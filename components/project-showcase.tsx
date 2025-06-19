@@ -1,0 +1,248 @@
+"use client"
+
+import { useState, useRef, useEffect } from "react"
+import { Github, Play } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+export function ProjectShowcase() {
+  const [isVisible, setIsVisible] = useState(false)
+  const [activeFilter, setActiveFilter] = useState("All")
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }, // Reduced threshold for faster mobile loading
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  const filters = ["All", "DeFi", "NFT", "AI", "Infrastructure", "Tools"]
+
+  const projects = [
+    {
+      title: "AI-Powered DeFi Yield Optimizer",
+      category: "DeFi",
+      description: "Revolutionary yield farming platform using ML algorithms to optimize returns across 50+ protocols.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Solidity", "Python", "React", "TensorFlow"],
+      metrics: { tvl: "$25M+", apy: "30% higher", users: "15K+" },
+      status: "Live",
+      links: { demo: "#", github: "#", live: "#" },
+    },
+    {
+      title: "Cross-Chain NFT Marketplace",
+      category: "NFT",
+      description: "Next-gen NFT platform with AI price discovery and seamless cross-chain transfers.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Next.js", "Solidity", "IPFS", "TypeScript"],
+      metrics: { volume: "$12M+", nfts: "50K+", chains: "4" },
+      status: "Live",
+      links: { demo: "#", github: "#" },
+    },
+    {
+      title: "Decentralized Identity Platform",
+      category: "Infrastructure",
+      description: "Self-sovereign identity solution using zero-knowledge proofs for privacy-preserving auth.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["zk-SNARKs", "React", "Node.js", "IPFS"],
+      metrics: { credentials: "100K+", privacy: "100%", uptime: "99.9%" },
+      status: "Beta",
+      links: { demo: "#", github: "#" },
+    },
+    {
+      title: "Smart Contract Security Analyzer",
+      category: "Tools",
+      description: "AI-powered vulnerability detection and gas optimization for smart contracts.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Python", "ML", "React", "FastAPI"],
+      metrics: { scanned: "10K+", accuracy: "95%", savings: "40%" },
+      status: "Live",
+      links: { demo: "#", github: "#" },
+    },
+    {
+      title: "Automated Trading Bot",
+      category: "DeFi",
+      description: "Intelligent trading bot with ML-driven strategies and risk management.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Python", "TensorFlow", "Web3.py", "Redis"],
+      metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
+      status: "Live",
+      links: { demo: "#", github: "#" },
+    },
+    {
+      title: "DAO Governance Platform",
+      category: "Infrastructure",
+      description: "Comprehensive governance solution with advanced voting mechanisms.",
+      image: "/placeholder.svg?height=300&width=400",
+      technologies: ["Solidity", "React", "GraphQL", "IPFS"],
+      metrics: { daos: "500+", proposals: "10K+", members: "50K+" },
+      status: "Live",
+      links: { demo: "#", github: "#" },
+    },
+  ]
+
+  const filteredProjects = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter)
+
+  return (
+    <section ref={sectionRef} className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <div className="max-w-7xl mx-auto">
+        <div className={`text-center mb-12 lg:mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <div className="inline-flex items-center px-4 lg:px-8 py-2 lg:py-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-full text-purple-300 text-xs lg:text-sm font-medium mb-6 lg:mb-8 shadow-lg shadow-purple-500/10">
+            Project Portfolio
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-6 lg:mb-8 leading-tight">
+            My{" "}
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
+              Creations
+            </span>
+          </h2>
+          <p className="text-lg lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            A curated collection of blockchain solutions that push the boundaries of what's possible
+          </p>
+        </div>
+
+        {/* Filter Controls - Mobile optimized */}
+        <div
+          className={`flex flex-wrap justify-center gap-2 lg:gap-3 mb-8 lg:mb-12 px-4 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+          style={{ animationDelay: "200ms" }}
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-xl lg:rounded-2xl font-medium transition-all duration-300 text-sm lg:text-base ${
+                activeFilter === filter
+                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+              }`}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid - Responsive */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Status Badge */}
+              <div className="absolute top-4 lg:top-6 right-4 lg:right-6 z-10">
+                <span
+                  className={`px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs font-bold ${
+                    project.status === "Live"
+                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                      : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
+
+              {/* Project Image */}
+              <div className="relative h-40 lg:h-48 bg-gradient-to-r from-purple-500/20 to-pink-500/20">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+
+              <div className="p-4 lg:p-6 space-y-4">
+                {/* Title and Description */}
+                <div>
+                  <div className="flex items-center gap-2 lg:gap-3 mb-2">
+                    <h3 className="text-lg lg:text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 line-clamp-1">
+                      {project.title}
+                    </h3>
+                    <span className="px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium whitespace-nowrap">
+                      {project.category}
+                    </span>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">{project.description}</p>
+                </div>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-3 gap-2">
+                  {Object.entries(project.metrics).map(([key, value]) => (
+                    <div key={key} className="text-center p-2 bg-white/5 rounded-lg">
+                      <div className="text-xs lg:text-sm font-bold text-white truncate">{value}</div>
+                      <div className="text-xs text-gray-400 uppercase tracking-wide truncate">{key}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-1">
+                  {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-2 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span className="px-2 py-1 bg-gray-500/20 text-gray-400 rounded-full text-xs">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-2 pt-2">
+                  {project.links.demo && (
+                    <Button
+                      size="sm"
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex-1 text-xs"
+                    >
+                      <Play className="w-3 h-3 mr-1" />
+                      Demo
+                    </Button>
+                  )}
+                  {project.links.github && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 flex-1 text-xs"
+                    >
+                      <Github className="w-3 h-3 mr-1" />
+                      Code
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Load More Button */}
+        <div className="text-center mt-12 lg:mt-16">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-8 lg:px-12 py-3 lg:py-4 text-base lg:text-lg font-semibold transition-all duration-300"
+          >
+            Load More Projects
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}

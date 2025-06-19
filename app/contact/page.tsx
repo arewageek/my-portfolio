@@ -1,0 +1,21 @@
+import { ContactHero } from "@/components/contact-hero"
+import { ContactForm } from "@/components/contact-form"
+import { ContactInfo } from "@/components/contact-info"
+import { ContactCTA } from "@/components/contact-cta"
+import { Navigation } from "@/components/navigation"
+
+export default function Contact() {
+  return (
+    <div className="relative min-h-screen bg-black overflow-x-hidden">
+      <Navigation />
+      <main>
+        <ContactHero />
+        <div className="grid lg:grid-cols-2 gap-0">
+          <ContactInfo />
+          <ContactForm />
+        </div>
+        <ContactCTA />
+      </main>
+    </div>
+  )
+}
