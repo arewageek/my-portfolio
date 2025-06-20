@@ -99,7 +99,7 @@ export function ContactHero() {
             </a>
 
             <a
-              href={brandConfig.social.twitter}
+              href={brandConfig.socials[2].href}
               target="_blank"
               rel="noopener noreferrer"
               className="group p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105"

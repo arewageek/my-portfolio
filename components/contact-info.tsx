@@ -30,16 +30,16 @@ export function ContactInfo() {
       icon: Mail,
       title: "Email",
       description: "Drop me a line anytime",
-      value: brandConfig.email,
+      value: brandConfig.socials[3].href,
       action: "Send Email",
       href: `mailto:${brandConfig.email}`,
       gradient: "from-purple-600 to-pink-600",
     },
     {
-      icon: MessageSquare,
-      title: "Discord",
+      icon: Twitter,
+      title: "Twitter",
       description: "Let's chat about blockchain",
-      value: brandConfig.social.discord,
+      value: brandConfig.socials[2].href,
       action: "Message Me",
       href: "#",
       gradient: "from-blue-600 to-purple-600",
@@ -52,23 +52,7 @@ export function ContactInfo() {
       action: "Book Now",
       href: "#",
       gradient: "from-green-600 to-blue-600",
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      description: `Based in ${brandConfig.location}`,
-      value: "Available worldwide",
-      action: "View Timezone",
-      href: "#",
-      gradient: "from-pink-600 to-red-600",
-    },
-  ]
-
-  const socialLinks = [
-    { icon: Github, href: brandConfig.social.github, label: "GitHub", color: "hover:text-gray-400" },
-    { icon: Linkedin, href: brandConfig.social.linkedin, label: "LinkedIn", color: "hover:text-blue-400" },
-    { icon: Twitter, href: brandConfig.social.twitter, label: "Twitter", color: "hover:text-cyan-400" },
-    { icon: Mail, href: `mailto:${brandConfig.email}`, label: "Email", color: "hover:text-pink-400" },
+    }
   ]
 
   return (
@@ -118,7 +102,7 @@ export function ContactInfo() {
           <div className="pt-8 border-t border-white/10">
             <h3 className="text-xl font-bold text-white mb-6">Follow Me</h3>
             <div className="flex space-x-4">
-              {socialLinks.map(({ icon: Icon, href, label, color }) => (
+              {brandConfig.socials.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
