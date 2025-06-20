@@ -1,3 +1,5 @@
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+
 export const brandConfig = {
   // Personal Information
   name: "Arewa Geek",
@@ -9,12 +11,36 @@ export const brandConfig = {
   email: "hello@arewaofweb3.dev",
 
   // Social Links
-  social: {
-    github: "https://github.com/arewaofweb3",
-    linkedin: "https://linkedin.com/in/arewaofweb3",
-    twitter: "https://x.com/arewaofweb3",
-    discord: "@arewaofweb3",
-  },
+  socials: [
+    {
+      href: "https://github.com/arewageek",
+      label: "GitHub",
+      icon: Github,
+      color:
+        "hover:text-purple-400 hover:bg-purple-500/10 hover:border-purple-400/30",
+    },
+    {
+      href: "https://linkedin.com/in/augustine-ameh-a2315b165",
+      label: "LinkedIn",
+      icon: Linkedin,
+      color:
+        "hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-400/30",
+    },
+    {
+      href: "https://x.com/arewaofweb3",
+      label: "Twitter",
+      icon: Twitter,
+      color:
+        "hover:text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400/30",
+    },
+    {
+      href: "@arewaofweb3",
+      label: "Email",
+      icon: Mail,
+      color:
+        "hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-400/30",
+    },
+  ],
 
   // Brand Colors & Gradients
   colors: {
@@ -29,7 +55,7 @@ export const brandConfig = {
   hero: {
     greeting: "Hello, I'm",
     description:
-      "I craft decentralized applications and protocols that feel effortlessly simple and beautifully smooth. Because Web3 deserves exceptional user experiences, not complexity.",
+      "I build decentralized apps and protocols that feel simple and smooth. Because Web3 should be easy to use—not unnecessarily complex.",
     cta: {
       primary: "Explore My Work",
       secondary: "Let's Connect",
@@ -39,7 +65,8 @@ export const brandConfig = {
 
   // About Page
   about: {
-    intro: "A blockchain engineer who believes technology should feel effortless, not overwhelming.",
+    intro:
+      "A blockchain engineer who believes the best technology is the kind you don’t even realize you’re using.",
     mission:
       "I build decentralized systems that real people actually want to use—designed from the ground up to scale effortlessly as they grow.",
     story: [
@@ -56,7 +83,8 @@ export const brandConfig = {
       },
       {
         title: "Keep it simple",
-        description: "The best solutions are often the simplest ones. Complexity is easy, simplicity takes work.",
+        description:
+          "The best solutions are often the simplest ones. Complexity is easy, simplicity takes work.",
       },
       {
         title: "Build to last",
@@ -116,7 +144,8 @@ export const brandConfig = {
     {
       id: "ai-defi-v2",
       title: "AI DeFi Protocol V2",
-      description: "Next-generation yield optimization platform with advanced machine learning capabilities",
+      description:
+        "Next-generation yield optimization platform with advanced machine learning capabilities",
       status: "in-development", // "in-development", "beta", "launching-soon"
       progress: 75,
       technologies: ["Solidity", "Python", "TensorFlow", "React"],
@@ -130,17 +159,23 @@ export const brandConfig = {
     {
       id: "nft-marketplace-v3",
       title: "Cross-Chain NFT Marketplace",
-      description: "Revolutionary NFT platform with AI-powered price discovery and seamless cross-chain transfers",
+      description:
+        "Revolutionary NFT platform with AI-powered price discovery and seamless cross-chain transfers",
       status: "beta",
       progress: 90,
       technologies: ["Next.js", "Solidity", "IPFS", "AI"],
       expectedLaunch: "Q1 2024",
-      highlights: ["AI-powered price recommendations", "Gasless cross-chain transfers", "Advanced creator tools"],
+      highlights: [
+        "AI-powered price recommendations",
+        "Gasless cross-chain transfers",
+        "Advanced creator tools",
+      ],
     },
     {
       id: "security-scanner",
       title: "Smart Contract Security Scanner",
-      description: "AI-powered vulnerability detection tool for smart contract auditing",
+      description:
+        "AI-powered vulnerability detection tool for smart contract auditing",
       status: "launching-soon",
       progress: 95,
       technologies: ["Python", "Machine Learning", "React"],
@@ -156,256 +191,547 @@ export const brandConfig = {
   // Work Experience
   companies: [
     {
-      id: "defi-protocol",
-      name: "DeFi Protocol Inc.",
-      role: "Senior Blockchain Engineer",
-      period: "2023 - Present",
-      location: "San Francisco, CA",
+      id: "borbbles",
+      name: "Borbbles",
+      role: "Full-Stack Engineer",
+      period: "Sep 2021 - Mar 2022",
+      location: "Niger, Nigeria",
       type: "Full-time",
       logo: "🏦",
-      status: "current",
+      status: "past",
       description:
-        "Leading the development of next-generation DeFi protocols with AI-powered yield optimization and cross-chain interoperability.",
+        "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
       achievements: [
-        "Architected smart contracts managing $25M+ TVL",
-        "Reduced gas costs by 45% through optimization",
-        "Led team of 12 engineers building cross-chain infrastructure",
-        "Implemented AI-driven yield strategies increasing APY by 30%",
+        // "Architected smart contracts managing $25M+ TVL",
+        // "Reduced gas costs by 45% through optimization",
+        // "Led team of 12 engineers building cross-chain infrastructure",
+        // "Implemented AI-driven yield strategies increasing APY by 30%",
       ],
-      technologies: ["Solidity", "React", "Python", "AWS", "TensorFlow"],
-      projectCount: 8,
+      technologies: ["PHP", "MySQL"],
+      projectCount: 1,
       overview: {
-        description:
-          "At DeFi Protocol Inc., I led the development of revolutionary DeFi infrastructure that combines artificial intelligence with blockchain technology. My role involved architecting smart contracts that could adapt and optimize themselves based on market conditions.",
+        // description:
+        //   "At DeFi Protocol Inc., I led the development of revolutionary DeFi infrastructure that combines artificial intelligence with blockchain technology. My role involved architecting smart contracts that could adapt and optimize themselves based on market conditions.",
         responsibilities: [
-          "Architected and deployed smart contracts managing over $25M in total value locked",
-          "Led a cross-functional team of 12 engineers across frontend, backend, and blockchain development",
-          "Implemented AI-driven yield optimization algorithms that increased user returns by 30%",
-          "Designed and built cross-chain bridge infrastructure supporting 4 major blockchains",
-          "Reduced gas costs by 45% through advanced smart contract optimization techniques",
-          "Established security protocols and conducted comprehensive smart contract audits",
+          "Developed a comprehensive web application, improving user experience and operational efficiency.",
+          "Integrated subscription services into the web application, enabling customers to easily manage recurring services and payments.",
+          "Educated users on the features and functionalities of the web application, ensuring smooth adoption and enhancing customer satisfaction.",
         ],
-        impact:
-          "Led the company's transition from a traditional DeFi protocol to an AI-powered platform, resulting in 300% user growth and $25M+ in managed assets.",
+        // impact:
+        //   "Led the company's transition from a traditional DeFi protocol to an AI-powered platform, resulting in 300% user growth and $25M+ in managed assets.",
       },
       projects: [
-        {
-          title: "AI Yield Optimizer",
-          description:
-            "Revolutionary DeFi protocol that uses machine learning to optimize yield farming strategies across 50+ protocols.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Solidity", "Python", "TensorFlow", "React"],
-          metrics: { tvl: "$25M+", apy: "30% higher", users: "15K+" },
-          links: { demo: "#", github: "#" },
-        },
-        {
-          title: "Cross-Chain Bridge",
-          description:
-            "Secure and efficient bridge infrastructure enabling seamless asset transfers across 4 major blockchains.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Solidity", "Go", "React", "PostgreSQL"],
-          metrics: { volume: "$50M+", chains: "4", uptime: "99.9%" },
-          links: { demo: "#", github: "#" },
-        },
-        {
-          title: "Governance Dashboard",
-          description:
-            "Comprehensive governance platform with advanced voting mechanisms and treasury management capabilities.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Next.js", "Solidity", "GraphQL", "TypeScript"],
-          metrics: { proposals: "500+", voters: "10K+", decisions: "95%" },
-          links: { demo: "#", github: "#" },
-        },
+        //   {
+        //     title: "AI Yield Optimizer",
+        //     description:
+        //       "Revolutionary DeFi protocol that uses machine learning to optimize yield farming strategies across 50+ protocols.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "Python", "TensorFlow", "React"],
+        //     metrics: { tvl: "$25M+", apy: "30% higher", users: "15K+" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Cross-Chain Bridge",
+        //     description:
+        //       "Secure and efficient bridge infrastructure enabling seamless asset transfers across 4 major blockchains.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "Go", "React", "PostgreSQL"],
+        //     metrics: { volume: "$50M+", chains: "4", uptime: "99.9%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Governance Dashboard",
+        //     description:
+        //       "Comprehensive governance platform with advanced voting mechanisms and treasury management capabilities.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Next.js", "Solidity", "GraphQL", "TypeScript"],
+        //     metrics: { proposals: "500+", voters: "10K+", decisions: "95%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
       ],
       impact: [
-        {
-          value: "$25M+",
-          label: "Total Value Locked",
-          description: "Managed across all protocols",
-        },
-        {
-          value: "15K+",
-          label: "Active Users",
-          description: "Daily active protocol users",
-        },
-        {
-          value: "45%",
-          label: "Gas Reduction",
-          description: "Through optimization techniques",
-        },
-        {
-          value: "100%",
-          label: "Security Record",
-          description: "Zero hacks or exploits",
-        },
+        //   {
+        //     value: "$25M+",
+        //     label: "Total Value Locked",
+        //     description: "Managed across all protocols",
+        //   },
+        //   {
+        //     value: "15K+",
+        //     label: "Active Users",
+        //     description: "Daily active protocol users",
+        //   },
+        //   {
+        //     value: "45%",
+        //     label: "Gas Reduction",
+        //     description: "Through optimization techniques",
+        //   },
+        //   {
+        //     value: "100%",
+        //     label: "Security Record",
+        //     description: "Zero hacks or exploits",
+        //   },
       ],
     },
     {
-      id: "web3-startup",
-      name: "Web3 Innovations",
-      role: "Fullstack Blockchain Developer",
-      period: "2022 - 2023",
-      location: "Remote",
-      type: "Full-time",
+      id: "skytech",
+      name: "Skytech Integrated Network Ltd ",
+      role: "Fullstack Developer",
+      period: "Jun 2022 - Jul 2023",
+      location: "Nasarawa, Nigeria",
+      type: "Part-time",
       logo: "🚀",
       status: "past",
       description:
-        "Built end-to-end blockchain applications with emphasis on user experience and AI integration for automated testing.",
+        "Developed custom web applications for the organization and its clients, delivering tailored solutions to meet specific business needs.",
       achievements: [
-        "Developed NFT marketplace with 75K+ active users",
-        "Created AI-powered smart contract vulnerability scanner",
-        "Implemented automated testing reducing bugs by 70%",
-        "Built cross-platform mobile app with 50K+ downloads",
+        // "Developed NFT marketplace with 75K+ active users",
+        // "Created AI-powered smart contract vulnerability scanner",
+        // "Implemented automated testing reducing bugs by 70%",
+        // "Built cross-platform mobile app with 50K+ downloads",
       ],
-      technologies: ["Next.js", "Solidity", "TypeScript", "Docker", "PostgreSQL"],
-      projectCount: 12,
+      technologies: ["PHP", "Laravel", "SQL"],
+      projectCount: 3,
       overview: {
-        description:
-          "As a Fullstack Blockchain Developer at Web3 Innovations, I was responsible for building end-to-end blockchain applications with a strong focus on user experience and automated testing through AI integration.",
+        // description:
+        //   "As a Fullstack Blockchain Developer at Web3 Innovations, I was responsible for building end-to-end blockchain applications with a strong focus on user experience and automated testing through AI integration.",
         responsibilities: [
-          "Developed a comprehensive NFT marketplace that attracted 75,000+ active users",
-          "Created an AI-powered smart contract vulnerability scanner used by 500+ developers",
-          "Implemented automated testing frameworks that reduced deployment bugs by 70%",
-          "Built cross-platform mobile applications with 50,000+ downloads",
-          "Optimized application performance achieving 2-second load times",
-          "Mentored junior developers and established coding best practices",
+          "Led the on-boarding process for new interns, providing guidance and support to help them integrate smoothly into the team.",
+          "Designed and developed a POS system for cybercafes, enabling them to effectively track sales, manage inventory, payrolls, and analyze growth.",
+          "Mentored and tutored new interns on website development, utilizing tools such as JavaScript and PHP to foster their technical skills.",
         ],
-        impact:
-          "Transformed the company's technical capabilities, leading to $12M+ in NFT trading volume and recognition as a top Web3 development team.",
+        // impact:
+        //   "Transformed the company's technical capabilities, leading to $12M+ in NFT trading volume and recognition as a top Web3 development team.",
       },
       projects: [
-        {
-          title: "NFT Marketplace",
-          description:
-            "Next-generation NFT trading platform with AI-powered price discovery and seamless user experience.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Next.js", "Solidity", "IPFS", "TypeScript"],
-          metrics: { volume: "$12M+", nfts: "50K+", users: "75K+" },
-          links: { demo: "#", github: "#" },
-        },
-        {
-          title: "Smart Contract Scanner",
-          description:
-            "AI-powered vulnerability detection tool that analyzes smart contracts for security issues and gas optimization.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Python", "Machine Learning", "React", "FastAPI"],
-          metrics: { scanned: "10K+", accuracy: "95%", saved: "$2M+" },
-          links: { demo: "#", github: "#" },
-        },
-        {
-          title: "Mobile DeFi App",
-          description:
-            "Cross-platform mobile application bringing DeFi to mainstream users with intuitive design and powerful features.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["React Native", "TypeScript", "Web3", "Redux"],
-          metrics: { downloads: "50K+", rating: "4.8/5", retention: "85%" },
-          links: { demo: "#", github: "#" },
-        },
+        //   {
+        //     title: "NFT Marketplace",
+        //     description:
+        //       "Next-generation NFT trading platform with AI-powered price discovery and seamless user experience.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Next.js", "Solidity", "IPFS", "TypeScript"],
+        //     metrics: { volume: "$12M+", nfts: "50K+", users: "75K+" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Smart Contract Scanner",
+        //     description:
+        //       "AI-powered vulnerability detection tool that analyzes smart contracts for security issues and gas optimization.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Python", "Machine Learning", "React", "FastAPI"],
+        //     metrics: { scanned: "10K+", accuracy: "95%", saved: "$2M+" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Mobile DeFi App",
+        //     description:
+        //       "Cross-platform mobile application bringing DeFi to mainstream users with intuitive design and powerful features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["React Native", "TypeScript", "Web3", "Redux"],
+        //     metrics: { downloads: "50K+", rating: "4.8/5", retention: "85%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
       ],
       impact: [
-        {
-          value: "75K+",
-          label: "Marketplace Users",
-          description: "Active NFT traders",
-        },
-        {
-          value: "$12M+",
-          label: "Trading Volume",
-          description: "NFT marketplace volume",
-        },
-        {
-          value: "95%",
-          label: "Scanner Accuracy",
-          description: "Vulnerability detection rate",
-        },
-        {
-          value: "70%",
-          label: "Bug Reduction",
-          description: "Through automated testing",
-        },
+        //   {
+        //     value: "75K+",
+        //     label: "Marketplace Users",
+        //     description: "Active NFT traders",
+        //   },
+        //   {
+        //     value: "$12M+",
+        //     label: "Trading Volume",
+        //     description: "NFT marketplace volume",
+        //   },
+        //   {
+        //     value: "95%",
+        //     label: "Scanner Accuracy",
+        //     description: "Vulnerability detection rate",
+        //   },
+        //   {
+        //     value: "70%",
+        //     label: "Bug Reduction",
+        //     description: "Through automated testing",
+        //   },
       ],
     },
     {
-      id: "blockchain-solutions",
-      name: "Blockchain Solutions Ltd.",
-      role: "Blockchain Developer",
-      period: "2021 - 2022",
-      location: "Lagos, Nigeria",
+      id: "its",
+      name: "ITS, FUT Minna",
+      role: "Software Engineer (Intern)",
+      period: "Sep 2023 - Feb 2024",
+      location: "Niger, Nigeria",
       type: "Full-time",
       logo: "⛓️",
       status: "past",
       description:
-        "Specialized in smart contract development and dApp creation with focus on security and user-friendly interfaces.",
+        "Built responsive and efficient web applications to address various operational needs.",
       achievements: [
-        "Deployed 25+ smart contracts with zero vulnerabilities",
-        "Built DeFi lending protocol with $5M+ in loans",
-        "Improved dApp loading speed by 80%",
-        "Conducted security audits for 15+ external projects",
+        //   "Deployed 25+ smart contracts with zero vulnerabilities",
+        //   "Built DeFi lending protocol with $5M+ in loans",
+        //   "Improved dApp loading speed by 80%",
+        //   "Conducted security audits for 15+ external projects",
       ],
-      technologies: ["Solidity", "Web3.js", "React", "IPFS", "Hardhat"],
-      projectCount: 15,
+      technologies: ["Laravel", "React", "SQL"],
+      projectCount: 2,
       overview: {
         description:
-          "At Blockchain Solutions Ltd., I specialized in smart contract development and dApp creation, with a particular focus on security and creating user-friendly interfaces for complex blockchain interactions.",
+          "Built responsive and efficient web applications to address various operational needs.",
         responsibilities: [
-          "Deployed 25+ smart contracts to mainnet with zero security vulnerabilities",
-          "Built a DeFi lending protocol that facilitated over $5M in loans",
-          "Improved dApp loading speeds by 80% through performance optimization",
-          "Conducted security audits for 15+ external blockchain projects",
-          "Mentored 8 junior developers in blockchain development best practices",
-          "Established the company's smart contract development standards",
+          "Collaborated with a team of software engineers in the MIS unit.",
+          "Designed and implemented a web application for managing interns within the MIS unit, streamlining processes and improving administrative oversight.",
+          "Collaborated with a team of developers both on-site and remotely, leveraging Laravel and PostgreSQL to deliver robust back-end solutions.",
+          "Developed WikiChat, a Python-React app utilizing OpenAI’s Python SDK to generate witty and engaging responses, enhancing user interactions.",
+          "Developed TrustLendr, a decentralized lending platform that uses on-chain credit scores for loan eligibility. Integrated a native ERC-20 token to facilitate smooth lending and borrowing transactions",
         ],
-        impact:
-          "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
+        // impact:
+        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
       },
       projects: [
-        {
-          title: "DeFi Lending Protocol",
-          description:
-            "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Solidity", "React", "Web3.js", "Node.js"],
-          metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
-          links: { demo: "#", github: "#" },
-        },
-        {
-          title: "Token Launchpad",
-          description:
-            "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
-          image: "/placeholder.svg?height=300&width=500",
-          technologies: ["Solidity", "React", "IPFS", "Hardhat"],
-          metrics: { launches: "25+", raised: "$10M+", success: "100%" },
-          links: { demo: "#", github: "#" },
-        },
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
       ],
       impact: [
-        {
-          value: "25+",
-          label: "Smart Contracts",
-          description: "Deployed with zero hacks",
-        },
-        {
-          value: "$5M+",
-          label: "Loans Facilitated",
-          description: "Through DeFi lending protocol",
-        },
-        {
-          value: "80%",
-          label: "Speed Improvement",
-          description: "dApp loading optimization",
-        },
-        {
-          value: "15+",
-          label: "Audits Completed",
-          description: "External security audits",
-        },
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
+      ],
+    },
+
+    {
+      id: "phlamingos",
+      name: "Phlamingos NFT",
+      role: "Software Engineer",
+      period: "May - Jul 2024",
+      location: "Fiverr",
+      type: "Contract",
+      logo: "⛓️",
+      status: "past",
+      description:
+        "Built a smart contract and decentralized application (dApp) for NFT auctions, making it easy for users to participate in secure and transparent bidding.",
+      achievements: [
+        //   "Deployed 25+ smart contracts with zero vulnerabilities",
+        //   "Built DeFi lending protocol with $5M+ in loans",
+        //   "Improved dApp loading speed by 80%",
+        //   "Conducted security audits for 15+ external projects",
+      ],
+      technologies: ["Solidity", "Next Js", "Prisma ORM", "PostgreSQL"],
+      projectCount: 1,
+      overview: {
+        description:
+          "Built a smart contract and decentralized application (dApp) for NFT auctions, making it easy for users to participate in secure and transparent bidding.",
+        responsibilities: [
+          "Built a smart contract and decentralized application (dApp) for NFT auctions, making it easy for users to participate in secure and transparent bidding.",
+          "Developed a web app for inscribing NFTs onto the Ethereum blockchain, combining a user-friendly interface with efficient blockchain integration.",
+        ],
+        // impact:
+        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
+      },
+      projects: [
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+      ],
+      impact: [
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
+      ],
+    },
+
+    {
+      id: "tol",
+      name: "The Open Labs (TOL)",
+      role: "Software Engineer",
+      period: "Aug - Nov 2024",
+      location: "Remote",
+      type: "Contract",
+      logo: "⛓️",
+      status: "past",
+      description:
+        "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
+      achievements: [
+        //   "Deployed 25+ smart contracts with zero vulnerabilities",
+        //   "Built DeFi lending protocol with $5M+ in loans",
+        //   "Improved dApp loading speed by 80%",
+        //   "Conducted security audits for 15+ external projects",
+      ],
+      technologies: ["Next JS", "Mongo DB"],
+      projectCount: 1,
+      overview: {
+        description:
+          "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
+        responsibilities: [
+          "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
+          "Built a dynamic wait-list and NFT minting website, incorporating blockchain features for seamless user on-boarding.",
+          "Developed a Telegram Mini-App and integrated Telegram Bot to enhance user engagement, streamline communication, and facilitate platform interactions.",
+          "Created a quest dashboard to engage the community through interactive social tasks, incentivizing participation and building excitement for a potential airdrop.",
+          "Developed a tap-to-earn Telegram mini-app game that rewards users with TapM tokens for interactions. Integrated a marketplace where tokens can be used to boost Points Per Hour (PPH), increasing user retention and platform activity.",
+        ],
+        // impact:
+        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
+      },
+      projects: [
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+      ],
+      impact: [
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
+      ],
+    },
+
+    {
+      id: "flaury",
+      name: "Flaury",
+      role: "Backend Software Engineer",
+      period: "Oct - Nov 2024",
+      location: "Remote",
+      type: "Contract",
+      logo: "⛓️",
+      status: "past",
+      description:
+        "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
+      achievements: [
+        //   "Deployed 25+ smart contracts with zero vulnerabilities",
+        //   "Built DeFi lending protocol with $5M+ in loans",
+        //   "Improved dApp loading speed by 80%",
+        //   "Conducted security audits for 15+ external projects",
+      ],
+      technologies: ["Express JS", "Mongo DB", "Firebase"],
+      projectCount: 1,
+      overview: {
+        description:
+          "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
+        responsibilities: [
+          "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
+          "Developed API services to power the beauty services platform, ensuring seamless functionality for both web and mobile applications.",
+          "Collaborated effectively with a fully remote team using slack and github, maintaining strong communication and delivering results within tight deadlines.",
+          "Developed an API service for the application’s in-app messaging and live chat feature",
+        ],
+        // impact:
+        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
+      },
+      projects: [
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+      ],
+      impact: [
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
+      ],
+    },
+
+    {
+      id: "i633",
+      name: "Ignition 633 Ministries",
+      role: "Full-Stack Software Engineer",
+      period: "Jan 2025 - Present",
+      location: "Benue, Nigeria",
+      type: "Full-Time",
+      logo: "⛓️",
+      status: "current",
+      description:
+        "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
+      achievements: [
+        //   "Deployed 25+ smart contracts with zero vulnerabilities",
+        //   "Built DeFi lending protocol with $5M+ in loans",
+        //   "Improved dApp loading speed by 80%",
+        //   "Conducted security audits for 15+ external projects",
+      ],
+      technologies: ["Laravel", "Livewire", "MySQL"],
+      projectCount: 4,
+      overview: {
+        description:
+          "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
+        responsibilities: [
+          "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
+          "Developed and manage a notifications module used across multiple applications to deliver real-time updates to users. This module has been successfully integrated across various platforms.",
+          "Collaborate with a cross-functional team, including both local and remote members, to create innovative software products and enhance existing systems using tools like Jira, Bitbucket, and Microsoft Teams for project management, version control, and communication.",
+          "Assist interns by explaining development processes, conducting 1:1 review sessions to help them overcome challenges, and ensuring a smooth and effective learning experience. ",
+        ],
+        impact: "",
+      },
+      projects: [
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+      ],
+      impact: [
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
       ],
     },
   ],
 
   // Global Stats
   stats: {
-    experience: "3+",
+    experience: `${new Date().getFullYear() - 2020}+`,
     projects: "50+",
     users: "200K+",
     tvl: "$50M+",
@@ -499,7 +825,13 @@ export const brandConfig = {
       description:
         "AI-powered tool for automated smart contract vulnerability detection and gas optimization suggestions with detailed reporting.",
       image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Python", "Machine Learning", "Solidity", "React", "FastAPI"],
+      technologies: [
+        "Python",
+        "Machine Learning",
+        "Solidity",
+        "React",
+        "FastAPI",
+      ],
       features: [
         "Automated vulnerability scanning",
         "Gas optimization suggestions",
@@ -509,4 +841,5 @@ export const brandConfig = {
       links: { demo: "#", github: "#" },
     },
   ],
-}
+  meetingLink: "#",
+};

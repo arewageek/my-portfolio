@@ -1,3 +1,4 @@
+import { brandConfig } from "@/lib/brand-config"
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react"
 
 export function Footer() {
@@ -24,11 +25,10 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-              Portfolio
+              {brandConfig.name}
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Fullstack blockchain engineer passionate about creating seamless Web3 experiences with AI-powered
-              solutions.
+              {brandConfig.about.intro}
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
+              {brandConfig.socials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
@@ -67,10 +67,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-purple-500/20 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 Your Name. All rights reserved.</p>
-          <p className="text-gray-400 text-sm flex items-center mt-4 md:mt-0">
-            Made with <Heart className="w-4 h-4 text-pink-400 mx-1" /> and lots of coffee
-          </p>
+          <p className="text-gray-400 text-sm">© 2025 {brandConfig.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>
