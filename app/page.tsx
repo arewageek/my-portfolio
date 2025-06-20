@@ -8,12 +8,11 @@ import { Navigation } from "@/components/navigation"
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden">
-      <Navigation />
       <main>
         <HeroSection />
         <ProfessionalHighlights />
         <ProjectShowcase />
-        <WhyChooseMe />
+        {/* <WhyChooseMe /> */}
         <CallToAction />
       </main>
     </div>

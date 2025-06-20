@@ -31,44 +31,45 @@ export function ProfessionalHighlights() {
     {
       icon: Code2,
       title: "Smart Contract Development",
-      subtitle: "Bulletproof blockchain architecture",
+      subtitle: "Secured, Scalable Contracts",
       description:
-        "I architect and deploy production-ready smart contracts that handle millions in value. Every contract is security-audited, gas-optimized, and built with upgradability in mind. From simple tokens to complex DeFi protocols, I ensure your blockchain infrastructure is rock-solid.",
-      features: [
-        "Security-first development with comprehensive testing",
-        "Gas optimization reducing costs by up to 40%",
-        "Upgradeable contract patterns for future-proofing",
-        "Multi-chain deployment expertise",
+        "I design and deploy production-ready smart contracts that securely handle high-value transactions. Every contract I build is security-audited, gas-optimized, and designed for easy upgrades. Whether it’s simple tokens or complex DeFi protocols, I make sure your blockchain infrastructure is reliable and solid.",
+      "features": [
+        "Secure code with full tests",
+        "Lower gas costs by up to 40%",
+        "Upgradeable contracts that last",
+        "Experience deploying across multiple EVM chains"
       ],
+
       gradient: "from-purple-600 to-blue-600",
       bgGradient: "from-purple-500/10 to-blue-500/10",
     },
-    {
-      icon: Brain,
-      title: "AI Integration",
-      subtitle: "Intelligent blockchain solutions",
-      description:
-        "I don't just build blockchain apps—I make them intelligent. By integrating cutting-edge AI technologies, I create solutions that learn, adapt, and optimize themselves. From predictive analytics to automated decision-making, AI transforms how users interact with Web3.",
-      features: [
-        "Machine learning models for yield optimization",
-        "AI-powered price discovery and market analysis",
-        "Intelligent automation reducing manual processes",
-        "Natural language interfaces for complex operations",
-      ],
-      gradient: "from-pink-600 to-purple-600",
-      bgGradient: "from-pink-500/10 to-purple-500/10",
-    },
+    // {
+    //   icon: Brain,
+    //   title: "AI Integration",
+    //   subtitle: "Intelligent blockchain solutions",
+    //   description:
+    //     "I don't just build blockchain apps—I make them intelligent. By integrating cutting-edge AI technologies, I create solutions that learn, adapt, and optimize themselves. From predictive analytics to automated decision-making, AI transforms how users interact with Web3.",
+    //   features: [
+    //     "Machine learning models for yield optimization",
+    //     "AI-powered price discovery and market analysis",
+    //     "Intelligent automation reducing manual processes",
+    //     "Natural language interfaces for complex operations",
+    //   ],
+    //   gradient: "from-pink-600 to-purple-600",
+    //   bgGradient: "from-pink-500/10 to-purple-500/10",
+    // },
     {
       icon: Globe,
       title: "Full-Stack Development",
       subtitle: "End-to-end Web3 experiences",
       description:
-        "From smart contracts to stunning user interfaces, I handle every layer of the stack. I create seamless experiences that make complex blockchain technology feel simple and intuitive. Users shouldn't need to understand the underlying complexity to benefit from Web3.",
+        "I build everything from smart contracts to smooth, user-focused interfaces—making blockchain technology feel simple, approachable, and easy to use. Web3 should feel seamless, even if users don’t fully understand the magic happening behind the scenes.",
       features: [
-        "Modern React/Next.js applications with TypeScript",
-        "Responsive design that works on all devices",
-        "Web3 wallet integration and transaction handling",
-        "Real-time data synchronization and state management",
+        "Building modern React and Next.js applications with TypeScript",
+        "Creating responsive designs that look great on all devices",
+        "Integrating Web3 wallets and handling blockchain transactions",
+        "Implementing real-time data sync and smooth state management",
       ],
       gradient: "from-green-600 to-teal-600",
       bgGradient: "from-green-500/10 to-teal-500/10",
@@ -78,42 +79,41 @@ export function ProfessionalHighlights() {
       title: "Security & Auditing",
       subtitle: "Zero-compromise protection",
       description:
-        "Security isn't an afterthought—it's the foundation. I implement defense-in-depth strategies, conduct thorough security audits, and follow industry best practices to ensure your assets and users are protected against all known attack vectors.",
+        "Security is at the core of everything I build. I apply defense-in-depth, perform detailed security reviews, and follow proven best practices to keep your users and assets safe from known vulnerabilities.",
       features: [
-        "Comprehensive security audits and vulnerability assessments",
-        "Implementation of security best practices and patterns",
-        "Multi-signature and timelock mechanisms",
-        "Continuous monitoring and incident response planning",
+        "Thorough security audits and vulnerability checks",
+        "Applying proven security best practices and design patterns",
+        "Integrating multi-signature wallets and timelock protections",
+        "Setting up continuous monitoring and preparing for incident response"
       ],
       gradient: "from-red-600 to-pink-600",
       bgGradient: "from-red-500/10 to-pink-500/10",
     },
-    {
-      icon: Database,
-      title: "DeFi Protocols",
-      subtitle: "Next-generation financial infrastructure",
-      description:
-        "I build the financial primitives of tomorrow. From automated market makers to yield farming protocols, I create DeFi solutions that are not only innovative but also sustainable and user-friendly. Every protocol is designed for long-term value creation.",
-      features: [
-        "Custom AMM and liquidity pool implementations",
-        "Yield farming and staking mechanisms",
-        "Cross-chain bridge and interoperability solutions",
-        "Governance tokens and DAO infrastructure",
-      ],
-      gradient: "from-yellow-600 to-orange-600",
-      bgGradient: "from-yellow-500/10 to-orange-500/10",
-    },
+    // {
+    //   icon: Database,
+    //   title: "DeFi Protocols",
+    //   subtitle: "Next-generation financial infrastructure",
+    //   description:
+    //     "I build the financial primitives of tomorrow. From automated market makers to yield farming protocols, I create DeFi solutions that are not only innovative but also sustainable and user-friendly. Every protocol is designed for long-term value creation.",
+    //   features: [
+    //     "Custom AMM and liquidity pool implementations",
+    //     "Yield farming and staking mechanisms",
+    //     "Cross-chain bridge and interoperability solutions",
+    //     "Governance tokens and DAO infrastructure",
+    //   ],
+    //   gradient: "from-yellow-600 to-orange-600",
+    //   bgGradient: "from-yellow-500/10 to-orange-500/10",
+    // },
     {
       icon: Zap,
-      title: "Performance Optimization",
-      subtitle: "Lightning-fast Web3 applications",
-      description:
-        "Speed is a feature, not a luxury. I optimize every aspect of the application stack—from smart contract gas efficiency to frontend loading times. Users expect Web2-level performance from Web3 applications, and I deliver exactly that.",
+      title: "Performance & Scalability",
+      subtitle: "Fast, Scalable Web3 Applications",
+      description: "Speed and scalability are not optional—they’re essential. I optimize every layer of the stack, from gas-efficient smart contracts to frontend loading times, while building systems that scale effortlessly as user demand grows. Web3 users expect Web2-level speed and reliability, and I make sure they get both.",
       features: [
-        "Advanced caching strategies and CDN optimization",
-        "Smart contract gas optimization techniques",
-        "Progressive loading and code splitting",
-        "Real-time performance monitoring and analytics",
+        "Advanced caching strategies and CDN optimization for faster load times",
+        "Smart contract gas optimization and scalable architecture design",
+        "Progressive loading, code splitting, and efficient asset management",
+        "Real-time performance monitoring, load testing, and scaling strategies"
       ],
       gradient: "from-cyan-600 to-blue-600",
       bgGradient: "from-cyan-500/10 to-blue-500/10",
@@ -123,7 +123,7 @@ export function ProfessionalHighlights() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 lg:px-8"
+      className="relative py-32 px-6 lg:px-8 hidden md:block"
       style={{
         background: `
           linear-gradient(135deg, #0f0f23 0%, #1a0b2e 50%, #0f0f23 100%)
@@ -154,11 +154,10 @@ export function ProfessionalHighlights() {
               <button
                 key={index}
                 onClick={() => setActiveHighlight(index)}
-                className={`w-full text-left p-6 rounded-2xl border transition-all duration-500 group ${
-                  activeHighlight === index
-                    ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/50 transform scale-105"
-                    : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-102"
-                } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+                className={`w-full text-left p-6 rounded-2xl border transition-all duration-500 group ${activeHighlight === index
+                  ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/50 transform scale-105"
+                  : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 hover:transform hover:scale-102"
+                  } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center space-x-4">
@@ -169,26 +168,23 @@ export function ProfessionalHighlights() {
                   </div>
                   <div className="flex-1">
                     <h3
-                      className={`text-lg font-bold mb-1 transition-colors duration-300 ${
-                        activeHighlight === index ? "text-white" : "text-gray-300 group-hover:text-white"
-                      }`}
+                      className={`text-lg font-bold mb-1 transition-colors duration-300 ${activeHighlight === index ? "text-white" : "text-gray-300 group-hover:text-white"
+                        }`}
                     >
                       {highlight.title}
                     </h3>
                     <p
-                      className={`text-sm transition-colors duration-300 ${
-                        activeHighlight === index ? "text-purple-400" : "text-gray-400 group-hover:text-gray-300"
-                      }`}
+                      className={`text-sm transition-colors duration-300 ${activeHighlight === index ? "text-purple-400" : "text-gray-400 group-hover:text-gray-300"
+                        }`}
                     >
                       {highlight.subtitle}
                     </p>
                   </div>
                   <ChevronRight
-                    className={`w-5 h-5 transition-all duration-300 ${
-                      activeHighlight === index
-                        ? "text-purple-400 transform rotate-90"
-                        : "text-gray-400 group-hover:text-white group-hover:translate-x-1"
-                    }`}
+                    className={`w-5 h-5 transition-all duration-300 ${activeHighlight === index
+                      ? "text-purple-400 transform rotate-90"
+                      : "text-gray-400 group-hover:text-white group-hover:translate-x-1"
+                      }`}
                   />
                 </div>
               </button>
@@ -198,9 +194,8 @@ export function ProfessionalHighlights() {
           {/* Highlight Details */}
           <div className="lg:col-span-2">
             <div
-              className={`bg-gradient-to-br ${highlights[activeHighlight].bgGradient} backdrop-blur-xl border border-white/10 rounded-3xl p-8 transition-all duration-700 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
+              className={`bg-gradient-to-br ${highlights[activeHighlight].bgGradient} backdrop-blur-xl border border-white/10 rounded-3xl p-8 transition-all duration-700 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+                }`}
               style={{ animationDelay: "300ms" }}
             >
               <div className="space-y-8">

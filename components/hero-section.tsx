@@ -131,7 +131,7 @@ export function HeroSection() {
             {/* Name & Title */}
             <div className="space-y-4 lg:space-y-6">
               <div className="space-y-2 lg:space-y-3">
-                <p className="text-gray-400 text-lg lg:text-xl font-medium tracking-wide">
+                <p className="text-gray-400 text-lg lg:text-2xl font-medium tracking-wide">
                   {brandConfig.hero.greeting}
                 </p>
                 <h1 className="text-5xl sm:text-6xl lg:text-9xl font-black leading-none tracking-tight">
@@ -154,14 +154,14 @@ export function HeroSection() {
                   </div>
                   <div className="w-8 lg:w-12 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
                 </div>
-                <div className="flex items-center justify-center lg:justify-start space-x-3 lg:space-x-4">
+                {/* <div className="flex items-center justify-center lg:justify-start space-x-3 lg:space-x-4">
                   <div className="w-6 lg:w-8 h-0.5 bg-gradient-to-r from-pink-500/60 to-purple-500/60 rounded-full" />
                   <div className="flex items-center space-x-2 lg:space-x-3">
                     <Zap className="w-4 h-4 lg:w-5 lg:h-5 text-pink-400" />
                     <span className="text-base lg:text-lg font-medium text-gray-300">{brandConfig.subtitle}</span>
                   </div>
                   <div className="w-6 lg:w-8 h-0.5 bg-gradient-to-r from-purple-500/60 to-pink-500/60 rounded-full" />
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -198,32 +198,7 @@ export function HeroSection() {
 
             {/* Social Links with proper bottom spacing */}
             <div className="flex justify-center lg:justify-start space-x-4 lg:space-x-6 pt-6 lg:pt-8 pb-8 lg:pb-12">
-              {[
-                {
-                  icon: Github,
-                  href: brandConfig.social.github,
-                  label: "GitHub",
-                  color: "hover:text-purple-400 hover:bg-purple-500/10 hover:border-purple-400/30",
-                },
-                {
-                  icon: Linkedin,
-                  href: brandConfig.social.linkedin,
-                  label: "LinkedIn",
-                  color: "hover:text-blue-400 hover:bg-blue-500/10 hover:border-blue-400/30",
-                },
-                {
-                  icon: Twitter,
-                  href: brandConfig.social.twitter,
-                  label: "Twitter",
-                  color: "hover:text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400/30",
-                },
-                {
-                  icon: Mail,
-                  href: `mailto:${brandConfig.email}`,
-                  label: "Email",
-                  color: "hover:text-pink-400 hover:bg-pink-500/10 hover:border-pink-400/30",
-                },
-              ].map(({ icon: Icon, href, label, color }) => (
+              {brandConfig.socials.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
@@ -273,13 +248,13 @@ export function HeroSection() {
                   className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 px-3 py-2 lg:px-4 lg:py-2 bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-md rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-xl border border-purple-400/20"
                   style={{ animation: "gentleFloat 7s ease-in-out infinite" }}
                 >
-                  🚀 {brandConfig.stats.projects}
+                  🚀 {brandConfig.stats.projects} Projects
                 </div>
                 <div
                   className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 px-3 py-2 lg:px-4 lg:py-2 bg-gradient-to-r from-pink-600/90 to-purple-600/90 backdrop-blur-md rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-xl border border-pink-400/20"
                   style={{ animation: "gentleFloat 9s ease-in-out infinite reverse" }}
                 >
-                  ⚡ {brandConfig.stats.experience}
+                  ⚡ {brandConfig.stats.experience} Years Experience
                 </div>
               </div>
             </div>

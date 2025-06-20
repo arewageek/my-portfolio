@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ArrowRight, Sparkles, Rocket, Zap, Star } from "lucide-react"
+import { ArrowRight, Sparkles, Rocket, Zap, Star, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { brandConfig } from "@/lib/brand-config"
 
 export function CallToAction() {
   const [isVisible, setIsVisible] = useState(false)
@@ -116,7 +117,7 @@ export function CallToAction() {
           </p>
 
           {/* Achievement Stats */}
-          <div
+          {/* <div
             className={`grid md:grid-cols-4 gap-8 py-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "300ms" }}
           >
@@ -137,35 +138,35 @@ export function CallToAction() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* CTA Buttons */}
           <div
             className={`flex flex-col sm:flex-row gap-8 justify-center pt-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "600ms" }}
           >
-            <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-16 py-6 text-2xl font-bold shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-500 transform hover:scale-105 border border-purple-400/20 rounded-2xl"
-              >
-                Start Your Project
-                <ArrowRight className="w-6 h-6 ml-3" />
-              </Button>
-            </Link>
-            <Link href="/work">
+            <Link href={brandConfig.meetingLink}>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-purple-500/60 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-16 py-6 text-2xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
               >
-                View My Work
+                Book an Appointment
+                <Calendar className="w-6 h-6 ml-3" />
               </Button>
             </Link>
+            {/* <Link href="/projects">
+              <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-16 py-6 text-2xl font-bold shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-500 transform hover:scale-105 border border-purple-400/20 rounded-2xl"
+              >
+                View My Work
+              </Button>
+            </Link> */}
           </div>
 
           {/* Bottom Message */}
-          <div
+          {/* <div
             className={`pt-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "900ms" }}
           >
@@ -173,7 +174,7 @@ export function CallToAction() {
               <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse" />
               Available for new projects • Response within 24 hours
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
