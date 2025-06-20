@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react"
 import { Github, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { brandConfig } from "@/lib/brand-config"
+import Link from "next/link"
 
 export function ProjectShowcase() {
   const [isVisible, setIsVisible] = useState(false)
@@ -26,72 +28,10 @@ export function ProjectShowcase() {
     return () => observer.disconnect()
   }, [])
 
-  const filters = ["All", "DeFi", "NFT", "AI", "Infrastructure", "Tools"]
+  const filters = ["All", "DeFi", "Infra", "Tools"]
 
-  const projects = [
-    {
-      title: "AI-Powered DeFi Yield Optimizer",
-      category: "DeFi",
-      description: "Revolutionary yield farming platform using ML algorithms to optimize returns across 50+ protocols.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Solidity", "Python", "React", "TensorFlow"],
-      metrics: { tvl: "$25M+", apy: "30% higher", users: "15K+" },
-      status: "Live",
-      links: { demo: "#", github: "#", live: "#" },
-    },
-    {
-      title: "Cross-Chain NFT Marketplace",
-      category: "NFT",
-      description: "Next-gen NFT platform with AI price discovery and seamless cross-chain transfers.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Next.js", "Solidity", "IPFS", "TypeScript"],
-      metrics: { volume: "$12M+", nfts: "50K+", chains: "4" },
-      status: "Live",
-      links: { demo: "#", github: "#" },
-    },
-    {
-      title: "Decentralized Identity Platform",
-      category: "Infrastructure",
-      description: "Self-sovereign identity solution using zero-knowledge proofs for privacy-preserving auth.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["zk-SNARKs", "React", "Node.js", "IPFS"],
-      metrics: { credentials: "100K+", privacy: "100%", uptime: "99.9%" },
-      status: "Beta",
-      links: { demo: "#", github: "#" },
-    },
-    {
-      title: "Smart Contract Security Analyzer",
-      category: "Tools",
-      description: "AI-powered vulnerability detection and gas optimization for smart contracts.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Python", "ML", "React", "FastAPI"],
-      metrics: { scanned: "10K+", accuracy: "95%", savings: "40%" },
-      status: "Live",
-      links: { demo: "#", github: "#" },
-    },
-    {
-      title: "Automated Trading Bot",
-      category: "DeFi",
-      description: "Intelligent trading bot with ML-driven strategies and risk management.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Python", "TensorFlow", "Web3.py", "Redis"],
-      metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
-      status: "Live",
-      links: { demo: "#", github: "#" },
-    },
-    {
-      title: "DAO Governance Platform",
-      category: "Infrastructure",
-      description: "Comprehensive governance solution with advanced voting mechanisms.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Solidity", "React", "GraphQL", "IPFS"],
-      metrics: { daos: "500+", proposals: "10K+", members: "50K+" },
-      status: "Live",
-      links: { demo: "#", github: "#" },
-    },
-  ]
 
-  const filteredProjects = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter)
+  const filteredProjects = activeFilter === "All" ? brandConfig.projects : brandConfig.projects.filter((p) => p.category === activeFilter)
 
   return (
     <section ref={sectionRef} className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
@@ -154,7 +94,7 @@ export function ProjectShowcase() {
               {/* Project Image */}
               <div className="relative h-40 lg:h-48 bg-gradient-to-r from-purple-500/20 to-pink-500/20">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={`/projects/${project.image}` || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -176,14 +116,14 @@ export function ProjectShowcase() {
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-2">
+                {/* <div className="grid grid-cols-3 gap-2">
                   {Object.entries(project.metrics).map(([key, value]) => (
                     <div key={key} className="text-center p-2 bg-white/5 rounded-lg">
                       <div className="text-xs lg:text-sm font-bold text-white truncate">{value}</div>
                       <div className="text-xs text-gray-400 uppercase tracking-wide truncate">{key}</div>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-1">
@@ -207,20 +147,26 @@ export function ProjectShowcase() {
                   {project.links.demo && (
                     <Button
                       size="sm"
+                      asChild={true}
                       className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex-1 text-xs"
                     >
-                      <Play className="w-3 h-3 mr-1" />
-                      Preview
+                      <Link href={project.links.demo} target="_blank">
+                        <Play className="w-3 h-3 mr-1" />
+                        Preview
+                      </Link>
                     </Button>
                   )}
                   {project.links.github && (
                     <Button
                       size="sm"
-                      variant="outline"
+                      asChild={true}
                       className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 flex-1 text-xs"
+                      variant="outline"
                     >
-                      <Github className="w-3 h-3 mr-1" />
-                      Repo
+                      <Link href={project.links.github} target="_blank">
+                        <Github className="w-3 h-3 mr-1" />
+                        Repo
+                      </Link>
                     </Button>
                   )}
                 </div>
@@ -231,15 +177,17 @@ export function ProjectShowcase() {
 
         {/* Load More Button */}
         <div className="text-center mt-12 lg:mt-16">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-8 lg:px-12 py-3 lg:py-4 text-base lg:text-lg font-semibold transition-all duration-300"
-          >
-            Load More Projects
-          </Button>
+          <Link href="/projects">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-8 lg:px-12 py-3 lg:py-4 text-base lg:text-lg font-semibold transition-all duration-300"
+            >
+              Load More Projects
+            </Button>
+          </Link>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

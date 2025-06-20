@@ -85,7 +85,7 @@ export function ProjectsHero() {
             {[
               { icon: Building, label: "Companies", value: brandConfig.companies.length },
               { icon: Users, label: "Team Members", value: brandConfig.stats.teamMembers },
-              { icon: Code, label: "Projects Delivered", value: brandConfig.featuredProjects.length },
+              { icon: Code, label: "Projects Delivered", value: brandConfig.projects.length },
               { icon: TrendingUp, label: "Total Value Created", value: brandConfig.stats.tvl },
             ].map((stat, index) => (
               <div

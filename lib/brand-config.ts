@@ -777,68 +777,86 @@ export const brandConfig = {
   },
 
   // Featured Projects
-  featuredProjects: [
+  projects: [
     {
-      title: "AI-Powered DeFi Yield Optimizer",
+      title: "BlocVote",
+      category: "Infra",
       description:
-        "Intelligent yield farming platform that uses machine learning to optimize returns across multiple protocols while minimizing risk and gas costs.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Solidity", "Python", "React", "TensorFlow", "Web3.js"],
-      features: [
-        "AI-driven yield strategy optimization",
-        "Cross-chain yield farming",
-        "Automated rebalancing",
-        "Risk assessment algorithms",
-      ],
-      links: { demo: "#", github: "#", live: "#" },
+        "Developed an electoral system utilizing an ESP32 micro-controller to capture and transmit votes securely. Integrated with a smart contract and API, the system ensures that all votes are recorded on-chain, leveraging the Ethereum blockchain  for transparency and immutability. This blockchain-powered solution enhances electoral integrity by preventing fraud, enabling real-time verification, and establishing a verifiable, tamper-proof election record.",
+      image: "blocvote.png",
+      technologies: ["Solidity", "C", "Nodejs"],
+      metrics: { tvl: "$25M+", apy: "30% higher", users: "15K+" },
+      status: "Live",
+      links: {
+        demo: "",
+        github: "https://github.com/arewageek/blocvote-hardhat",
+        live: "#",
+      },
     },
     {
-      title: "Cross-Chain NFT Marketplace",
+      title: "XonPad",
+      category: "DeFi",
       description:
-        "Seamless NFT trading platform supporting multiple blockchains with AI-powered price discovery and automated royalty distribution.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Solidity", "Next.js", "TypeScript", "IPFS", "Polygon"],
-      features: [
-        "Multi-chain NFT support",
-        "AI price recommendations",
-        "Lazy minting capabilities",
-        "Advanced search & filtering",
-      ],
-      links: { demo: "#", github: "#", live: "#" },
+        "Designed and developed an ERC20 token launchpad and presale platform that empowers users to create and deploy crypto tokens effortlessly. The platform facilitates ICO token presales, enabling fundraising without requiring any coding expertise, streamlining token launches for projects of all scales.",
+      image: "/xonpad.png",
+      technologies: ["Next.js", "Solidity"],
+      metrics: { volume: "$12M+", nfts: "50K+", chains: "4" },
+      status: "Dev",
+      links: {
+        demo: "https://xonpad.vercel.app",
+        github: "https://github.com/arewageek/xonpad",
+      },
     },
     {
-      title: "Decentralized Identity Platform",
+      title: "Agro Ledger",
+      category: "Supplychain",
       description:
-        "Self-sovereign identity solution with zero-knowledge proofs, enabling privacy-preserving authentication across Web3 applications.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Solidity", "zk-SNARKs", "React", "Node.js", "IPFS"],
-      features: [
-        "Zero-knowledge authentication",
-        "Decentralized credential storage",
-        "Privacy-preserving verification",
-        "Cross-platform compatibility",
-      ],
-      links: { demo: "#", github: "#" },
+        "Developed a blockchain-powered agricultural supply chain management system to ensure end-to-end transparency and traceability of food products. The system tracks the quality and movement of items from production through processing and distribution, providing consumers with verifiable data on sourcing, handling, and authenticity.",
+      image: "agroledger.png",
+      technologies: ["Solidity", "Next JS"],
+      metrics: { credentials: "100K+", privacy: "100%", uptime: "99.9%" },
+      status: "Beta",
+      links: {
+        demo: "",
+        github:
+          "https://github.com/arewageek/blockchain-agro-supplychain-system",
+      },
     },
     {
-      title: "Smart Contract Security Analyzer",
+      title: "Talqq",
+      category: "Tools",
       description:
-        "AI-powered tool for automated smart contract vulnerability detection and gas optimization suggestions with detailed reporting.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: [
-        "Python",
-        "Machine Learning",
-        "Solidity",
-        "React",
-        "FastAPI",
-      ],
-      features: [
-        "Automated vulnerability scanning",
-        "Gas optimization suggestions",
-        "Detailed security reports",
-        "Integration with development tools",
-      ],
-      links: { demo: "#", github: "#" },
+        "Developed a user-friendly video conferencing platform that simplifies virtual communication. The platform enables seamless meeting scheduling, instant joining, and session recording, ensuring an effortless and efficient collaboration experience.",
+      image: "talqq.png",
+      technologies: ["Next JS"],
+      metrics: { scanned: "10K+", accuracy: "95%", savings: "40%" },
+      status: "Live",
+      links: {
+        demo: "https://talqq.vercel.app/",
+        github: "https://github.com/arewageek/talq",
+      },
+    },
+    {
+      title: "ProxySign",
+      category: "DeFi",
+      description:
+        "Built a Web3 wallet contract with multi-signature support, adding an extra layer of security by requiring multiple approvals for transactions. This ensures better control over funds and reduces the risk of unauthorized access.",
+      image: "proxysign.png",
+      technologies: ["Solidity"],
+      metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
+      status: "Dev",
+      links: { demo: "", github: "https://github.com/arewageek/proxysign" },
+    },
+    {
+      title: "PaySilo",
+      category: "Infra",
+      description:
+        "A freelance platform that makes global payments easy and secure for both freelancers and clients, with a simple, user-friendly experience at its core. Building on the Base Blockchain",
+      image: "paysilo.png",
+      technologies: ["Solidity", "Next JS"],
+      metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
+      status: "Dev",
+      links: { demo: "https://paysilohq.vercel.app", github: "" },
     },
   ],
   meetingLink: "#",
