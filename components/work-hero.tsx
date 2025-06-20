@@ -82,9 +82,9 @@ export function WorkHero() {
             style={{ animationDelay: "300ms" }}
           >
             {[
-              { icon: Building, label: "Companies", value: brandConfig.stats.companies },
+              { icon: Building, label: "Companies", value: brandConfig.companies.length },
               { icon: Users, label: "Team Members", value: brandConfig.stats.teamMembers },
-              { icon: Code, label: "Projects Delivered", value: brandConfig.stats.projects },
+              { icon: Code, label: "Projects Delivered", value: brandConfig.featuredProjects.length },
               { icon: TrendingUp, label: "Total Value Created", value: brandConfig.stats.tvl },
             ].map((stat, index) => (
               <div

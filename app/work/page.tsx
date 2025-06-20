@@ -7,12 +7,11 @@ import { Navigation } from "@/components/navigation"
 export default function Work() {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden">
-      <Navigation />
       <main>
         <WorkHero />
-        <CurrentlyWorking />
+        {/* <CurrentlyWorking /> */}
         <CompaniesGrid />
-        <WorkStats />
+        {/* <WorkStats /> */}
       </main>
     </div>
   )
