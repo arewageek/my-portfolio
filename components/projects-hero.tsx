@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Code, Sparkles, Rocket, Zap } from "lucide-react"
+import { Code, Sparkles, Rocket, Zap, Building, Users, TrendingUp } from "lucide-react"
 import { brandConfig } from "@/lib/brand-config"
 
 export function ProjectsHero() {
@@ -83,10 +83,10 @@ export function ProjectsHero() {
             style={{ animationDelay: "300ms" }}
           >
             {[
-              { icon: Code, label: "Projects Built", value: brandConfig.stats.projects },
-              { icon: Rocket, label: "Users Served", value: brandConfig.stats.users },
-              { icon: Zap, label: "Total Value", value: brandConfig.stats.tvl },
-              { icon: Sparkles, label: "Success Rate", value: brandConfig.stats.successRate },
+              { icon: Building, label: "Companies", value: brandConfig.companies.length },
+              { icon: Users, label: "Team Members", value: brandConfig.stats.teamMembers },
+              { icon: Code, label: "Projects Delivered", value: brandConfig.featuredProjects.length },
+              { icon: TrendingUp, label: "Total Value Created", value: brandConfig.stats.tvl },
             ].map((stat, index) => (
               <div
                 key={index}

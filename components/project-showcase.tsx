@@ -107,7 +107,7 @@ export function ProjectShowcase() {
             </span>
           </h2>
           <p className="text-lg lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A curated collection of blockchain solutions that push the boundaries of what's possible
+            A curated collection of projects that push the boundaries of what’s possible.
           </p>
         </div>
 
@@ -120,11 +120,10 @@ export function ProjectShowcase() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-xl lg:rounded-2xl font-medium transition-all duration-300 text-sm lg:text-base ${
-                activeFilter === filter
-                  ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30"
-                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
-              }`}
+              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-xl lg:rounded-2xl font-medium transition-all duration-300 text-sm lg:text-base ${activeFilter === filter
+                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30"
+                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                }`}
             >
               {filter}
             </button>
@@ -136,19 +135,17 @@ export function ProjectShowcase() {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
+              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+                }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Status Badge */}
               <div className="absolute top-4 lg:top-6 right-4 lg:right-6 z-10">
                 <span
-                  className={`px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs font-bold ${
-                    project.status === "Live"
-                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                      : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
-                  }`}
+                  className={`px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs font-bold ${project.status === "Live"
+                    ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                    : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                    }`}
                 >
                   {project.status}
                 </span>
@@ -213,7 +210,7 @@ export function ProjectShowcase() {
                       className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex-1 text-xs"
                     >
                       <Play className="w-3 h-3 mr-1" />
-                      Demo
+                      Preview
                     </Button>
                   )}
                   {project.links.github && (
@@ -223,7 +220,7 @@ export function ProjectShowcase() {
                       className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 flex-1 text-xs"
                     >
                       <Github className="w-3 h-3 mr-1" />
-                      Code
+                      Repo
                     </Button>
                   )}
                 </div>

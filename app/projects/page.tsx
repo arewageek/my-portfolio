@@ -8,13 +8,12 @@ import { Navigation } from "@/components/navigation"
 export default function Projects() {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden">
-      <Navigation />
       <main>
         <ProjectsHero />
-        <CurrentlyBuilding />
-        <ProjectCategories />
+        {/* <CurrentlyBuilding /> */}
+        {/* <ProjectCategories /> */}
         <ProjectShowcase />
-        <ProjectStats />
+        {/* <ProjectStats /> */}
       </main>
     </div>
   )
