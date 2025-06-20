@@ -30,9 +30,8 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-black/90 backdrop-blur-xl border-b border-purple-500/20" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-black/90 backdrop-blur-xl border-b border-purple-500/20" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
@@ -48,15 +47,13 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide group ${
-                  pathname === item.href ? "text-white" : ""
-                }`}
+                className={`relative text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide group ${pathname === item.href ? "text-white" : ""
+                  }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ${
-                    pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
                 />
               </Link>
             ))}
@@ -65,14 +62,19 @@ export function Navigation() {
           <div className="hidden lg:flex items-center space-x-4">
             <Button
               variant="outline"
+              asChild
               className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300"
             >
-              <Download className="w-4 h-4 mr-2" />
-              Resume
+              <Link href="resume/arewageek.pdf" download="arewageek.pdf" target="_blank">
+                <Download className="w-4 h-4 mr-2" />
+                Resume
+              </Link>
             </Button>
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/25 transition-all duration-300">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Hire Me
+            <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/25 transition-all duration-300">
+              <Link href="/contact">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Hire Me
+              </Link>
             </Button>
           </div>
 
@@ -97,9 +99,8 @@ export function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block text-xl transition-colors duration-300 ${
-                    pathname === item.href ? "text-white" : "text-gray-300 hover:text-white"
-                  }`}
+                  className={`block text-xl transition-colors duration-300 ${pathname === item.href ? "text-white" : "text-gray-300 hover:text-white"
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
