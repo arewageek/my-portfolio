@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Calendar, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { brandConfig } from "@/lib/brand-config"
 
 export function AboutQuote() {
   const [isVisible, setIsVisible] = useState(false)
@@ -61,22 +62,14 @@ export function AboutQuote() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-            <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-8 py-4 text-lg font-bold shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-500 transform hover:scale-105 border border-purple-400/20 rounded-2xl"
-              >
-                Start a Project
-                <ArrowRight className="w-5 h-5 ml-3" />
-              </Button>
-            </Link>
-            <Link href="/work">
+            <Link href={brandConfig.meetingLink}>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-purple-500/60 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-8 py-4 text-lg font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
+                className="border-2 border-purple-500/60 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-16 py-6 text-2xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
               >
-                View My Work
+                Book an Appointment
+                <Calendar className="w-6 h-6 ml-3" />
               </Button>
             </Link>
           </div>

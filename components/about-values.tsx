@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Coffee, Music, Book, Globe, Heart, Code } from "lucide-react"
+import { Coffee, Music, Book, Globe, Heart, Code, Gamepad } from "lucide-react"
 
 export function AboutValues() {
   const [isVisible, setIsVisible] = useState(false)
@@ -26,9 +26,9 @@ export function AboutValues() {
 
   const interests = [
     {
-      icon: Coffee,
-      title: "Coffee Enthusiast",
-      description: "Currently exploring different brewing methods",
+      icon: Gamepad,
+      title: "Video Games",
+      description: "I play video games to keep my mental health in check ;)",
       color: "text-amber-400",
     },
     {
@@ -40,7 +40,7 @@ export function AboutValues() {
     {
       icon: Book,
       title: "Always Learning",
-      description: "Reading about AI research and system design",
+      description: "I read and watch videos about new tools and understanding existng systems",
       color: "text-blue-400",
     },
     {

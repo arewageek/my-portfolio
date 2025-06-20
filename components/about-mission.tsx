@@ -32,7 +32,7 @@ export function AboutMission() {
     },
     {
       icon: Zap,
-      title: "Simplicity Wins",
+      title: "Simplicity",
       description: "The best solutions are often the simplest ones",
     },
     {
@@ -69,15 +69,15 @@ export function AboutMission() {
             </h2>
 
             <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              Build decentralized systems that real people actually want to use—designed to scale effortlessly as they
-              grow.
+              I build decentralized systems that real people actually want to use—designed to scale easily as they grow.
             </p>
 
             <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-400 leading-relaxed">
-              <p>Too many blockchain projects are built for the technology first, users second. I flip that around.</p>
               <p>
-                Every smart contract, interface, and system I build starts with one question: "How do we make this feel
-                natural?"
+                Too many blockchain projects are built for the technology first and the users second. I do the opposite.
+              </p>
+              <p>
+                Every smart contract, interface, and system I build starts with one question: “How can we make this feel natural?”
               </p>
             </div>
           </div>

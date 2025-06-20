@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { ArrowDown } from "lucide-react"
+import { brandConfig } from "@/lib/brand-config"
 
 export function AboutHero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -50,12 +51,12 @@ export function AboutHero() {
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
                 I'm{" "}
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-                  Arewa Geek
+                  {brandConfig.name}
                 </span>
               </h1>
 
               <p className="text-xl sm:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-                A blockchain engineer who believes the best technology is the kind you don't even notice you're using.
+                {brandConfig.about.intro}
               </p>
             </div>
 
@@ -64,10 +65,10 @@ export function AboutHero() {
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <span className="text-white font-medium">Available for projects</span>
               </div>
-              <div className="flex items-center space-x-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl">
+              {/* <div className="flex items-center space-x-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl">
                 <span className="text-2xl">🇳🇬</span>
                 <span className="text-gray-300">Based in Nigeria</span>
-              </div>
+              </div> */}
             </div>
           </div>
 

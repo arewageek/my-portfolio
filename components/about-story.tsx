@@ -33,16 +33,16 @@ export function AboutStory() {
     },
     {
       icon: Lightbulb,
-      title: "3+ Years",
+      title: "5+ Years",
       description: "In blockchain development",
       gradient: "from-pink-500 to-purple-500",
     },
-    {
-      icon: Rocket,
-      title: "100K+ Users",
-      description: "Across all platforms",
-      gradient: "from-blue-500 to-cyan-500",
-    },
+    // {
+    //   icon: Rocket,
+    //   title: "100K+ Users",
+    //   description: "Across all platforms",
+    //   gradient: "from-blue-500 to-cyan-500",
+    // },
   ]
 
   return (
@@ -62,18 +62,15 @@ export function AboutStory() {
 
                 <div className="space-y-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
                   <p>
-                    I got into blockchain not because of the hype, but because I was fascinated by the idea of building
-                    systems that don't need a middleman to work.
+                    I got into blockchain because I found the ecosystem interesting. It grew—maybe a little too fast—but that made it even more exciting.
                   </p>
 
                   <p>
-                    Most blockchain apps feel like they were built by engineers for engineers. I think that's backwards.
-                    The best technology is invisible.
+                    While working in the Web3 space, I noticed a key problem: user experience. That got me even more interested in how we can build this space with everyone in mind.
                   </p>
 
                   <p>
-                    When I'm not coding, I'm probably thinking about how to make complex things simple, or figuring out
-                    how AI can make blockchain smarter.
+                    When I’m not coding, I’m usually thinking about how to make complex things simple or exploring how AI can make blockchain smarter.
                   </p>
                 </div>
               </div>

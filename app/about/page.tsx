@@ -9,7 +9,6 @@ import { Navigation } from "@/components/navigation"
 export default function About() {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden">
-      <Navigation />
       <main>
         <AboutHero />
         <AboutStory />
