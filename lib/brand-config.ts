@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, WashingMachine } from "lucide-react";
 
 export const brandConfig = {
   // Personal Information
@@ -197,7 +197,7 @@ export const brandConfig = {
       period: "Sep 2021 - Mar 2022",
       location: "Niger, Nigeria",
       type: "Full-time",
-      logo: "🏦",
+      logo: WashingMachine,
       status: "past",
       description:
         "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
@@ -857,6 +857,16 @@ export const brandConfig = {
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Dev",
       links: { demo: "https://paysilohq.vercel.app", github: "" },
+    },
+    {
+      title: "633 Kitchen",
+      category: "E-Commerce",
+      description: "A food ordering app designed for in local restaurants",
+      image: "633-kitchen.png",
+      technologies: ["Next JS"],
+      metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
+      status: "Beta",
+      links: { demo: "https://633-kitchen.vercel.app", github: "" },
     },
   ],
   meetingLink: "#",

@@ -28,7 +28,7 @@ export function ProjectShowcase() {
     return () => observer.disconnect()
   }, [])
 
-  const filters = ["All", "DeFi", "Infra", "Tools"]
+  const filters = ["All", "DeFi", "Infra", "Tools", "E-Commerce"]
 
 
   const filteredProjects = activeFilter === "All" ? brandConfig.projects : brandConfig.projects.filter((p) => p.category === activeFilter)
@@ -72,10 +72,10 @@ export function ProjectShowcase() {
 
         {/* Projects Grid - Responsive */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.toReversed().map((project, index) => (
             <div
               key={index}
-              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${project.status == 'current' && "border-purple-500/30 transform shadow-2xl shadow-purple-500/20"} ${isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >

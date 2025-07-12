@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ArrowRight, Calendar, MapPin } from "lucide-react"
+import { ArrowRight, Calendar, MapPin, Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { brandConfig } from "@/lib/brand-config"
@@ -66,7 +66,9 @@ export function CompaniesGrid() {
                     {/* Company Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-4 sm:space-y-0">
                       <div className="flex items-center space-x-4">
-                        <div className="text-3xl lg:text-4xl">{company.logo}</div>
+                        <div className="text-3xl lg:text-4xl">
+                          <Rocket />
+                        </div>
                         <div>
                           <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
                             {company.name}
@@ -90,7 +92,7 @@ export function CompaniesGrid() {
                     <p className="text-gray-300 leading-relaxed text-sm lg:text-lg">{company.description}</p>
 
                     {/* Key Achievements */}
-                    <div>
+                    {/* <div>
                       <h4 className="text-white font-semibold mb-3 lg:mb-4 text-sm lg:text-base">Key Achievements</h4>
                       <div className="space-y-2">
                         {company.achievements.slice(0, 3).map((achievement, i) => (
@@ -100,7 +102,7 @@ export function CompaniesGrid() {
                           </div>
                         ))}
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
@@ -122,7 +124,7 @@ export function CompaniesGrid() {
                     {/* Projects Count & CTA */}
                     <div className="flex items-center justify-between pt-4 lg:pt-6 border-t border-white/10">
                       <div className="text-xs lg:text-sm text-gray-400">
-                        <span className="text-white font-semibold">{company.projectCount}</span> products
+                        {/* <span className="text-white font-semibold">{company.projectCount}</span> products */}
                       </div>
                       <Button
                         size="sm"

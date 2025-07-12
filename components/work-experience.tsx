@@ -124,20 +124,18 @@ export function WorkExperience() {
               <button
                 key={index}
                 onClick={() => setActiveExperience(index)}
-                className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${
-                  activeExperience === index
-                    ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/50"
-                    : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
-                }`}
+                className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${activeExperience === index
+                  ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/50"
+                  : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
+                  }`}
               >
                 <div className="space-y-2">
                   <h3 className={`text-lg font-bold ${activeExperience === index ? "text-white" : "text-gray-300"}`}>
                     {exp.title}
                   </h3>
                   <p
-                    className={`text-sm font-medium ${
-                      activeExperience === index ? "text-purple-400" : "text-gray-400"
-                    }`}
+                    className={`text-sm font-medium ${activeExperience === index ? "text-purple-400" : "text-gray-400"
+                      }`}
                   >
                     {exp.company}
                   </p>
@@ -198,7 +196,7 @@ export function WorkExperience() {
                 </div>
 
                 {/* Achievements */}
-                <div>
+                {/* <div>
                   <h4 className="text-xl font-bold text-white mb-4">Key Achievements</h4>
                   <div className="space-y-3">
                     {experiences[activeExperience].achievements.map((achievement, index) => (
@@ -208,7 +206,7 @@ export function WorkExperience() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Technologies */}
                 <div>
