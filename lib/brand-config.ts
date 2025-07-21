@@ -130,7 +130,7 @@ export const brandConfig = {
       startDate: "2023",
       status: "current", // "current" or "past"
       description: "Leading AI-powered DeFi infrastructure development",
-      logo: "🏦",
+      logo: "",
       highlights: [
         "Building next-gen yield optimization protocols",
         "Leading cross-chain infrastructure development",
@@ -197,21 +197,16 @@ export const brandConfig = {
       period: "Sep 2021 - Mar 2022",
       location: "Niger, Nigeria",
       type: "Full-time",
-      logo: WashingMachine,
+      logo: "",
       status: "past",
       description:
         "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
-      achievements: [
-        // "Architected smart contracts managing $25M+ TVL",
-        // "Reduced gas costs by 45% through optimization",
-        // "Led team of 12 engineers building cross-chain infrastructure",
-        // "Implemented AI-driven yield strategies increasing APY by 30%",
-      ],
+      achievements: [],
       technologies: ["PHP", "MySQL"],
       projectCount: 1,
       overview: {
-        // description:
-        //   "At DeFi Protocol Inc., I led the development of revolutionary DeFi infrastructure that combines artificial intelligence with blockchain technology. My role involved architecting smart contracts that could adapt and optimize themselves based on market conditions.",
+        description:
+          "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
         responsibilities: [
           "Developed a comprehensive web application, improving user experience and operational efficiency.",
           "Integrated subscription services into the web application, enabling customers to easily manage recurring services and payments.",
@@ -274,12 +269,12 @@ export const brandConfig = {
     },
     {
       id: "skytech",
-      name: "Skytech Integrated Network Ltd ",
+      name: "Skytech Integrated Network Ltd.",
       role: "Fullstack Developer",
       period: "Jun 2022 - Jul 2023",
       location: "Nasarawa, Nigeria",
-      type: "Part-time",
-      logo: "🚀",
+      type: "Full-time",
+      logo: "",
       status: "past",
       description:
         "Developed custom web applications for the organization and its clients, delivering tailored solutions to meet specific business needs.",
@@ -361,7 +356,7 @@ export const brandConfig = {
       period: "Sep 2023 - Feb 2024",
       location: "Niger, Nigeria",
       type: "Full-time",
-      logo: "⛓️",
+      logo: "",
       status: "past",
       description:
         "Built responsive and efficient web applications to address various operational needs.",
@@ -437,7 +432,7 @@ export const brandConfig = {
       period: "May - Jul 2024",
       location: "Fiverr",
       type: "Contract",
-      logo: "⛓️",
+      logo: "",
       status: "past",
       description:
         "Built a smart contract and decentralized application (dApp) for NFT auctions, making it easy for users to participate in secure and transparent bidding.",
@@ -510,7 +505,7 @@ export const brandConfig = {
       period: "Aug - Nov 2024",
       location: "Remote",
       type: "Contract",
-      logo: "⛓️",
+      logo: "",
       status: "past",
       description:
         "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
@@ -585,17 +580,12 @@ export const brandConfig = {
       role: "Backend Software Engineer",
       period: "Oct - Nov 2024",
       location: "Remote",
-      type: "Contract",
-      logo: "⛓️",
+      type: "Volunteer",
+      logo: "",
       status: "past",
       description:
         "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
-      achievements: [
-        //   "Deployed 25+ smart contracts with zero vulnerabilities",
-        //   "Built DeFi lending protocol with $5M+ in loans",
-        //   "Improved dApp loading speed by 80%",
-        //   "Conducted security audits for 15+ external projects",
-      ],
+      achievements: [],
       technologies: ["Express JS", "Mongo DB", "Firebase"],
       projectCount: 1,
       overview: {
@@ -661,7 +651,7 @@ export const brandConfig = {
       period: "Jan 2025 - Present",
       location: "Benue, Nigeria",
       type: "Full-Time",
-      logo: "⛓️",
+      logo: "",
       status: "current",
       description:
         "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
@@ -671,7 +661,13 @@ export const brandConfig = {
         //   "Improved dApp loading speed by 80%",
         //   "Conducted security audits for 15+ external projects",
       ],
-      technologies: ["Laravel", "Livewire", "MySQL"],
+      technologies: [
+        "Laravel",
+        "Livewire",
+        "MySQL",
+        "Modular Design",
+        "Microservices",
+      ],
       projectCount: 4,
       overview: {
         description:

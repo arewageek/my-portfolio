@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ArrowLeft, Calendar, MapPin } from "lucide-react"
+import { ArrowLeft, Briefcase, Calendar, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -12,6 +12,7 @@ interface CompanyHeroProps {
     period: string
     location: string
     logo: string
+    type: string
   }
 }
 
@@ -50,11 +51,11 @@ export function CompanyHero({ company }: CompanyHeroProps) {
 
           {/* Company Header */}
           <div className="text-center space-y-8">
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <div className="p-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl text-6xl shadow-2xl">
                 {company.logo}
               </div>
-            </div>
+            </div> */}
 
             <div className="space-y-4">
               <h1 className="text-6xl lg:text-8xl font-black text-white leading-tight">{company.name}</h1>
@@ -68,6 +69,10 @@ export function CompanyHero({ company }: CompanyHeroProps) {
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-5 h-5" />
                   <span className="text-lg">{company.location}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Briefcase className="w-5 h-5" />
+                  <span className="text-lg">{company.type}</span>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ArrowRight, Calendar, MapPin, Rocket } from "lucide-react"
+import { ArrowRight, Briefcase, Calendar, MapPin, Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { brandConfig } from "@/lib/brand-config"
@@ -77,13 +77,17 @@ export function CompaniesGrid() {
                         </div>
                       </div>
                       <div className="text-right text-xs lg:text-sm text-gray-400">
-                        <div className="flex items-center space-x-1 mb-1">
+                        <div className="flex items-center space-x-1">
                           <Calendar className="w-3 h-3" />
                           <span>{company.period}</span>
                         </div>
-                        <div className="flex items-center space-x-1">
+                        <div className="flex items-center space-x-1 my-1">
                           <MapPin className="w-3 h-3" />
                           <span>{company.location}</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <Briefcase className="w-3 h-3" />
+                          <span>{company.type}</span>
                         </div>
                       </div>
                     </div>

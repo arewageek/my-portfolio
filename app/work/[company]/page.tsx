@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { notFound } from "next/navigation"
 import { brandConfig } from "@/lib/brand-config"
 
-export default function CompanyPage({ params }: { params: { company: string } }) {
+export default async function CompanyPage({ params }: { params: { company: string } }) {
   const company = brandConfig.companies.find((c) => c.id === params.company)
 
   if (!company) {
@@ -19,8 +19,8 @@ export default function CompanyPage({ params }: { params: { company: string } })
       <main>
         <CompanyHero company={company} />
         <CompanyOverview company={company} />
-        <CompanyProjects company={company} />
-        <CompanyImpact company={company} />
+        {/* <CompanyProjects company={company} /> */}
+        {/* <CompanyImpact company={company} /> */}
       </main>
     </div>
   )

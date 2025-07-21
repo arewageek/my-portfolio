@@ -9,10 +9,9 @@ import Preloader from "@/components/preloader"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Arewa Geek - Fullstack Blockchain Developer",
+  title: "Arewa Geek - Fullstack Blockchain Engineer",
   description:
-    "Experienced blockchain developer specializing in DeFi protocols, smart contracts, and Web3 applications. Building the future of decentralized finance.",
-  generator: 'v0.dev'
+    "Experienced blockchain engineer specializing in DeFi protocols, smart contracts, and Web3 applications. Solving real-world problems with DeFi"
 }
 
 export default function RootLayout({

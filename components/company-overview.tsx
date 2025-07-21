@@ -1,5 +1,6 @@
 "use client"
 
+import { brandConfig } from "@/lib/brand-config"
 import { useState, useRef, useEffect } from "react"
 
 interface CompanyOverviewProps {
@@ -10,6 +11,7 @@ interface CompanyOverviewProps {
       impact: string
     }
     technologies: string[]
+    logo: string
   }
 }
 
@@ -55,10 +57,10 @@ export function CompanyOverview({ company }: CompanyOverviewProps) {
                 <p className="text-xl text-gray-300 leading-relaxed">{company.overview.description}</p>
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="text-2xl font-bold text-white mb-6">Impact Created</h3>
                 <p className="text-lg text-purple-400 leading-relaxed font-medium">{company.overview.impact}</p>
-              </div>
+              </div> */}
             </div>
 
             {/* Responsibilities */}
