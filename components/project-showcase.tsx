@@ -28,7 +28,7 @@ export function ProjectShowcase() {
     return () => observer.disconnect()
   }, [])
 
-  const filters = ["All", "DeFi", "Infra", "Tools", "E-Commerce"]
+  const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce"]
 
 
   const filteredProjects = activeFilter === "All" ? brandConfig.projects : brandConfig.projects.filter((p) => p.category === activeFilter)
