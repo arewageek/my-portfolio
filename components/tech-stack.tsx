@@ -78,12 +78,13 @@ export function TechStack() {
     <section ref={sectionRef} className="relative py-32 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-6 py-3 glass-card rounded-full text-purple-300 text-sm font-medium mb-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse" />
             Technology Stack
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
+          <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
             Mastering{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="gradient-text-primary drop-shadow-lg">
               Cutting-Edge
             </span>{" "}
             Tech
@@ -97,9 +98,8 @@ export function TechStack() {
           {techCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className={`p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
+              className={`p-8 glass-card rounded-3xl hover:bg-white/10 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-500 group ${isVisible ? "animate-fade-in-up" : "opacity-0"
+                }`}
               style={{ animationDelay: `${categoryIndex * 200}ms` }}
             >
               <div className="space-y-6">
@@ -123,11 +123,13 @@ export function TechStack() {
                         </div>
                         <span className="text-purple-400 font-bold text-sm">{tech.proficiency}%</span>
                       </div>
-                      <div className="w-full bg-gray-700 rounded-full h-1.5">
+                      <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
                         <div
-                          className={`h-1.5 bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
+                          className={`h-2 bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out shadow-lg relative`}
                           style={{ width: isVisible ? `${tech.proficiency}%` : "0%" }}
-                        />
+                        >
+                          <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse" />
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -161,7 +163,7 @@ export function TechStack() {
           ].map((highlight, index) => (
             <div
               key={index}
-              className="p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105"
+              className="p-6 glass-card rounded-2xl hover:bg-white/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-1 group"
             >
               <div className="text-center mb-4">
                 <div className="text-4xl mb-2">{highlight.icon}</div>
@@ -172,7 +174,7 @@ export function TechStack() {
                 {highlight.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-2 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium"
+                    className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium backdrop-blur-sm hover:bg-purple-500/30 hover:scale-105 transition-all duration-200 cursor-default"
                   >
                     {tech}
                   </span>

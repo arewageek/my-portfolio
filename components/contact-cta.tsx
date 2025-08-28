@@ -42,14 +42,14 @@ export function ContactCTA() {
       <div className="max-w-5xl mx-auto text-center">
         <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <div className="space-y-8">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
-              <Sparkles className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center px-6 py-3 glass-card rounded-full text-purple-300 text-sm font-medium shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+              <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
               Ready to innovate?
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black text-white leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
               Your Next Big{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
+              <span className="gradient-text-primary drop-shadow-lg">
                 Breakthrough
               </span>{" "}
               Starts Here

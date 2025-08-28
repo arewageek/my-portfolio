@@ -122,10 +122,10 @@ export function HeroSection() {
             className={`space-y-6 lg:space-y-10 text-center lg:text-left ${isLoaded ? "animate-fade-in-up" : "opacity-0"}`}
           >
             {/* Status Badge */}
-            <div className="inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 bg-black/30 backdrop-blur-md border border-purple-500/20 rounded-full text-purple-400 text-xs lg:text-sm font-medium shadow-lg">
-              <div className="w-2 h-2 bg-green-400 rounded-full mr-2 lg:mr-3 animate-pulse" />
+            <div className="inline-flex items-center px-4 lg:px-6 py-2 lg:py-3 glass-card rounded-full text-purple-300 text-xs lg:text-sm font-medium shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-2 h-2 bg-green-400 rounded-full mr-2 lg:mr-3 animate-pulse shadow-lg shadow-green-400/50" />
               {brandConfig.hero.status}
-              <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 ml-2" />
+              <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 ml-2 text-purple-400" />
             </div>
 
             {/* Name & Title */}
@@ -180,16 +180,17 @@ export function HeroSection() {
               <Link href="/projects">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105 border border-purple-400/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-2xl shadow-purple-500/30 hover:shadow-3xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-purple-400/20 relative overflow-hidden group"
                 >
-                  {brandConfig.hero.cta.primary}
+                  <span className="relative z-10">{brandConfig.hero.cta.primary}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>
               </Link>
               <Link href="/contact">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold transition-all duration-300 backdrop-blur-sm"
+                  className="w-full sm:w-auto glass-card border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1"
                 >
                   {brandConfig.hero.cta.secondary}
                 </Button>
@@ -202,10 +203,10 @@ export function HeroSection() {
                 <a
                   key={label}
                   href={href}
-                  className={`p-3 lg:p-4 rounded-xl lg:rounded-2xl bg-black/20 backdrop-blur-md border border-white/10 ${color} transition-all duration-300 hover:transform hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20`}
+                  className={`p-3 lg:p-4 rounded-xl lg:rounded-2xl glass-card ${color} transition-all duration-300 hover:transform hover:scale-110 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/30 group`}
                   aria-label={label}
                 >
-                  <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
+                  <Icon className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:rotate-6" />
                 </a>
               ))}
             </div>
@@ -226,11 +227,11 @@ export function HeroSection() {
                   />
 
                   {/* PFP Image */}
-                  <div className="relative w-full h-full rounded-2xl lg:rounded-[3rem] overflow-hidden border border-purple-400/30 shadow-2xl shadow-purple-500/20 backdrop-blur-sm">
+                  <div className="relative w-full h-full rounded-2xl lg:rounded-[3rem] overflow-hidden border border-purple-400/40 shadow-2xl shadow-purple-500/30 backdrop-blur-sm hover:shadow-3xl hover:shadow-purple-500/40 transition-all duration-500 group">
                     <img
                       src="/pfp.png"
                       alt={`${brandConfig.name} - ${brandConfig.title}`}
-                      className="w-full h-full object-cover transition-transform duration-700"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       style={{
                         transform: shouldApplyMouseEffects()
                           ? `translate(${mousePosition.x / 8}px, ${mousePosition.y / 8}px) scale(1.02)`
@@ -238,20 +239,23 @@ export function HeroSection() {
                       }}
                     />
 
-                    {/* Subtle overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-transparent to-pink-900/10" />
+                    {/* Enhanced overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-pink-900/15 group-hover:from-purple-900/20 group-hover:to-pink-900/10 transition-all duration-500" />
+
+                    {/* Subtle inner glow */}
+                    <div className="absolute inset-0 rounded-2xl lg:rounded-[3rem] ring-1 ring-inset ring-white/10" />
                   </div>
                 </div>
 
-                {/* Cleaner achievement badges */}
+                {/* Enhanced achievement badges */}
                 <div
-                  className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 px-3 py-2 lg:px-4 lg:py-2 bg-gradient-to-r from-purple-600/90 to-pink-600/90 backdrop-blur-md rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-xl border border-purple-400/20"
+                  className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 px-3 py-2 lg:px-4 lg:py-2 glass-card bg-gradient-to-r from-purple-600/80 to-pink-600/80 rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-2xl border border-purple-400/30 hover:shadow-3xl hover:shadow-purple-500/40 transition-all duration-300 hover:-translate-y-1"
                   style={{ animation: "gentleFloat 7s ease-in-out infinite" }}
                 >
                   🚀 {brandConfig.stats.projects} Projects
                 </div>
                 <div
-                  className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 px-3 py-2 lg:px-4 lg:py-2 bg-gradient-to-r from-pink-600/90 to-purple-600/90 backdrop-blur-md rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-xl border border-pink-400/20"
+                  className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 px-3 py-2 lg:px-4 lg:py-2 glass-card bg-gradient-to-r from-pink-600/80 to-purple-600/80 rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-2xl border border-pink-400/30 hover:shadow-3xl hover:shadow-pink-500/40 transition-all duration-300 hover:-translate-y-1"
                   style={{ animation: "gentleFloat 9s ease-in-out infinite reverse" }}
                 >
                   ⚡ {brandConfig.stats.experience} Years Experience
