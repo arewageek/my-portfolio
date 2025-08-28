@@ -28,7 +28,7 @@ export function ProjectShowcase() {
     return () => observer.disconnect()
   }, [])
 
-  const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce"]
+  const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce", "AI"]
 
 
   const filteredProjects = activeFilter === "All" ? brandConfig.projects : brandConfig.projects.filter((p) => p.category === activeFilter)
@@ -37,12 +37,13 @@ export function ProjectShowcase() {
     <section ref={sectionRef} className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-12 lg:mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center px-4 lg:px-8 py-2 lg:py-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-full text-purple-300 text-xs lg:text-sm font-medium mb-6 lg:mb-8 shadow-lg shadow-purple-500/10">
+          <div className="inline-flex items-center px-6 lg:px-8 py-3 lg:py-4 glass-card rounded-full text-purple-300 text-xs lg:text-sm font-medium mb-8 lg:mb-10 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse" />
             Project Portfolio
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-6 lg:mb-8 leading-tight">
             My{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
+            <span className="gradient-text-primary drop-shadow-lg">
               Creations
             </span>
           </h2>
@@ -60,9 +61,9 @@ export function ProjectShowcase() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-xl lg:rounded-2xl font-medium transition-all duration-300 text-sm lg:text-base ${activeFilter === filter
-                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30"
-                : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+              className={`px-4 lg:px-6 py-2 lg:py-3 rounded-xl lg:rounded-2xl font-medium transition-all duration-300 text-sm lg:text-base hover:-translate-y-0.5 ${activeFilter === filter
+                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-xl shadow-purple-500/40 scale-105"
+                : "glass-card text-gray-400 hover:bg-white/10 hover:text-white hover:shadow-lg hover:shadow-purple-500/20"
                 }`}
             >
               {filter}
@@ -75,16 +76,16 @@ export function ProjectShowcase() {
           {filteredProjects.toReversed().map((project, index) => (
             <div
               key={index}
-              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${project.status == 'current' && "border-purple-500/30 transform shadow-2xl shadow-purple-500/20"} ${isVisible ? "animate-fade-in-up" : "opacity-0"
+              className={`group relative glass-card rounded-2xl lg:rounded-3xl overflow-hidden hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30 ${project.status == 'current' && "border-purple-500/40 transform shadow-2xl shadow-purple-500/30"} ${isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Status Badge */}
               <div className="absolute top-4 lg:top-6 right-4 lg:right-6 z-10">
                 <span
-                  className={`px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs font-bold ${project.status === "Live"
-                    ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                    : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30"
+                  className={`px-3 lg:px-4 py-1 lg:py-2 rounded-full text-xs font-bold backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-110 ${project.status === "Live"
+                    ? "bg-green-500/30 text-green-300 border border-green-500/50 shadow-green-500/20"
+                    : "bg-yellow-500/30 text-yellow-300 border border-yellow-500/50 shadow-yellow-500/20"
                     }`}
                 >
                   {project.status}
@@ -130,7 +131,7 @@ export function ProjectShowcase() {
                   {project.technologies.slice(0, 3).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium"
+                      className="px-2 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium backdrop-blur-sm hover:bg-purple-500/30 hover:scale-105 transition-all duration-200"
                     >
                       {tech}
                     </span>
@@ -148,7 +149,7 @@ export function ProjectShowcase() {
                     <Button
                       size="sm"
                       asChild={true}
-                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex-1 text-xs"
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex-1 text-xs shadow-lg hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-0.5"
                     >
                       <Link href={project.links.demo} target="_blank">
                         <Play className="w-3 h-3 mr-1" />
@@ -160,7 +161,7 @@ export function ProjectShowcase() {
                     <Button
                       size="sm"
                       asChild={true}
-                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 flex-1 text-xs"
+                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 flex-1 text-xs hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur-sm"
                       variant="outline"
                     >
                       <Link href={project.links.github} target="_blank">
@@ -181,7 +182,7 @@ export function ProjectShowcase() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-8 lg:px-12 py-3 lg:py-4 text-base lg:text-lg font-semibold transition-all duration-300"
+              className="glass-card border-2 border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-8 lg:px-12 py-3 lg:py-4 text-base lg:text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1"
             >
               Load More Projects
             </Button>

@@ -78,14 +78,14 @@ export function WorkHero() {
 
           {/* Quick overview stats */}
           <div
-            className={`grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+            className={`grid grid-cols-2 lg:grid-cols-2 mx-auto w-fit gap-4 lg:gap-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "300ms" }}
           >
             {[
               { icon: Building, label: "Companies", value: brandConfig.companies.length },
-              { icon: Users, label: "Team Members", value: brandConfig.stats.teamMembers },
+              // { icon: Users, label: "Team Members", value: brandConfig.stats.teamMembers },
               { icon: Code, label: "Projects Delivered", value: brandConfig.projects.length },
-              { icon: TrendingUp, label: "Total Value Created", value: brandConfig.stats.tvl },
+              // { icon: TrendingUp, label: "Total Value Created", value: brandConfig.stats.tvl },
             ].map((stat, index) => (
               <div
                 key={index}

@@ -193,7 +193,7 @@ export const brandConfig = {
     {
       id: "borbbles",
       name: "Borbbles",
-      role: "Full-Stack Engineer",
+      role: "Fullstack Engineer",
       period: "Sep 2021 - Mar 2022",
       location: "Niger, Nigeria",
       type: "Full-time",
@@ -270,7 +270,7 @@ export const brandConfig = {
     {
       id: "skytech",
       name: "Skytech Integrated Network Ltd.",
-      role: "Fullstack Developer",
+      role: "Fullstack Engineer & Tutor",
       period: "Jun 2022 - Jul 2023",
       location: "Nasarawa, Nigeria",
       type: "Full-time",
@@ -352,7 +352,7 @@ export const brandConfig = {
     {
       id: "its",
       name: "ITS, FUT Minna",
-      role: "Software Engineer (Intern)",
+      role: "Fullstack Engineer",
       period: "Sep 2023 - Feb 2024",
       location: "Niger, Nigeria",
       type: "Full-time",
@@ -428,7 +428,7 @@ export const brandConfig = {
     {
       id: "phlamingos",
       name: "Phlamingos NFT",
-      role: "Software Engineer",
+      role: "Blockchain Engineer",
       period: "May - Jul 2024",
       location: "Fiverr",
       type: "Contract",
@@ -501,7 +501,7 @@ export const brandConfig = {
     {
       id: "tol",
       name: "The Open Labs (TOL)",
-      role: "Software Engineer",
+      role: "Fullstack Engineer",
       period: "Aug - Nov 2024",
       location: "Remote",
       type: "Contract",
@@ -577,7 +577,7 @@ export const brandConfig = {
     {
       id: "flaury",
       name: "Flaury",
-      role: "Backend Software Engineer",
+      role: "Backend Engineer",
       period: "Oct - Nov 2024",
       location: "Remote",
       type: "Volunteer",
@@ -647,7 +647,7 @@ export const brandConfig = {
     {
       id: "i633",
       name: "Ignition 633 Ministries",
-      role: "Full-Stack Software Engineer",
+      role: "Fullstack Engineer",
       period: "Jan 2025 - Present",
       location: "Benue, Nigeria",
       type: "Full-Time",
@@ -667,6 +667,7 @@ export const brandConfig = {
         "MySQL",
         "Modular Design",
         "Microservices",
+        "Figma",
       ],
       projectCount: 4,
       overview: {
@@ -677,6 +678,74 @@ export const brandConfig = {
           "Developed and manage a notifications module used across multiple applications to deliver real-time updates to users. This module has been successfully integrated across various platforms.",
           "Collaborate with a cross-functional team, including both local and remote members, to create innovative software products and enhance existing systems using tools like Jira, Bitbucket, and Microsoft Teams for project management, version control, and communication.",
           "Assist interns by explaining development processes, conducting 1:1 review sessions to help them overcome challenges, and ensuring a smooth and effective learning experience. ",
+        ],
+        impact: "",
+      },
+      projects: [
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+      ],
+      impact: [
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
+      ],
+    },
+
+    {
+      id: "whoscore",
+      name: "Whoscore",
+      role: "Fullstack Engineer",
+      period: "Aug 2025 - Present",
+      location: "Remote",
+      type: "Full-Time",
+      logo: "",
+      status: "current",
+      description:
+        "At Whoscore, I design and build user interfaces for an AI-powered sports network, including the search flow and Livescore page.",
+      achievements: [],
+      technologies: ["React", "Next.js", "TailwindCss"],
+      projectCount: 4,
+      overview: {
+        description:
+          "At Whoscore, I design and build user interfaces for an AI-powered sports network, including the search flow and Livescore page.",
+        responsibilities: [
+          "Designed the frontend for the entire search flow, including the search page, hot trends, highlights, and search results page.",
+          "Created the desktop mode for the Livescore page, improving usability and accessibility across devices.",
+          "Collaborate with the team to enhance user experience, engagement, and platform scalability.",
         ],
         impact: "",
       },
@@ -917,6 +986,20 @@ export const brandConfig = {
       links: {
         demo: "",
         github: "https://github.com/arewageek/twotap",
+      },
+    },
+    {
+      title: "Whoscore (Frontend)",
+      category: "AI",
+      description:
+        "A sports network that helps users track betting tickets across multiple platforms using an AI agent, connect with fellow enthusiasts, make predictions, and access the latest sports news through an AI-powered search engine",
+      image: "whoscore.png",
+      technologies: ["Next JS"],
+      metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
+      status: "Live",
+      links: {
+        demo: "https://whoscore.uk",
+        github: "",
       },
     },
   ],
