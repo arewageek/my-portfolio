@@ -131,8 +131,9 @@ export function CompaniesGrid() {
                         {/* <span className="text-white font-semibold">{company.projectCount}</span> products */}
                       </div>
                       <Button
+                        variant="ghost"
                         size="sm"
-                        className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 text-xs lg:text-sm"
+                        className="text-xs lg:text-sm"
                       >
                         View Details
                         <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 ml-2" />

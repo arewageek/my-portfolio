@@ -179,8 +179,9 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-4 lg:pt-6">
               <Link href="/projects">
                 <Button
-                  size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-2xl shadow-purple-500/30 hover:shadow-3xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-purple-400/20 relative overflow-hidden group"
+                  variant="primary"
+                  size="xl"
+                  className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold"
                 >
                   <span className="relative z-10">{brandConfig.hero.cta.primary}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -188,9 +189,9 @@ export function HeroSection() {
               </Link>
               <Link href="/contact">
                 <Button
-                  size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto glass-card border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1"
+                  size="xl"
+                  className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold"
                 >
                   {brandConfig.hero.cta.secondary}
                 </Button>

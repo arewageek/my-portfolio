@@ -147,22 +147,23 @@ export function CallToAction() {
           >
             <Link href={brandConfig.meetingLink}>
               <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-purple-500/60 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-16 py-6 text-2xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
+                variant="primary"
+                size="xl"
+                className="px-16 py-6 text-2xl font-bold"
               >
                 Book an Appointment
                 <Calendar className="w-6 h-6 ml-3" />
               </Button>
             </Link>
-            {/* <Link href="/projects">
+            <Link href="/projects">
               <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-16 py-6 text-2xl font-bold shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-500 transform hover:scale-105 border border-purple-400/20 rounded-2xl"
+                variant="outline"
+                size="xl"
+                className="px-16 py-6 text-2xl font-bold"
               >
                 View My Work
               </Button>
-            </Link> */}
+            </Link>
           </div>
 
           {/* Bottom Message */}

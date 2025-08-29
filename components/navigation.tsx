@@ -63,16 +63,15 @@ export function Navigation() {
 
           <div className="hidden lg:flex items-center space-x-4">
             <Button
-              variant="outline"
+              variant="ghost"
               asChild
-              className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 hover:text-purple-300 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-0.5"
             >
               <Link href="resume/arewageek.pdf" download="arewageek.pdf" target="_blank">
                 <Download className="w-4 h-4 mr-2" />
                 Resume
               </Link>
             </Button>
-            <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-0.5">
+            <Button variant="primary" asChild>
               <Link href="/contact">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Hire Me
@@ -110,13 +109,13 @@ export function Navigation() {
               ))}
               <div className="pt-6 space-y-4">
                 <Button
-                  variant="outline"
-                  className="w-full border-purple-500/50 text-purple-400 hover:bg-purple-500/10"
+                  variant="ghost"
+                  className="w-full"
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                <Button variant="primary" className="w-full">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Hire Me
                 </Button>
