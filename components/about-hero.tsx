@@ -15,26 +15,11 @@ export function AboutHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
-      style={{
-        background: `
-          radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-          linear-gradient(135deg, #000000 0%, #0a0a0f 100%)
-        `,
-      }}
+      className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-black"
     >
-      {/* Floating orbs */}
+      {/* Subtle accent orb */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse" />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-pink-500/10 rounded-full blur-xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute top-1/2 right-1/3 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-pulse"
-          style={{ animationDelay: "2s" }}
-        />
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto">

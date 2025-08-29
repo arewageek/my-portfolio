@@ -41,11 +41,10 @@ export function AboutPersonal() {
           <Quote className="w-16 h-16 text-purple-400 mx-auto opacity-50" />
 
           <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-            "The future I'm building is one where blockchain technology works so{" "}
+            "Where we're going, we won't need {" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              seamlessly
-            </span>{" "}
-            that people forget they're using it at all."
+              wallets, gas fees, or complex interfaces.
+            </span>
           </blockquote>
 
           <div className="space-y-6">
@@ -56,8 +55,7 @@ export function AboutPersonal() {
             </div>
 
             <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Where we're going, we won't need to think about wallets, gas fees, or complex interfaces. Just pure,
-              effortless innovation.
+
             </p>
           </div>
         </div>

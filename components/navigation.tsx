@@ -72,7 +72,7 @@ export function Navigation() {
               </Link>
             </Button>
             <Button variant="primary" asChild>
-              <Link href="/contact">
+www              <Link href="/contact">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Hire Me
               </Link>

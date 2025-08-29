@@ -94,11 +94,6 @@ export function Footer() {
           <p className="text-gray-400 text-sm font-light">
             © 2025 {brandConfig.name}. All rights reserved.
           </p>
-          <div className="flex items-center space-x-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-purple-400 transition-colors duration-300">Privacy</a>
-            <a href="#" className="hover:text-purple-400 transition-colors duration-300">Terms</a>
-            <span className="text-xs">Made with ❤️ in Nigeria</span>
-          </div>
         </div>
       </div>
     </footer>

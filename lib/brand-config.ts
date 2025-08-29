@@ -60,7 +60,7 @@ export const brandConfig = {
       primary: "Explore My Work",
       secondary: "Let's Connect",
     },
-    status: "Available for ambitious projects",
+    status: "Available for new projects",
   },
 
   // About Page

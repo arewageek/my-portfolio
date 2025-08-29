@@ -37,24 +37,24 @@ export function AboutValues() {
       description: "Afrobeats, jazz, and lo-fi keep me focused",
       color: "text-pink-400",
     },
-    {
-      icon: Book,
-      title: "Always Learning",
-      description: "I read and watch videos about new tools and understanding existng systems",
-      color: "text-blue-400",
-    },
-    {
-      icon: Globe,
-      title: "Global Mindset",
-      description: "Working with teams across different time zones",
-      color: "text-green-400",
-    },
-    {
-      icon: Heart,
-      title: "Care About Craft",
-      description: "Every line of code matters to me",
-      color: "text-red-400",
-    },
+    // {
+    //   icon: Book,
+    //   title: "Always Learning",
+    //   description: "I read and watch videos about new tools and understanding existng systems",
+    //   color: "text-blue-400",
+    // },
+    // {
+    //   icon: Globe,
+    //   title: "Global Mindset",
+    //   description: "Working with teams across different time zones",
+    //   color: "text-green-400",
+    // },
+    // {
+    //   icon: Heart,
+    //   title: "Care About Craft",
+    //   description: "Every line of code matters to me",
+    //   color: "text-red-400",
+    // },
     {
       icon: Code,
       title: "Problem Solver",

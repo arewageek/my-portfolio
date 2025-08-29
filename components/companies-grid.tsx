@@ -66,9 +66,9 @@ export function CompaniesGrid() {
                     {/* Company Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-4 sm:space-y-0">
                       <div className="flex items-center space-x-4">
-                        <div className="text-3xl lg:text-4xl">
+                        {/* <div className="text-3xl lg:text-4xl">
                           <Rocket />
-                        </div>
+                        </div> */}
                         <div>
                           <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
                             {company.name}

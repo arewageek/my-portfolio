@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Code2, Lightbulb, Rocket } from "lucide-react"
+import { brandConfig } from "@/lib/brand-config"
 
 export function AboutStory() {
   const [isVisible, setIsVisible] = useState(false)
@@ -27,7 +28,7 @@ export function AboutStory() {
   const highlights = [
     {
       icon: Code2,
-      title: "50+ Projects",
+      title: brandConfig.projects.length,
       description: "Built and deployed",
       gradient: "from-purple-500 to-blue-500",
     },
@@ -50,8 +51,8 @@ export function AboutStory() {
       <div className="max-w-6xl mx-auto">
         <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Story content */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-4 gap-12 lg:gap-20 items-center">
+            <div className="space-y-8 col-span-3">
               <div className="space-y-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
                   My{" "}
@@ -62,22 +63,26 @@ export function AboutStory() {
 
                 <div className="space-y-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
                   <p>
-                    I got into blockchain because I found the ecosystem interesting. It grew—maybe a little too fast—but that made it even more exciting.
+                    I got into blockchain because the space felt alive. Things were moving fast, sometimes too fast, but that energy pulled me in. It felt like being part of something that was still being figured out, and that was exciting.
                   </p>
 
                   <p>
-                    While working in the Web3 space, I noticed a key problem: user experience. That got me even more interested in how we can build this space with everyone in mind.
+                    As I worked in Web3, I started to notice a pattern. The tech was powerful, but the experience wasn’t always friendly. People often struggled to use products that were supposed to empower them. That stuck with me, and it shaped how I approach building—I want to create tools that people enjoy using, not just ones that are technically impressive.
                   </p>
 
                   <p>
-                    When I’m not coding, I’m usually thinking about how to make complex things simple or exploring how AI can make blockchain smarter.
+                    Since then, I’ve focused on projects that try to make blockchain simpler and more approachable. Along the way, I’ve also been exploring how AI can fit into the picture, as a way to make systems smarter and interactions smoother.
+                  </p>
+
+                  <p>
+                    For me, it always comes back to people. Blockchain isn’t just code or tokens, it’s about building systems that work for real lives. That’s the part that keeps me hooked and keeps me building.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Highlights */}
-            <div className="grid gap-6">
+            {/* <div className="grid gap-6">
               {highlights.map((highlight, index) => (
                 <div
                   key={index}
@@ -97,7 +102,7 @@ export function AboutStory() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -131,9 +131,9 @@ export function HeroSection() {
             {/* Name & Title */}
             <div className="space-y-4 lg:space-y-6">
               <div className="space-y-2 lg:space-y-3">
-                <p className="text-gray-400 text-lg lg:text-2xl font-medium tracking-wide">
+                {/* <p className="text-gray-400 text-lg lg:text-2xl font-medium tracking-wide">
                   {brandConfig.hero.greeting}
-                </p>
+                </p> */}
                 <h1 className="text-5xl sm:text-6xl lg:text-9xl font-black leading-none tracking-tight">
                   <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
                     {brandConfig.name.split(" ")[0]}
@@ -166,14 +166,14 @@ export function HeroSection() {
             </div>
 
             {/* Enhanced Description */}
-            <div className="space-y-4 lg:space-y-6">
+            {/* <div className="space-y-4 lg:space-y-6">
               <p className="text-xl lg:text-3xl text-gray-200 leading-relaxed font-light">
                 <span className="text-purple-400 font-semibold">Blockchain is a tool, not a barrier.</span>
               </p>
               <p className="text-lg lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 {brandConfig.hero.description}
               </p>
-            </div>
+            </div> */}
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-4 lg:pt-6">
