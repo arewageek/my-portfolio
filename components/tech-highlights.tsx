@@ -59,12 +59,12 @@ export function TechHighlights() {
     <section ref={sectionRef} className="relative py-32 px-6 lg:px-8 bg-black/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center px-6 py-3 bg-white/5 backdrop-blur-md border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-6 py-3 bg-gray-900/50 backdrop-blur-md border border-gray-800 rounded-full text-gray-300 text-sm font-medium mb-6">
             Core Expertise
           </div>
           <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
             Why Choose{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="text-pink-400">
               Arewa Geek
             </span>
           </h2>
@@ -77,9 +77,8 @@ export function TechHighlights() {
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className={`group p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
+              className={`group p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+                }`}
               style={{
                 animationDelay: `${index * 150}ms`,
                 animation: isVisible ? `float 6s ease-in-out infinite ${index * 0.5}s` : undefined,
@@ -93,11 +92,11 @@ export function TechHighlights() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors duration-300">
                     {highlight.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-4">{highlight.description}</p>
-                  <div className="text-purple-400 font-bold text-lg">{highlight.stats}</div>
+                  <div className="text-pink-400 font-bold text-lg">{highlight.stats}</div>
                 </div>
               </div>
             </div>

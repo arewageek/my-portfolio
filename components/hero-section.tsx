@@ -149,7 +149,7 @@ export function HeroSection() {
                 <div className="flex items-center justify-center lg:justify-start space-x-3 lg:space-x-4">
                   <div className="w-8 lg:w-12 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
                   <div className="flex items-center space-x-2 lg:space-x-3">
-                    <Code className="w-5 h-5 lg:w-6 lg:h-6 text-purple-400" />
+                    {/* <Code className="w-5 h-5 lg:w-6 lg:h-6 text-purple-400" /> */}
                     <span className="text-lg lg:text-2xl font-bold text-white">{brandConfig.title}</span>
                   </div>
                   <div className="w-8 lg:w-12 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
@@ -253,7 +253,7 @@ export function HeroSection() {
                   className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 px-3 py-2 lg:px-4 lg:py-2 glass-card bg-gradient-to-r from-purple-600/80 to-pink-600/80 rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-2xl border border-purple-400/30 hover:shadow-3xl hover:shadow-purple-500/40 transition-all duration-300 hover:-translate-y-1"
                   style={{ animation: "gentleFloat 7s ease-in-out infinite" }}
                 >
-                  🚀 {brandConfig.stats.projects} Projects
+                  🚀 {brandConfig.projects.length} Projects
                 </div>
                 <div
                   className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 px-3 py-2 lg:px-4 lg:py-2 glass-card bg-gradient-to-r from-pink-600/80 to-purple-600/80 rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-2xl border border-pink-400/30 hover:shadow-3xl hover:shadow-pink-500/40 transition-all duration-300 hover:-translate-y-1"

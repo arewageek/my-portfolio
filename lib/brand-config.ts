@@ -4,7 +4,7 @@ export const brandConfig = {
   // Personal Information
   name: "Arewa Geek",
   fullName: "Arewa Geek",
-  title: "Fullstack Blockchain Engineer",
+  title: "Full-stack Engineer",
   subtitle: "Building the future of Web3",
   tagline: "Where we're going, we won't need wallets",
   location: "Nigeria",
@@ -34,7 +34,7 @@ export const brandConfig = {
         "hover:text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400/30",
     },
     {
-      href: "@arewaofweb3",
+      href: "arewageek@gmail.com",
       label: "Email",
       icon: Mail,
       color:

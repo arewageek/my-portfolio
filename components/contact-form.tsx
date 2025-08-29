@@ -75,7 +75,7 @@ export function ContactForm() {
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-black text-white">
                 Start Your{" "}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="text-pink-400">
                   Project
                 </span>
               </h2>
@@ -91,7 +91,7 @@ export function ContactForm() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your name"
-                    className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-12"
+                    className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-pink-400 focus:ring-pink-400/20 h-12"
                     required
                   />
                 </div>
@@ -103,7 +103,7 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="your@email.com"
-                    className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-12"
+                    className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-pink-400 focus:ring-pink-400/20 h-12"
                     required
                   />
                 </div>
@@ -116,7 +116,7 @@ export function ContactForm() {
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full h-12 bg-white/5 border border-white/20 text-white rounded-md px-3 focus:border-purple-400 focus:ring-purple-400/20"
+                    className="w-full h-12 bg-white/5 border border-white/20 text-white rounded-md px-3 focus:border-pink-400 focus:ring-pink-400/20"
                   >
                     <option value="">Select budget range</option>
                     <option value="5k-10k">$5K - $10K</option>
@@ -131,7 +131,7 @@ export function ContactForm() {
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleInputChange}
-                    className="w-full h-12 bg-white/5 border border-white/20 text-white rounded-md px-3 focus:border-purple-400 focus:ring-purple-400/20"
+                    className="w-full h-12 bg-white/5 border border-white/20 text-white rounded-md px-3 focus:border-pink-400 focus:ring-pink-400/20"
                   >
                     <option value="">Select timeline</option>
                     <option value="asap">ASAP</option>
@@ -162,14 +162,14 @@ export function ContactForm() {
                   onChange={handleInputChange}
                   placeholder="Tell me about your project, goals, and any specific requirements..."
                   rows={6}
-                  className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/20 resize-none"
+                  className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-pink-400 focus:ring-pink-400/20 resize-none"
                   required
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 text-lg font-semibold shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-pink-600 hover:bg-pink-700 text-white py-4 text-lg font-semibold shadow-2xl shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message
