@@ -64,13 +64,13 @@ export function AboutValues() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-950">
       <div className="max-w-6xl mx-auto">
         <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <div className="text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
               Beyond{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Code</span>
+              <span className="text-pink-400">Code</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               What makes me tick when I'm not building the future of Web3
@@ -81,7 +81,7 @@ export function AboutValues() {
             {interests.map((interest, index) => (
               <div
                 key={index}
-                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105"
+                className="group p-6 bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-2xl hover:bg-gray-900/50 hover:border-pink-400/30 transition-all duration-300 hover:transform hover:scale-105"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="space-y-4">

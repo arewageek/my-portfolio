@@ -29,13 +29,13 @@ export function AboutHero() {
           {/* Left side - Text */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 bg-gray-900/50 border border-gray-800 rounded-full text-gray-300 text-sm font-medium">
                 👋 Nice to meet you
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
                 I'm{" "}
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
+                <span className="text-pink-400">
                   {brandConfig.name}
                 </span>
               </h1>
@@ -46,25 +46,21 @@ export function AboutHero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <div className="flex items-center space-x-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+              <div className="flex items-center space-x-3 px-6 py-3 bg-gray-900/30 border border-gray-800 rounded-2xl">
+                <div className="w-3 h-3 bg-pink-400 rounded-full animate-pulse" />
                 <span className="text-white font-medium">Available for projects</span>
               </div>
-              {/* <div className="flex items-center space-x-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl">
-                <span className="text-2xl">🇳🇬</span>
-                <span className="text-gray-300">Based in Nigeria</span>
-              </div> */}
             </div>
           </div>
 
           {/* Right side - Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-20 animate-pulse" />
+              <div className="absolute inset-0 bg-pink-500/10 rounded-3xl blur-2xl" />
               <img
                 src="/pfp.png"
                 alt="Arewa Geek"
-                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl border border-purple-400/20 shadow-2xl shadow-purple-500/20"
+                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl border border-gray-800 shadow-2xl"
               />
             </div>
           </div>
@@ -72,7 +68,7 @@ export function AboutHero() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 text-purple-400" />
+          <ArrowDown className="w-6 h-6 text-pink-400" />
         </div>
       </div>
     </section>

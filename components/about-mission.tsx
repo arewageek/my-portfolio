@@ -50,12 +50,7 @@ export function AboutMission() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8"
-      style={{
-        background: `
-          linear-gradient(135deg, #0f0f23 0%, #1a0b2e 50%, #0f0f23 100%)
-        `,
-      }}
+      className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black"
     >
       <div className="max-w-6xl mx-auto">
         <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
@@ -63,7 +58,7 @@ export function AboutMission() {
           <div className="text-center space-y-8">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
               My{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="text-pink-400">
                 Mission
               </span>
             </h2>
