@@ -11,7 +11,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProfessionalHighlights />
-        <ProjectShowcase />
+        <ProjectShowcase showLoadMore={true} />
         {/* <WhyChooseMe /> */}
         <CallToAction />
       </main>

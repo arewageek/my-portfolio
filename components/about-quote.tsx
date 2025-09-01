@@ -55,7 +55,7 @@ export function AboutQuote() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-            <Link href={brandConfig.meetingLink}>
+            <Link href={brandConfig.calendar}>
               <Button
                 size="lg"
                 variant="outline"

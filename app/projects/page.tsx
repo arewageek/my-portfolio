@@ -12,7 +12,7 @@ export default function Projects() {
         <ProjectsHero />
         {/* <CurrentlyBuilding /> */}
         {/* <ProjectCategories /> */}
-        <ProjectShowcase />
+        <ProjectShowcase showLoadMore={false} showHeader={false} />
         {/* <ProjectStats /> */}
       </main>
     </div>

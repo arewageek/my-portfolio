@@ -30,7 +30,7 @@ export function ContactInfo() {
       icon: Mail,
       title: "Email",
       description: "Drop me a line anytime",
-      value: brandConfig.socials[3].href,
+      value: brandConfig.email,
       action: "Send Email",
       href: `mailto:${brandConfig.email}`,
       gradient: "from-purple-600 to-pink-600",
@@ -41,7 +41,7 @@ export function ContactInfo() {
       description: "Let's chat about blockchain",
       value: brandConfig.socials[2].href,
       action: "Message Me",
-      href: "#",
+      href: brandConfig.socials[2].href,
       gradient: "from-blue-600 to-purple-600",
     },
     {
@@ -50,7 +50,7 @@ export function ContactInfo() {
       description: "Book a consultation",
       value: "30-min slots available",
       action: "Book Now",
-      href: "#",
+      href: brandConfig.calendar,
       gradient: "from-green-600 to-blue-600",
     }
   ]

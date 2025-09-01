@@ -145,7 +145,7 @@ export function CallToAction() {
             className={`flex flex-col sm:flex-row gap-8 justify-center pt-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "600ms" }}
           >
-            <Link href={brandConfig.meetingLink}>
+            <Link href={brandConfig.calendar}>
               <Button
                 variant="primary"
                 size="xl"

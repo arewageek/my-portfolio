@@ -8,7 +8,7 @@ export const brandConfig = {
   subtitle: "Building the future of Web3",
   tagline: "Where we're going, we won't need wallets",
   location: "Nigeria",
-  email: "hello@arewaofweb3.dev",
+  email: "arewageek@gmail.com",
 
   // Social Links
   socials: [
@@ -34,7 +34,7 @@ export const brandConfig = {
         "hover:text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400/30",
     },
     {
-      href: "arewageek@gmail.com",
+      href: "mailto:arewageek@gmail.com",
       label: "Email",
       icon: Mail,
       color:
@@ -796,7 +796,7 @@ export const brandConfig = {
 
   // Global Stats
   stats: {
-    experience: `${new Date().getFullYear() - 2020}+`,
+    experience: `${Math.floor((new Date().getFullYear() - 2018) / 5) * 5}+`,
     projects: "50+",
     users: "200K+",
     tvl: "$50M+",
@@ -815,14 +815,14 @@ export const brandConfig = {
       { name: "NFT Development", level: 88 },
       { name: "Cross-chain", level: 85 },
     ],
-    ai: [
-      { name: "OpenAI API", level: 95 },
-      { name: "LangChain", level: 90 },
-      { name: "Vector Databases", level: 88 },
-      { name: "TensorFlow", level: 82 },
-      { name: "Hugging Face", level: 85 },
-      { name: "AI Agents", level: 87 },
-    ],
+    // ai: [
+    //   { name: "OpenAI API", level: 95 },
+    //   { name: "LangChain", level: 90 },
+    //   { name: "Vector Databases", level: 88 },
+    //   { name: "TensorFlow", level: 82 },
+    //   { name: "Hugging Face", level: 85 },
+    //   { name: "AI Agents", level: 87 },
+    // ],
     frontend: [
       { name: "React", level: 96 },
       { name: "Next.js", level: 94 },
@@ -1003,5 +1003,5 @@ export const brandConfig = {
       },
     },
   ],
-  meetingLink: "#",
+  calendar: "https://calendar.app.google/kxuj3jZRMry5AiZr9",
 };
