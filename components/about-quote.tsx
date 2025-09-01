@@ -36,13 +36,13 @@ export function AboutQuote() {
         <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <div className="space-y-8">
             <div className="inline-flex items-center px-6 py-3 bg-gray-900/50 backdrop-blur-xl border border-gray-800 rounded-full text-gray-300 text-sm font-medium">
-              <Sparkles className="w-4 h-4 mr-2 text-pink-400" />
+              <Sparkles className="w-4 h-4 mr-2 text-purple-400" />
               Ready to innovate together?
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-tight">
               Let's Build the{" "}
-              <span className="text-pink-400">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Future
               </span>{" "}
               Together
@@ -59,7 +59,7 @@ export function AboutQuote() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-pink-400/60 text-pink-400 hover:bg-pink-400/10 hover:border-pink-400 hover:text-white px-16 py-6 text-2xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
+                className="border-2 border-pink-400/6x0 text-pink-400 hover:bg-pink-400/10 hover:border-pink-400 hover:text-white px-16 py-6 text-2xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
               >
                 Schedule Call
                 <Calendar className="w-6 h-6 ml-3" />

@@ -35,7 +35,7 @@ export function AboutHero() {
 
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
                 I'm{" "}
-                <span className="text-pink-400">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {brandConfig.name}
                 </span>
               </h1>
@@ -46,8 +46,8 @@ export function AboutHero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <div className="flex items-center space-x-3 px-6 py-3 bg-gray-900/30 border border-gray-800 rounded-2xl">
-                <div className="w-3 h-3 bg-pink-400 rounded-full animate-pulse" />
+              <div className="flex items-center space-x-3 px-6 py-3 bg-gray-900/30 border border-purple-500/30 rounded-2xl">
+                <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse" />
                 <span className="text-white font-medium">Available for projects</span>
               </div>
             </div>
@@ -56,7 +56,7 @@ export function AboutHero() {
           {/* Right side - Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 bg-pink-500/10 rounded-3xl blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl" />
               <img
                 src="/pfp.png"
                 alt="Arewa Geek"
@@ -68,7 +68,7 @@ export function AboutHero() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 text-pink-400" />
+          <ArrowDown className="w-6 h-6 text-purple-400" />
         </div>
       </div>
     </section>

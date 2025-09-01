@@ -20,7 +20,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
     const [activeFilter, setActiveFilter] = useState("All")
     const [viewMode, setViewMode] = useState<ViewMode>('grid')
     const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-    const [visibleCount, setVisibleCount] = useState(10)
+    const [visibleCount, setVisibleCount] = useState(9)
     const sectionRef = useRef<HTMLDivElement>(null)
     const pathname = usePathname()
     const isHomePage = pathname === '/'
@@ -42,7 +42,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
         return () => observer.disconnect()
     }, [])
 
-    const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce", "AI", "Supplychain"]
+    const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce", "AI"]
     const allFilteredProjects = activeFilter === "All"
         ? brandConfig.projects
         : brandConfig.projects.filter((p) => p.category === activeFilter)
@@ -59,7 +59,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
 
     // Reset visible count when filter changes
     useEffect(() => {
-        setVisibleCount(10)
+        setVisibleCount(15)
     }, [activeFilter])
 
     const getStatusColor = (status: string) => {
