@@ -134,7 +134,7 @@ export function HeroSection() {
                 <p className="text-gray-400 text-lg lg:text-2xl font-medium tracking-wide">
                   {brandConfig.hero.greeting}
                 </p>
-                <h1 className="text-5xl sm:text-6xl lg:text-9xl font-black leading-none tracking-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-9xl font-black leading-none tracking-tight">
                   <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
                     {brandConfig.name.split(" ")[0]}
                   </span>
