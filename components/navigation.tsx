@@ -31,14 +31,14 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${scrolled
-        ? "bg-black/95 backdrop-blur-2xl border-b border-purple-500/30 shadow-2xl shadow-purple-500/10"
+        ? "bg-black/95 backdrop-blur-2xl border-b border-gray-800"
         : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 lg:py-6">
           <Link href="/" className="text-2xl font-bold group">
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent transition-all duration-300 group-hover:from-purple-300 group-hover:via-pink-300 group-hover:to-purple-500">
+            <span className="text-white transition-all duration-300 group-hover:text-pink-400">
               {brandConfig.name}
             </span>
           </Link>
@@ -54,7 +54,7 @@ export function Navigation() {
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-pink-400 transition-all duration-300 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                 />
               </Link>
@@ -63,16 +63,15 @@ export function Navigation() {
 
           <div className="hidden lg:flex items-center space-x-4">
             <Button
-              variant="outline"
+              variant="ghost"
               asChild
-              className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 hover:text-purple-300 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-0.5"
             >
               <Link href="resume/arewageek.pdf" download="arewageek.pdf" target="_blank">
                 <Download className="w-4 h-4 mr-2" />
                 Resume
               </Link>
             </Button>
-            <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-0.5">
+            <Button variant="primary" asChild>
               <Link href="/contact">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Hire Me
@@ -95,7 +94,7 @@ export function Navigation() {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-black/98 backdrop-blur-2xl border-b border-purple-500/30 shadow-2xl shadow-purple-500/10 animate-fade-in-up">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-black/98 backdrop-blur-2xl border-b border-gray-800 animate-fade-in-up">
             <div className="px-6 py-8 space-y-6">
               {navItems.map((item) => (
                 <Link
@@ -110,13 +109,13 @@ export function Navigation() {
               ))}
               <div className="pt-6 space-y-4">
                 <Button
-                  variant="outline"
-                  className="w-full border-purple-500/50 text-purple-400 hover:bg-purple-500/10"
+                  variant="ghost"
+                  className="w-full"
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Resume
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                <Button variant="primary" className="w-full">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Hire Me
                 </Button>

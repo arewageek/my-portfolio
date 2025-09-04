@@ -1,14 +1,16 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { ArrowRight, Briefcase, Calendar, MapPin, Rocket } from "lucide-react"
+import { ArrowRight, Briefcase, Calendar, MapPin, Rocket, Building2, Users, TrendingUp, Award, ChevronRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { brandConfig } from "@/lib/brand-config"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function CompaniesGrid() {
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredCompany, setHoveredCompany] = useState<number | null>(null)
+  const [activeTab, setActiveTab] = useState<'timeline' | 'grid'>('timeline')
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export function CompaniesGrid() {
           setIsVisible(true)
         }
       },
-      { threshold: 0.1 }, // Reduced threshold for faster mobile loading
+      { threshold: 0.1 }
     )
 
     if (sectionRef.current) {
@@ -28,124 +30,405 @@ export function CompaniesGrid() {
     return () => observer.disconnect()
   }, [])
 
-  const list = [...brandConfig.companies].reverse()
+  const companies = [...brandConfig.companies].reverse()
+
+  const getCompanyIcon = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'startup':
+        return <Rocket className="w-5 h-5" />
+      case 'enterprise':
+        return <Building2 className="w-5 h-5" />
+      case 'agency':
+        return <Users className="w-5 h-5" />
+      default:
+        return <Briefcase className="w-5 h-5" />
+    }
+  }
+
+  const getTypeColor = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'startup':
+        return 'from-emerald-500 to-green-500'
+      case 'enterprise':
+        return 'from-blue-500 to-cyan-500'
+      case 'agency':
+        return 'from-purple-500 to-pink-500'
+      default:
+        return 'from-gray-500 to-slate-500'
+    }
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  }
 
   return (
-    <section ref={sectionRef} className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-12 lg:mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white mb-6 lg:mb-8 leading-tight">
-            My{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
+    <section ref={sectionRef} className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10" />
+      <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          {/* <div className="inline-flex items-center px-6 py-3 glass-card rounded-full text-purple-300 text-sm font-medium mb-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
+            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 animate-pulse" />
+            Professional Journey
+            <div className="ml-3 px-2 py-1 bg-purple-500/20 rounded-full text-xs">
+              {companies.length} Companies
+            </div>
+          </div> */}
+
+          {/* <h2 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white mb-8 leading-tight">
+            Career{" "}
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg">
               Journey
             </span>
-          </h2>
-          <p className="text-lg lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Each company taught me something new about building at scale
-          </p>
-        </div>
+          </h2> */}
 
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-          {
-            list.map((company, index) => (
-              <Link key={company.id} href={`/work/${company.id}`}>
-                <div
-                  className={`group relative p-6 lg:p-10 rounded-2xl lg:rounded-3xl border border-white/10 transition-all duration-500 cursor-pointer ${hoveredCompany === index
-                    ? "transform scale-105 shadow-2xl shadow-purple-500/20"
-                    : "hover:transform hover:scale-102 hover:shadow-xl hover:shadow-purple-500/10"
-                    } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-                  style={{
-                    animationDelay: `${index * 200}ms`,
-                    background: `linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05), rgba(0,0,0,0.3))`,
-                    backdropFilter: "blur(20px)",
-                  }}
-                  onMouseEnter={() => setHoveredCompany(index)}
-                  onMouseLeave={() => setHoveredCompany(null)}
-                >
-                  <div className="space-y-6 lg:space-y-8">
-                    {/* Company Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-4 sm:space-y-0">
-                      <div className="flex items-center space-x-4">
-                        <div className="text-3xl lg:text-4xl">
-                          <Rocket />
-                        </div>
-                        <div>
-                          <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-                            {company.name}
-                          </h3>
-                          <p className="text-purple-400 font-semibold text-sm lg:text-base">{company.role}</p>
-                        </div>
-                      </div>
-                      <div className="text-right text-xs lg:text-sm text-gray-400">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="w-3 h-3" />
-                          <span>{company.period}</span>
-                        </div>
-                        <div className="flex items-center space-x-1 my-1">
-                          <MapPin className="w-3 h-3" />
-                          <span>{company.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Briefcase className="w-3 h-3" />
-                          <span>{company.type}</span>
-                        </div>
-                      </div>
-                    </div>
+          {/* <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+            From startups to enterprises, each experience shaped my expertise in building scalable solutions and leading high-performing teams.
+          </p> */}
 
-                    {/* Description */}
-                    <p className="text-gray-300 leading-relaxed text-sm lg:text-lg">{company.description}</p>
+          {/* Stats */}
+          {/* <div className="flex justify-center gap-8 mb-12">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">{companies.length}+</div>
+              <div className="text-sm text-gray-400">Companies</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">
+                {companies.reduce((acc, company) => acc + company.technologies.length, 0)}+
+              </div>
+              <div className="text-sm text-gray-400">Technologies</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white">
+                {new Set(companies.map(c => c.type)).size}
+              </div>
+              <div className="text-sm text-gray-400">Industries</div>
+            </div>
+          </div> */}
 
-                    {/* Key Achievements */}
-                    {/* <div>
-                      <h4 className="text-white font-semibold mb-3 lg:mb-4 text-sm lg:text-base">Key Achievements</h4>
-                      <div className="space-y-2">
-                        {company.achievements.slice(0, 3).map((achievement, i) => (
-                          <div key={i} className="flex items-start space-x-3">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-gray-400 text-xs lg:text-sm">{achievement}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div> */}
+          {/* View Toggle */}
+          {/* <div className="flex items-center justify-center gap-2 glass-card rounded-xl p-1 max-w-xs mx-auto">
+            <button
+              onClick={() => setActiveTab('timeline')}
+              className={`px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${activeTab === 'timeline'
+                ? 'bg-purple-600 text-white shadow-lg'
+                : 'text-gray-400 hover:text-white hover:bg-white/10'
+                }`}
+            >
+              Timeline
+            </button>
+            <button
+              onClick={() => setActiveTab('grid')}
+              className={`px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${activeTab === 'grid'
+                ? 'bg-purple-600 text-white shadow-lg'
+                : 'text-gray-400 hover:text-white hover:bg-white/10'
+                }`}
+            >
+              Grid
+            </button>
+          </div> */}
+        </motion.div>
 
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
-                      {company.technologies.slice(0, 4).map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2 lg:px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium"
+        {/* Companies Display */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {activeTab === 'timeline' ? (
+              // Timeline View
+              <div className="relative">
+                {/* Timeline Line - Responsive positioning */}
+                <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500 opacity-30" />
+
+                <div className="space-y-8 sm:space-y-12">
+                  {companies.map((company, index) => (
+                    <motion.div
+                      key={company.id}
+                      variants={itemVariants}
+                      className="relative"
+                    >
+                      {/* Timeline Dot - Responsive positioning */}
+                      <div className="absolute left-2.5 sm:left-6 top-6 sm:top-8 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-2 sm:border-4 border-black shadow-lg z-10" />
+
+                      <Link href={`/work/${company.id}`}>
+                        <div
+                          className="group relative ml-10 sm:ml-20 p-4 sm:p-6 lg:p-8 glass-card rounded-2xl sm:rounded-3xl hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-[1.01] sm:hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/20"
+                          onMouseEnter={() => setHoveredCompany(index)}
+                          onMouseLeave={() => setHoveredCompany(null)}
                         >
-                          {tech}
-                        </span>
-                      ))}
-                      {company.technologies.length > 4 && (
-                        <span className="px-2 lg:px-3 py-1 bg-gray-500/20 text-gray-400 rounded-full text-xs">
-                          +{company.technologies.length - 4}
-                        </span>
-                      )}
-                    </div>
+                          {/* Background Gradient */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl" />
 
-                    {/* Projects Count & CTA */}
-                    <div className="flex items-center justify-between pt-4 lg:pt-6 border-t border-white/10">
-                      <div className="text-xs lg:text-sm text-gray-400">
-                        {/* <span className="text-white font-semibold">{company.projectCount}</span> products */}
-                      </div>
-                      <Button
-                        size="sm"
-                        className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 text-xs lg:text-sm"
-                      >
-                        View Details
-                        <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 ml-2" />
-                      </Button>
-                    </div>
-                  </div>
+                          <div className="relative space-y-4 sm:space-y-6">
+                            {/* Header */}
+                            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                              <div className="space-y-3">
+                                <div className="flex items-center gap-3 sm:gap-4">
+                                  <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-r ${getTypeColor(company.type)} shadow-lg`}>
+                                    {getCompanyIcon(company.type)}
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300 truncate">
+                                      {company.name}
+                                    </h3>
+                                    <p className="text-purple-400 font-semibold text-sm sm:text-base lg:text-lg">{company.role}</p>
+                                  </div>
+                                </div>
+                              </div>
 
-                  {/* Hover effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                              <div className="flex flex-col sm:flex-row sm:items-start lg:flex-col lg:items-end gap-3 sm:gap-4">
+                                <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold backdrop-blur-md shadow-lg bg-gradient-to-r ${getTypeColor(company.type)} text-white self-start sm:self-auto`}>
+                                  {getCompanyIcon(company.type)}
+                                  <span className="hidden sm:inline">{company.type}</span>
+                                </div>
+                                <div className="flex flex-wrap gap-3 sm:gap-4 lg:flex-col lg:items-end lg:gap-1 text-xs sm:text-sm text-gray-400">
+                                  <div className="flex items-center gap-1.5 sm:gap-2">
+                                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                                    <span>{company.period}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5 sm:gap-2">
+                                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                                    <span>{company.location}</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                              {company.description}
+                            </p>
+
+                            {/* Technologies */}
+                            <div className="space-y-2 sm:space-y-3">
+                              <h4 className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">Technologies</h4>
+                              <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                {company.technologies.map((tech, techIndex) => (
+                                  <span
+                                    key={techIndex}
+                                    className="px-2 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-white/5 to-white/10 text-gray-300 border border-white/10 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium backdrop-blur-sm hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 hover:border-purple-500/30 hover:text-purple-300 hover:scale-105 transition-all duration-200 cursor-default"
+                                  >
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* CTA */}
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 pt-4 sm:pt-6 border-t border-white/10">
+                              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
+                                <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                                <span>View detailed experience</span>
+                              </div>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="text-purple-400 hover:text-white hover:bg-purple-500/10 group/btn self-start sm:self-auto"
+                              >
+                                <span className="text-xs sm:text-sm">Learn More</span>
+                                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
                 </div>
-              </Link>
-            ))}
-        </div>
+              </div>
+            ) : (
+              // Grid View
+              <div className="grid lg:grid-cols-2 gap-8">
+                {companies.map((company, index) => (
+                  <motion.div
+                    key={company.id}
+                    variants={itemVariants}
+                  >
+                    <Link href={`/work/${company.id}`}>
+                      <div
+                        className="group relative p-8 glass-card rounded-3xl hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 h-full"
+                        onMouseEnter={() => setHoveredCompany(index)}
+                        onMouseLeave={() => setHoveredCompany(null)}
+                      >
+                        {/* Background Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+
+                        <div className="relative space-y-6 h-full flex flex-col">
+                          {/* Header */}
+                          <div className="flex items-start justify-between">
+                            <div className="flex items-center gap-4">
+                              <div className={`p-3 rounded-xl bg-gradient-to-r ${getTypeColor(company.type)} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                {getCompanyIcon(company.type)}
+                              </div>
+                              <div>
+                                <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
+                                  {company.name}
+                                </h3>
+                                <p className="text-purple-400 font-semibold">{company.role}</p>
+                              </div>
+                            </div>
+
+                            <div className={`px-3 py-1.5 rounded-xl text-xs font-bold backdrop-blur-md shadow-lg bg-gradient-to-r ${getTypeColor(company.type)} text-white`}>
+                              {company.type}
+                            </div>
+                          </div>
+
+                          {/* Meta Info */}
+                          <div className="flex flex-col gap-2 text-sm text-gray-400">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4" />
+                              <span>{company.period}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4" />
+                              <span>{company.location}</span>
+                            </div>
+                          </div>
+
+                          {/* Description */}
+                          <p className="text-gray-300 leading-relaxed flex-grow">
+                            {company.description}
+                          </p>
+
+                          {/* Technologies */}
+                          <div className="space-y-3">
+                            <div className="flex flex-wrap gap-2">
+                              {company.technologies.slice(0, 4).map((tech, techIndex) => (
+                                <span
+                                  key={techIndex}
+                                  className="px-2.5 py-1 bg-white/5 text-gray-300 border border-white/10 rounded-lg text-xs font-medium backdrop-blur-sm hover:bg-white/10 hover:scale-105 transition-all duration-200"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                              {company.technologies.length > 4 && (
+                                <span className="px-2.5 py-1 bg-gray-500/20 text-gray-400 rounded-lg text-xs font-medium">
+                                  +{company.technologies.length - 4}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* CTA */}
+                          <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                            <div className="flex items-center gap-2 text-sm text-gray-400">
+                              <TrendingUp className="w-4 h-4" />
+                              <span>View details</span>
+                            </div>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="text-purple-400 hover:text-white hover:bg-purple-500/10 group/btn"
+                            >
+                              Explore
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Integrated Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-16 sm:mt-20 lg:mt-24"
+        >
+          <div className="relative">
+            {/* Background gradient that blends with the page */}
+            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-purple-900/5 to-transparent rounded-3xl" />
+
+            <div className="relative border border-purple-500/20 rounded-3xl p-8 sm:p-12 backdrop-blur-sm">
+              <div className="text-center space-y-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl mb-2">
+                  <Sparkles className="w-8 h-8 text-purple-400" />
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                    Let's Build Something{" "}
+                    <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      Amazing
+                    </span>
+                  </h3>
+                  <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Ready to bring your vision to life? Let's discuss how my experience across these companies can help drive your next project to success.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 group"
+                  >
+                    <Link href="/contact">
+                      Start a Conversation
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    </Link>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 backdrop-blur-sm hover:border-purple-400 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <Link href="/projects">
+                      View My Work
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

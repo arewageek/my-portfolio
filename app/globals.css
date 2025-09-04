@@ -155,11 +155,11 @@
 
   /* Gradient text utilities */
   .gradient-text-primary {
-    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent;
+    @apply text-pink-400;
   }
 
   .gradient-text-secondary {
-    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent;
+    @apply text-gray-400;
   }
 }
 
@@ -259,7 +259,7 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -267,12 +267,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+  background: #ec4899;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #7c3aed, #db2777);
+  background: #db2777;
 }
 
 /* Smooth scrolling */
@@ -282,7 +282,7 @@ html {
 
 /* Selection styling */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
+  background: rgba(236, 72, 153, 0.3);
   color: white;
 }
 
@@ -290,7 +290,7 @@ html {
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #8b5cf6;
+  outline: 2px solid #ec4899;
   outline-offset: 2px;
 }
 

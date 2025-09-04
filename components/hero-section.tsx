@@ -131,10 +131,10 @@ export function HeroSection() {
             {/* Name & Title */}
             <div className="space-y-4 lg:space-y-6">
               <div className="space-y-2 lg:space-y-3">
-                <p className="text-gray-400 text-lg lg:text-2xl font-medium tracking-wide">
+                {/* <p className="text-gray-400 text-lg lg:text-2xl font-medium tracking-wide">
                   {brandConfig.hero.greeting}
-                </p>
-                <h1 className="text-4xl sm:text-5xl lg:text-9xl font-black leading-none tracking-tight">
+                </p> */}
+                <h1 className="text-8xl md:text-9xl font-black leading-none tracking-tight">
                   <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
                     {brandConfig.name.split(" ")[0]}
                   </span>
@@ -149,7 +149,7 @@ export function HeroSection() {
                 <div className="flex items-center justify-center lg:justify-start space-x-3 lg:space-x-4">
                   <div className="w-8 lg:w-12 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
                   <div className="flex items-center space-x-2 lg:space-x-3">
-                    <Code className="w-5 h-5 lg:w-6 lg:h-6 text-purple-400" />
+                    {/* <Code className="w-5 h-5 lg:w-6 lg:h-6 text-purple-400" /> */}
                     <span className="text-lg lg:text-2xl font-bold text-white">{brandConfig.title}</span>
                   </div>
                   <div className="w-8 lg:w-12 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
@@ -166,21 +166,22 @@ export function HeroSection() {
             </div>
 
             {/* Enhanced Description */}
-            <div className="space-y-4 lg:space-y-6">
+            {/* <div className="space-y-4 lg:space-y-6">
               <p className="text-xl lg:text-3xl text-gray-200 leading-relaxed font-light">
                 <span className="text-purple-400 font-semibold">Blockchain is a tool, not a barrier.</span>
               </p>
               <p className="text-lg lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 {brandConfig.hero.description}
               </p>
-            </div>
+            </div> */}
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-4 lg:pt-6">
+            <div className="flex flex-col md:flex-row gap-4 lg:gap-6 pt-4 lg:pt-6">
               <Link href="/projects">
                 <Button
-                  size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-2xl shadow-purple-500/30 hover:shadow-3xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-purple-400/20 relative overflow-hidden group"
+                  variant="primary"
+                  size="xl"
+                  className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold"
                 >
                   <span className="relative z-10">{brandConfig.hero.cta.primary}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -188,9 +189,9 @@ export function HeroSection() {
               </Link>
               <Link href="/contact">
                 <Button
-                  size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto glass-card border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1"
+                  size="xl"
+                  className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold"
                 >
                   {brandConfig.hero.cta.secondary}
                 </Button>
@@ -252,7 +253,7 @@ export function HeroSection() {
                   className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 px-3 py-2 lg:px-4 lg:py-2 glass-card bg-gradient-to-r from-purple-600/80 to-pink-600/80 rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-2xl border border-purple-400/30 hover:shadow-3xl hover:shadow-purple-500/40 transition-all duration-300 hover:-translate-y-1"
                   style={{ animation: "gentleFloat 7s ease-in-out infinite" }}
                 >
-                  🚀 {brandConfig.stats.projects} Projects
+                  🚀 {brandConfig.projects.length} Projects
                 </div>
                 <div
                   className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 px-3 py-2 lg:px-4 lg:py-2 glass-card bg-gradient-to-r from-pink-600/80 to-purple-600/80 rounded-xl lg:rounded-2xl text-white font-bold text-xs lg:text-sm shadow-2xl border border-pink-400/30 hover:shadow-3xl hover:shadow-pink-500/40 transition-all duration-300 hover:-translate-y-1"

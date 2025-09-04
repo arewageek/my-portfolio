@@ -63,21 +63,21 @@ export function ProjectCard({ title, description, image, technologies, features,
         <div className="flex gap-3">
           {links.demo && (
             <Button
+              variant="primary"
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
             >
               <Play className="w-4 h-4 mr-2" />
               Demo
             </Button>
           )}
           {links.github && (
-            <Button size="sm" variant="outline" className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10">
+            <Button size="sm" variant="ghost">
               <Github className="w-4 h-4 mr-2" />
               Code
             </Button>
           )}
           {links.live && (
-            <Button size="sm" variant="outline" className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10">
+            <Button size="sm" variant="ghost">
               <ExternalLink className="w-4 h-4 mr-2" />
               Live
             </Button>

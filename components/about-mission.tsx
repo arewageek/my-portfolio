@@ -50,12 +50,7 @@ export function AboutMission() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8"
-      style={{
-        background: `
-          linear-gradient(135deg, #0f0f23 0%, #1a0b2e 50%, #0f0f23 100%)
-        `,
-      }}
+      className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black"
     >
       <div className="max-w-6xl mx-auto">
         <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
@@ -63,27 +58,30 @@ export function AboutMission() {
           <div className="text-center space-y-8">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
               My{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="text-pink-400">
                 Mission
               </span>
             </h2>
 
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+            <div className="text-xl sm:text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+              <div className="text-6xl font-bold font-serif">
+                "
+              </div>
               I build decentralized systems that real people actually want to use—designed to scale easily as they grow.
-            </p>
+            </div>
 
             <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-400 leading-relaxed">
               <p>
                 Too many blockchain projects are built for the technology first and the users second. I do the opposite.
               </p>
-              <p>
+              {/* <p>
                 Every smart contract, interface, and system I build starts with one question: “How can we make this feel natural?”
-              </p>
+              </p> */}
             </div>
           </div>
 
           {/* Principles grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {principles.map((principle, index) => (
               <div
                 key={index}
@@ -101,7 +99,7 @@ export function AboutMission() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

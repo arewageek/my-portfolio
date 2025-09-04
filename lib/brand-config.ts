@@ -4,11 +4,11 @@ export const brandConfig = {
   // Personal Information
   name: "Arewa Geek",
   fullName: "Arewa Geek",
-  title: "Fullstack Blockchain Engineer",
+  title: "Full-stack Engineer",
   subtitle: "Building the future of Web3",
   tagline: "Where we're going, we won't need wallets",
   location: "Nigeria",
-  email: "hello@arewaofweb3.dev",
+  email: "arewageek@gmail.com",
 
   // Social Links
   socials: [
@@ -34,7 +34,7 @@ export const brandConfig = {
         "hover:text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400/30",
     },
     {
-      href: "@arewaofweb3",
+      href: "mailto:arewageek@gmail.com",
       label: "Email",
       icon: Mail,
       color:
@@ -60,7 +60,7 @@ export const brandConfig = {
       primary: "Explore My Work",
       secondary: "Let's Connect",
     },
-    status: "Available for ambitious projects",
+    status: "Available for new projects",
   },
 
   // About Page
@@ -796,7 +796,7 @@ export const brandConfig = {
 
   // Global Stats
   stats: {
-    experience: `${new Date().getFullYear() - 2020}+`,
+    experience: `${Math.floor((new Date().getFullYear() - 2018) / 5) * 5}+`,
     projects: "50+",
     users: "200K+",
     tvl: "$50M+",
@@ -815,14 +815,14 @@ export const brandConfig = {
       { name: "NFT Development", level: 88 },
       { name: "Cross-chain", level: 85 },
     ],
-    ai: [
-      { name: "OpenAI API", level: 95 },
-      { name: "LangChain", level: 90 },
-      { name: "Vector Databases", level: 88 },
-      { name: "TensorFlow", level: 82 },
-      { name: "Hugging Face", level: 85 },
-      { name: "AI Agents", level: 87 },
-    ],
+    // ai: [
+    //   { name: "OpenAI API", level: 95 },
+    //   { name: "LangChain", level: 90 },
+    //   { name: "Vector Databases", level: 88 },
+    //   { name: "TensorFlow", level: 82 },
+    //   { name: "Hugging Face", level: 85 },
+    //   { name: "AI Agents", level: 87 },
+    // ],
     frontend: [
       { name: "React", level: 96 },
       { name: "Next.js", level: 94 },
@@ -874,11 +874,11 @@ export const brandConfig = {
     },
     {
       title: "Farm Ledger",
-      category: "Supplychain",
+      category: "DeFi",
       description:
         "Developed a blockchain-powered agricultural supply chain management system to ensure end-to-end transparency and traceability of food products. The system tracks the quality and movement of items from production through processing and distribution, providing consumers with verifiable data on sourcing, handling, and authenticity.",
       image: "farmledger.png",
-      technologies: ["Solidity", "Next JS"],
+      technologies: ["Solidity", "Hardhat", "Next JS", "Wagmi"],
       metrics: { credentials: "100K+", privacy: "100%", uptime: "99.9%" },
       status: "Live",
       links: {
@@ -893,7 +893,7 @@ export const brandConfig = {
       description:
         "Developed a user-friendly video conferencing platform that simplifies virtual communication. The platform enables seamless meeting scheduling, instant joining, and session recording, ensuring an effortless and efficient collaboration experience.",
       image: "talqq.png",
-      technologies: ["Next JS"],
+      technologies: ["Next JS", "Clerk", "Streams SDK"],
       metrics: { scanned: "10K+", accuracy: "95%", savings: "40%" },
       status: "Live",
       links: {
@@ -907,7 +907,7 @@ export const brandConfig = {
       description:
         "Built a Web3 wallet contract with multi-signature support, adding an extra layer of security by requiring multiple approvals for transactions. This ensures better control over funds and reduces the risk of unauthorized access.",
       image: "proxysign.png",
-      technologies: ["Solidity"],
+      technologies: ["Solidity", "Hardhat"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Live",
       links: { demo: "", github: "https://github.com/arewageek/proxysign" },
@@ -918,7 +918,7 @@ export const brandConfig = {
       description:
         "A freelance platform that makes global payments easy and secure for both freelancers and clients, with a simple, user-friendly experience at its core. Building on the Base Blockchain",
       image: "paysilo.png",
-      technologies: ["Solidity", "Next JS"],
+      technologies: ["Solidity", "Foundry", "Next JS"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Dev",
       links: { demo: "https://paysilohq.vercel.app", github: "" },
@@ -928,7 +928,7 @@ export const brandConfig = {
       category: "E-Commerce",
       description: "A food ordering app designed for in local restaurants",
       image: "633-kitchen.png",
-      technologies: ["Next JS"],
+      technologies: ["Next JS", "Paystack", "Clerk"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Beta",
       links: { demo: "https://633-kitchen.vercel.app", github: "" },
@@ -948,7 +948,7 @@ export const brandConfig = {
       category: "NFT",
       description: "Landing page for The Sui wizard - The WHIZ",
       image: "thewhizsui.png",
-      technologies: ["Next JS"],
+      technologies: ["Next JS", "Tailwind CSS"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Live",
       links: { demo: "https://www.thewhizsui.xyz", github: "" },
@@ -958,7 +958,7 @@ export const brandConfig = {
       category: "E-COmmerce",
       description: "An app that lets people create and manage stores",
       image: "pricetag.png",
-      technologies: ["React"],
+      technologies: ["React", "Motion SDK", "TailwindCSS"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Dev",
       links: { demo: "#", github: "" },
@@ -994,7 +994,7 @@ export const brandConfig = {
       description:
         "A sports network that helps users track betting tickets across multiple platforms using an AI agent, connect with fellow enthusiasts, make predictions, and access the latest sports news through an AI-powered search engine",
       image: "whoscore.png",
-      technologies: ["Next JS"],
+      technologies: ["Next JS", "Motion SDK"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Live",
       links: {
@@ -1003,5 +1003,5 @@ export const brandConfig = {
       },
     },
   ],
-  meetingLink: "#",
+  calendar: "https://calendar.app.google/kxuj3jZRMry5AiZr9",
 };
