@@ -5,6 +5,7 @@ import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Preloader from "@/components/preloader"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -26,6 +27,11 @@ export default function RootLayout({
         <Navigation />
         <main className="relative z-10">{children}</main>
         <Footer />
+
+        <Script
+          src="//code.tidio.co/djigl1juhhik9frwz95ibypmds77jeky.js"
+          async
+        />
       </body>
     </html>
   )
