@@ -726,26 +726,27 @@ export const brandConfig = {
     },
 
     {
-      id: "whoscore",
-      name: "Whoscore",
-      role: "Fullstack Engineer",
+      id: "goviral",
+      name: "Go Viral Africa",
+      role: "Frontend Engineer",
       period: "Aug 2025 - Present",
       location: "Remote",
       type: "Full-Time",
       logo: "",
       status: "current",
       description:
-        "At Whoscore, I design and build user interfaces for an AI-powered sports network, including the search flow and Livescore page.",
+        "At Go Viral Africa, I build and maintain the frontend for two products: Whoscore, an AI-powered sports network, and Monei, an AI agent for simple and smart financial management.",
       achievements: [],
-      technologies: ["React", "Next.js", "TailwindCss"],
+      technologies: ["React", "Next.js", "TailwindCss", "Axios"],
       projectCount: 4,
       overview: {
         description:
-          "At Whoscore, I design and build user interfaces for an AI-powered sports network, including the search flow and Livescore page.",
+          "At Go Viral Africa, I build and maintain the frontend for two products: Whoscore, an AI-powered sports network, and Monei, an AI agent for simple and smart financial management.",
         responsibilities: [
-          "Designed the frontend for the entire search flow, including the search page, hot trends, highlights, and search results page.",
-          "Created the desktop mode for the Livescore page, improving usability and accessibility across devices.",
-          "Collaborate with the team to enhance user experience, engagement, and platform scalability.",
+          "Built and refined the full search flow for Whoscore, including the search page, hot trends, highlights, and results page.",
+          "Designed the desktop experience for the Livescore page to improve usability across devices.",
+          "Developed core frontend features for Monei, focusing on wallet access, portfolio views, peer-to-peer flows, and smart automations.",
+          "Collaborate with product and engineering teams to improve user experience, performance, and overall platform reliability."
         ],
         impact: "",
       },
