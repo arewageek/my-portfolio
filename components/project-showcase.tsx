@@ -1,21 +1,37 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Github, ExternalLink, Play, Star, TrendingUp, Users, Calendar, ArrowRight, Filter, Grid3X3, List, Plus, Sparkles } from "lucide-react"
+import { Github, ExternalLink, Play, Star, TrendingUp, Users, Calendar, Grid3X3, List, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { brandConfig } from "@/lib/brand-config"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 import { usePathname } from "next/navigation"
 
 type ViewMode = 'grid' | 'list'
 
+export interface Project {
+    id: string
+    title: string
+    category: string
+    description: string | null
+    image: string
+    status: string
+    technologies: string[]
+    links: {
+        demo: string | null
+        github: string | null
+        live?: string | null
+    } | null
+    metrics?: any | null
+}
+
 interface ProjectShowcaseProps {
+    projects: Project[]
     showLoadMore?: boolean
     showHeader?: boolean
 }
 
-export function ProjectShowcase({ showLoadMore = true, showHeader = true }: ProjectShowcaseProps) {
+export function ProjectShowcase({ projects, showLoadMore = true, showHeader = true }: ProjectShowcaseProps) {
     const [isVisible, setIsVisible] = useState(false)
     const [activeFilter, setActiveFilter] = useState("All")
     const [viewMode, setViewMode] = useState<ViewMode>('grid')
@@ -44,8 +60,8 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
 
     const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce", "AI"]
     const allFilteredProjects = activeFilter === "All"
-        ? brandConfig.projects
-        : brandConfig.projects.filter((p) => p.category === activeFilter)
+        ? projects
+        : projects.filter((p) => p.category === activeFilter)
 
     const filteredProjects = isHomePage && showLoadMore
         ? allFilteredProjects.slice(0, visibleCount)
@@ -88,7 +104,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
         }
     }
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -99,7 +115,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
         }
     }
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: {
             opacity: 0,
             y: 30,
@@ -110,7 +126,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
             y: 0,
             scale: 1,
             transition: {
-                type: "spring",
+                type: "spring" as const,
                 stiffness: 100,
                 damping: 15
             }
@@ -137,7 +153,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                             <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 animate-pulse" />
                             Featured Projects
                             <div className="ml-3 px-2 py-1 bg-purple-500/20 rounded-full text-xs">
-                                {brandConfig.projects.length}
+                                {projects.length}
                             </div>
                         </div>
 
@@ -155,7 +171,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                         {/* Stats */}
                         <div className="flex justify-center gap-8 mb-12">
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-white">{brandConfig.projects.length}+</div>
+                                <div className="text-2xl font-bold text-white">{projects.length}+</div>
                                 <div className="text-sm text-gray-400">Projects</div>
                             </div>
                             <div className="text-center">
@@ -164,7 +180,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl font-bold text-white">
-                                    {brandConfig.projects.filter(p => p.status === 'Live').length}
+                                    {projects.filter(p => p.status?.toLowerCase() === 'live').length}
                                 </div>
                                 <div className="text-sm text-gray-400">Live</div>
                             </div>
@@ -265,7 +281,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                                         {/* Project Image */}
                                         <div className="relative h-48 lg:h-56 bg-gradient-to-br from-purple-500/20 to-pink-500/20 overflow-hidden">
                                             <img
-                                                src={`/projects/${project.image}` || "/placeholder.svg"}
+                                                src={`${project.image}` || "/placeholder.svg"}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                             />
@@ -276,7 +292,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
 
                                             {/* Quick Actions */}
                                             <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                                                {project.links.demo && (
+                                                {project.links?.demo && (
                                                     <Button
                                                         size="sm"
                                                         asChild
@@ -288,7 +304,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                                                         </Link>
                                                     </Button>
                                                 )}
-                                                {project.links.github && (
+                                                {project.links?.github && (
                                                     <Button
                                                         size="sm"
                                                         asChild
@@ -366,7 +382,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                                                 {/* Hover Overlay with Quick Actions */}
                                                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-4">
                                                     <div className="flex gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                                        {project.links.demo && (
+                                                        {project.links?.demo && (
                                                             <Button
                                                                 size="sm"
                                                                 asChild
@@ -378,7 +394,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                                                                 </Link>
                                                             </Button>
                                                         )}
-                                                        {project.links.github && (
+                                                        {project.links?.github && (
                                                             <Button
                                                                 size="sm"
                                                                 asChild
@@ -433,7 +449,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
 
                                                 {/* Action Buttons */}
                                                 <div className="flex gap-3 pt-2">
-                                                    {project.links.demo && (
+                                                    {project.links?.demo && (
                                                         <Button
                                                             asChild
                                                             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-0.5 px-6 py-2.5 text-sm font-medium"
@@ -444,7 +460,7 @@ export function ProjectShowcase({ showLoadMore = true, showHeader = true }: Proj
                                                             </Link>
                                                         </Button>
                                                     )}
-                                                    {project.links.github && (
+                                                    {project.links?.github && (
                                                         <Button
                                                             asChild
                                                             variant="outline"
