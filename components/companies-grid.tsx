@@ -4,10 +4,24 @@ import { useState, useRef, useEffect } from "react"
 import { ArrowRight, Briefcase, Calendar, MapPin, Rocket, Building2, Users, TrendingUp, Award, ChevronRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { brandConfig } from "@/lib/brand-config"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 
-export function CompaniesGrid() {
+export interface Company {
+  id: string
+  name: string
+  role: string
+  period: string
+  location: string
+  type: string
+  description: string
+  technologies: string[]
+}
+
+interface CompaniesGridProps {
+  companies: Company[]
+}
+
+export function CompaniesGrid({ companies }: CompaniesGridProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredCompany, setHoveredCompany] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState<'timeline' | 'grid'>('timeline')
@@ -30,9 +44,7 @@ export function CompaniesGrid() {
     return () => observer.disconnect()
   }, [])
 
-  const companies = [...brandConfig.companies].reverse()
-
-  const getCompanyIcon = (type: string) => {
+  const getCompanyIcon = (type: string = '') => {
     switch (type.toLowerCase()) {
       case 'startup':
         return <Rocket className="w-5 h-5" />
@@ -45,7 +57,7 @@ export function CompaniesGrid() {
     }
   }
 
-  const getTypeColor = (type: string) => {
+  const getTypeColor = (type: string = '') => {
     switch (type.toLowerCase()) {
       case 'startup':
         return 'from-emerald-500 to-green-500'
@@ -58,7 +70,7 @@ export function CompaniesGrid() {
     }
   }
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -69,7 +81,7 @@ export function CompaniesGrid() {
     }
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 40,
@@ -80,7 +92,7 @@ export function CompaniesGrid() {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 15
       }
@@ -180,7 +192,7 @@ export function CompaniesGrid() {
                 <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500 opacity-30" />
 
                 <div className="space-y-8 sm:space-y-12">
-                  {companies.map((company, index) => (
+                  {companies.toReversed().map((company, index) => (
                     <motion.div
                       key={company.id}
                       variants={itemVariants}
@@ -372,63 +384,6 @@ export function CompaniesGrid() {
             )}
           </motion.div>
         </AnimatePresence>
-
-        {/* Integrated Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 sm:mt-20 lg:mt-24"
-        >
-          <div className="relative">
-            {/* Background gradient that blends with the page */}
-            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-purple-900/5 to-transparent rounded-3xl" />
-
-            <div className="relative border border-purple-500/20 rounded-3xl p-8 sm:p-12 backdrop-blur-sm">
-              <div className="text-center space-y-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl mb-2">
-                  <Sparkles className="w-8 h-8 text-purple-400" />
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                    Let's Build Something{" "}
-                    <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                      Amazing
-                    </span>
-                  </h3>
-                  <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-                    Ready to bring your vision to life? Let's discuss how my experience across these companies can help drive your next project to success.
-                  </p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5 group"
-                  >
-                    <Link href="/contact">
-                      Start a Conversation
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                    </Link>
-                  </Button>
-
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 backdrop-blur-sm hover:border-purple-400 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:-translate-y-0.5"
-                  >
-                    <Link href="/projects">
-                      View My Work
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
