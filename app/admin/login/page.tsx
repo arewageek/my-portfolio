@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useActionState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Eye, EyeOff, Lock, Mail, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,26 +11,28 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { brandConfig } from "@/lib/brand-config";
+import { loginAction } from "./actions";
+import { toast } from "sonner";
 
 export default function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setLoading(false);
-    // Handle login logic here
-  };
+  const [state, formAction, isPending] = useActionState(loginAction, null);
+
+  useEffect(() => {
+    if (state?.success) {
+      toast.success("Login successful! Redirecting...");
+      router.push("/admin");
+    } else if (state?.error) {
+      toast.error(state.error || "Failed to login you in");
+    }
+  }, [state, router]);
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-background relative overflow-hidden">
@@ -88,7 +90,7 @@ export default function AdminLogin() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action={formAction} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-muted-foreground/80">
                   Email
@@ -97,6 +99,7 @@ export default function AdminLogin() {
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground group-focus-within:text-purple-500 transition-colors" />
                   <Input
                     id="email"
+                    name="email"
                     placeholder="admin@example.com"
                     type="email"
                     value={email}
@@ -119,6 +122,7 @@ export default function AdminLogin() {
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground group-focus-within:text-purple-500 transition-colors" />
                   <Input
                     id="password"
+                    name="password"
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -143,10 +147,10 @@ export default function AdminLogin() {
               <Button
                 type="submit"
                 className="w-full h-11 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/25 transition-all hover:scale-[1.02] hover:shadow-purple-500/40 relative overflow-hidden group"
-                disabled={loading}
+                disabled={isPending}
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  {loading ? (
+                  {isPending ? (
                     "Signing in..."
                   ) : (
                     <>
