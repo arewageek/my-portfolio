@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Preloader from "@/components/preloader"
 import Script from "next/script"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -27,6 +28,8 @@ export default function RootLayout({
         <Navigation />
         <main className="relative z-10">{children}</main>
         <Footer />
+
+        <Toaster />
 
         <Script
           src="//code.tidio.co/djigl1juhhik9frwz95ibypmds77jeky.js"
