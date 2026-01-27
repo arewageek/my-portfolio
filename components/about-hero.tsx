@@ -29,7 +29,7 @@ export function AboutHero() {
           {/* Left side - Text */}
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-gray-900/50 border border-gray-800 rounded-full text-gray-300 text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 bg-secondary/50 border border-white/10 rounded-full text-gray-300 text-sm font-medium">
                 👋 Nice to meet you
               </div>
 
@@ -46,7 +46,7 @@ export function AboutHero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <div className="flex items-center space-x-3 px-6 py-3 bg-gray-900/30 border border-purple-500/30 rounded-2xl">
+              <div className="flex items-center space-x-3 px-6 py-3 bg-secondary/30 border border-purple-500/30 rounded-2xl">
                 <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse" />
                 <span className="text-white font-medium">Available for projects</span>
               </div>

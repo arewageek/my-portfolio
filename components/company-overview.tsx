@@ -86,7 +86,7 @@ export function CompanyOverview({ company }: CompanyOverviewProps) {
               {company.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full font-medium"
+                  className="px-4 py-2 bg-secondary text-purple-300 border border-purple-500/30 rounded-full font-medium"
                 >
                   {tech}
                 </span>

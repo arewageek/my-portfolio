@@ -136,9 +136,9 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
     return (
         <section ref={sectionRef} className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10" />
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/10 via-transparent to-zinc-900/10" />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl opacity-20" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl opacity-20" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header Section - Conditionally rendered */}
@@ -327,7 +327,7 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                                                     <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 line-clamp-1">
                                                         {project.title}
                                                     </h3>
-                                                    <span className="px-2 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium whitespace-nowrap">
+                                                    <span className="px-2 py-1 bg-secondary text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium whitespace-nowrap">
                                                         {project.category}
                                                     </span>
                                                 </div>
@@ -439,7 +439,7 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                                                         {project.technologies.map((tech, techIndex) => (
                                                             <span
                                                                 key={techIndex}
-                                                                className="px-3 py-1.5 bg-gradient-to-r from-white/5 to-white/10 text-gray-300 border border-white/10 rounded-xl text-sm font-medium backdrop-blur-sm hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 hover:border-purple-500/30 hover:text-purple-300 hover:scale-105 transition-all duration-200 cursor-default"
+                                                                className="px-3 py-1.5 bg-secondary text-gray-300 border border-white/10 rounded-xl text-sm font-medium backdrop-blur-sm hover:bg-secondary/80 hover:border-purple-500/30 hover:text-purple-300 hover:scale-105 transition-all duration-200 cursor-default"
                                                             >
                                                                 {tech}
                                                             </span>

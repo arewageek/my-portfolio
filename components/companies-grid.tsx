@@ -102,9 +102,9 @@ export function CompaniesGrid({ companies }: CompaniesGridProps) {
   return (
     <section ref={sectionRef} className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10" />
-      <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/10 via-transparent to-zinc-900/10" />
+      <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl opacity-20" />
+      <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl opacity-20" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
@@ -117,7 +117,7 @@ export function CompaniesGrid({ companies }: CompaniesGridProps) {
           {/* <div className="inline-flex items-center px-6 py-3 glass-card rounded-full text-purple-300 text-sm font-medium mb-8 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
             <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 animate-pulse" />
             Professional Journey
-            <div className="ml-3 px-2 py-1 bg-purple-500/20 rounded-full text-xs">
+            <div className="ml-3 px-2 py-1 bg-secondary rounded-full text-xs">
               {companies.length} Companies
             </div>
           </div> */}

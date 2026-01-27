@@ -47,46 +47,53 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pb-24"
-      style={{
-        background: `
-          radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
-          linear-gradient(135deg, #000000 0%, #0a0a0f 100%)
-        `,
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-24 pb-16 lg:pb-24 bg-black"
     >
+      <div className="absolute inset-0 bg-grain opacity-20" />
+      
+      {/* Premium dark gradient background */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 30%),
+            linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 100%)
+          `
+        }}
+      />
+
       {/* Minimal geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Top left triangle */}
         <div
           className="absolute top-20 left-10 w-32 h-32 opacity-5"
           style={{
-            background: "linear-gradient(45deg, #8b5cf6, transparent)",
+            background: "linear-gradient(45deg, #27272a, transparent)",
             clipPath: "polygon(0 0, 100% 0, 0 100%)",
             animation: "gentleFloat 12s ease-in-out infinite",
           }}
         />
-
+        
         {/* Bottom right circle */}
         <div
-          className="absolute bottom-20 right-16 w-24 h-24 rounded-full bg-gradient-to-r from-pink-500/5 to-purple-500/5 blur-sm"
+          className="absolute bottom-20 right-16 w-24 h-24 rounded-full bg-gradient-to-r from-zinc-800/10 to-zinc-700/10 blur-sm"
           style={{ animation: "gentleFloat 10s ease-in-out infinite reverse" }}
         />
 
         {/* Center diamond */}
         <div
-          className="absolute top-1/3 right-1/4 w-16 h-16 opacity-10 rotate-45 bg-gradient-to-br from-purple-400/20 to-pink-400/20"
+          className="absolute top-1/3 right-1/4 w-16 h-16 opacity-5 rotate-45 bg-gradient-to-br from-zinc-800 to-zinc-900"
           style={{ animation: "gentleFloat 8s ease-in-out infinite" }}
         />
 
         {/* Subtle grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.02]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
           }}
@@ -96,7 +103,7 @@ export function HeroSection() {
       {/* Simplified floating orbs - more subtle */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <div
-          className="absolute top-1/4 left-1/4 w-48 h-48 lg:w-64 lg:h-64 bg-purple-500/8 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-48 h-48 lg:w-64 lg:h-64 bg-purple-900/5 rounded-full blur-3xl"
           style={{
             transform: shouldApplyMouseEffects()
               ? `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`
@@ -105,7 +112,7 @@ export function HeroSection() {
           }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-40 h-40 lg:w-48 lg:h-48 bg-pink-500/8 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-40 h-40 lg:w-48 lg:h-48 bg-pink-900/5 rounded-full blur-3xl"
           style={{
             transform: shouldApplyMouseEffects()
               ? `translate(${mousePosition.x * -0.2}px, ${mousePosition.y * -0.2}px)`

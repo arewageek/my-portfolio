@@ -19,7 +19,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="relative bg-black border-t border-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-black border-t border-white/10 py-16 px-4 sm:px-6 lg:px-8">
       {/* Subtle accent line */}
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-pink-400"></div>
 
@@ -64,7 +64,7 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  className="p-3 rounded-xl bg-gray-900/30 border border-gray-800 hover:border-pink-400/30 hover:bg-gray-900/50 transition-all duration-300 hover:scale-110 hover:-translate-y-1 group"
+                  className="p-3 rounded-xl bg-secondary/30 border border-white/10 hover:border-pink-400/30 hover:bg-secondary/50 transition-all duration-300 hover:scale-110 hover:-translate-y-1 group"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-all duration-300 group-hover:rotate-6" />

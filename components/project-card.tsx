@@ -17,7 +17,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, description, image, technologies, features, links }: ProjectCardProps) {
   return (
-    <div className="group bg-slate-800/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-[1.02]">
+    <div className="group bg-card/50 rounded-xl overflow-hidden border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-[1.02]">
       <div className="relative overflow-hidden">
         <img
           src={image || "/placeholder.svg"}
@@ -52,7 +52,7 @@ export function ProjectCard({ title, description, image, technologies, features,
               <Badge
                 key={index}
                 variant="secondary"
-                className="bg-purple-500/20 text-purple-300 border-purple-500/30 text-xs"
+                className="bg-secondary text-purple-300 border-purple-500/30 text-xs"
               >
                 {tech}
               </Badge>

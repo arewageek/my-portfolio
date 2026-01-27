@@ -49,7 +49,7 @@ export function ExperienceCard({
             <h4 className="text-white font-semibold mb-3">Technologies:</h4>
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech, i) => (
-                <Badge key={i} variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30">
+                <Badge key={i} variant="secondary" className="bg-secondary text-purple-300 border-purple-500/30">
                   {tech}
                 </Badge>
               ))}
