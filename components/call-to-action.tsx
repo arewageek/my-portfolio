@@ -53,37 +53,25 @@ export function CallToAction() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 lg:px-8 overflow-hidden"
+      className="relative py-32 px-6 lg:px-8 overflow-hidden bg-black"
       style={{
         background: `
-          radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
-          radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 70%),
-          linear-gradient(135deg, #000000 0%, #1a0b2e 50%, #000000 100%)
+          radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 70%)
         `,
       }}
     >
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"
+          className="absolute top-20 left-20 w-64 h-64 bg-primary/5 rounded-full blur-[100px]"
           style={{
             transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px)`,
-            animation: "gentleFloat 8s ease-in-out infinite",
           }}
         />
         <div
-          className="absolute bottom-20 right-20 w-40 h-40 bg-pink-500/10 rounded-full blur-2xl"
+          className="absolute bottom-20 right-20 w-80 h-80 bg-white/5 rounded-full blur-[120px]"
           style={{
             transform: `translate(${mousePosition.x * -0.3}px, ${mousePosition.y * -0.3}px)`,
-            animation: "gentleFloat 10s ease-in-out infinite reverse",
-          }}
-        />
-        <div
-          className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-xl"
-          style={{
-            transform: `translate(-50%, -50%) translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px)`,
-            animation: "gentleFloat 12s ease-in-out infinite",
           }}
         />
       </div>
@@ -91,54 +79,22 @@ export function CallToAction() {
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Badge */}
-          <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium shadow-lg shadow-purple-500/10">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Ready to transform your vision?
+          <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+            Contact
           </div>
 
           {/* Main Headline */}
-          <div className="space-y-6">
-            <h2 className="text-6xl lg:text-8xl font-black text-white leading-tight">
-              Let's Build{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-                Something
-              </span>
-            </h2>
-            <h2 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-pink-400 via-purple-400 to-pink-600 bg-clip-text text-transparent leading-tight">
-              Big
+          <div className="space-y-4">
+            <h2 className="text-6xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter uppercase">
+              Start a
+              <span className="block text-primary">Project</span>
             </h2>
           </div>
 
           {/* Description */}
-          <p className="text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-            Your blockchain vision deserves more than ordinary execution. Let's create a solution that doesn't just
-            work—it <span className="text-purple-400 font-semibold">transforms industries</span> and{" "}
-            <span className="text-pink-400 font-semibold">delights users</span>.
+          <p className="text-xl lg:text-2xl text-white/60 leading-relaxed max-w-3xl mx-auto italic">
+            I help teams build modern, secure, and user-friendly web and blockchain applications.
           </p>
-
-          {/* Achievement Stats */}
-          {/* <div
-            className={`grid md:grid-cols-4 gap-8 py-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-            style={{ animationDelay: "300ms" }}
-          >
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="group p-6 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl hover:border-purple-500/30 transition-all duration-500 hover:transform hover:scale-105"
-                style={{ animation: `gentleFloat 6s ease-in-out infinite ${index * 0.5}s` }}
-              >
-                <div className="space-y-4">
-                  <div className="p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
-                    <achievement.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-black text-white mb-1">{achievement.label}</div>
-                    <div className="text-purple-400 font-medium text-sm">{achievement.value}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div> */}
 
           {/* CTA Buttons */}
           <div
@@ -149,9 +105,9 @@ export function CallToAction() {
               <Button
                 variant="primary"
                 size="xl"
-                className="px-16 py-6 text-xl font-bold"
+                className="px-16 py-6 text-xl font-black uppercase tracking-widest rounded-none border-none"
               >
-                Schedule Call
+                Schedule a Call
                 <Calendar className="w-6 h-6 ml-3" />
               </Button>
             </Link>
@@ -159,23 +115,23 @@ export function CallToAction() {
               <Button
                 variant="outline"
                 size="xl"
-                className="px-16 py-6 text-2xl font-bold"
+                className="px-16 py-6 text-xl font-black uppercase tracking-widest rounded-none border-white/10 text-white/40 hover:text-white"
               >
-                View My Work
+                My Projects
               </Button>
             </Link>
           </div>
 
           {/* Bottom Message */}
-          {/* <div
+          <div
             className={`pt-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "900ms" }}
           >
-            <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-500/30 rounded-full text-green-300 text-lg font-medium shadow-lg shadow-green-500/10">
-              <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse" />
-              Available for new projects • Response within 24 hours
+            <div className="inline-flex items-center px-6 py-3 bg-white/5 border border-white/10 rounded-none text-white/30 text-[10px] uppercase font-bold tracking-[0.4em]">
+              <div className="w-2 h-2 bg-primary rounded-none mr-4 animate-pulse shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
+              Available for new projects globally
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 

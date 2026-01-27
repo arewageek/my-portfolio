@@ -37,8 +37,9 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 lg:py-6">
-          <Link href="/" className="text-2xl font-bold group">
-            <span className="text-white transition-all duration-300 group-hover:text-pink-400">
+          <Link href="/" className="text-xl font-bold tracking-tighter group flex items-center gap-2">
+            <div className="w-6 h-6 bg-primary rounded-none animate-pulse" />
+            <span className="text-white uppercase transition-all duration-300">
               {brandConfig.name}
             </span>
           </Link>
@@ -49,12 +50,12 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide group ${pathname === item.href ? "text-white" : ""
+                className={`relative text-[10px] uppercase font-bold tracking-[0.3em] transition-all duration-300 group ${pathname === item.href ? "text-primary" : "text-white/40 hover:text-white"
                   }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-pink-400 transition-all duration-300 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                  className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-500 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                 />
               </Link>
@@ -65,16 +66,16 @@ export function Navigation() {
             <Button
               variant="ghost"
               asChild
+              className="rounded-none text-white/40 hover:text-white uppercase tracking-widest text-[10px] font-bold"
             >
               <Link href="resume/arewageek.pdf" download="arewageek.pdf" target="_blank">
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-3 h-3 mr-2" />
                 Resume
               </Link>
             </Button>
-            <Button variant="primary" asChild>
-              <Link href="/contact">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Hire Me
+            <Button variant="primary" asChild size="sm" className="rounded-none px-6">
+              <Link href="/contact" className="text-[10px] uppercase font-bold tracking-widest">
+                Connect
               </Link>
             </Button>
           </div>
@@ -85,22 +86,22 @@ export function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white"
+              className="text-white/40 hover:text-white"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-black/98 backdrop-blur-2xl border-b border-gray-800 animate-fade-in-up">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-3xl border-b border-white/5 animate-fade-in-up">
             <div className="px-6 py-8 space-y-6">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block text-xl transition-colors duration-300 ${pathname === item.href ? "text-white" : "text-gray-300 hover:text-white"
+                  className={`block text-xs uppercase tracking-[0.3em] font-black transition-colors duration-300 ${pathname === item.href ? "text-primary" : "text-white/40 hover:text-white"
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -108,16 +109,8 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="pt-6 space-y-4">
-                <Button
-                  variant="ghost"
-                  className="w-full"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
-                </Button>
-                <Button variant="primary" className="w-full">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Hire Me
+                <Button variant="primary" className="w-full rounded-none uppercase tracking-widest text-[10px] font-bold h-12">
+                   Initiate Engagement
                 </Button>
               </div>
             </div>
