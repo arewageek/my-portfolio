@@ -55,20 +55,20 @@ export const brandConfig = {
   hero: {
     greeting: "Hello, I'm",
     description:
-      "I build decentralized apps and protocols that feel simple and smooth. Because Web3 should be easy to use—not unnecessarily complex.",
+      "I build decentralized apps and protocols that feel simple and focus on user experience. Web3 doesn't have to be complicated.",
     cta: {
-      primary: "Explore My Work",
-      secondary: "Let's Connect",
+      primary: "My Work",
+      secondary: "Contact Me",
     },
-    status: "Available for new projects",
+    status: "Available now",
   },
 
   // About Page
   about: {
     intro:
-      "A blockchain engineer who believes the best technology is the kind you don’t even realize you’re using.",
+      "A software engineer building web and blockchain applications with a focus on simplicity and quality.",
     mission:
-      "I build decentralized systems that real people actually want to use—designed from the ground up to scale effortlessly as they grow.",
+      "I build decentralized systems that people actually enjoy using.",
     story: [
       "I got into blockchain not because of the hype, but because I was fascinated by the idea of building systems that don't need a middleman to work.",
       "Most blockchain apps feel like they were built by engineers for engineers. I think that's backwards. The best technology is the kind you don't even notice you're using.",
@@ -206,14 +206,12 @@ export const brandConfig = {
       projectCount: 1,
       overview: {
         description:
-          "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
+          "Co-founded a laundry service company in college with a subscription model.",
         responsibilities: [
-          "Developed a comprehensive web application, improving user experience and operational efficiency.",
-          "Integrated subscription services into the web application, enabling customers to easily manage recurring services and payments.",
-          "Educated users on the features and functionalities of the web application, ensuring smooth adoption and enhancing customer satisfaction.",
+          "Developed a web app that improved user experience and work efficiency.",
+          "Built a subscription system to help customers manage recurring payments.",
+          "Guided users on how to use the app to ensure smooth adoption.",
         ],
-        // impact:
-        //   "Led the company's transition from a traditional DeFi protocol to an AI-powered platform, resulting in 300% user growth and $25M+ in managed assets.",
       },
       projects: [
         //   {
