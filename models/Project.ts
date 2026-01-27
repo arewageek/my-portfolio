@@ -3,7 +3,7 @@ import mongoose, { Schema, Model, models } from "mongoose";
 
 export interface IBackEndProject {
   title: string;
-  category: string;
+  category: string | mongoose.Types.ObjectId | any;
   description?: string;
   image: string;
   status: string;
@@ -22,7 +22,7 @@ export interface IBackEndProject {
 const ProjectSchema = new Schema<IBackEndProject>(
   {
     title: { type: String, required: true },
-    category: { type: String, required: true },
+    category: { type: Schema.Types.ObjectId, ref: "Category", required: true },
     description: String,
     image: { type: String, required: true },
     status: { type: String, required: true },
