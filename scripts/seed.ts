@@ -31,7 +31,6 @@ async function seed() {
       slug: company.id,
       name: company.name,
       role: company.role,
-      period: company.period,
       location: company.location,
       type: company.type,
       logo: company.logo,
@@ -42,6 +41,8 @@ async function seed() {
       responsibilities: (company as any).responsibilities,
       impact: (company as any).impact,
       overview: (company as any).overview,
+      started: (company as any).started,
+      stopped: (company as any).stopped,
     });
     companiesMap.set(company.id, created._id);
     console.log(`Created company: ${company.name}`);
