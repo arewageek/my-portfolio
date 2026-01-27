@@ -70,44 +70,45 @@ export function ProjectCategories() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-12 lg:mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-6 lg:mb-8 leading-tight">
-            Project{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-              Categories
-            </span>
-          </h2>
-          <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Explore different types of blockchain solutions I've built across various domains
-          </p>
+        <div className={`text-center mb-16 lg:mb-24 space-y-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Categories
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+              Project
+              <span className="block text-primary">Types</span>
+            </h2>
+            <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto italic font-light">
+                Exploring the different industries and solutions I've built for.
+            </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => (
             <div
               key={index}
-              className={`group p-6 lg:p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl lg:rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 ${
+              className={`group p-8 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500 ${
                 isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
-              style={{ animationDelay: `${index * 100}ms` }} // Reduced delay
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="space-y-4 lg:space-y-6">
+              <div className="space-y-8">
                 <div
-                  className={`p-3 lg:p-4 bg-gradient-to-r ${category.gradient} rounded-xl lg:rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300`}
+                  className={`p-4 bg-primary rounded-none w-fit group-hover:scale-110 transition-transform duration-500 shadow-[0_0_15px_rgba(0,255,255,0.3)]`}
                 >
-                  <category.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                  <category.icon className="w-8 h-8 text-black" />
                 </div>
 
-                <div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 lg:mb-3 group-hover:text-purple-300 transition-colors duration-300">
+                <div className="space-y-4">
+                  <h3 className="text-xl lg:text-2xl font-black text-white uppercase tracking-tighter group-hover:text-primary transition-colors">
                     {category.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed mb-3 lg:mb-4 text-sm lg:text-base">
+                  <p className="text-white/40 text-sm lg:text-base italic font-light leading-relaxed">
                     {category.description}
                   </p>
-                  <div className="text-purple-400 font-semibold text-sm">{category.count}</div>
+                  <div className="text-primary font-black text-[9px] uppercase tracking-widest">{category.count}</div>
                 </div>
               </div>
             </div>

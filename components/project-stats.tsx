@@ -73,46 +73,44 @@ export function ProjectStats() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 lg:px-8"
-      style={{
-        background: `linear-gradient(135deg, #0f0f23 0%, #1a0b2e 50%, #0f0f23 100%)`,
-      }}
+      className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black"
     >
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-8 leading-tight">
-            Project{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-              Impact
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Real numbers that demonstrate the value and scale of my work
-          </p>
+        <div className={`text-center mb-16 lg:mb-24 space-y-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Overall Impact
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+              My
+              <span className="block text-primary">Results</span>
+            </h2>
+            <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto italic font-light">
+                Numbers that show the scale and impact of the work I've done.
+            </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`group p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 ${
+              className={`group p-10 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500 ${
                 isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="space-y-6 text-center">
+              <div className="space-y-8 text-center">
                 <div
-                  className={`p-4 bg-gradient-to-r ${stat.gradient} rounded-2xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300`}
+                  className={`p-4 bg-primary rounded-none w-fit mx-auto transition-transform duration-500 group-hover:scale-110 shadow-[0_0_15px_rgba(0,255,255,0.3)]`}
                 >
-                  <stat.icon className="w-8 h-8 text-white" />
+                  <stat.icon className="w-8 h-8 text-black" />
                 </div>
 
-                <div>
-                  <div className="text-4xl font-black text-white mb-2">{stat.value}</div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
+                <div className="space-y-4">
+                  <div className="text-5xl font-black text-white uppercase tracking-tighter group-hover:text-primary transition-colors">{stat.value}</div>
+                  <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none">
                     {stat.label}
                   </h3>
-                  <p className="text-gray-400 text-sm">{stat.description}</p>
+                  <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold italic leading-relaxed">{stat.description}</p>
                 </div>
               </div>
             </div>

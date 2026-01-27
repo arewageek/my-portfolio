@@ -102,18 +102,15 @@ export function ProfessionalHighlights() {
       <div className="relative max-w-6xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-16 lg:mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-gray-300 text-sm font-medium mb-6">
-            Core Expertise
+          <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+            Skills
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            What I{" "}
-            <span className="text-pink-400">
-              Specialize
-            </span>{" "}
-            In
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tighter leading-[0.9]">
+            What I
+            <span className="block text-primary">Do</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Transforming blockchain visions into production-ready solutions
+          <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto leading-relaxed italic">
+            Building modern, secure web and blockchain applications.
           </p>
         </div>
 
@@ -122,7 +119,7 @@ export function ProfessionalHighlights() {
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+              className={`bg-white/5 border border-white/5 rounded-none overflow-hidden transition-all duration-300 ${isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -131,49 +128,42 @@ export function ProfessionalHighlights() {
                 className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"
               >
                 <div className="flex items-center space-x-4">
-                  <div className={`p-3 rounded-xl ${highlight.color === 'pink'
-                      ? 'bg-pink-600'
-                      : 'bg-purple-600'
-                    }`}>
-                    <highlight.icon className="w-5 h-5 text-white" />
+                  <div className={`p-3 rounded-none ${activeHighlight === index ? "bg-primary" : "bg-white/5"}`}>
+                    <highlight.icon className={`w-5 h-5 ${activeHighlight === index ? "text-black" : "text-white/40"}`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">
+                    <h3 className="text-xs font-black text-white uppercase tracking-widest leading-none">
                       {highlight.title}
                     </h3>
-                    <p className="text-sm text-gray-400">
-                      {highlight.subtitle}
-                    </p>
                   </div>
                 </div>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${activeHighlight === index ? "rotate-180" : ""
+                  className={`w-4 h-4 text-white/20 transition-transform duration-200 ${activeHighlight === index ? "rotate-180" : ""
                     }`}
                 />
               </button>
 
               {activeHighlight === index && (
-                <div className="px-6 pb-6 border-t border-white/10">
+                <div className="px-6 pb-6 border-t border-white/5">
                   <div className="pt-6 space-y-6">
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-white/40 text-xs leading-relaxed italic">
                       {highlight.description}
                     </p>
 
                     <div>
-                      <h4 className="text-white font-semibold mb-3">Key Capabilities</h4>
-                      <div className="space-y-2">
+                      <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-white mb-4">Key Features</h4>
+                      <div className="space-y-3">
                         {highlight.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-start space-x-3">
-                            <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${highlight.color === 'pink' ? 'bg-pink-400' : 'bg-purple-400'
-                              }`} />
-                            <p className="text-sm text-gray-300 leading-relaxed">{feature}</p>
+                            <div className="w-1 h-1 bg-primary rounded-none mt-1.5 flex-shrink-0" />
+                            <p className="text-[10px] uppercase tracking-wider text-white/40 leading-relaxed">{feature}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <Button variant="primary" size="sm" className="w-full">
-                      Discuss This Service
+                    <Button variant="primary" size="sm" className="w-full rounded-none">
+                      Learn More
                     </Button>
                   </div>
                 </div>
@@ -183,95 +173,89 @@ export function ProfessionalHighlights() {
         </div>
 
         {/* Desktop Grid Layout */}
-        <div className="hidden lg:grid lg:grid-cols-5 gap-8">
-          {/* Navigation Cards */}
-          <div className="lg:col-span-2 space-y-4">
-            {highlights.map((highlight, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveHighlight(index)}
-                className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 group ${activeHighlight === index
-                    ? "bg-white/10 border-white/20 scale-[1.02]"
-                    : "bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/15"
-                  } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex items-center space-x-4">
-                  <div className={`p-3 rounded-xl transition-transform duration-200 group-hover:scale-110 ${highlight.color === 'pink'
-                      ? 'bg-pink-600'
-                      : 'bg-purple-600'
-                    }`}>
-                    <highlight.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className={`font-semibold mb-1 transition-colors duration-200 ${activeHighlight === index ? "text-white" : "text-gray-300 group-hover:text-white"
+        <div className="hidden lg:grid lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+          {/* Selection Column */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="grid gap-4">
+              {highlights.map((highlight, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveHighlight(index)}
+                  className={`group relative p-6 text-left border transition-all duration-300 rounded-none overflow-hidden ${activeHighlight === index
+                      ? "bg-white/5 border-primary shadow-[0_0_20px_rgba(0,255,255,0.05)]"
+                      : "bg-black border-white/5 hover:border-white/20"
+                    } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className={`p-3 rounded-none ${activeHighlight === index
+                        ? 'bg-primary'
+                        : 'bg-white/5 group-hover:bg-white/10'
                       }`}>
-                      {highlight.title}
-                    </h3>
-                    <p className={`text-sm transition-colors duration-200 ${activeHighlight === index
-                        ? highlight.color === 'pink' ? "text-pink-400" : "text-purple-400"
-                        : "text-gray-400 group-hover:text-gray-300"
-                      }`}>
-                      {highlight.subtitle}
-                    </p>
+                      <highlight.icon className={`w-5 h-5 ${activeHighlight === index ? 'text-black' : 'text-white/60'}`} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className={`font-bold mb-1 uppercase tracking-wider text-xs transition-colors duration-200 ${activeHighlight === index ? "text-white" : "text-white/40 group-hover:text-white"
+                        }`}>
+                        {highlight.title}
+                      </h3>
+                      <p className={`text-[10px] uppercase tracking-widest transition-colors duration-200 ${activeHighlight === index
+                          ? "text-primary"
+                          : "text-white/20 group-hover:text-white/40"
+                        }`}>
+                        {highlight.subtitle}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </button>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Details Panel */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-7">
             <div
-              className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full transition-all duration-500 ${isVisible ? "animate-fade-in-up" : "opacity-0"
+              className={`bg-white/5 border border-white/5 p-12 h-full transition-all duration-500 rounded-none ${isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
               style={{ animationDelay: "300ms" }}
             >
-              <div className="space-y-6">
+              <div className="space-y-10">
                 {/* Header */}
-                <div className="flex items-start space-x-4">
-                  <div className={`p-4 rounded-2xl ${highlights[activeHighlight].color === 'pink'
-                      ? 'bg-pink-600'
-                      : 'bg-purple-600'
-                    }`}>
+                <div className="flex items-start space-x-6">
+                  <div className="p-6 bg-primary rounded-none">
                     {React.createElement(highlights[activeHighlight].icon, {
-                      className: "w-6 h-6 text-white"
+                      className: "w-10 h-10 text-black"
                     })}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-5xl font-black text-white mb-2 uppercase tracking-tighter leading-none">
                       {highlights[activeHighlight].title}
                     </h3>
-                    <p className={`text-lg font-medium mb-4 ${highlights[activeHighlight].color === 'pink' ? 'text-pink-400' : 'text-purple-400'
-                      }`}>
-                      {highlights[activeHighlight].subtitle}
-                    </p>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-white/40 leading-relaxed text-xl italic font-light">
                   {highlights[activeHighlight].description}
                 </p>
 
                 {/* Features */}
                 <div>
-                  <h4 className="text-white font-semibold mb-4">Key Capabilities</h4>
-                  <div className="space-y-3">
+                  <h4 className="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Key Features</h4>
+                  <div className="grid sm:grid-cols-2 gap-8">
                     {highlights[activeHighlight].features.map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3">
-                        <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${highlights[activeHighlight].color === 'pink' ? 'bg-pink-400' : 'bg-purple-400'
-                          }`} />
-                        <p className="text-gray-300 leading-relaxed">{feature}</p>
+                      <div key={index} className="flex items-start space-x-4">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-none mt-2 flex-shrink-0 shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
+                        <p className="text-[11px] uppercase tracking-widest text-white/40 leading-relaxed">{feature}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* CTA */}
-                <div className="pt-4">
-                  <Button variant="primary" size="lg">
-                    Discuss This Service
+                <div className="pt-8">
+                  <Button variant="primary" size="xl" className="rounded-none px-12 h-16 text-xs uppercase tracking-[0.3em]">
+                    Contact Me
                   </Button>
                 </div>
               </div>
