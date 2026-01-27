@@ -9,6 +9,16 @@ export const brandConfig = {
   tagline: "Where we're going, we won't need wallets",
   location: "Nigeria",
   email: "arewageek@gmail.com",
+  
+  // Categories
+  categories: [
+    { name: "DeFi", slug: "defi", description: "Decentralized Finance protocols and applications" },
+    { name: "Infra", slug: "infra", description: "Infrastructure and developer tools" },
+    { name: "NFT", slug: "nft", description: "Non-fungible tokens and marketplaces" },
+    { name: "AI", slug: "ai", description: "Artificial Intelligence and Machine Learning" },
+    { name: "E-Commerce", slug: "ecommerce", description: "Online shopping and commerce solutions" },
+    { name: "Web3", slug: "web3", description: "Decentralized web applications" }
+  ],
 
   // Social Links
   socials: [
@@ -937,6 +947,7 @@ export const brandConfig = {
       technologies: ["Next JS", "Paystack", "Clerk"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Beta",
+      companyId: "i633",
       links: { demo: "https://633-kitchen.vercel.app", github: "" },
     },
     {
@@ -961,7 +972,7 @@ export const brandConfig = {
     },
     {
       title: "Pricetag (Frontend)",
-      category: "E-COmmerce",
+      category: "E-Commerce",
       description: "An app that lets people create and manage stores",
       image: "pricetag.png",
       technologies: ["React", "Motion SDK", "TailwindCSS"],
@@ -1003,6 +1014,7 @@ export const brandConfig = {
       technologies: ["Next JS", "Motion SDK"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Live",
+      companyId: "goviral",
       links: {
         demo: "https://whoscore.uk",
         github: "",
