@@ -79,22 +79,20 @@ export function ExpertiseSection() {
     <section
       id="expertise"
       ref={sectionRef}
-      className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-900/10"
+      className="relative py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header - Always visible, no animation dependency */}
         <div className="text-center mb-12 lg:mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs lg:text-sm font-medium mb-4 lg:mb-6">
-            Technical Expertise
+          <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+            Technical Stack Overview
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-4 lg:mb-6">
-            Mastering the{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Full Stack
-            </span>
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white mb-4 lg:mb-6 uppercase tracking-tighter leading-[0.9]">
+            Full-Stack
+            <span className="block text-primary">Mastery</span>
           </h2>
-          <p className="text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto">
-            From smart contracts to AI integration, I bring deep expertise across the entire technology stack
+          <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto italic leading-relaxed">
+            Engineered systems with deep integration across the decentralized stack.
           </p>
         </div>
 
@@ -105,8 +103,8 @@ export function ExpertiseSection() {
               <button
                 key={index}
                 onClick={() => setActiveCategory(index)}
-                className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  activeCategory === index ? "bg-purple-500 text-white" : "bg-white/10 text-gray-300 hover:bg-white/20"
+                className={`flex-shrink-0 px-4 py-2 rounded-none text-[10px] uppercase font-bold tracking-widest transition-all duration-200 ${
+                  activeCategory === index ? "bg-primary text-black" : "bg-white/5 text-white/40 hover:bg-white/10"
                 }`}
               >
                 {category.title}
@@ -122,21 +120,21 @@ export function ExpertiseSection() {
               <button
                 key={index}
                 onClick={() => setActiveCategory(index)}
-                className={`w-full text-left p-6 rounded-2xl border transition-all duration-200 ${
+                className={`w-full text-left p-6 rounded-none border transition-all duration-200 ${
                   activeCategory === index
-                    ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/50 text-white"
-                    : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/20"
+                    ? "bg-primary text-black border-primary font-black"
+                    : "bg-white/5 border-white/5 text-white/30 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                <h3 className="text-lg font-bold">{category.title}</h3>
+                <h3 className="text-xs uppercase tracking-[0.2em]">{category.title}</h3>
               </button>
             ))}
           </div>
 
           {/* Skills Display - Always visible */}
           <div className="lg:col-span-3">
-            <div className="bg-white/5 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-8">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8">
+            <div className="bg-white/5 border border-white/10 p-6 lg:p-8">
+              <h3 className="text-xl lg:text-2xl font-black text-white mb-6 lg:mb-8 uppercase tracking-tighter">
                 {categories[activeCategory].title}
               </h3>
 
@@ -144,19 +142,19 @@ export function ExpertiseSection() {
                 {categories[activeCategory].skills.map((skill, index) => (
                   <div
                     key={index}
-                    className="group p-4 lg:p-6 bg-white/5 border border-white/10 rounded-xl lg:rounded-2xl hover:bg-white/10 transition-all duration-200"
+                    className="group"
                   >
                     <div className="flex justify-between items-center mb-3">
-                      <h4 className="text-lg lg:text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-200">
+                      <h4 className="text-xs font-bold text-white uppercase tracking-widest transition-colors duration-200">
                         {skill.name}
                       </h4>
-                      <span className="text-purple-400 font-bold text-base lg:text-lg">{skill.level}%</span>
+                      <span className="text-primary font-bold text-xs">{skill.level}%</span>
                     </div>
 
                     {/* Progress bar - simplified animation */}
-                    <div className="w-full bg-gray-700 rounded-full h-2 mb-3">
+                    <div className="w-full bg-white/5 rounded-none h-px mb-3">
                       <div
-                        className="h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-500 ease-out"
+                        className="h-full bg-primary transition-all duration-500 ease-out"
                         style={{
                           width: `${skill.level}%`, // Always show full width
                           opacity: isVisible ? 1 : 0.5, // Just fade in when visible
@@ -164,7 +162,7 @@ export function ExpertiseSection() {
                       />
                     </div>
 
-                    <p className="text-gray-400 text-sm">{skill.description}</p>
+                    <p className="text-white/40 text-[10px] uppercase tracking-wider italic">{skill.description}</p>
                   </div>
                 ))}
               </div>

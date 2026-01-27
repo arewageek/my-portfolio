@@ -18,7 +18,8 @@ export default async function CompanyPage({ params }: { params: { company: strin
   const heroData = {
     name: company.name,
     role: company.role,
-    period: company.period || "",
+    started: company.started || "",
+    stopped: company.stopped,
     location: company.location || "",
     logo: company.logo || "",
     type: company.type || ""

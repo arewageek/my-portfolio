@@ -9,7 +9,8 @@ interface CompanyHeroProps {
   company: {
     name: string
     role: string
-    period: string
+    started: string
+    stopped?: string
     location: string
     logo: string
     type: string
@@ -27,52 +28,72 @@ export function CompanyHero({ company }: CompanyHeroProps) {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
-      style={{
-        background: `
-          radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 70% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-          linear-gradient(135deg, #000000 0%, #0a0a0f 100%)
-        `,
-      }}
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
     >
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-        <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+      {/* Background Glows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] opacity-40" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] opacity-20" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className={`space-y-16 lg:space-y-24 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Back button */}
           <Link href="/work">
             <Button
               variant="outline"
-              className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400"
+              className="px-6 py-2 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase hover:bg-white/10 hover:text-white transition-all duration-500"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Work
+              <ArrowLeft className="w-3 h-3 mr-2" />
+              Go Back
             </Button>
           </Link>
 
           {/* Company Header */}
-          <div className="text-center space-y-8">
-            {/* <div className="flex justify-center">
-              <div className="p-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl text-6xl shadow-2xl">
-                {company.logo}
+          <div className="text-center space-y-12">
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                  Experience
               </div>
-            </div> */}
 
-            <div className="space-y-4">
-              <h1 className="text-6xl lg:text-8xl font-black text-white leading-tight">{company.name}</h1>
-              <p className="text-2xl lg:text-3xl text-purple-400 font-semibold">{company.role}</p>
+              <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter uppercase">
+                {company.name}
+              </h1>
+              
+              <div className="flex flex-col items-center gap-4">
+                 <p className="text-2xl lg:text-4xl text-primary font-black uppercase tracking-tighter leading-none">{company.role}</p>
+                 <div className="h-px w-20 bg-primary/20" />
+              </div>
 
-              <div className="flex items-center justify-center space-x-8 text-gray-400">
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span className="text-lg">{company.period}</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto pt-8">
+                <div className="flex items-center justify-center gap-4 p-4 bg-white/5 border border-white/5 rounded-none group transition-all duration-500 hover:border-primary/20">
+                  <div className="p-3 bg-primary rounded-none shadow-[0_0_10px_rgba(0,255,255,0.2)]">
+                    <Calendar className="w-4 h-4 text-black" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[8px] uppercase font-black text-white/20 tracking-widest mb-1 group-hover:text-primary transition-colors">Period</div>
+                    <div className="text-[10px] uppercase font-bold text-white tracking-widest italic">{company.started} - {company.stopped || 'Present'}</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <MapPin className="w-5 h-5" />
-                  <span className="text-lg">{company.location}</span>
+
+                <div className="flex items-center justify-center gap-4 p-4 bg-white/5 border border-white/5 rounded-none group transition-all duration-500 hover:border-primary/20">
+                  <div className="p-3 bg-primary rounded-none shadow-[0_0_10px_rgba(0,255,255,0.2)]">
+                    <MapPin className="w-4 h-4 text-black" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[8px] uppercase font-black text-white/20 tracking-widest mb-1 group-hover:text-primary transition-colors">Location</div>
+                    <div className="text-[10px] uppercase font-bold text-white tracking-widest italic">{company.location}</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Briefcase className="w-5 h-5" />
-                  <span className="text-lg">{company.type}</span>
+
+                <div className="flex items-center justify-center gap-4 p-4 bg-white/5 border border-white/5 rounded-none group transition-all duration-500 hover:border-primary/20">
+                  <div className="p-3 bg-primary rounded-none shadow-[0_0_10px_rgba(0,255,255,0.2)]">
+                    <Briefcase className="w-4 h-4 text-black" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-[8px] uppercase font-black text-white/20 tracking-widest mb-1 group-hover:text-primary transition-colors">Type</div>
+                    <div className="text-[10px] uppercase font-bold text-white tracking-widest italic">{company.type}</div>
+                  </div>
                 </div>
               </div>
             </div>

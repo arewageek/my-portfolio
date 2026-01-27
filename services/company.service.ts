@@ -5,9 +5,8 @@ import Project from '../models/Project'
 import { ProjectDocument } from './project.service'
 
 export type CompanyDocument = Omit<IBackEndCompany, 
-  'period' | 'location' | 'type' | 'logo' | 'status' | 'description' | 'technologies' | 'achievements' | 'responsibilities'
+  'location' | 'type' | 'logo' | 'status' | 'description' | 'technologies' | 'achievements' | 'responsibilities'
 > & { 
-  period: string;
   location: string;
   type: string;
   logo: string;
@@ -18,6 +17,8 @@ export type CompanyDocument = Omit<IBackEndCompany,
   responsibilities: string[];
   _id: string; 
   id: string;
+  started?: string;
+  stopped?: string;
   projects?: ProjectDocument[]
 }
 

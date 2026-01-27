@@ -39,100 +39,89 @@ export function CompanyProjects({ company }: CompanyProjectsProps) {
   }, [])
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-32 px-6 lg:px-8"
-      style={{
-        background: `linear-gradient(135deg, #0f0f23 0%, #1a0b2e 100%)`,
-      }}
-    >
+    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-8 leading-tight">
-            Featured{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-              Projects
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Key projects that showcase the impact and innovation delivered
-          </p>
+        <div className={`text-center mb-20 space-y-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Projects
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+              Core
+              <span className="block text-primary">Projects</span>
+            </h2>
+            <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto italic font-light">
+                A look at the specific projects I delivered during my time here.
+            </p>
         </div>
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {company.projects.map((project, index) => (
             <div
               key={index}
-              className={`group bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105 ${
+              className={`group bg-white/5 border border-white/5 rounded-none overflow-hidden hover:border-primary/20 transition-all duration-500 ${
                 isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-gradient-to-r from-purple-500/20 to-pink-500/20">
+              <div className="relative h-56 bg-white/5">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
 
-              <div className="p-6 space-y-4">
+              <div className="p-8 space-y-6">
                 {/* Title and Description */}
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300">
+                  <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
+                  <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold italic leading-relaxed">{project.description}</p>
                 </div>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-4 border-y border-white/5 py-6">
                   {Object.entries(project.metrics).map(([key, value]) => (
-                    <div key={key} className="text-center p-2 bg-white/5 rounded-lg">
-                      <div className="text-sm font-bold text-white">{value}</div>
-                      <div className="text-xs text-gray-400 uppercase tracking-wide">{key}</div>
+                    <div key={key} className="text-center">
+                      <div className="text-[10px] font-black text-white uppercase tracking-tighter mb-1">{value}</div>
+                      <div className="text-[7px] text-white/20 uppercase tracking-[0.2em] font-black">{key}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.slice(0, 3).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium"
+                      className="px-2 py-1 bg-white/5 text-white/40 border border-white/5 rounded-none text-[8px] uppercase font-black tracking-widest"
                     >
                       {tech}
                     </span>
                   ))}
-                  {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-500/20 text-gray-400 rounded-full text-xs">
-                      +{project.technologies.length - 3}
-                    </span>
-                  )}
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-2 pt-2">
+                <div className="flex gap-4 pt-4">
                   {project.links.demo && (
                     <Button
+                      variant="primary"
                       size="sm"
-                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 flex-1 text-xs"
+                      className="flex-1 text-[9px] uppercase font-black tracking-[0.3em] rounded-none py-4"
                     >
-                      <Play className="w-3 h-3 mr-1" />
-                      Demo
+                      Live Demo
                     </Button>
                   )}
                   {project.links.github && (
                     <Button
-                      size="sm"
                       variant="outline"
-                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 flex-1 text-xs"
+                      size="sm"
+                      className="flex-1 text-[9px] uppercase font-black tracking-[0.3em] rounded-none py-4 border-white/10 text-white/40 hover:text-white"
                     >
-                      <Github className="w-3 h-3 mr-1" />
-                      Code
+                      GitHub
                     </Button>
                   )}
                 </div>
