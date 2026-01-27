@@ -176,33 +176,32 @@ export function WorkFormDialog({
                 </FormItem>
               )}
             />
-              <FormField
-                control={form.control}
-                name="started"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Started</FormLabel>
-                    <FormControl>
-                      <Input {...field} placeholder="Jan 2023" className="bg-secondary/50 border-white/10" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="stopped"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Stopped (leave blank if present)</FormLabel>
-                    <FormControl>
-                      <Input {...field} placeholder="Dec 2023" className="bg-secondary/50 border-white/10" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            <FormField
+              control={form.control}
+              name="started"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Started</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="Jan 2023" className="bg-secondary/50 border-white/10" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="stopped"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Stopped (leave blank if present)</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="Dec 2023" className="bg-secondary/50 border-white/10" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
@@ -239,46 +238,47 @@ export function WorkFormDialog({
                   <FormMessage />
                 </FormItem>
               )}
-            />
-            <FormField
-              control={form.control}
-              name="description"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Short Description</FormLabel>
-                  <FormControl>
-                    <Textarea {...field} className="bg-secondary/50 border-white/10 h-20" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="technologies"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Technologies (comma separated)</FormLabel>
-                  <FormControl>
-                    <Input {...field} className="bg-secondary/50 border-white/10" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="logo"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Logo URL (optional)</FormLabel>
-                  <FormControl>
-                    <Input {...field} className="bg-secondary/50 border-white/10" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+              />
+              <FormField
+                control={form.control}
+                name="description"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Short Description</FormLabel>
+                    <FormControl>
+                      <Textarea {...field} className="bg-secondary/50 border-white/10 h-20" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="technologies"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Technologies (comma separated)</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-secondary/50 border-white/10" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="logo"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Logo URL (optional)</FormLabel>
+                    <FormControl>
+                      <Input {...field} className="bg-secondary/50 border-white/10" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <DialogFooter className="pt-4">
               <Button type="button" variant="ghost" onClick={() => onOpenChange(false)}>
                 Cancel

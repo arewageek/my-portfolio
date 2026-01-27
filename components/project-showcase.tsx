@@ -261,7 +261,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                             <img
                                                 src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/projects/${project.image}`}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                                className="w-full h-full object-cover transition-all duration-700"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
@@ -331,7 +331,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                                 <img
                                                     src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/projects/${project.image}`}
                                                     alt={project.title}
-                                                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                                    className="w-full h-full object-cover transition-all duration-700"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
