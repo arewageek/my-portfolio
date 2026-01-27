@@ -1,8 +1,6 @@
 import { ContactHero } from "@/components/contact-hero"
 import { ContactForm } from "@/components/contact-form"
 import { ContactInfo } from "@/components/contact-info"
-import { ContactCTA } from "@/components/contact-cta"
-import { Navigation } from "@/components/navigation"
 
 export default function Contact() {
   return (

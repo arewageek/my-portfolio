@@ -30,72 +30,62 @@ export function ContactCTA() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 px-6 lg:px-8 overflow-hidden"
-      style={{
-        background: `
-          radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
-          linear-gradient(135deg, #0f0f23 0%, #1a0b2e 50%, #0f0f23 100%)
-        `,
-      }}
+      className="relative py-20 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-black"
     >
-      <div className="max-w-5xl mx-auto text-center">
-        <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-6 py-3 glass-card rounded-full text-purple-300 text-sm font-medium shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1">
-              <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
-              Ready to innovate?
+      <div className="max-w-7xl mx-auto text-center border-t border-white/5 pt-20 lg:pt-32">
+        <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <div className="space-y-12">
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Final Protocol
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-              Your Next Big{" "}
-              <span className="gradient-text-primary drop-shadow-lg">
-                Breakthrough
-              </span>{" "}
-              Starts Here
+            <h2 className="text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+              Initiate
+              <span className="block text-primary">Breakthrough</span>
             </h2>
 
-            <p className="text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Don't let your blockchain vision remain just an idea. Let's build something that changes the game.
+            <p className="text-xl lg:text-3xl text-white/40 leading-relaxed max-w-4xl mx-auto italic font-light">
+                Engineering a future where decentralized infrastructure is as invisible and reliable as the air we breathe.
             </p>
           </div>
 
           {/* Quick stats */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { icon: Clock, label: "24h Response", description: "Quick turnaround guaranteed" },
-              { icon: Sparkles, label: "100% Success", description: "All projects delivered on time" },
-              { icon: ArrowRight, label: "Ready to Start", description: "Available for new projects" },
+              { icon: Clock, label: "24h Latency", description: "Standard response buffer" },
+              { icon: Sparkles, label: "Synchronized", description: "Verification complete" },
+              { icon: ArrowRight, label: "Online", description: "Awaiting instruction" },
             ].map((item, index) => (
-              <div key={index} className="text-center space-y-3">
-                <div className="p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl w-fit mx-auto">
-                  <item.icon className="w-6 h-6 text-white" />
+              <div key={index} className="flex flex-col items-center space-y-4 group">
+                <div className="p-3 bg-primary rounded-none transition-transform duration-500 group-hover:scale-110 shadow-[0_0_10px_rgba(0,255,255,0.3)]">
+                  <item.icon className="w-5 h-5 text-black" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">{item.label}</h3>
-                  <p className="text-gray-400 text-sm">{item.description}</p>
+                  <h3 className="text-[10px] font-black text-white uppercase tracking-widest leading-none mb-1">{item.label}</h3>
+                  <p className="text-white/20 text-[8px] uppercase tracking-widest font-bold italic">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center pt-8">
             <a href={`mailto:${brandConfig.email}`}>
               <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white px-12 py-6 text-xl font-bold shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-500 transform hover:scale-105 border border-purple-400/20 rounded-2xl"
+                variant="primary"
+                size="xl"
+                className="px-12 py-6 text-xl font-black uppercase tracking-widest rounded-none border-none"
               >
-                Start Your Project
+                Initalize Deployment
                 <ArrowRight className="w-5 h-5 ml-3" />
               </Button>
             </a>
             <Link href="/work">
               <Button
-                size="lg"
                 variant="outline"
-                className="border-2 border-purple-500/60 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 hover:text-white px-12 py-6 text-xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
+                size="xl"
+                className="px-12 py-6 text-xl font-black uppercase tracking-widest rounded-none border-white/10 text-white/40 hover:text-white"
               >
-                View My Work
+                Inspect Ledger
               </Button>
             </Link>
           </div>
