@@ -29,71 +29,59 @@ export function ContactHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
-      style={{
-        background: `
-          radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 70% 30%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-          linear-gradient(135deg, #000000 0%, #0a0a0f 100%)
-        `,
-      }}
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
     >
-      {/* Floating orbs */}
+      {/* Background Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] opacity-40"
           style={{
             transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
-            animation: "gentleFloat 15s ease-in-out infinite",
           }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] opacity-20"
           style={{
             transform: `translate(${mousePosition.x * -0.2}px, ${mousePosition.y * -0.2}px)`,
-            animation: "gentleFloat 12s ease-in-out infinite reverse",
           }}
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="text-center space-y-12">
-          <div className={`space-y-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-            <div className="inline-flex items-center px-8 py-4 bg-black/40 backdrop-blur-md border border-purple-500/30 rounded-full text-purple-400 text-sm font-medium">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Let's Connect
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="text-center space-y-16 lg:space-y-24">
+          <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Contact
             </div>
 
-            <h1 className="text-7xl lg:text-9xl font-black text-white leading-tight">
-              Get In{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-                Touch
-              </span>
+            <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter uppercase whitespace-pre-line">
+              Get In
+              <span className="block text-primary">Touch</span>
             </h1>
 
-            <p className="text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              Ready to build something amazing together? Let's discuss your next blockchain project
+            <p className="text-xl lg:text-3xl text-white/40 leading-relaxed max-w-3xl mx-auto italic font-light">
+                I'm currently available for new projects, collaborations, and consulting.
             </p>
           </div>
 
           {/* Quick contact options */}
           <div
-            className={`grid md:grid-cols-2 gap-8 max-w-2xl mx-auto ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+            className={`grid md:grid-cols-2 gap-8 max-w-3xl mx-auto ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "300ms" }}
           >
             <a
               href={`mailto:${brandConfig.email}`}
-              className="group p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105"
+              className="group p-10 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500"
             >
-              <div className="space-y-4 text-center">
-                <div className="p-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-8 h-8 text-white" />
+              <div className="space-y-6 text-center">
+                <div className="p-4 bg-primary rounded-none w-fit mx-auto transition-transform duration-500 group-hover:scale-110">
+                  <Mail className="w-8 h-8 text-black" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
-                    Email Me
+                  <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none">
+                    Email
                   </h3>
-                  <p className="text-gray-400">{brandConfig.email}</p>
+                  <p className="text-primary font-bold text-xs uppercase tracking-widest">{brandConfig.email}</p>
                 </div>
               </div>
             </a>
@@ -102,17 +90,17 @@ export function ContactHero() {
               href={brandConfig.socials[2].href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105"
+              className="group p-10 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500"
             >
-              <div className="space-y-4 text-center">
-                <div className="p-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <MessageSquare className="w-8 h-8 text-white" />
+              <div className="space-y-6 text-center">
+                <div className="p-4 bg-primary rounded-none w-fit mx-auto transition-transform duration-500 group-hover:scale-110">
+                  <MessageSquare className="w-8 h-8 text-black" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
-                    Message Me
+                  <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none">
+                    X (Twitter)
                   </h3>
-                  <p className="text-gray-400">@arewaofweb3</p>
+                  <p className="text-primary font-bold text-xs uppercase tracking-widest">@arewaofweb3</p>
                 </div>
               </div>
             </a>

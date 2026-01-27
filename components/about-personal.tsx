@@ -29,26 +29,24 @@ export function AboutPersonal() {
       ref={sectionRef}
       className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black"
     >
-      <div className="max-w-4xl mx-auto text-center">
-        <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <Quote className="w-16 h-16 text-pink-400 mx-auto opacity-50" />
+      <div className="max-w-7xl mx-auto text-center">
+        <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <div className="h-20 w-px bg-primary mx-auto opacity-40 shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
 
-          <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-            "Where we're going, we won't need {" "}
-            <span className="text-pink-400">
-              wallets, gas fees, or complex interfaces.
+          <blockquote className="text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[0.9] uppercase tracking-tighter">
+            Where we're going, we won't need
+            <span className="block text-primary">
+              wallets, gas, or complexity.
             </span>
           </blockquote>
 
-          <div className="space-y-6">
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-0.5 bg-pink-400" />
-              <span className="text-pink-400 font-medium">My vision for Web3</span>
-              <div className="w-12 h-0.5 bg-pink-400" />
+          <div className="space-y-8">
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                My Vision
             </div>
 
-            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-
+            <p className="text-xl lg:text-3xl text-white/40 leading-relaxed max-w-4xl mx-auto italic font-light">
+                Engineering a future where decentralized infrastructure is as invisible and reliable as the air we breathe.
             </p>
           </div>
         </div>

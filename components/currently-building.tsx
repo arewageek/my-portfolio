@@ -63,135 +63,130 @@ export function CurrentlyBuilding() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 lg:py-24 px-4 sm:px-6 lg:px-8 w-full"
-      style={{
-        background: `linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #1a0b2e 100%)`,
-      }}
+      className="relative py-12 lg:py-24 px-4 sm:px-6 lg:px-8 w-full bg-black overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Compact Header */}
-          <div className="text-center mb-8 lg:mb-12">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-500/30 rounded-full text-blue-300 text-xs font-medium mb-4 shadow-lg shadow-blue-500/10">
-              <Rocket className="w-3 h-3 mr-2" />
-              Currently Building
+          <div className="text-center mb-12 lg:mb-16 space-y-8">
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Active Projects
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-3 lg:mb-4 leading-tight">
-              What I'm{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                Creating
-              </span>
+            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+              Currently
+              <span className="block text-primary">Building</span>
             </h2>
-            <p className="text-base lg:text-lg text-gray-300 max-w-2xl mx-auto">
-              Innovative projects shaping the future of Web3
+            <p className="text-lg lg:text-xl text-white/40 max-w-2xl mx-auto italic font-light">
+                A look at the projects I'm actively working on right now.
             </p>
           </div>
 
           {/* Compact Project Showcase */}
-          <div className="bg-gradient-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6 lg:p-8">
-            <div className="grid lg:grid-cols-4 gap-6">
-              {/* Project Info - More compact */}
-              <div className="lg:col-span-3 space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-3 sm:space-y-0">
+          <div className="bg-white/5 border border-white/5 rounded-none p-8 lg:p-12 relative overflow-hidden group hover:border-primary/20 transition-all duration-500">
+            <div className="grid lg:grid-cols-4 gap-12 lg:gap-16">
+              {/* Project Info */}
+              <div className="lg:col-span-3 space-y-8">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
                   <div className="flex-1">
-                    <h3 className="text-xl lg:text-2xl font-black text-white mb-2">
+                    <h3 className="text-2xl lg:text-3xl font-black text-white uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors">
                       {currentProjects[activeProject].title}
                     </h3>
-                    <p className="text-sm lg:text-base text-gray-300 leading-relaxed mb-3">
+                    <p className="text-white/40 text-sm lg:text-base italic font-light leading-relaxed">
                       {currentProjects[activeProject].description}
                     </p>
                   </div>
                   <div
-                    className={`px-3 py-1 bg-gradient-to-r ${getStatusColor(
-                      currentProjects[activeProject].status,
-                    )} rounded-full text-white font-semibold text-xs whitespace-nowrap`}
+                    className="px-3 py-1 bg-white/5 border border-white/10 text-white/40 font-black text-[9px] uppercase tracking-widest whitespace-nowrap"
                   >
                     {getStatusText(currentProjects[activeProject].status)}
                   </div>
                 </div>
 
                 {/* Compact Progress Bar */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 font-medium text-sm">Progress</span>
-                    <span className="text-blue-400 font-bold text-sm">{currentProjects[activeProject].progress}%</span>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-[0.3em]">
+                    <span className="text-white/20">Development Progress</span>
+                    <span className="text-primary">{currentProjects[activeProject].progress}%</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div className="w-full bg-white/5 rounded-none h-1.5 relative overflow-hidden">
                     <div
-                      className="h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out"
+                      className="absolute inset-y-0 left-0 bg-primary transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(0,255,255,0.5)]"
                       style={{ width: `${currentProjects[activeProject].progress}%` }}
                     />
                   </div>
                 </div>
 
-                {/* Expected Launch */}
-                <div className="flex items-center space-x-2 text-gray-300">
-                  <Clock className="w-4 h-4" />
-                  <span className="text-sm">Launch: {currentProjects[activeProject].expectedLaunch}</span>
+                <div className="flex items-center space-x-3 text-white/20">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="text-[9px] font-black uppercase tracking-[0.2em] italic">Expected Launch: {currentProjects[activeProject].expectedLaunch}</span>
                 </div>
 
                 {/* Compact Features */}
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-2">Key Features</h4>
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {currentProjects[activeProject].highlights.slice(0, 4).map((highlight, index) => (
-                      <div key={index} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mt-1.5 flex-shrink-0" />
-                        <p className="text-xs lg:text-sm text-gray-300 leading-relaxed">{highlight}</p>
+                <div className="grid sm:grid-cols-2 gap-8">
+                   <div className="space-y-4">
+                      <h4 className="text-[10px] uppercase font-black tracking-widest text-white/40">Key Features</h4>
+                      <div className="space-y-3">
+                        {currentProjects[activeProject].highlights.slice(0, 4).map((highlight, index) => (
+                          <div key={index} className="flex items-start space-x-3">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-none mt-1.5 flex-shrink-0" />
+                            <p className="text-[10px] text-white/40 leading-relaxed font-bold uppercase tracking-wider italic">{highlight}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                   </div>
 
-                {/* Compact Technologies */}
-                <div>
-                  <h4 className="text-sm font-bold text-white mb-2">Tech Stack</h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {currentProjects[activeProject].technologies.slice(0, 6).map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full font-medium text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                   <div className="space-y-4">
+                      <h4 className="text-[10px] uppercase font-black tracking-widest text-white/40">Tech Stack</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {currentProjects[activeProject].technologies.slice(0, 6).map((tech, index) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 bg-white/5 text-white/30 border border-white/5 rounded-none font-bold text-[9px] uppercase tracking-widest group-hover:border-primary/20 transition-colors"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                   </div>
                 </div>
               </div>
 
               {/* Compact Status Card */}
               <div className="lg:col-span-1">
-                <div className="p-4 lg:p-6 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-blue-500/30 rounded-xl text-center">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Code className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+                <div className="h-full p-8 bg-white/5 border border-white/5 rounded-none text-center flex flex-col items-center justify-center space-y-6 transition-all duration-500 hover:bg-white/10 group/status">
+                  <div className="w-16 h-16 bg-primary rounded-none flex items-center justify-center shadow-[0_0_20px_rgba(0,255,255,0.4)] group-hover/status:scale-110 transition-transform">
+                    <Code className="w-8 h-8 text-black" />
                   </div>
-                  <h4 className="text-base lg:text-lg font-bold text-white mb-1">In Development</h4>
-                  <p className="text-blue-400 font-semibold mb-3 text-sm">
-                    {currentProjects[activeProject].progress}% Complete
-                  </p>
+                  <div className="space-y-2">
+                      <h4 className="text-xs font-black text-white uppercase tracking-widest">In Development</h4>
+                      <p className="text-primary font-black text-[10px] uppercase tracking-widest">
+                        {currentProjects[activeProject].progress}% Complete
+                      </p>
+                  </div>
                   <Button
+                    variant="primary"
                     size="sm"
-                    className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-xs"
+                    className="w-full text-[9px] uppercase font-black tracking-[0.4em] rounded-none py-4"
                   >
-                    <Play className="w-3 h-3 mr-1" />
+                    <Play className="w-3 h-3 mr-2" />
                     Preview
                   </Button>
                 </div>
               </div>
             </div>
 
-            {/* Project Navigation - More compact */}
+            {/* Project Navigation */}
             {showNavigation && (
-              <div className="flex justify-center mt-6 pt-6 border-t border-white/10">
-                <div className="flex space-x-2 bg-black/20 rounded-lg p-1">
+              <div className="flex justify-center mt-12 pt-12 border-t border-white/5">
+                <div className="flex space-x-4">
                   {currentProjects.map((project, index) => (
                     <button
                       key={project.id}
                       onClick={() => setActiveProject(index)}
-                      className={`px-3 py-1.5 rounded-md font-medium transition-all duration-300 text-sm ${
+                      className={`px-4 py-2 rounded-none font-black transition-all duration-300 text-[10px] uppercase tracking-widest ${
                         activeProject === index
-                          ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white"
-                          : "text-gray-400 hover:text-white"
+                          ? "bg-primary text-black"
+                          : "bg-white/5 text-white/40 hover:text-white"
                       }`}
                     >
                       {project.title}

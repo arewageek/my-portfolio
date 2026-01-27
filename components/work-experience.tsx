@@ -125,7 +125,7 @@ export function WorkExperience() {
                 key={index}
                 onClick={() => setActiveExperience(index)}
                 className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${activeExperience === index
-                  ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/50"
+                  ? "bg-secondary border-purple-500/50"
                   : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
                   }`}
               >
@@ -167,7 +167,7 @@ export function WorkExperience() {
                           <MapPin className="w-4 h-4" />
                           <span>{experiences[activeExperience].location}</span>
                         </div>
-                        <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">
+                        <span className="px-3 py-1 bg-secondary text-purple-400 rounded-full text-sm">
                           {experiences[activeExperience].type}
                         </span>
                       </div>
@@ -215,7 +215,7 @@ export function WorkExperience() {
                     {experiences[activeExperience].technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-secondary text-purple-300 border border-purple-500/30 rounded-full text-sm font-medium"
                       >
                         {tech}
                       </span>

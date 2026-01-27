@@ -45,14 +45,22 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader
-          title="Experience"
-          subtitle="Building innovative blockchain solutions across various industries"
-        />
+        <div className="text-center mb-16 lg:mb-24">
+          <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-full text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+            Professional Trajectory
+          </div>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tighter leading-[0.9]">
+            Engagement
+            <span className="block text-primary">History</span>
+          </h2>
+          <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto italic">
+            Documenting the evolution of decentralized infrastructure through successive deployments.
+          </p>
+        </div>
 
-        <div className="space-y-8">
+        <div className="space-y-16">
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} {...experience} index={index} />
           ))}

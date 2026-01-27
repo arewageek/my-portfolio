@@ -33,16 +33,16 @@ export function AboutValues() {
     },
     {
       icon: Music,
-      title: "Music Lover",
+      title: "Music",
       description: "Afrobeats, jazz, and lo-fi keep me focused",
       color: "text-pink-400",
     },
-    // {
-    //   icon: Book,
-    //   title: "Always Learning",
-    //   description: "I read and watch videos about new tools and understanding existng systems",
-    //   color: "text-blue-400",
-    // },
+    {
+      icon: Book,
+      title: "Reading",
+      description: "I read books that help me think better, grow personally, and see the world more clearly.",
+      color: "text-blue-400",
+    },
     // {
     //   icon: Globe,
     //   title: "Global Mindset",
@@ -55,42 +55,47 @@ export function AboutValues() {
     //   description: "Every line of code matters to me",
     //   color: "text-red-400",
     // },
-    {
-      icon: Code,
-      title: "Problem Solver",
-      description: "Love turning complex ideas into simple solutions",
-      color: "text-purple-400",
-    },
+    // {
+    //   icon: Code,
+    //   title: "Problem Solver",
+    //   description: "Love turning complex ideas into simple solutions",
+    //   color: "text-purple-400",
+    // },
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-950">
-      <div className="max-w-6xl mx-auto">
-        <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="text-center space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-              Beyond{" "}
-              <span className="text-pink-400">Code</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              What makes me tick when I'm not building the future of Web3
+    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <div className="max-w-7xl mx-auto">
+        <div className={`space-y-16 lg:space-y-24 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <div className="text-center space-y-12">
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                  Telemetry
+              </div>
+              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+                My
+                <span className="block text-primary">Interests</span>
+              </h2>
+            </div>
+            <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto italic font-light">
+              What you'll find me doing when I'm not shipping
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {interests.map((interest, index) => (
               <div
                 key={index}
-                className="group p-6 bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-2xl hover:bg-gray-900/50 hover:border-pink-400/30 transition-all duration-300 hover:transform hover:scale-105"
+                className="group p-8 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <interest.icon
-                    className={`w-8 h-8 ${interest.color} group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-10 h-10 text-primary transition-transform duration-500`}
                   />
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">{interest.title}</h3>
-                    <p className="text-gray-400 leading-relaxed">{interest.description}</p>
+                    <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none">{interest.title}</h3>
+                    <p className="text-white/40 text-[9px] uppercase tracking-wider font-bold italic leading-relaxed">{interest.description}</p>
                   </div>
                 </div>
               </div>

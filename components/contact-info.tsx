@@ -56,19 +56,19 @@ export function ContactInfo() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-32 px-6 lg:px-8 bg-gradient-to-br from-purple-900/10 to-pink-900/10">
+    <section ref={sectionRef} className="py-32 px-6 lg:px-8 bg-black">
       <div className="max-w-2xl mx-auto">
-        <div className={`space-y-12 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
-          <div className="space-y-6">
-            <h2 className="text-4xl lg:text-5xl font-black text-white">
-              Let's Build Something{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Amazing
-              </span>
+        <div className={`space-y-16 lg:space-y-24 ${isVisible ? "animate-fade-in-left" : "opacity-0"}`}>
+          <div className="space-y-8">
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Contact Info
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+                Let's
+                <span className="block text-primary">Talk</span>
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Whether you have a revolutionary idea or need to transform an existing project, I'm here to help bring
-              your vision to life.
+            <p className="text-xl text-white/40 leading-relaxed italic font-light">
+                Feel free to reach out for collaborations or just a friendly hello.
             </p>
           </div>
 
@@ -78,20 +78,20 @@ export function ContactInfo() {
               <a
                 key={index}
                 href={method.href}
-                className="group block p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105"
+                className="group block p-8 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500"
               >
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-6">
                   <div
-                    className={`p-3 bg-gradient-to-r ${method.gradient} rounded-xl group-hover:scale-110 transition-transform duration-300`}
+                    className={`p-4 bg-primary rounded-none transition-transform duration-500 group-hover:scale-110`}
                   >
-                    <method.icon className="w-6 h-6 text-white" />
+                    <method.icon className="w-6 h-6 text-black" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-purple-300 transition-colors duration-300">
+                    <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none group-hover:text-primary transition-colors">
                       {method.title}
                     </h3>
-                    <p className="text-gray-400 text-sm mb-1">{method.description}</p>
-                    <p className="text-purple-400 font-medium text-sm">{method.value}</p>
+                    <p className="text-white/40 text-[9px] uppercase tracking-wider font-bold italic mb-2">{method.description}</p>
+                    <p className="text-primary font-bold text-[10px] uppercase tracking-widest">{method.value}</p>
                   </div>
                 </div>
               </a>
@@ -99,33 +99,32 @@ export function ContactInfo() {
           </div>
 
           {/* Social Links */}
-          <div className="pt-8 border-t border-white/10">
-            <h3 className="text-xl font-bold text-white mb-6">Follow Me</h3>
-            <div className="flex space-x-4">
-              {brandConfig.socials.map(({ icon: Icon, href, label, color }) => (
+          <div className="pt-12 border-t border-white/5">
+            <h3 className="text-[10px] font-black text-white/20 mb-8 uppercase tracking-[0.3em]">Follow Me</h3>
+            <div className="flex flex-wrap gap-4">
+              {brandConfig.socials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className={`p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/20 ${color} transition-all duration-300 hover:transform hover:scale-110`}
+                  className={`p-4 bg-white/5 border border-white/5 rounded-none hover:border-primary/20 transition-all duration-500 hover:transform hover:scale-110`}
                   aria-label={label}
                 >
-                  <Icon className="w-6 h-6" />
+                  <Icon className="w-5 h-5 text-white/40 group-hover:text-primary transition-colors" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Availability Status */}
-          <div className="p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-2xl">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-green-400 font-semibold">Available for new projects</span>
+          <div className="p-8 bg-white/5 border border-white/5 rounded-none">
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="w-2 h-2 bg-primary rounded-none animate-pulse shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
+              <span className="text-primary font-black uppercase tracking-[0.2em] text-[10px]">Status: Available for Work</span>
             </div>
-            <p className="text-gray-300 text-sm">
-              I typically respond within 24 hours. For urgent inquiries, feel free to reach out via Discord or schedule
-              a call directly.
+            <p className="text-white/40 text-[10px] uppercase tracking-widest leading-relaxed font-bold italic">
+              Typically responding within 24 hours. For urgent matters, reach out on Twitter.
             </p>
           </div>
         </div>

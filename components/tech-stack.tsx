@@ -174,7 +174,7 @@ export function TechStack() {
                 {highlight.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium backdrop-blur-sm hover:bg-purple-500/30 hover:scale-105 transition-all duration-200 cursor-default"
+                    className="px-3 py-1 bg-secondary text-purple-300 border border-purple-500/30 rounded-full text-xs font-medium backdrop-blur-sm hover:bg-secondary/80 hover:scale-105 transition-all duration-200 cursor-default"
                   >
                     {tech}
                   </span>

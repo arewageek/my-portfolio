@@ -55,51 +55,48 @@ export function AboutMission() {
       <div className="max-w-6xl mx-auto">
         <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Mission statement */}
-          <div className="text-center space-y-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-              My{" "}
-              <span className="text-pink-400">
-                Mission
-              </span>
-            </h2>
-
-            <div className="text-xl sm:text-2xl lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              <div className="text-6xl font-bold font-serif">
-                "
+          <div className="text-center space-y-12">
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                  Objective
               </div>
-              I build decentralized systems that real people actually want to use—designed to scale easily as they grow.
+              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+                My Core
+                <span className="block text-primary">Philosophy</span>
+              </h2>
             </div>
 
-            <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-400 leading-relaxed">
+            <div className="text-2xl lg:text-4xl text-white/40 leading-relaxed max-w-5xl mx-auto italic font-light">
+              Designing decentralized systems that integrate seamlessly into real-world workflows, engineered to be modular and scalable.
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-6 text-[10px] uppercase font-bold tracking-[0.3em] text-white/20">
               <p>
-                Too many blockchain projects are built for the technology first and the users second. I do the opposite.
+                A priority shift: Putting the user first in the development process.
               </p>
-              {/* <p>
-                Every smart contract, interface, and system I build starts with one question: “How can we make this feel natural?”
-              </p> */}
             </div>
           </div>
 
           {/* Principles grid */}
-          {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {principles.map((principle, index) => (
               <div
                 key={index}
-                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 text-center"
+                className="group p-8 bg-white/5 border border-white/5 rounded-none transition-all duration-300 hover:border-primary/20 text-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                    <principle.icon className="w-6 h-6 text-white" />
+                <div className="space-y-6">
+                  <div className="w-12 h-12 bg-primary rounded-none flex items-center justify-center mx-auto transition-transform duration-300">
+                    <principle.icon className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">{principle.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{principle.description}</p>
+                    <h3 className="text-xs font-black text-white mb-2 uppercase tracking-widest leading-none">{principle.title}</h3>
+                    <p className="text-white/40 text-[9px] uppercase tracking-wider font-bold italic leading-relaxed">{principle.description}</p>
                   </div>
                 </div>
               </div>
             ))}
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

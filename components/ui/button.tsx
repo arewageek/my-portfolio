@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white text-black hover:bg-gray-100 active:bg-gray-200 shadow-sm hover:shadow-md border border-gray-200/50",
-        primary: "bg-pink-600 text-white hover:bg-pink-700 active:bg-pink-800 shadow-sm hover:shadow-lg",
-        secondary: "bg-gray-800 text-white hover:bg-gray-700 active:bg-gray-900 shadow-sm hover:shadow-md",
-        outline: "border border-pink-600/30 bg-transparent text-pink-400 hover:bg-pink-600/5 hover:border-pink-600/50 hover:text-pink-300 active:bg-pink-600/10",
-        ghost: "text-gray-400 hover:text-white hover:bg-white/5 active:bg-white/10",
-        link: "text-pink-400 hover:text-pink-300 underline-offset-4 hover:underline",
-        destructive: "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm hover:shadow-md",
-        accent: "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 shadow-sm hover:shadow-md",
+        default: "bg-white text-black hover:bg-zinc-200 active:bg-zinc-300 shadow-sm border border-zinc-200/50 backdrop-blur-sm",
+        primary: "bg-primary text-black hover:bg-primary/90 shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all duration-300 font-bold uppercase tracking-widest",
+        secondary: "bg-white/5 text-white hover:bg-white/10 active:bg-white/5 shadow-sm border border-white/10 backdrop-blur-sm transition-all duration-300",
+        outline: "border border-white/10 bg-transparent text-white hover:bg-white/5 hover:border-primary/50 transition-all duration-500",
+        ghost: "text-zinc-400 hover:text-white hover:bg-white/5 active:bg-white/10",
+        link: "text-primary hover:text-white underline-offset-4 hover:underline transition-colors",
+        destructive: "bg-red-900/50 text-red-200 border border-red-900 hover:bg-red-900/70 hover:text-white",
+        accent: "bg-primary text-black hover:bg-primary/80 shadow-lg hover:shadow-primary/20",
       },
       size: {
         default: "h-10 px-4 py-2 rounded-lg",

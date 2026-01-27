@@ -9,6 +9,16 @@ export const brandConfig = {
   tagline: "Where we're going, we won't need wallets",
   location: "Nigeria",
   email: "arewageek@gmail.com",
+  
+  // Categories
+  categories: [
+    { name: "DeFi", slug: "defi", description: "Decentralized Finance protocols and applications" },
+    { name: "Infra", slug: "infra", description: "Infrastructure and developer tools" },
+    { name: "NFT", slug: "nft", description: "Non-fungible tokens and marketplaces" },
+    { name: "AI", slug: "ai", description: "Artificial Intelligence and Machine Learning" },
+    { name: "E-Commerce", slug: "ecommerce", description: "Online shopping and commerce solutions" },
+    { name: "Web3", slug: "web3", description: "Decentralized web applications" }
+  ],
 
   // Social Links
   socials: [
@@ -55,20 +65,20 @@ export const brandConfig = {
   hero: {
     greeting: "Hello, I'm",
     description:
-      "I build decentralized apps and protocols that feel simple and smooth. Because Web3 should be easy to use—not unnecessarily complex.",
+      "I build decentralized apps and protocols that feel simple and focus on user experience. Web3 doesn't have to be complicated.",
     cta: {
-      primary: "Explore My Work",
-      secondary: "Let's Connect",
+      primary: "My Work",
+      secondary: "Contact Me",
     },
-    status: "Available for new projects",
+    status: "Available now",
   },
 
   // About Page
   about: {
     intro:
-      "A blockchain engineer who believes the best technology is the kind you don’t even realize you’re using.",
+      "A software engineer building web and blockchain applications with a focus on simplicity and quality.",
     mission:
-      "I build decentralized systems that real people actually want to use—designed from the ground up to scale effortlessly as they grow.",
+      "I build decentralized systems that people actually enjoy using.",
     story: [
       "I got into blockchain not because of the hype, but because I was fascinated by the idea of building systems that don't need a middleman to work.",
       "Most blockchain apps feel like they were built by engineers for engineers. I think that's backwards. The best technology is the kind you don't even notice you're using.",
@@ -194,7 +204,8 @@ export const brandConfig = {
       id: "borbbles",
       name: "Borbbles",
       role: "Fullstack Engineer",
-      period: "Sep 2021 - Mar 2022",
+      started: "Sep 2021",
+      stopped: "Mar 2022",
       location: "Niger, Nigeria",
       type: "Full-time",
       logo: "",
@@ -206,14 +217,12 @@ export const brandConfig = {
       projectCount: 1,
       overview: {
         description:
-          "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
+          "Co-founded a laundry service company in college with a subscription model.",
         responsibilities: [
-          "Developed a comprehensive web application, improving user experience and operational efficiency.",
-          "Integrated subscription services into the web application, enabling customers to easily manage recurring services and payments.",
-          "Educated users on the features and functionalities of the web application, ensuring smooth adoption and enhancing customer satisfaction.",
+          "Developed a web app that improved user experience and work efficiency.",
+          "Built a subscription system to help customers manage recurring payments.",
+          "Guided users on how to use the app to ensure smooth adoption.",
         ],
-        // impact:
-        //   "Led the company's transition from a traditional DeFi protocol to an AI-powered platform, resulting in 300% user growth and $25M+ in managed assets.",
       },
       projects: [
         //   {
@@ -271,7 +280,8 @@ export const brandConfig = {
       id: "skytech",
       name: "Skytech Integrated Network Ltd.",
       role: "Fullstack Engineer & Tutor",
-      period: "Jun 2022 - Jul 2023",
+      started: "Jun 2022",
+      stopped: "Jul 2023",
       location: "Nasarawa, Nigeria",
       type: "Full-time",
       logo: "",
@@ -353,7 +363,8 @@ export const brandConfig = {
       id: "its",
       name: "ITS, FUT Minna",
       role: "Fullstack Engineer",
-      period: "Sep 2023 - Feb 2024",
+      started: "Sep 2023",
+      stopped: "Feb 2024",
       location: "Niger, Nigeria",
       type: "Full-time",
       logo: "",
@@ -429,7 +440,8 @@ export const brandConfig = {
       id: "phlamingos",
       name: "Phlamingos NFT",
       role: "Blockchain Engineer",
-      period: "May - Jul 2024",
+      started: "May 2024",
+      stopped: "Jul 2024",
       location: "Fiverr",
       type: "Contract",
       logo: "",
@@ -502,7 +514,8 @@ export const brandConfig = {
       id: "tol",
       name: "The Open Labs (TOL)",
       role: "Fullstack Engineer",
-      period: "Aug - Nov 2024",
+      started: "Aug 2024",
+      stopped: "Nov 2024",
       location: "Remote",
       type: "Contract",
       logo: "",
@@ -578,7 +591,8 @@ export const brandConfig = {
       id: "flaury",
       name: "Flaury",
       role: "Backend Engineer",
-      period: "Oct - Nov 2024",
+      started: "Oct 2024",
+      stopped: "Nov 2024",
       location: "Remote",
       type: "Volunteer",
       logo: "",
@@ -648,7 +662,7 @@ export const brandConfig = {
       id: "i633",
       name: "Ignition 633 Ministries",
       role: "Fullstack Engineer",
-      period: "Jan 2025 - Present",
+      started: "Jan 2025",
       location: "Benue, Nigeria",
       type: "Full-Time",
       logo: "",
@@ -729,7 +743,8 @@ export const brandConfig = {
       id: "goviral",
       name: "Go Viral Africa",
       role: "Frontend Engineer",
-      period: "Aug 2025 - Present",
+      started: "Aug 2025",
+      stopped: "Nov 2025",
       location: "Remote",
       type: "Full-Time",
       logo: "",
@@ -932,6 +947,7 @@ export const brandConfig = {
       technologies: ["Next JS", "Paystack", "Clerk"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Beta",
+      companyId: "i633",
       links: { demo: "https://633-kitchen.vercel.app", github: "" },
     },
     {
@@ -956,7 +972,7 @@ export const brandConfig = {
     },
     {
       title: "Pricetag (Frontend)",
-      category: "E-COmmerce",
+      category: "E-Commerce",
       description: "An app that lets people create and manage stores",
       image: "pricetag.png",
       technologies: ["React", "Motion SDK", "TailwindCSS"],
@@ -998,6 +1014,7 @@ export const brandConfig = {
       technologies: ["Next JS", "Motion SDK"],
       metrics: { trades: "1M+", accuracy: "78%", profit: "45%" },
       status: "Live",
+      companyId: "goviral",
       links: {
         demo: "https://whoscore.uk",
         github: "",

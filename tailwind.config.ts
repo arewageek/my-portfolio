@@ -30,28 +30,28 @@ const config: Config = {
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#1e293b",
-          foreground: "#f1f5f9",
+          DEFAULT: "#18181b", // Zinc 900
+          foreground: "#fafafa",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#334155",
-          foreground: "#94a3b8",
+          DEFAULT: "#27272a", // Zinc 800
+          foreground: "#a1a1aa",
         },
         accent: {
-          DEFAULT: "#ec4899",
+          DEFAULT: "#ec4899", // Pink
           foreground: "#ffffff",
         },
         popover: {
-          DEFAULT: "#1e293b",
-          foreground: "#f1f5f9",
+          DEFAULT: "#09090b", // Zinc 950
+          foreground: "#fafafa",
         },
         card: {
-          DEFAULT: "#1e293b",
-          foreground: "#f1f5f9",
+          DEFAULT: "#09090b", // Zinc 950
+          foreground: "#fafafa",
         },
         purple: {
           50: "#faf5ff",

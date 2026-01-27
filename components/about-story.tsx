@@ -47,62 +47,60 @@ export function AboutStory() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-950">
-      <div className="max-w-6xl mx-auto">
+    <section ref={sectionRef} className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <div className="max-w-7xl mx-auto">
         <div className={`space-y-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Story content */}
-          <div className="grid lg:grid-cols-4 gap-12 lg:gap-20 items-center">
-            <div className="space-y-8 col-span-3">
-              <div className="space-y-6">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
-                  My{" "}
-                  <span className="text-pink-400">
-                    Story
-                  </span>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <div className="lg:col-span-8 space-y-12">
+              <div className="space-y-8">
+                <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                    Genesis
+                </div>
+                <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+                  My
+                  <span className="block text-primary">Story</span>
                 </h2>
 
-                <div className="space-y-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
+                <div className="space-y-8 text-lg lg:text-xl text-white/40 leading-relaxed italic font-light">
                   <p>
-                    I got into blockchain because the space felt alive. Things were moving fast, sometimes too fast, but that energy pulled me in. It felt like being part of something that was still being figured out, and that was exciting.
+                    I entered the crypto space because it felt alive. The pace of innovation was intense, and building within an ecosystem that was still taking shape in real time offered a rare and deeply engaging challenge.
                   </p>
 
                   <p>
-                    As I worked in Web3, I started to notice a pattern. The tech was powerful, but the experience wasn’t always friendly. People often struggled to use products that were supposed to empower them. That stuck with me, and it shaped how I approach building—I want to create tools that people enjoy using, not just ones that are technically impressive.
+                    As I worked across Web3 systems, a consistent issue became clear: the disconnect between cryptographic capability and human usability. While protocols grew increasingly secure and advanced, user experience often lagged behind. This pushed me toward building interfaces that make decentralized systems understandable and usable by real people.
                   </p>
 
                   <p>
-                    Since then, I’ve focused on projects that try to make blockchain simpler and more approachable. Along the way, I’ve also been exploring how AI can fit into the picture, as a way to make systems smarter and interactions smoother.
+                    My focus is now centered on creating systems that balance clarity with performance. By combining thoughtful design with reliable, scalable infrastructure, I work to reduce friction for emerging use cases in digital identity and online commerce.
                   </p>
 
                   <p>
-                    For me, it always comes back to people. Blockchain isn’t just code or tokens, it’s about building systems that work for real lives. That’s the part that keeps me hooked and keeps me building.
+                    At the core of my work is the human behind the hash. Decentralization is not just a technical concept, but a social one. Building systems that strengthen individual autonomy is the motivation behind everything I ship.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Highlights */}
-            {/* <div className="grid gap-6">
-              {highlights.map((highlight, index) => (
-                <div
-                  key={index}
-                  className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex items-center space-x-4">
-                    <div
-                      className={`p-3 bg-gradient-to-r ${highlight.gradient} rounded-xl group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <highlight.icon className="w-6 h-6 text-white" />
+            {/* Side Info / Highlights */}
+            <div className="lg:col-span-4 space-y-8">
+                <div className="bg-white/5 border border-white/5 p-8 rounded-none">
+                    <h4 className="text-[10px] uppercase tracking-[0.3em] font-black text-white mb-6">Kernel Parameters</h4>
+                    <div className="space-y-8">
+                        {highlights.map((highlight, index) => (
+                            <div key={index} className="flex items-center space-x-4">
+                                <div className="p-3 bg-primary rounded-none">
+                                    <highlight.icon className="w-5 h-5 text-black" />
+                                </div>
+                                <div>
+                                    <div className="text-2xl font-black text-white uppercase tracking-tighter">{highlight.title}</div>
+                                    <div className="text-[10px] uppercase tracking-widest text-white/20 font-bold">{highlight.description}</div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <div>
-                      <div className="text-2xl font-black text-white">{highlight.title}</div>
-                      <div className="text-gray-400">{highlight.description}</div>
-                    </div>
-                  </div>
                 </div>
-              ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

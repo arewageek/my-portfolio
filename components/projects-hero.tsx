@@ -30,29 +30,20 @@ export function ProjectsHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-4 sm:px-6 lg:px-8"
-      style={{
-        background: `
-          radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 70% 30%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-          linear-gradient(135deg, #000000 0%, #0a0a0f 100%)
-        `,
-      }}
+      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-4 sm:px-6 lg:px-8 bg-black"
     >
-      {/* Floating orbs - Hidden on mobile */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
+      {/* Background Glows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-64 h-64 lg:w-96 lg:h-96 bg-purple-500/5 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"
           style={{
             transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
-            animation: "gentleFloat 15s ease-in-out infinite",
           }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-48 h-48 lg:w-80 lg:h-80 bg-pink-500/5 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-[100px]"
           style={{
             transform: `translate(${mousePosition.x * -0.2}px, ${mousePosition.y * -0.2}px)`,
-            animation: "gentleFloat 12s ease-in-out infinite reverse",
           }}
         />
       </div>
@@ -60,46 +51,40 @@ export function ProjectsHero() {
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center space-y-12 lg:space-y-16">
           <div className={`space-y-6 lg:space-y-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-            <div className="inline-flex items-center px-4 lg:px-8 py-2 lg:py-4 bg-black/40 backdrop-blur-md border border-purple-500/30 rounded-full text-purple-400 text-xs lg:text-sm font-medium">
-              <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 mr-2" />
-              Featured Work
+            <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+              Projects
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-9xl font-black text-white leading-tight">
-              My{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
-                Projects
-              </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter uppercase">
+               Recent
+              <span className="block text-primary">Projects</span>
             </h1>
 
-            <p className="text-lg lg:text-3xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              Innovative blockchain solutions that push the boundaries of what's possible in Web3
+            <p className="text-lg lg:text-2xl text-white/40 leading-relaxed max-w-3xl mx-auto italic font-light">
+                A collection of web and blockchain projects I've built.
             </p>
           </div>
 
           {/* Quick overview stats */}
           <div
-            className={`grid grid-cols-2 lg:grid-cols-2 mx-auto w-fit gap-4 lg:gap-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+            className={`grid grid-cols-2 lg:grid-cols-2 mx-auto w-fit gap-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "300ms" }}
           >
             {[
               { icon: Building, label: "Companies", value: brandConfig.companies.length },
-              // { icon: Users, label: "Team Members", value: brandConfig.stats.teamMembers },
-              { icon: Code, label: "Projects Delivered", value: brandConfig.projects.length },
-              // { icon: TrendingUp, label: "Total Value Created", value: brandConfig.stats.tvl },
+              { icon: Code, label: "Live Projects", value: brandConfig.projects.length },
             ].map((stat, index) => (
               <div
                 key={index}
-                className="p-4 lg:p-8 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl lg:rounded-3xl hover:bg-white/10 transition-all duration-500 hover:transform hover:scale-105"
-                style={{ animation: `gentleFloat 8s ease-in-out infinite ${index * 0.5}s` }}
+                className="p-8 bg-white/5 border border-white/5 rounded-none w-48 lg:w-64 transition-all duration-500 hover:border-primary/20"
               >
-                <div className="space-y-3 lg:space-y-4">
-                  <div className="p-2 lg:p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl lg:rounded-2xl w-fit mx-auto">
-                    <stat.icon className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
+                <div className="space-y-4">
+                  <div className="p-3 bg-primary rounded-none w-fit mx-auto">
+                    <stat.icon className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <div className="text-2xl lg:text-3xl font-black text-white mb-1">{stat.value}</div>
-                    <div className="text-gray-400 font-medium text-xs lg:text-base">{stat.label}</div>
+                    <div className="text-3xl lg:text-4xl font-black text-white mb-1 uppercase tracking-tighter">{stat.value}</div>
+                    <div className="text-white/20 font-bold text-[10px] uppercase tracking-widest">{stat.label}</div>
                   </div>
                 </div>
               </div>

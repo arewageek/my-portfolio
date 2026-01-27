@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <div className="fixed inset-0 bg-grain opacity-[0.02] pointer-events-none z-[1]" />
         <Preloader />
         <Navigation />
         <main className="relative z-10">{children}</main>

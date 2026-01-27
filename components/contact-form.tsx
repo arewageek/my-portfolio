@@ -55,123 +55,124 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <section ref={sectionRef} className="py-32 px-6 lg:px-8 flex items-center justify-center">
-        <div className="text-center space-y-6">
-          <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto">
-            <CheckCircle className="w-10 h-10 text-white" />
+      <section ref={sectionRef} className="py-32 px-6 lg:px-8 flex items-center justify-center bg-black">
+        <div className="text-center space-y-8 animate-fade-in-up">
+          <div className="w-20 h-20 bg-primary rounded-none flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(0,255,255,0.4)]">
+            <CheckCircle className="w-10 h-10 text-black" />
           </div>
-          <h3 className="text-3xl font-bold text-white">Message Sent!</h3>
-          <p className="text-gray-300">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+          <h3 className="text-4xl font-black text-white uppercase tracking-tighter">Transmission Successful</h3>
+          <p className="text-white/40 text-xs uppercase tracking-widest font-bold italic">Verification complete. Architectural review initiated. Latency: &lt; 24h.</p>
         </div>
       </section>
     )
   }
 
   return (
-    <section ref={sectionRef} className="py-32 px-6 lg:px-8">
+    <section ref={sectionRef} className="py-32 px-6 lg:px-8 bg-black">
       <div className="max-w-2xl mx-auto">
         <div className={`${isVisible ? "animate-fade-in-right" : "opacity-0"}`}>
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-black text-white">
-                Start Your{" "}
-                <span className="text-pink-400">
-                  Project
-                </span>
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Contact Form
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+                Start a
+                <span className="block text-primary">Project</span>
               </h2>
-              <p className="text-xl text-gray-300">Tell me about your vision and let's make it a reality together.</p>
+              <p className="text-white/40 text-xs uppercase tracking-widest font-bold italic">Tell me about your vision and let's build it together.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-gray-300 font-medium mb-3">Name *</label>
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] uppercase font-black tracking-widest text-white/20">Name *</label>
                   <Input
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Your name"
-                    className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-pink-400 focus:ring-pink-400/20 h-12"
+                    placeholder="Enter your name"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/10 focus:border-primary focus:ring-0 h-14 rounded-none uppercase text-xs tracking-widest font-bold"
                     required
                   />
                 </div>
-                <div>
-                  <label className="block text-gray-300 font-medium mb-3">Email *</label>
+                <div className="space-y-3">
+                  <label className="text-[10px] uppercase font-black tracking-widest text-white/20">Email Address *</label>
                   <Input
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="your@email.com"
-                    className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-pink-400 focus:ring-pink-400/20 h-12"
+                    placeholder="Enter your email"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/10 focus:border-primary focus:ring-0 h-14 rounded-none uppercase text-xs tracking-widest font-bold"
                     required
                   />
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-gray-300 font-medium mb-3">Budget Range</label>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] uppercase font-black tracking-widest text-white/20">Budget Range</label>
                   <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full h-12 bg-white/5 border border-white/20 text-white rounded-md px-3 focus:border-pink-400 focus:ring-pink-400/20"
+                    className="w-full h-14 bg-white/5 border border-white/10 text-white/40 px-4 focus:border-primary focus:outline-none rounded-none uppercase text-[10px] tracking-widest font-bold appearance-none cursor-pointer"
                   >
-                    <option value="">Select budget range</option>
-                    <option value="5k-10k">$5K - $10K</option>
-                    <option value="10k-25k">$10K - $25K</option>
-                    <option value="25k-50k">$25K - $50K</option>
-                    <option value="50k+">$50K+</option>
+                    <option value="" className="bg-black">Select Budget</option>
+                    <option value="5k-10k" className="bg-black">$5K - $10K</option>
+                    <option value="10k-25k" className="bg-black">$10K - $25K</option>
+                    <option value="25k-50k" className="bg-black">$25K - $50K</option>
+                    <option value="50k+" className="bg-black">$50K+</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-gray-300 font-medium mb-3">Timeline</label>
+                <div className="space-y-3">
+                  <label className="text-[10px] uppercase font-black tracking-widest text-white/20">Project Timeline</label>
                   <select
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleInputChange}
-                    className="w-full h-12 bg-white/5 border border-white/20 text-white rounded-md px-3 focus:border-pink-400 focus:ring-pink-400/20"
+                    className="w-full h-14 bg-white/5 border border-white/10 text-white/40 px-4 focus:border-primary focus:outline-none rounded-none uppercase text-[10px] tracking-widest font-bold appearance-none cursor-pointer"
                   >
-                    <option value="">Select timeline</option>
-                    <option value="asap">ASAP</option>
-                    <option value="1-2months">1-2 months</option>
-                    <option value="3-6months">3-6 months</option>
-                    <option value="6months+">6+ months</option>
+                    <option value="" className="bg-black">Select Timeline</option>
+                    <option value="asap" className="bg-black">ASAP</option>
+                    <option value="1-2months" className="bg-black">1-2 Months</option>
+                    <option value="3-6months" className="bg-black">3-6 Months</option>
+                    <option value="6months+" className="bg-black">6+ Months</option>
                   </select>
                 </div>
               </div>
 
-              <div>
-                <label className="block text-gray-300 font-medium mb-3">Subject *</label>
+              <div className="space-y-3">
+                <label className="text-[10px] uppercase font-black tracking-widest text-white/20">Subject *</label>
                 <Input
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  placeholder="Project discussion"
-                  className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/20 h-12"
+                  placeholder="Project Discussion"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/10 focus:border-primary focus:ring-0 h-14 rounded-none uppercase text-xs tracking-widest font-bold"
                   required
                 />
               </div>
 
-              <div>
-                <label className="block text-gray-300 font-medium mb-3">Project Details *</label>
+              <div className="space-y-3">
+                <label className="text-[10px] uppercase font-black tracking-widest text-white/20">Message Details *</label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Tell me about your project, goals, and any specific requirements..."
+                  placeholder="Tell me more about your project..."
                   rows={6}
-                  className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-pink-400 focus:ring-pink-400/20 resize-none"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/10 focus:border-primary focus:ring-0 rounded-none uppercase text-xs tracking-widest font-bold resize-none p-4"
                   required
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-pink-600 hover:bg-pink-700 text-white py-4 text-lg font-semibold shadow-2xl shadow-pink-500/25 hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-primary text-black h-16 text-xs font-black uppercase tracking-[0.4em] rounded-none shadow-[0_0_20px_rgba(0,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] transition-all duration-500"
               >
-                <Send className="w-5 h-5 mr-2" />
+                <Send className="w-5 h-5 mr-3" />
                 Send Message
               </Button>
             </form>

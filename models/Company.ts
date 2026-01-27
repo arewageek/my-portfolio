@@ -5,7 +5,6 @@ export interface IBackEndCompany {
   slug: string;
   name: string;
   role: string;
-  period?: string;
   location?: string;
   type?: string;
   logo?: string;
@@ -24,6 +23,8 @@ export interface IBackEndCompany {
     responsibilities?: string[];
     impact?: string;
   };
+  started?: string;
+  stopped?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -33,7 +34,6 @@ const CompanySchema = new Schema<IBackEndCompany>(
     slug: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     role: { type: String, required: true },
-    period: String,
     location: String,
     type: String,
     logo: String,
@@ -54,6 +54,8 @@ const CompanySchema = new Schema<IBackEndCompany>(
       responsibilities: [String],
       impact: String,
     },
+    started: String,
+    stopped: String,
   },
   { timestamps: true }
 );

@@ -59,7 +59,7 @@ export function TechHighlights() {
     <section ref={sectionRef} className="relative py-32 px-6 lg:px-8 bg-black/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center px-6 py-3 bg-gray-900/50 backdrop-blur-md border border-gray-800 rounded-full text-gray-300 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-6 py-3 bg-secondary/50 backdrop-blur-md border border-white/10 rounded-full text-gray-300 text-sm font-medium mb-6">
             Core Expertise
           </div>
           <h2 className="text-5xl lg:text-6xl font-black text-white mb-6">
