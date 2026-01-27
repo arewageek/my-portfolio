@@ -34,35 +34,40 @@ export function AboutQuote() {
     >
       <div className="max-w-5xl mx-auto text-center">
         <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-6 py-3 bg-gray-900/50 backdrop-blur-xl border border-gray-800 rounded-full text-gray-300 text-sm font-medium">
-              <Sparkles className="w-4 h-4 mr-2 text-purple-400" />
-              Ready to innovate together?
+          <div className="space-y-12">
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                Collaborate
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-tight">
-              Let's Build the{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Future
-              </span>{" "}
-              Together
+            <h2 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-[0.85] tracking-tighter uppercase">
+              Let's Work
+              <span className="block text-primary">Together</span>
             </h2>
 
-            <p className="text-xl sm:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Whether you have a revolutionary idea or need to transform an existing project, I'm here to make it
-              happen.
+            <p className="text-xl lg:text-2xl text-white/40 leading-relaxed max-w-4xl mx-auto italic font-light">
+              I'm always open to new ideas and challenging projects. Let's create something amazing.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center pt-8">
             <Link href={brandConfig.calendar}>
               <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-pink-400/6x0 text-pink-400 hover:bg-pink-400/10 hover:border-pink-400 hover:text-white px-16 py-6 text-2xl font-bold transition-all duration-500 backdrop-blur-sm rounded-2xl"
+                variant="primary"
+                size="xl"
+                className="px-16 py-6 text-xl font-black uppercase tracking-widest rounded-none border-none"
               >
                 Schedule Call
                 <Calendar className="w-6 h-6 ml-3" />
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                size="xl"
+                className="px-16 py-6 text-xl font-black uppercase tracking-widest rounded-none border-white/10 text-white/40 hover:text-white"
+              >
+                Contact Me
+                <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
             </Link>
           </div>
