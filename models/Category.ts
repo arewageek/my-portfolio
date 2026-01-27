@@ -5,7 +5,6 @@ export interface ICategory {
   slug: string;
   description?: string;
   color?: string;
-  parent?: mongoose.Types.ObjectId | string | null;
 }
 
 const CategorySchema = new Schema<ICategory>(
@@ -14,7 +13,6 @@ const CategorySchema = new Schema<ICategory>(
     slug: { type: String, required: true, unique: true, lowercase: true },
     description: String,
     color: String,
-    parent: { type: Schema.Types.ObjectId, ref: "Category", default: null },
   },
   { timestamps: true }
 );

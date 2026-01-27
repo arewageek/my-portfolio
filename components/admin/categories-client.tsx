@@ -18,7 +18,7 @@ export function CategoriesClient({ initialCategories }: CategoriesClientProps) {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("[Client] Categories prop:", initialCategories);
+    // Component logic
   }, [initialCategories]);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -84,7 +84,6 @@ export function CategoriesClient({ initialCategories }: CategoriesClientProps) {
                 <tr>
                   <th className="h-12 px-4 sm:px-6 align-middle">Category</th>
                   <th className="h-12 px-4 sm:px-6 align-middle">Slug</th>
-                  <th className="h-12 px-4 sm:px-6 align-middle hidden md:table-cell">Parent</th>
                   <th className="h-12 px-4 sm:px-6 align-middle text-right">Actions</th>
                 </tr>
               </thead>
@@ -100,11 +99,8 @@ export function CategoriesClient({ initialCategories }: CategoriesClientProps) {
                         <span className="font-semibold">{cat.name || "Unnamed Category"}</span>
                       </div>
                     </td>
-                    <td className="p-4 sm:p-6 align-middle text-muted-foreground">
+                    <td className="p-4 sm:p-6 align-middle text-muted-foreground text-xs">
                       {cat.slug || "-"}
-                    </td>
-                    <td className="p-4 sm:p-6 align-middle hidden md:table-cell text-muted-foreground text-xs">
-                      {cat.parent?.name || "-"}
                     </td>
                     <td className="p-4 sm:p-6 align-middle text-right">
                       <div className="flex justify-end gap-2">

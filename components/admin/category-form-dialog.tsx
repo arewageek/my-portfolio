@@ -35,7 +35,6 @@ import { useState, useEffect } from "react";
 const categorySchema = z.object({
   name: z.string().min(2, "Name is too short"),
   description: z.string().optional(),
-  parent: z.string().optional().nullable(),
 });
 
 interface CategoryFormDialogProps {
@@ -59,7 +58,6 @@ export function CategoryFormDialog({
     defaultValues: {
       name: "",
       description: "",
-      parent: "none",
     },
   });
 
@@ -67,8 +65,7 @@ export function CategoryFormDialog({
     async function loadCategories() {
       const res = await getCategories();
       if (res.success) {
-        // Only show 1st level categories (no parent) in the selection
-        setCategories(res.data.filter((c: any) => !c.parent && c._id !== category?._id));
+        setCategories(res.data.filter((c: any) => c._id !== category?._id));
       }
     }
     if (open) loadCategories();
@@ -79,13 +76,11 @@ export function CategoryFormDialog({
       form.reset({
         name: category.name,
         description: category.description || "",
-        parent: category.parent?._id || category.parent || "none",
       });
     } else if (!category && open) {
       form.reset({
         name: "",
         description: "",
-        parent: "none",
       });
     }
   }, [category, form, open]);
@@ -94,7 +89,6 @@ export function CategoryFormDialog({
     setIsLoading(true);
     const data = {
       ...values,
-      parent: values.parent === "none" ? null : values.parent,
     };
 
     const res = category
@@ -132,31 +126,7 @@ export function CategoryFormDialog({
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="parent"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Parent Category</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value || "none"}>
-                    <FormControl>
-                      <SelectTrigger className="bg-secondary/50 border-white/10 text-white">
-                        <SelectValue placeholder="None (Root Category)" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent className="glass text-white border-white/10">
-                      <SelectItem value="none">None (Root Category)</SelectItem>
-                      {categories.map((cat) => (
-                        <SelectItem key={cat._id} value={cat._id}>
-                          {cat.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+
             <FormField
               control={form.control}
               name="description"

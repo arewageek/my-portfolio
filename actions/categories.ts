@@ -16,7 +16,6 @@ export async function getCategories() {
   await dbConnect();
   try {
     const categories = await Category.find({})
-      .populate({ path: 'parent', select: 'name', strictPopulate: false })
       .sort({ name: 1 })
       .lean();
     console.log(`[Server Action] Fetched ${categories.length} categories`);
