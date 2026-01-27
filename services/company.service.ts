@@ -31,7 +31,10 @@ export async function getCompanyBySlug(slug: string): Promise<CompanyDocument | 
   
   const projects = await Project.find({ companyId }).lean()
 
-  const mappedProjects = projects.map((p) => ({
+  const sanitizedCompany = JSON.parse(JSON.stringify(company))
+  const sanitizedProjects = JSON.parse(JSON.stringify(projects))
+
+  const mappedProjects = sanitizedProjects.map((p: any) => ({
     ...p,
     description: p.description || null,
     links: p.links ? {
@@ -39,23 +42,10 @@ export async function getCompanyBySlug(slug: string): Promise<CompanyDocument | 
         github: p.links.github || null,
         live: p.links.live || null,
     } : null,
-    _id: (p as any)._id.toString(),
-    id: (p as any)._id.toString(),
   })) as unknown as ProjectDocument[]
 
   return {
-    ...company,
-    period: (company as any).period || "",
-    location: (company as any).location || "",
-    type: (company as any).type || "",
-    logo: (company as any).logo || "",
-    status: (company as any).status || "",
-    description: (company as any).description || "",
-    technologies: (company as any).technologies || [],
-    achievements: (company as any).achievements || [],
-    responsibilities: (company as any).responsibilities || [],
-    _id: companyId.toString(),
-    id: companyId.toString(),
+    ...sanitizedCompany,
     projects: mappedProjects
   } as unknown as CompanyDocument
 }
@@ -64,18 +54,5 @@ export async function getCompanies(): Promise<CompanyDocument[]> {
   await dbConnect()
   const companies = await Company.find({}).lean()
   
-  return companies.map((c) => ({
-    ...c,
-    period: (c as any).period || "",
-    location: (c as any).location || "",
-    type: (c as any).type || "",
-    logo: (c as any).logo || "",
-    status: (c as any).status || "",
-    description: (c as any).description || "",
-    technologies: (c as any).technologies || [],
-    achievements: (c as any).achievements || [],
-    responsibilities: (c as any).responsibilities || [],
-    _id: (c as any)._id.toString(),
-    id: (c as any)._id.toString(),
-  })) as unknown as CompanyDocument[]
+  return JSON.parse(JSON.stringify(companies)) as unknown as CompanyDocument[]
 }
