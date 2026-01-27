@@ -26,12 +26,13 @@ export interface Project {
 }
 
 interface ProjectShowcaseProps {
-    projects: Project[]
+    projects: any[]
+    categories?: any[]
     showLoadMore?: boolean
     showHeader?: boolean
 }
 
-export function ProjectShowcase({ projects, showLoadMore = true, showHeader = true }: ProjectShowcaseProps) {
+export function ProjectShowcase({ projects, categories = [], showLoadMore = true, showHeader = true }: ProjectShowcaseProps) {
     const [isVisible, setIsVisible] = useState(false)
     const [activeFilter, setActiveFilter] = useState("All")
     const [viewMode, setViewMode] = useState<ViewMode>('grid')
@@ -58,10 +59,13 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
         return () => observer.disconnect()
     }, [])
 
-    const filters = ["All", "DeFi", "Infra", "NFT", "E-Commerce", "AI"]
+    // Only show 1st level (root) categories in the tabs
+    const rootCategories = (categories || []).filter((c: any) => !c.parent || c.parent === 'none');
+    const filters = ["All", ...rootCategories.map((c: any) => c.name)];
+
     const allFilteredProjects = activeFilter === "All"
         ? projects
-        : projects.filter((p) => p.category === activeFilter)
+        : projects.filter((p) => p.category === activeFilter || p.parentCategory === activeFilter);
 
     const filteredProjects = isHomePage && showLoadMore
         ? allFilteredProjects.slice(0, visibleCount)
@@ -196,24 +200,26 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                     className={`flex flex-col lg:flex-row justify-between items-center gap-6 mb-12 ${!showHeader ? 'mt-8' : ''}`}
                 >
                     {/* Filter Controls */}
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-3">
                         {filters.map((filter) => (
                             <button
                                 key={filter}
                                 onClick={() => setActiveFilter(filter)}
-                                className={`group relative px-6 py-3 rounded-2xl font-medium transition-all duration-300 text-sm hover:-translate-y-0.5 ${activeFilter === filter
-                                    ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-xl shadow-purple-500/40"
-                                    : "glass-card text-gray-400 hover:bg-white/10 hover:text-white hover:shadow-lg hover:shadow-purple-500/20"
+                                className={`group relative px-6 py-3 rounded-2xl font-semibold transition-all duration-500 text-sm hover:-translate-y-1 ${activeFilter === filter
+                                    ? "text-white shadow-2xl shadow-purple-500/40"
+                                    : "glass-card text-gray-400 hover:bg-white/10 hover:text-white hover:shadow-xl hover:shadow-purple-500/20"
                                     }`}
                             >
-                                <span className="relative z-10">{filter}</span>
+                                <span className="relative z-20">{filter}</span>
                                 {activeFilter === filter && (
                                     <motion.div
                                         layoutId="activeFilter"
-                                        className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl"
+                                        className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 rounded-2xl"
                                         initial={false}
-                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                    />
+                                        transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                                    >
+                                        <div className="absolute inset-0 bg-white/20 blur-sm rounded-2xl" />
+                                    </motion.div>
                                 )}
                             </button>
                         ))}
@@ -281,9 +287,9 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                                         {/* Project Image */}
                                         <div className="relative h-48 lg:h-56 bg-gradient-to-br from-purple-500/20 to-pink-500/20 overflow-hidden">
                                             <img
-                                                src={`${project.image}` || "/placeholder.svg"}
+                                                src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/projects/${project.image}`}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
@@ -338,7 +344,7 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
 
                                             {/* Technologies */}
                                             <div className="flex flex-wrap gap-1.5">
-                                                {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                                                {project.technologies?.slice(0, 3).map((tech: string, techIndex: number) => (
                                                     <span
                                                         key={techIndex}
                                                         className="px-2.5 py-1 bg-white/5 text-gray-300 border border-white/10 rounded-lg text-xs font-medium backdrop-blur-sm hover:bg-white/10 hover:scale-105 transition-all duration-200"
@@ -346,9 +352,9 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                                                         {tech}
                                                     </span>
                                                 ))}
-                                                {project.technologies.length > 3 && (
+                                                {(project.technologies?.length || 0) > 3 && (
                                                     <span className="px-2.5 py-1 bg-gray-500/20 text-gray-400 rounded-lg text-xs font-medium">
-                                                        +{project.technologies.length - 3}
+                                                        +{(project.technologies?.length || 0) - 3}
                                                     </span>
                                                 )}
                                             </div>
@@ -365,9 +371,9 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                                             <div className="relative lg:w-80 h-48 lg:h-40 rounded-2xl overflow-hidden flex-shrink-0 group/image">
                                                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-500/30" />
                                                 <img
-                                                    src={`/projects/${project.image}` || "/placeholder.svg"}
+                                                    src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/projects/${project.image}`}
                                                     alt={project.title}
-                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -436,7 +442,7 @@ export function ProjectShowcase({ projects, showLoadMore = true, showHeader = tr
                                                 <div className="space-y-3">
                                                     <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Technologies</h4>
                                                     <div className="flex flex-wrap gap-2">
-                                                        {project.technologies.map((tech, techIndex) => (
+                                                        {project.technologies?.map((tech: string, techIndex: number) => (
                                                             <span
                                                                 key={techIndex}
                                                                 className="px-3 py-1.5 bg-secondary text-gray-300 border border-white/10 rounded-xl text-sm font-medium backdrop-blur-sm hover:bg-secondary/80 hover:border-purple-500/30 hover:text-purple-300 hover:scale-105 transition-all duration-200 cursor-default"

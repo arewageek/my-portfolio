@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { deleteCompany } from "@/actions/work";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 import { IBackEndCompany } from "@/models/Company";
 
 import { WorkFormDialog } from "./work-form-dialog";
@@ -25,12 +26,12 @@ interface WorkClientProps {
 }
 
 export function WorkClient({ initialCompanies }: WorkClientProps) {
-  const [companies, setCompanies] = useState<any[]>(initialCompanies);
   const [searchQuery, setSearchQuery] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedWork, setSelectedWork] = useState<any | null>(null);
+  const router = useRouter(); 
 
-  const filteredCompanies = companies.filter(company => 
+  const filteredCompanies = initialCompanies.filter(company => 
     company.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     company.role.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -50,7 +51,7 @@ export function WorkClient({ initialCompanies }: WorkClientProps) {
       const result = await deleteCompany(id);
       if (result.success) {
         toast.success("Work experience deleted successfully");
-        window.location.reload(); 
+        router.refresh(); 
       } else {
         toast.error("Failed to delete work experience");
       }
@@ -168,7 +169,7 @@ export function WorkClient({ initialCompanies }: WorkClientProps) {
         open={isDialogOpen} 
         onOpenChange={setIsDialogOpen} 
         work={selectedWork}
-        onSuccess={() => window.location.reload()}
+        onSuccess={() => router.refresh()}
       />
     </div>
   );
