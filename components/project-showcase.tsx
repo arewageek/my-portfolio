@@ -59,13 +59,11 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
         return () => observer.disconnect()
     }, [])
 
-    // Only show 1st level (root) categories in the tabs
-    const rootCategories = (categories || []).filter((c: any) => !c.parent || c.parent === 'none');
-    const filters = ["All", ...rootCategories.map((c: any) => c.name)];
+    const filters = ["All", ...categories.map((c: any) => c.name)];
 
     const allFilteredProjects = activeFilter === "All"
         ? projects
-        : projects.filter((p) => p.category === activeFilter || p.parentCategory === activeFilter);
+        : projects.filter((p) => p.category === activeFilter);
 
     const filteredProjects = isHomePage && showLoadMore
         ? allFilteredProjects.slice(0, visibleCount)

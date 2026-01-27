@@ -33,9 +33,6 @@ export function ProjectsClient({ initialProjects, categories }: ProjectsClientPr
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const router = useRouter();
 
-  // 1st level categories only
-  const rootCategories = (categories || []).filter((c: any) => !c.parent || c.parent === 'none');
-
   const filteredProjects = initialProjects.filter(project => {
     // Search filter
     const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -46,17 +43,7 @@ export function ProjectsClient({ initialProjects, categories }: ProjectsClientPr
     // Category filter (Tab)
     if (selectedTab === "all") return true;
 
-    const projectCategory = project.categoryData;
-    if (!projectCategory) return false;
-
-    // Check if directly in root category
-    if (projectCategory._id === selectedTab) return true;
-    
-    // Check if in a child of the root category
-    const parentId = typeof projectCategory.parent === 'object' ? projectCategory.parent?._id : projectCategory.parent;
-    if (parentId === selectedTab) return true;
-
-    return false;
+    return project.category === selectedTab;
   });
 
   const handleEdit = (project: any) => {
@@ -102,7 +89,7 @@ export function ProjectsClient({ initialProjects, categories }: ProjectsClientPr
           >
             All Projects
           </TabsTrigger>
-          {rootCategories.map(cat => (
+          {categories.map(cat => (
             <TabsTrigger 
               key={cat._id} 
               value={cat._id} 

@@ -20,7 +20,6 @@ export async function getProjects() {
     const sanitizedProjects = JSON.parse(JSON.stringify(projects)).map((p: any) => ({
       ...p,
       categoryName: p.category?.name || "Uncategorized",
-      categoryData: p.category, // Keep the full object for filtering
       category: p.category?._id || p.category
     }));
 

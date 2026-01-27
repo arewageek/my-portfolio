@@ -20,7 +20,6 @@ export async function getProjects(): Promise<ProjectDocument[]> {
     .populate({ 
       path: 'category', 
       model: Category,
-      populate: { path: 'parent', model: Category },
       strictPopulate: false 
     })
     .sort({ createdAt: -1 })
@@ -29,7 +28,6 @@ export async function getProjects(): Promise<ProjectDocument[]> {
   return JSON.parse(JSON.stringify(projects)).map((p: any) => ({
     ...p,
     category: p.category?.name || "Uncategorized", 
-    parentCategory: p.category?.parent?.name || null, // Include parent name
     description: p.description || null,
     links: p.links ? {
         demo: p.links.demo || null,
@@ -55,18 +53,8 @@ export async function getProjectById(id: string): Promise<ProjectDocument | null
   } as unknown as ProjectDocument
 }
 
-export async function getRootCategories() {
+export async function getAllCategories() {
   await dbConnect()
-  // Ensure we get all categories that don't have a parent OR have parent set to null/empty
-  const categories = await Category.find({ 
-    $or: [
-      { parent: { $exists: false } },
-      { parent: null }, 
-      { parent: "none" },
-      { parent: "" }
-    ] 
-  }).sort({ name: 1 }).lean()
-  
-  console.log(`[Service] Found ${categories.length} root categories for filter bar`);
+  const categories = await Category.find({}).sort({ name: 1 }).lean()
   return JSON.parse(JSON.stringify(categories))
 }
