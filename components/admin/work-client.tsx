@@ -124,7 +124,7 @@ export function WorkClient({ initialCompanies }: WorkClientProps) {
                         </Badge>
                     </td>
                     <td className="p-4 sm:p-6 align-middle hidden md:table-cell">
-                      <span className="text-muted-foreground">{company.period}</span>
+                      <span className="text-muted-foreground">{company.started} - {company.stopped || 'Present'}</span>
                     </td>
                     <td className="p-4 sm:p-6 align-middle hidden lg:table-cell">
                       <span className="text-muted-foreground">{company.location}</span>

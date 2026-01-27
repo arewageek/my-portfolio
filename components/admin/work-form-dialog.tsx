@@ -35,7 +35,8 @@ import { useState, useEffect } from "react";
 const workSchema = z.object({
   name: z.string().min(2, "Company name is too short"),
   role: z.string().min(2, "Role is too short"),
-  period: z.string().min(1, "Period is required"),
+  started: z.string().min(1, "Start date is required"),
+  stopped: z.string().optional().or(z.literal("")),
   location: z.string().min(1, "Location is required"),
   type: z.string().min(1, "Job type is required"),
   description: z.string().min(10, "Description is too short"),
@@ -64,7 +65,8 @@ export function WorkFormDialog({
     defaultValues: {
       name: "",
       role: "",
-      period: "",
+      started: "",
+      stopped: "",
       location: "",
       type: "Full-time",
       description: "",
@@ -79,7 +81,8 @@ export function WorkFormDialog({
       form.reset({
         name: work.name,
         role: work.role,
-        period: work.period || "",
+        started: work.started || "",
+        stopped: work.stopped || "",
         location: work.location || "",
         type: work.type || "Full-time",
         description: work.description || "",
@@ -91,7 +94,8 @@ export function WorkFormDialog({
       form.reset({
         name: "",
         role: "",
-        period: "",
+        started: "",
+        stopped: "",
         location: "",
         type: "Full-time",
         description: "",
@@ -172,20 +176,34 @@ export function WorkFormDialog({
                 </FormItem>
               )}
             />
-            <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
-                name="period"
+                name="started"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Period</FormLabel>
+                    <FormLabel>Started</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Jan 2023 - Present" className="bg-secondary/50 border-white/10" />
+                      <Input {...field} placeholder="Jan 2023" className="bg-secondary/50 border-white/10" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="stopped"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Stopped (leave blank if present)</FormLabel>
+                    <FormControl>
+                      <Input {...field} placeholder="Dec 2023" className="bg-secondary/50 border-white/10" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
                 name="type"
@@ -209,7 +227,6 @@ export function WorkFormDialog({
                   </FormItem>
                 )}
               />
-            </div>
              <FormField
               control={form.control}
               name="location"
