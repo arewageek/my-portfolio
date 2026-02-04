@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { BarChart3, Briefcase, FolderGit2, LayoutDashboard, Settings, LogOut, Hash } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { logoutAction } from "@/app/login/actions";
+import { toast } from "sonner";
 
 const sidebarItems = [
   {
@@ -41,6 +43,17 @@ const sidebarItems = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await logoutAction();
+      toast.success("Logged out successfully");
+      router.push("/login");
+    } catch (error) {
+      toast.error("Failed to logout");
+    }
+  };
 
   return (
     <aside className="fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border/50 backdrop-blur-xl hidden md:flex flex-col">
@@ -72,7 +85,11 @@ export function AdminSidebar() {
       </nav>
 
       <div className="p-4 border-t border-border/50">
-        <Button variant="ghost" className="w-full justify-start gap-3 text-muted-foreground hover:text-destructive hover:bg-destructive/10">
+        <Button 
+          variant="ghost" 
+          className="w-full justify-start gap-3 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+          onClick={handleLogout}
+        >
           <LogOut className="w-5 h-5" />
           Logout
         </Button>

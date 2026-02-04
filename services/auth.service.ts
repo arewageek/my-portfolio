@@ -50,4 +50,13 @@ export class AuthService {
     delete adminObj.password;
     return adminObj;
   }
+
+  static async getAdminById(id: string) {
+    await dbConnect();
+    const admin = await Admin.findById(id);
+    if (!admin) return null;
+    const adminObj = admin.toObject() as IAdmin;
+    delete adminObj.password;
+    return adminObj;
+  }
 }
