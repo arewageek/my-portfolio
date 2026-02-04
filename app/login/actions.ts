@@ -38,3 +38,7 @@ export async function loginAction(prevState: any, formData: FormData) {
     return { error: error.message || "An unexpected error occurred" };
   }
 }
+
+export async function logoutAction() {
+  (await cookies()).delete("admin_token");
+}
