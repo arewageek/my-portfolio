@@ -151,7 +151,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+                        <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/60 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
                             Portfoilo
                         </div>
 
@@ -160,7 +160,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                             <span className="block text-primary">Work</span>
                         </h2>
 
-                        <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto leading-relaxed mb-8 italic">
+                        <p className="text-lg lg:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-8 italic">
                             A collection of my recent web and blockchain projects.
                         </p>
                     </motion.div>
@@ -181,7 +181,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                 onClick={() => setActiveFilter(filter)}
                                 className={`group relative py-2 transition-all duration-500 text-[10px] uppercase tracking-[0.2em] ${activeFilter === filter
                                     ? "text-primary font-bold"
-                                    : "text-white/30 hover:text-white/60"
+                                    : "text-white/50 hover:text-white/80"
                                     }`}
                             >
                                 <span className="relative z-20">{filter}</span>
@@ -203,7 +203,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                             onClick={() => setViewMode('grid')}
                             className={`p-2 transition-all duration-200 ${viewMode === 'grid'
                                 ? 'bg-primary text-black'
-                                : 'text-white/30 hover:text-white'
+                                : 'text-white/50 hover:text-white'
                                 }`}
                         >
                             <Grid3X3 className="w-4 h-4" />
@@ -212,7 +212,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                             onClick={() => setViewMode('list')}
                             className={`p-2 transition-all duration-200 ${viewMode === 'list'
                                 ? 'bg-primary text-black'
-                                : 'text-white/30 hover:text-white'
+                                : 'text-white/50 hover:text-white'
                                 }`}
                         >
                             <List className="w-4 h-4" />
@@ -300,11 +300,11 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                                     <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors duration-300 line-clamp-1 uppercase tracking-tighter">
                                                         {project.title}
                                                     </h3>
-                                                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">
+                                                    <span className="text-[10px] uppercase tracking-widest text-white/50 font-bold">
                                                         {project.category}
                                                     </span>
                                                 </div>
-                                                <p className="text-white/40 text-xs leading-relaxed line-clamp-2 italic">
+                                                <p className="text-white/60 text-xs leading-relaxed line-clamp-2 italic">
                                                     {project.description}
                                                 </p>
                                             </div>
@@ -314,7 +314,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                                 {project.technologies?.slice(0, 3).map((tech: string, techIndex: number) => (
                                                     <span
                                                         key={techIndex}
-                                                        className="px-2 py-1 bg-white/5 text-white/40 border border-white/5 text-[9px] uppercase font-bold tracking-widest hover:text-primary transition-colors cursor-default"
+                                                        className="px-2 py-1 bg-white/5 text-white/60 border border-white/5 text-[9px] uppercase font-bold tracking-widest hover:text-primary transition-colors cursor-default"
                                                     >
                                                         {tech}
                                                     </span>
@@ -354,11 +354,11 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                                                 <h3 className="text-2xl font-black text-white uppercase tracking-tighter group-hover:text-primary transition-all duration-300">
                                                                     {project.title}
                                                                 </h3>
-                                                                <span className="text-[10px] bg-white/5 text-white/30 border border-white/5 px-2 py-0.5 font-bold uppercase tracking-widest">
+                                                                <span className="text-[10px] bg-white/5 text-white/50 border border-white/5 px-2 py-0.5 font-bold uppercase tracking-widest">
                                                                     {project.category}
                                                                 </span>
                                                             </div>
-                                                            <p className="text-white/40 text-sm leading-relaxed max-w-2xl italic font-light">
+                                                            <p className="text-white/60 text-sm leading-relaxed max-w-2xl italic font-light">
                                                                 {project.description}
                                                             </p>
                                                         </div>
@@ -395,7 +395,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                                                             asChild
                                                             size="sm"
                                                             variant="outline"
-                                                            className="bg-transparent text-white/40 border-white/10 rounded-none px-6 font-bold uppercase tracking-widest text-[10px] hover:text-white"
+                                                            className="bg-transparent text-white/60 border-white/10 rounded-none px-6 font-bold uppercase tracking-widest text-[10px] hover:text-white"
                                                         >
                                                             <Link href={project.links.github} target="_blank">
                                                                 GitHub
