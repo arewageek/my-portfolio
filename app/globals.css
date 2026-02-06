@@ -15,7 +15,7 @@
     --secondary: 240 3.7% 10%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 10%;
-    --muted-foreground: 240 5% 60%;
+    --muted-foreground: 240 5% 75%;
     --accent: 180 100% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -68,6 +68,8 @@
 
   p {
     @apply leading-relaxed text-muted-foreground;
+    line-height: 1.75;
+    font-weight: 400;
   }
 }
 
@@ -103,6 +105,23 @@
 
   .text-accent-secondary {
     @apply text-muted-foreground;
+  }
+
+  /* Enhanced readability text utilities */
+  .text-readable {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .text-descriptive {
+    color: rgba(255, 255, 255, 0.70);
+  }
+
+  .text-secondary-readable {
+    color: rgba(255, 255, 255, 0.60);
+  }
+
+  .text-subtle {
+    color: rgba(255, 255, 255, 0.45);
   }
 }
 

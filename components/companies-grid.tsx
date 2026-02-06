@@ -167,15 +167,15 @@ export function CompaniesGrid({ companies }: CompaniesGridProps) {
                             {/* Header */}
                             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
                               <div className="space-y-4">
-                                <div className="flex items-center gap-6">
-                                  <div className="p-4 bg-primary rounded-none">
+                                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 min-w-0 flex-1">
+                                  <div className="p-4 bg-primary rounded-none flex-shrink-0">
                                     {getCompanyIcon(company.type)}
                                   </div>
                                   <div className="min-w-0 flex-1">
-                                    <h3 className="text-2xl lg:text-3xl font-black text-white uppercase tracking-tighter line-clamp-1 group-hover:text-primary transition-colors">
+                                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tighter break-words group-hover:text-primary transition-colors">
                                       {company.name}
                                     </h3>
-                                    <p className="text-primary font-bold text-xs uppercase tracking-[0.3em]">{company.role}</p>
+                                    <p className="text-primary font-bold text-xs uppercase tracking-[0.3em] break-words">{company.role}</p>
                                   </div>
                                 </div>
                               </div>
@@ -257,16 +257,16 @@ export function CompaniesGrid({ companies }: CompaniesGridProps) {
                       >
                         <div className="relative space-y-8 h-full flex flex-col">
                           {/* Header */}
-                          <div className="flex items-start justify-between">
-                            <div className="flex items-center gap-4">
-                              <div className="p-4 bg-primary rounded-none shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                            <div className="flex items-start gap-4 min-w-0 flex-1">
+                              <div className="p-4 bg-primary rounded-none shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                                 {getCompanyIcon(company.type)}
                               </div>
-                              <div>
-                                <h3 className="text-xl font-black text-white uppercase tracking-tighter group-hover:text-primary transition-colors">
+                              <div className="min-w-0 flex-1">
+                                <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tighter group-hover:text-primary transition-colors break-words">
                                   {company.name}
                                 </h3>
-                                <p className="text-primary font-bold text-xs uppercase tracking-widest">{company.role}</p>
+                                <p className="text-primary font-bold text-xs uppercase tracking-widest break-words">{company.role}</p>
                               </div>
                             </div>
 

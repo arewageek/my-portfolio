@@ -69,7 +69,7 @@ export function HeroSection() {
             className={`space-y-6 lg:space-y-10 text-center lg:text-left ${isLoaded ? "animate-fade-in-up" : "opacity-0"}`}
           >
             {/* Status Badge */}
-            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/5 text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+            <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/5 text-white/60 text-[9px] font-black tracking-[0.4em] uppercase">
               <div className="w-1.5 h-1.5 bg-primary rounded-none mr-3 shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
               {brandConfig.hero.status}
             </div>
@@ -87,7 +87,7 @@ export function HeroSection() {
 
               <div className="flex items-center justify-center lg:justify-start space-x-4">
                 <div className="h-px flex-1 lg:flex-none lg:w-12 bg-white/10" />
-                <span className="text-lg lg:text-2xl font-light tracking-wide text-white/60 uppercase italic">
+                <span className="text-lg lg:text-2xl font-light tracking-wide text-white/75 uppercase italic">
                   {brandConfig.title}
                 </span>
                 <div className="h-px flex-1 lg:hidden bg-white/10" />
@@ -122,7 +122,7 @@ export function HeroSection() {
                 <a
                   key={label}
                   href={href}
-                  className="text-white/30 hover:text-primary transition-colors duration-300"
+                  className="text-white/50 hover:text-primary transition-colors duration-300"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5 lg:w-6 lg:h-6" />

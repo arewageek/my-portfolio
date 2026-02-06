@@ -25,7 +25,7 @@ export function ExperienceCard({
         <div className="sticky top-24">
           <div className="text-white/20 font-black text-[10px] uppercase tracking-[0.4em] mb-4">{period}</div>
           <h3 className="text-3xl font-black text-white mb-2 uppercase tracking-tighter leading-none">{title}</h3>
-          <div className="text-primary font-bold text-xs uppercase tracking-widest">{company}</div>
+          <div className="text-primary font-bold text-xs uppercase tracking-widest break-words">{company}</div>
         </div>
       </div>
 

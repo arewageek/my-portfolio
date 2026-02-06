@@ -130,11 +130,11 @@ export function WorkExperience() {
                   }`}
               >
                 <div className="space-y-2">
-                  <h3 className={`text-lg font-bold ${activeExperience === index ? "text-white" : "text-gray-300"}`}>
+                  <h3 className={`text-base lg:text-lg font-bold leading-tight ${activeExperience === index ? "text-white" : "text-gray-300"}`}>
                     {exp.title}
                   </h3>
                   <p
-                    className={`text-sm font-medium ${activeExperience === index ? "text-purple-400" : "text-gray-400"
+                    className={`text-sm font-medium break-words leading-snug ${activeExperience === index ? "text-purple-400" : "text-gray-400"
                       }`}
                   >
                     {exp.company}
@@ -150,24 +150,24 @@ export function WorkExperience() {
 
           {/* Experience Details */}
           <div className="lg:col-span-2">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-4 sm:p-6 lg:p-8">
               <div className="space-y-6">
                 {/* Header */}
                 <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-3xl font-black text-white mb-2">{experiences[activeExperience].title}</h3>
-                      <p className="text-xl text-purple-400 font-bold mb-2">{experiences[activeExperience].company}</p>
-                      <div className="flex items-center space-x-4 text-gray-400">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-2xl sm:text-3xl font-black text-white mb-2 break-words">{experiences[activeExperience].title}</h3>
+                      <p className="text-lg sm:text-xl text-purple-400 font-bold mb-3 break-words">{experiences[activeExperience].company}</p>
+                      <div className="flex flex-wrap items-center gap-3 text-gray-400 text-sm">
                         <div className="flex items-center space-x-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{experiences[activeExperience].period}</span>
+                          <Calendar className="w-4 h-4 flex-shrink-0" />
+                          <span className="whitespace-nowrap">{experiences[activeExperience].period}</span>
                         </div>
                         <div className="flex items-center space-x-1">
-                          <MapPin className="w-4 h-4" />
+                          <MapPin className="w-4 h-4 flex-shrink-0" />
                           <span>{experiences[activeExperience].location}</span>
                         </div>
-                        <span className="px-3 py-1 bg-secondary text-purple-400 rounded-full text-sm">
+                        <span className="px-3 py-1 bg-secondary text-purple-400 rounded-full text-sm whitespace-nowrap">
                           {experiences[activeExperience].type}
                         </span>
                       </div>
@@ -175,7 +175,7 @@ export function WorkExperience() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10"
+                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10 w-full lg:w-auto flex-shrink-0"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       View Company

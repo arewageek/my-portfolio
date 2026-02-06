@@ -102,14 +102,14 @@ export function ProfessionalHighlights() {
       <div className="relative max-w-6xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-16 lg:mb-20 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/40 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
+          <div className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 rounded-none text-white/60 text-[10px] uppercase tracking-[0.3em] font-light mb-8">
             Skills
           </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tighter leading-[0.9]">
             What I
             <span className="block text-primary">Do</span>
           </h2>
-          <p className="text-lg lg:text-xl text-white/40 max-w-3xl mx-auto leading-relaxed italic">
+          <p className="text-lg lg:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed italic">
             Building modern, secure web and blockchain applications.
           </p>
         </div>
@@ -129,7 +129,7 @@ export function ProfessionalHighlights() {
               >
                 <div className="flex items-center space-x-4">
                   <div className={`p-3 rounded-none ${activeHighlight === index ? "bg-primary" : "bg-white/5"}`}>
-                    <highlight.icon className={`w-5 h-5 ${activeHighlight === index ? "text-black" : "text-white/40"}`} />
+                    <highlight.icon className={`w-5 h-5 ${activeHighlight === index ? "text-black" : "text-white/60"}`} />
                   </div>
                   <div>
                     <h3 className="text-xs font-black text-white uppercase tracking-widest leading-none">
@@ -138,7 +138,7 @@ export function ProfessionalHighlights() {
                   </div>
                 </div>
                 <ChevronDown
-                  className={`w-4 h-4 text-white/20 transition-transform duration-200 ${activeHighlight === index ? "rotate-180" : ""
+                  className={`w-4 h-4 text-white/40 transition-transform duration-200 ${activeHighlight === index ? "rotate-180" : ""
                     }`}
                 />
               </button>
@@ -146,7 +146,7 @@ export function ProfessionalHighlights() {
               {activeHighlight === index && (
                 <div className="px-6 pb-6 border-t border-white/5">
                   <div className="pt-6 space-y-6">
-                    <p className="text-white/40 text-xs leading-relaxed italic">
+                    <p className="text-white/60 text-xs leading-relaxed italic">
                       {highlight.description}
                     </p>
 
@@ -156,7 +156,7 @@ export function ProfessionalHighlights() {
                         {highlight.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-start space-x-3">
                             <div className="w-1 h-1 bg-primary rounded-none mt-1.5 flex-shrink-0" />
-                            <p className="text-[10px] uppercase tracking-wider text-white/40 leading-relaxed">{feature}</p>
+                            <p className="text-[10px] uppercase tracking-wider text-white/60 leading-relaxed">{feature}</p>
                           </div>
                         ))}
                       </div>
@@ -195,13 +195,13 @@ export function ProfessionalHighlights() {
                       <highlight.icon className={`w-5 h-5 ${activeHighlight === index ? 'text-black' : 'text-white/60'}`} />
                     </div>
                     <div className="flex-1">
-                      <h3 className={`font-bold mb-1 uppercase tracking-wider text-xs transition-colors duration-200 ${activeHighlight === index ? "text-white" : "text-white/40 group-hover:text-white"
+                      <h3 className={`font-bold mb-1 uppercase tracking-wider text-xs transition-colors duration-200 ${activeHighlight === index ? "text-white" : "text-white/60 group-hover:text-white"
                         }`}>
                         {highlight.title}
                       </h3>
                       <p className={`text-[10px] uppercase tracking-widest transition-colors duration-200 ${activeHighlight === index
                           ? "text-primary"
-                          : "text-white/20 group-hover:text-white/40"
+                          : "text-white/45 group-hover:text-white/65"
                         }`}>
                         {highlight.subtitle}
                       </p>
@@ -235,7 +235,7 @@ export function ProfessionalHighlights() {
                 </div>
 
                 {/* Description */}
-                <p className="text-white/40 leading-relaxed text-xl italic font-light">
+                <p className="text-white/60 leading-relaxed text-xl italic font-light">
                   {highlights[activeHighlight].description}
                 </p>
 
@@ -246,7 +246,7 @@ export function ProfessionalHighlights() {
                     {highlights[activeHighlight].features.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-4">
                         <div className="w-1.5 h-1.5 bg-primary rounded-none mt-2 flex-shrink-0 shadow-[0_0_10px_rgba(0,255,255,0.5)]" />
-                        <p className="text-[11px] uppercase tracking-widest text-white/40 leading-relaxed">{feature}</p>
+                        <p className="text-[11px] uppercase tracking-widest text-white/60 leading-relaxed">{feature}</p>
                       </div>
                     ))}
                   </div>

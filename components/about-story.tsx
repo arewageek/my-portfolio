@@ -54,7 +54,7 @@ export function AboutStory() {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             <div className="lg:col-span-8 space-y-12">
               <div className="space-y-8">
-                <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/40 text-[9px] font-black tracking-[0.4em] uppercase">
+                <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/10 rounded-none text-white/60 text-[9px] font-black tracking-[0.4em] uppercase">
                     Genesis
                 </div>
                 <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
@@ -62,7 +62,7 @@ export function AboutStory() {
                   <span className="block text-primary">Story</span>
                 </h2>
 
-                <div className="space-y-8 text-lg lg:text-xl text-white/40 leading-relaxed italic font-light">
+                <div className="space-y-8 text-lg lg:text-xl text-white/60 leading-relaxed italic font-light">
                   <p>
                     I entered the crypto space because it felt alive. The pace of innovation was intense, and building within an ecosystem that was still taking shape in real time offered a rare and deeply engaging challenge.
                   </p>
@@ -94,7 +94,7 @@ export function AboutStory() {
                                 </div>
                                 <div>
                                     <div className="text-2xl font-black text-white uppercase tracking-tighter">{highlight.title}</div>
-                                    <div className="text-[10px] uppercase tracking-widest text-white/20 font-bold">{highlight.description}</div>
+                                    <div className="text-[10px] uppercase tracking-widest text-white/45 font-bold">{highlight.description}</div>
                                 </div>
                             </div>
                         ))}
