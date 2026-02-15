@@ -37,16 +37,19 @@ export default function RootLayout({
           async
         /> */}
 
-        <Script id="zoho-salesiq-config" strategy="beforeInteractive">
+        {/* Smartsupp Configuration */}
+        <Script id="smartsupp-config" strategy="beforeInteractive">
           {`
-            window.$zoho = window.$zoho || {};
-            $zoho.salesiq = $zoho.salesiq || { ready: function() {} };
+            window._smartsupp = window._smartsupp || {};
+            window._smartsupp.key = '48e411adc6533eb79bccad34ac0d9b84a05af085';
           `}
         </Script>
-        <Script
-          id="zsiqscript"
-          src="https://salesiq.zohopublic.com/widget?wc=siq8a436081e7b7921b294d87e3eedf69a8e45f119b4a0410c268f5139b059ec591"
-          strategy="beforeInteractive"
+
+        {/* Smartsupp Loader */}
+        <Script 
+          id="smartsupp-loader"
+          src="https://www.smartsuppchat.com/loader.js?" 
+          strategy="beforeInteractive" 
         />
       </body>
     </html>
