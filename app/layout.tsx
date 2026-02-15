@@ -32,9 +32,21 @@ export default function RootLayout({
 
         <Toaster />
 
-        <Script
+        {/* <Script
           src="//code.tidio.co/djigl1juhhik9frwz95ibypmds77jeky.js"
           async
+        /> */}
+
+        <Script id="zoho-salesiq-config" strategy="beforeInteractive">
+          {`
+            window.$zoho = window.$zoho || {};
+            $zoho.salesiq = $zoho.salesiq || { ready: function() {} };
+          `}
+        </Script>
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siq8a436081e7b7921b294d87e3eedf69a8e45f119b4a0410c268f5139b059ec591"
+          strategy="beforeInteractive"
         />
       </body>
     </html>
