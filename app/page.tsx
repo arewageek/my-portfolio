@@ -1,7 +1,8 @@
-import { HeroSection } from "@/components/hero-section"
-import { ProfessionalHighlights } from "@/components/professional-highlights"
+import { HeroSection } from "@/components/home/hero-section"
+import { ProfessionalHighlights } from "@/components/home/professional-highlights"
 import { ProjectShowcase } from "@/components/project-showcase"
-import { CallToAction } from "@/components/call-to-action"
+import { GithubActivity } from "@/components/home/github-activity"
+import { CallToAction } from "@/components/home/call-to-action"
 import { getProjects } from "@/services/project.service"
 import { getCategories } from "@/actions/categories"
 
@@ -14,11 +15,12 @@ export default async function Home() {
   ])
 
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden">
+    <div className="relative min-h-screen">
       <main>
         <HeroSection />
         <ProfessionalHighlights />
         <ProjectShowcase projects={projects} categories={categories} showLoadMore={true} />
+        <GithubActivity />
         <CallToAction />
       </main>
     </div>
