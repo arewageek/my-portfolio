@@ -1,13 +1,22 @@
+"use client";
+
 import { brandConfig } from "@/lib/brand-config"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function Footer() {
+  const pathname = usePathname();
+
   const quickLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
   ]
+
+  if (pathname.startsWith("/login") || pathname.startsWith("/dashboard")) {
+    return null;
+  }
 
   return (
     <footer className="py-12 px-6 sm:px-12 lg:px-24">
