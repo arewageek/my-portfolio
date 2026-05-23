@@ -28,6 +28,10 @@ export function Navigation() {
     { href: "/contact", label: "Contact" },
   ]
 
+  if (pathname.startsWith("/login") || pathname.startsWith("/dashboard")) {
+    return null;
+  }
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
