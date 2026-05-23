@@ -1,7 +1,7 @@
 # Current Tasks
 
 ## Active Task
-- [x] Refine Insights page (sleeker index layout, search, categories, unboxed)
+- [x] Integrate Recent Insights on landing page
 
 ## Todo List
 - [ ] Receive further instructions from user on what features to build or bugs to fix.
