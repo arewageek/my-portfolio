@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import { Menu, X, Download, ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 import { brandConfig } from "@/lib/brand-config"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +14,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100)
+      setScrolled(window.scrollY > 50)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -22,100 +22,149 @@ export function Navigation() {
 
   const navItems = [
     { href: "/", label: "Home" },
+    { href: "/projects", label: "Work" },
     { href: "/about", label: "About" },
-    { href: "/work", label: "Work" },
-    { href: "/projects", label: "Projects" },
     { href: "/contact", label: "Contact" },
   ]
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${scrolled
-        ? "bg-black/95 backdrop-blur-2xl border-b border-gray-800"
-        : "bg-transparent"
-        }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-[#F4F1EA]/90 backdrop-blur-md border-b border-gray-200 py-3"
+          : "bg-transparent py-6"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 lg:py-6">
-          <Link href="/" className="text-xl font-bold tracking-tighter group flex items-center gap-2">
-            <div className="w-6 h-6 bg-primary rounded-none animate-pulse" />
-            <span className="text-white uppercase transition-all duration-300">
+        <div className="flex justify-between items-center">
+          <Link href="/" className="text-2xl font-serif tracking-tight text-gray-900 flex items-center gap-2 overflow-hidden">
+            <motion.span
+              initial={{ y: 0 }}
+              whileHover={{ y: -2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               {brandConfig.name}
-            </span>
+            </motion.span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-12">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative text-[10px] uppercase font-bold tracking-[0.3em] transition-all duration-300 group ${pathname === item.href ? "text-primary" : "text-white/40 hover:text-white"
-                  }`}
+                className={`text-sm tracking-wide transition-colors duration-300 relative group ${
+                  pathname === item.href ? "text-gray-900 font-medium" : "text-gray-500 hover:text-gray-900"
+                }`}
               >
                 {item.label}
-                <span
-                  className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-500 ${pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                />
+                {pathname === item.href && (
+                  <motion.div 
+                    layoutId="nav-underline"
+                    className="absolute left-0 right-0 -bottom-1 h-[1px] bg-gray-900" 
+                  />
+                )}
               </Link>
             ))}
-          </div>
-
-          <div className="hidden lg:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              asChild
-              className="rounded-none text-white/40 hover:text-white uppercase tracking-widest text-[10px] font-bold"
+            
+            <Link
+              href="/resume"
+              className={`text-sm tracking-wide transition-colors duration-300 relative group ${
+                pathname === "/resume" ? "text-gray-900 font-medium" : "text-gray-500 hover:text-gray-900"
+              }`}
             >
-              <Link href="resume/arewageek.pdf" download="arewageek.pdf" target="_blank">
-                <Download className="w-3 h-3 mr-2" />
-                Resume
-              </Link>
-            </Button>
-            <Button variant="primary" asChild size="sm" className="rounded-none px-6">
-              <Link href="/contact" className="text-[10px] uppercase font-bold tracking-widest">
-                Connect
-              </Link>
-            </Button>
+              Resume
+              {pathname === "/resume" && (
+                <motion.div 
+                  layoutId="nav-underline"
+                  className="absolute left-0 right-0 -bottom-1 h-[1px] bg-gray-900" 
+                />
+              )}
+            </Link>
           </div>
 
           {/* Mobile Navigation Toggle */}
           <div className="lg:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
+            <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white/40 hover:text-white"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X className="w-6 h-6 stroke-[1.5]" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu className="w-6 h-6 stroke-[1.5]" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-3xl border-b border-white/5 animate-fade-in-up">
-            <div className="px-6 py-8 space-y-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block text-xs uppercase tracking-[0.3em] font-black transition-colors duration-300 ${pathname === item.href ? "text-primary" : "text-white/40 hover:text-white"
-                    }`}
-                  onClick={() => setIsOpen(false)}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="lg:hidden absolute top-full left-0 w-full bg-[#F4F1EA] border-b border-gray-200 shadow-xl overflow-hidden"
+            >
+              <div className="px-6 py-6 flex flex-col space-y-4">
+                {navItems.map((item, i) => (
+                  <motion.div
+                    key={item.href}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + i * 0.05 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`text-lg font-serif transition-colors ${
+                        pathname === item.href ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 + navItems.length * 0.05 }}
                 >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="pt-6 space-y-4">
-                <Button variant="primary" className="w-full rounded-none uppercase tracking-widest text-[10px] font-bold h-12">
-                   Initiate Engagement
-                </Button>
+                  <Link
+                    href="/resume"
+                    className={`text-lg font-serif transition-colors ${
+                      pathname === "/resume" ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Resume
+                  </Link>
+                </motion.div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )
