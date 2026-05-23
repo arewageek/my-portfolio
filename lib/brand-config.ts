@@ -5,8 +5,8 @@ export const brandConfig = {
   name: "Arewa Geek",
   fullName: "Arewa Geek",
   title: "Full-stack Engineer",
-  subtitle: "Building the future of Web3",
-  tagline: "Where we're going, we won't need wallets",
+  subtitle: "Building robust software & the future of Web3",
+  tagline: "Engineering scalable solutions for the modern web",
   location: "Nigeria",
   email: "arewageek@gmail.com",
   
@@ -65,7 +65,7 @@ export const brandConfig = {
   hero: {
     greeting: "Hello, I'm",
     description:
-      "I build decentralized apps and protocols that feel simple and focus on user experience. Web3 doesn't have to be complicated.",
+      "I build scalable software systems, decentralized apps, and intuitive user experiences. Technology doesn't have to be complicated.",
     cta: {
       primary: "My Work",
       secondary: "Contact Me",
@@ -78,7 +78,7 @@ export const brandConfig = {
     intro:
       "A software engineer building web and blockchain applications with a focus on simplicity and quality.",
     mission:
-      "I build decentralized systems that people actually enjoy using.",
+      "I build software systems and decentralized applications that people actually enjoy using.",
     story: [
       "I got into blockchain not because of the hype, but because I was fascinated by the idea of building systems that don't need a middleman to work.",
       "Most blockchain apps feel like they were built by engineers for engineers. I think that's backwards. The best technology is the kind you don't even notice you're using.",
@@ -136,7 +136,7 @@ export const brandConfig = {
     {
       id: "defi-protocol",
       name: "DeFi Protocol Inc.",
-      role: "Senior Blockchain Engineer",
+      role: "Senior Software Engineer",
       startDate: "2023",
       status: "current", // "current" or "past"
       description: "Leading AI-powered DeFi infrastructure development",
@@ -439,7 +439,7 @@ export const brandConfig = {
     {
       id: "phlamingos",
       name: "Phlamingos NFT",
-      role: "Blockchain Engineer",
+      role: "Software Engineer",
       started: "May 2024",
       stopped: "Jul 2024",
       location: "Fiverr",

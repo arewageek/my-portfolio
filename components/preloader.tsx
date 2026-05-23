@@ -1,80 +1,46 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { brandConfig } from "@/lib/brand-config"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
-  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    // Simulate loading progress
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval)
-          // Add a small delay before hiding
-          setTimeout(() => setIsLoading(false), 500)
-          return 100
-        }
-        return prev + Math.random() * 15 + 5 // Random increment between 5-20
-      })
-    }, 100)
-
-    // Minimum loading time of 2 seconds
-    const minLoadTime = setTimeout(() => {
-      if (progress < 100) {
-        setProgress(100)
-      }
-    }, 2000)
-
-    return () => {
-      clearInterval(interval)
-      clearTimeout(minLoadTime)
-    }
-  }, [progress])
-
-  if (!isLoading) return null
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1800) // Slightly longer to allow the animation to play out beautifully
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black overflow-hidden">
-      {/* Background Subtle Glow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
-      </div>
-
-      <div className="relative flex flex-col items-center">
-        {/* Minimalist Spinner */}
-        <div className="relative w-24 h-24 mb-6">
-          {/* Outer Ring */}
-          <div className="absolute inset-0 rounded-full border-[1px] border-white/5" />
-          {/* Spinning Segment */}
-          <div className="absolute inset-0 rounded-full border-[1px] border-transparent border-t-primary animate-spin" />
-          
-          {/* Initial in center */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xl font-light tracking-widest text-white/40 uppercase">
-              {brandConfig.name.charAt(0)}
-            </span>
+    <AnimatePresence>
+      {isLoading && (
+        <motion.div
+          key="preloader"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-[#F4F1EA]"
+        >
+          <div className="relative overflow-hidden">
+            <motion.h1
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-4xl md:text-5xl font-serif text-gray-900 tracking-tight"
+            >
+              Arewa Geek.
+            </motion.h1>
           </div>
-        </div>
-
-        {/* Minimalist Text */}
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-white/30 font-light">
-            {brandConfig.name}
-          </span>
-          <div className="h-px w-8 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        </div>
-      </div>
-
-      {/* Very subtle progress line at bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/5">
-        <div 
-          className="h-full bg-primary transition-all duration-300 ease-out"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
-    </div>
+          
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="h-[1px] w-12 bg-gray-400 mt-6 origin-left"
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

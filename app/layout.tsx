@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Newsreader, Caveat } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -8,12 +8,14 @@ import Preloader from "@/components/preloader"
 import Script from "next/script"
 import { Toaster } from "@/components/ui/sonner"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-newsreader", style: ['normal', 'italic'] })
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat" })
 
 export const metadata: Metadata = {
-  title: "Arewa Geek - Fullstack Blockchain Engineer",
+  title: "Arewa Geek - Software Engineer",
   description:
-    "Experienced blockchain engineer specializing in DeFi protocols, smart contracts, and Web3 applications. Solving real-world problems with DeFi"
+    "Experienced software engineer specializing in scalable web applications, thoughtful interfaces, and robust systems."
 }
 
 export default function RootLayout({
@@ -23,8 +25,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <div className="fixed inset-0 bg-grain opacity-[0.02] pointer-events-none z-[1]" />
+      <body className={`${inter.variable} ${newsreader.variable} ${caveat.variable} font-sans antialiased bg-[#F4F1EA] text-[#1A1A1A] selection:bg-[#E8E8E8]`}>
+
         <Preloader />
         <Navigation />
         <main className="relative z-10">{children}</main>
@@ -46,10 +48,10 @@ export default function RootLayout({
         </Script>
 
         {/* Smartsupp Loader */}
-        <Script 
+        <Script
           id="smartsupp-loader"
-          src="https://www.smartsuppchat.com/loader.js?" 
-          strategy="beforeInteractive" 
+          src="https://www.smartsuppchat.com/loader.js?"
+          strategy="beforeInteractive"
         />
       </body>
     </html>

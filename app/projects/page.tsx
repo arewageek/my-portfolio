@@ -1,24 +1,21 @@
-import { ProjectsHero } from "@/components/projects-hero"
-import { CurrentlyBuilding } from "@/components/currently-building"
-import { ProjectCategories } from "@/components/project-categories"
+import { ProjectsHero } from "@/components/projects/projects-hero"
 import { ProjectShowcase } from "@/components/project-showcase"
-import { ProjectStats } from "@/components/project-stats"
-import { Navigation } from "@/components/navigation"
 import { getProjects } from "@/services/project.service"
+import { getCategories } from "@/actions/categories"
 
 export const dynamic = 'force-dynamic'
 
 export default async function Projects() {
-  const projects = await getProjects()
+  const [projects, { data: categories = [] }] = await Promise.all([
+    getProjects(),
+    getCategories()
+  ])
 
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden">
+    <div className="relative min-h-screen">
       <main>
         <ProjectsHero />
-        {/* <CurrentlyBuilding /> */}
-        {/* <ProjectCategories /> */}
-        <ProjectShowcase projects={projects} showLoadMore={false} showHeader={false} />
-        {/* <ProjectStats /> */}
+        <ProjectShowcase projects={projects} categories={categories} showLoadMore={false} showHeader={false} layoutMode="grid" />
       </main>
     </div>
   )
