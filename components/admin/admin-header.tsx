@@ -41,7 +41,7 @@ export function AdminHeader({ user }: AdminHeaderProps) {
               <p className="text-xs text-muted-foreground mt-1">{user?.email || "admin@arewageek.com"}</p>
             </div>
             <Avatar className="h-9 w-9 border border-border/50">
-              <AvatarImage src="/pfp.png" alt={user?.name || "Admin"} />
+
               <AvatarFallback>{user?.name?.slice(0, 2).toUpperCase() || "AD"}</AvatarFallback>
             </Avatar>
           </div>

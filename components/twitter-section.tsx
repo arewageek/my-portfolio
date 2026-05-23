@@ -100,11 +100,9 @@ export function TwitterSection() {
                 {/* Header */}
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <img
-                      src="/pfp.png"
-                      alt="Arewa Geek"
-                      className="w-12 h-12 rounded-full border-2 border-purple-400/30"
-                    />
+                    <div className="w-12 h-12 rounded-full border-2 border-purple-400/30 bg-purple-500/20 flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">AG</span>
+                    </div>
                     <div>
                       <div className="flex items-center space-x-2">
                         <h3 className="text-white font-bold">Arewa Geek</h3>

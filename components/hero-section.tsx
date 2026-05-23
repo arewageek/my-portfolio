@@ -63,10 +63,10 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-          {/* Left Content */}
+        <div className="flex flex-col items-center justify-center">
+          {/* Main Content */}
           <div
-            className={`space-y-6 lg:space-y-10 text-center lg:text-left ${isLoaded ? "animate-fade-in-up" : "opacity-0"}`}
+            className={`space-y-6 lg:space-y-10 text-center max-w-4xl mx-auto ${isLoaded ? "animate-fade-in-up" : "opacity-0"}`}
           >
             {/* Status Badge */}
             <div className="inline-flex items-center px-4 py-1.5 bg-white/5 border border-white/5 text-white/60 text-[9px] font-black tracking-[0.4em] uppercase">
@@ -85,7 +85,7 @@ export function HeroSection() {
                 </span>
               </h1>
 
-              <div className="flex items-center justify-center lg:justify-start space-x-4">
+              <div className="flex items-center justify-center space-x-4">
                 <div className="h-px flex-1 lg:flex-none lg:w-12 bg-white/10" />
                 <span className="text-lg lg:text-2xl font-light tracking-wide text-white/75 uppercase italic">
                   {brandConfig.title}
@@ -117,7 +117,7 @@ export function HeroSection() {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 pt-8">
+            <div className="flex justify-center space-x-6 pt-8">
               {brandConfig.socials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -128,35 +128,6 @@ export function HeroSection() {
                   <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
                 </a>
               ))}
-            </div>
-          </div>
-
-          {/* Right Content - PFP */}
-          <div className={`relative hidden sm:block ${isLoaded ? "animate-fade-in-right" : "opacity-0"}`}>
-            <div className="relative w-full max-w-lg lg:max-w-xl mx-auto">
-              <div className="relative aspect-square">
-                {/* Visual Elements */}
-                <div className="absolute -inset-4 border border-white/5 rounded-[2rem] lg:rounded-[4rem] animate-gentle-float" />
-                <div className="absolute -inset-8 border border-white/[0.02] rounded-[3rem] lg:rounded-[6rem] animate-gentle-float-reverse" />
-
-                {/* PFP Image Container */}
-                <div className="relative w-full h-full rounded-[2rem] lg:rounded-[4rem] overflow-hidden border border-white/10 bg-zinc-900 group">
-                  <img
-                    src="/pfp.png"
-                    alt={`${brandConfig.name}`}
-                    className="w-full h-full object-cover group-hover:opacity-100 transition-all duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-primary/5" />
-                </div>
-
-                {/* Engineering Badges */}
-                <div className="absolute -top-4 -left-4 px-6 py-3 bg-black border border-white/10 text-[10px] uppercase tracking-[0.3em] font-bold text-primary shadow-2xl">
-                  {brandConfig.projects.length} Projects
-                </div>
-                <div className="absolute -bottom-4 -right-4 px-6 py-3 bg-black border border-white/10 text-[10px] uppercase tracking-[0.3em] font-bold text-white shadow-2xl">
-                   Experience {brandConfig.stats.experience}Y
-                </div>
-              </div>
             </div>
           </div>
         </div>

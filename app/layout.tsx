@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Arewa Geek - Fullstack Blockchain Engineer",
   description:
-    "Experienced blockchain engineer specializing in DeFi protocols, smart contracts, and Web3 applications. Solving real-world problems with DeFi"
+    "Experienced software engineer specializing in scalable web applications, smart contracts, and AI integrations."
 }
 
 export default function RootLayout({
@@ -46,10 +46,10 @@ export default function RootLayout({
         </Script>
 
         {/* Smartsupp Loader */}
-        <Script 
+        <Script
           id="smartsupp-loader"
-          src="https://www.smartsuppchat.com/loader.js?" 
-          strategy="beforeInteractive" 
+          src="https://www.smartsuppchat.com/loader.js?"
+          strategy="beforeInteractive"
         />
       </body>
     </html>

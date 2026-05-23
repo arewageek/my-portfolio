@@ -53,7 +53,7 @@ export function AboutSection() {
 
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                I'm a passionate fullstack blockchain engineer who believes that the future of technology lies in the
+                I'm a passionate software engineer who believes that the future of technology lies in the
                 seamless integration of <span className="text-purple-400 font-semibold">artificial intelligence</span>{" "}
                 and
                 <span className="text-pink-400 font-semibold"> blockchain technology</span>.

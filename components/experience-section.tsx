@@ -4,7 +4,7 @@ import { ExperienceCard } from "@/components/experience-card"
 export function ExperienceSection() {
   const experiences = [
     {
-      title: "Senior Blockchain Engineer",
+      title: "Senior Software Engineer",
       company: "DeFi Protocol Inc.",
       period: "2023 - Present",
       description:
@@ -30,7 +30,7 @@ export function ExperienceSection() {
       technologies: ["Ethereum", "Next.js", "TypeScript", "PostgreSQL", "Docker"],
     },
     {
-      title: "Blockchain Developer",
+      title: "Software Engineer",
       company: "Tech Solutions Ltd.",
       period: "2021 - 2022",
       description:

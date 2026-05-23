@@ -28,7 +28,7 @@ export function WorkExperience() {
 
   const experiences = [
     {
-      title: "Senior Blockchain Engineer",
+      title: "Senior Software Engineer",
       company: "DeFi Protocol Inc.",
       period: "2023 - Present",
       location: "San Francisco, CA",
@@ -51,7 +51,7 @@ export function WorkExperience() {
       },
     },
     {
-      title: "Fullstack Blockchain Developer",
+      title: "Fullstack Developer",
       company: "Web3 Startup",
       period: "2022 - 2023",
       location: "Remote",
@@ -74,7 +74,7 @@ export function WorkExperience() {
       },
     },
     {
-      title: "Blockchain Developer",
+      title: "Software Engineer",
       company: "Tech Solutions Ltd.",
       period: "2021 - 2022",
       location: "New York, NY",
