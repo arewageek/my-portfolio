@@ -1,32 +1,26 @@
 # Technical Blueprint
 
 ## 1. Technical Stack & Architecture
-[Outline the core technologies and high-level architecture.]
-- **Frontend**: [e.g., Next.js, React, Vite]
-- **Backend**: [e.g., Node.js, Hono, Laravel, Go]
-- **Database**: [e.g., PostgreSQL, MongoDB, D1, MySQL]
-- **Caching**: [e.g., Redis, Bun Cache, LocalStorage]
-- **Deployment**: [e.g., Vercel, Cloudflare, AWS]
+- **Frontend**: Next.js 15 (App Router), React 19, TypeScript
+- **Styling**: Tailwind CSS, Radix UI primitives, `class-variance-authority`, `tailwindcss-animate`
+- **Animations**: Framer Motion
+- **Backend/API**: Next.js Server Actions, REST API via Next.js Route Handlers
+- **Database**: MongoDB (via Mongoose schemas like `Project`, `Company`, `Category`)
+- **Authentication**: Custom JWT-based Auth (`jose`, `bcryptjs`) for Admin Panel
+- **Package Manager**: Bun
 
 ## 2. Design System & Identity Standards
-[Define the visual language and design principles.]
 - **Brand Palette**:
-  - `primary`: [Hex/CSS Variable]
-  - `secondary`: [Hex/CSS Variable]
-  - `accent`: [Hex/CSS Variable]
-  - `success`: [Hex/CSS Variable]
-  - `warning`: [Hex/CSS Variable]
-  - `error`: [Hex/CSS Variable]
-  - `info`: [Hex/CSS Variable]
-- **Visual Tone**: [e.g., Professional, Minimalist, Vibrant]
-- **Key UI Patterns**: [e.g., Bento Grids, Glassmorphism, Micro-animations]
+  - `primary`: Purple to Pink gradients (`from-purple-600 to-pink-600`)
+  - `secondary`: Blue to Cyan gradients (`from-blue-600 to-cyan-600`)
+  - `accent`: Green to Emerald gradients (`from-green-600 to-emerald-600`)
+- **Visual Tone**: Highly dynamic, modern, professional Web3 aesthetic (Dark mode optimized, grain textures, floating elements).
+- **Key UI Patterns**: Hero sections with animated text, dynamic grids, floating interactive elements, micro-animations on hover, preloader screens.
 
 ## 3. Core Application Flows
-[Describe the critical user journeys.]
-1. **Flow A**: [Steps...]
-2. **Flow B**: [Steps...]
+1. **Public Portfolio View**: Users navigate through Hero, Professional Highlights, Project Showcase, and About sections. Interaction includes smooth scrolling and project filtering by categories.
+2. **Admin Management**: Authenticated admin users can access a protected dashboard to CRUD (Create, Read, Update, Delete) `Projects`, `Companies`, and `Categories`.
 
 ## 4. Development Standards
-[Project-specific coding standards not covered by Global Memory.]
-- **Folder Structure**: [Description]
-- **Naming Conventions**: [Description]
+- **Folder Structure**: App Router conventions (`app/`), highly modularized UI (`components/`), reusable business logic (`actions/`, `services/`), and data models (`models/`).
+- **Naming Conventions**: Kebab-case for component files (e.g., `hero-section.tsx`), PascalCase for React component names and Mongoose models (e.g., `Project.ts`).
