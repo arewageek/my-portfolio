@@ -38,7 +38,7 @@ export default function InsightsPage() {
             Insights & Articles
           </h1>
           <p className="text-lg text-gray-600">
-            Thoughts, tutorials, and deep dives into Web3, smart contracts, and modern frontend development.
+            Perspectives, system architectures, and deep dives into Web3, smart contracts, and modern frontend development.
           </p>
         </motion.header>
 
@@ -144,7 +144,7 @@ export default function InsightsPage() {
           <div className="mx-auto max-w-xl">
             <h2 className="text-3xl font-serif tracking-tight text-gray-900 mb-4">Stay in the loop</h2>
             <p className="text-gray-600 mb-8">
-              Get my latest articles, tutorials, and Web3 insights delivered straight to your inbox. No spam, ever.
+              Get my latest articles, technical thoughts, and Web3 insights delivered straight to your inbox. No spam, ever.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => { e.preventDefault(); toast.success("Subscribed successfully!"); }}>
               <input 
