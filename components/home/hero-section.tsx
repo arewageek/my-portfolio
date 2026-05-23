@@ -39,7 +39,7 @@ export function HeroSection() {
               Hello, I'm
             </p>
             <h1 className="text-5xl md:text-7xl font-serif font-medium tracking-tight text-gray-900 leading-tight">
-              Augustine Ameh.
+              {brandConfig.name}.
             </h1>
           </motion.div>
 
@@ -53,7 +53,7 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="pt-8 flex flex-wrap items-center gap-6 text-sm uppercase tracking-widest font-medium text-gray-800">
-            <Link href="/work" className="group flex items-center gap-2 hover:text-gray-500 transition-colors border-b border-gray-800 hover:border-gray-500 pb-1">
+            <Link href="/projects" className="group flex items-center gap-2 hover:text-gray-500 transition-colors border-b border-gray-800 hover:border-gray-500 pb-1">
               View my work
               <motion.span
                 className="inline-block"
