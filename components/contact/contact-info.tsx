@@ -1,4 +1,4 @@
-import { Mail, Calendar, Twitter } from "lucide-react"
+import { Mail, Calendar } from "lucide-react"
 import { brandConfig } from "@/lib/brand-config"
 
 export function ContactInfo() {
@@ -10,8 +10,8 @@ export function ContactInfo() {
       href: `mailto:${brandConfig.email}`,
     },
     {
-      icon: Twitter,
-      title: "Twitter",
+      icon: brandConfig.socials[2].icon,
+      title: "X (Twitter)",
       value: "@arewaofweb3",
       href: brandConfig.socials[2].href,
     },

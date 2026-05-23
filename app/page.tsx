@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { ProfessionalHighlights } from "@/components/home/professional-highlights"
 import { ProjectShowcase } from "@/components/project-showcase"
+import { RecentInsights } from "@/components/home/recent-insights"
 import { CallToAction } from "@/components/home/call-to-action"
 import { getProjects } from "@/services/project.service"
 import { getCategories } from "@/actions/categories"
@@ -21,6 +22,7 @@ export default async function Home() {
         <ProfessionalHighlights />
         <ProjectShowcase projects={projects} categories={categories} showLoadMore={true} />
         <GithubActivity />
+        <RecentInsights />
         <CallToAction />
       </main>
     </div>

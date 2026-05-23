@@ -3,19 +3,24 @@
 This file is a critical safety mechanism for preserving context across long-running tasks or session transitions.
 
 ## ACTIVE_CHECKPOINT
-> [Refining the Insights index page to be sleeker, adding search, categories, and modifying the layout]
+> [Integrating Recent Insights on Landing Page & Updating Icons]
 
 ### Intentions & Purpose
-- **GOAL**: Improve the visual hierarchy and sleekness of the `Insights` list page.
-- **RATIONALE**: The user felt the previous `aspect-square` or large image layout was "not looking very cool", was too boxed, and created excess height. We need a more unboxed, organic, and ultra-sleek list where the image height is minimized to match the summary text seamlessly. We also need to add search and category filtering to improve UX.
+- **GOAL**: Improve visibility of insights and ensure cohesive branding with proper modern social icons.
+- **RATIONALE**: Displaying recent articles on the home landing page draws traffic to the blog, and using modern X logo branding provides a professional feel.
 
 ### Architectural Plan
 - **STRATEGY**:
-  - Add state hooks (`useState`, `useMemo`) to `app/insights/page.tsx` to handle search and category filtering.
-  - Convert the list items from boxed layouts to clean, unboxed rows with subtle separators.
-  - Scale down the image to a small, landscape thumbnail (e.g. `w-40 h-24` or `w-48 h-28`) aligned elegantly next to the text content.
-  - Include a sleek sticky-like or inline header for the search input and category pills.
+  - `components/home/recent-insights.tsx`: Displays the 3 latest blog entries using the minimalist row format.
+  - `app/page.tsx`: Injected `RecentInsights` before the closing call to action.
+  - Socials: Cleaned up X branding across contact pages, brand configuration, and sharing modules.
+- **COMPONENTS_AFFECTED**:
+  - `components/home/recent-insights.tsx`
+  - `app/page.tsx`
+  - `components/contact/contact-info.tsx`
+  - `lib/brand-config.ts`
+  - `app/insights/[slug]/article-content.tsx`
 
 ### Progress Tracking
-- **DONE**: Added categories to `mock-articles.ts` and updated `.brain/task.md`.
-- **NEXT_STEPS**: Rewrite `app/insights/page.tsx` with the new design and functionality.
+- **DONE**: All components written and integrated.
+- **NEXT_STEPS**: Await user instructions.
