@@ -293,7 +293,7 @@ export const brandConfig = {
     {
       id: "skytech",
       name: "Skytech Integrated Network Ltd.",
-      role: "Fullstack Engineer & Tutor",
+      role: "Fullstack Engineer",
       started: "Jun 2022",
       stopped: "Jul 2023",
       location: "Nasarawa, Nigeria",
@@ -316,7 +316,7 @@ export const brandConfig = {
         responsibilities: [
           "Led the on-boarding process for new interns, providing guidance and support to help them integrate smoothly into the team.",
           "Designed and developed a POS system for cybercafes, enabling them to effectively track sales, manage inventory, payrolls, and analyze growth.",
-          "Mentored and tutored new interns on website development, utilizing tools such as JavaScript and PHP to foster their technical skills.",
+          "Mentored new interns on website development, utilizing tools such as JavaScript and PHP to foster their technical skills.",
         ],
         // impact:
         //   "Transformed the company's technical capabilities, leading to $12M+ in NFT trading volume and recognition as a top Web3 development team.",
