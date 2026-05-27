@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { LayoutDashboard, FolderKanban, Building2, Tags, Newspaper, Settings, LogOut, Search, Bell } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { useSession } from "next-auth/react";
+
 const sidebarLinks = [
   { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
   { href: "/dashboard/projects", label: "Projects", icon: FolderKanban },
@@ -14,6 +16,8 @@ const sidebarLinks = [
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const { data: session } = useSession();
+  const userName = session?.user?.name || "Arewa Geek";
 
   return (
     <div className="min-h-screen bg-[#F4F1EA] flex">
@@ -53,10 +57,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <Settings className="w-4 h-4 text-gray-400" />
             Settings
           </Link>
-          <Link href="/login" className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors">
+          <button 
+            onClick={() => import("next-auth/react").then(m => m.signOut({ callbackUrl: "/login" }))}
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors"
+          >
             <LogOut className="w-4 h-4 text-red-400" />
             Logout
-          </Link>
+          </button>
         </div>
       </aside>
 
@@ -85,7 +92,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <div className="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 overflow-hidden group-hover:ring-2 ring-gray-900/20 transition-all">
                 <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Arewa" alt="Avatar" className="w-full h-full object-cover" />
               </div>
-              <span className="text-sm font-medium text-gray-700 hidden sm:block group-hover:text-gray-900 transition-colors">Augustine A.</span>
+              <span className="text-sm font-medium text-gray-700 hidden sm:block group-hover:text-gray-900 transition-colors">{userName}</span>
             </div>
           </div>
         </header>
