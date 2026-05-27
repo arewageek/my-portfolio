@@ -10,13 +10,34 @@ import { toast } from "sonner";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Frontend-only simulation
-    toast.success("Authentication successful");
-    router.push("/dashboard");
+    setLoading(true);
+
+    try {
+      // Use next-auth signIn
+      const { signIn } = await import("next-auth/react");
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        toast.error("Invalid credentials");
+      } else {
+        toast.success("Authentication successful");
+        router.push("/dashboard");
+        router.refresh();
+      }
+    } catch (error) {
+      toast.error("An error occurred during authentication");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -72,10 +93,11 @@ export default function LoginPage() {
 
           <button 
             type="submit"
-            className="w-full group relative flex justify-center items-center gap-2 bg-gray-900 text-white px-6 py-3.5 rounded-xl text-sm font-medium hover:bg-gray-800 transition-all shadow-md hover:shadow-xl active:scale-[0.98]"
+            disabled={loading}
+            className="w-full group relative flex justify-center items-center gap-2 bg-gray-900 text-white px-6 py-3.5 rounded-xl text-sm font-medium hover:bg-gray-800 transition-all shadow-md hover:shadow-xl active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Authenticate
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            {loading ? "Authenticating..." : "Authenticate"}
+            {!loading && <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
           </button>
         </form>
 

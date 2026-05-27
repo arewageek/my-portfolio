@@ -1,14 +1,12 @@
 import { ProjectsHero } from "@/components/projects/projects-hero"
 import { ProjectShowcase } from "@/components/project-showcase"
-import { getProjects } from "@/services/project.service"
-import { getCategories } from "@/actions/categories"
 
 export const dynamic = 'force-dynamic'
 
 export default async function Projects() {
-  const [projects, { data: categories = [] }] = await Promise.all([
-    getProjects(),
-    getCategories()
+  const [projects, categories] = await Promise.all([
+    Promise.resolve([]),
+    Promise.resolve([])
   ])
 
   return (

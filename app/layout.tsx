@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     "Experienced software engineer specializing in scalable web applications, thoughtful interfaces, and robust systems."
 }
 
+import { SessionProvider } from "@/components/session-provider"
+
 export default function RootLayout({
   children,
 }: {
@@ -26,13 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${newsreader.variable} ${caveat.variable} font-sans antialiased bg-[#F4F1EA] text-[#1A1A1A] selection:bg-[#E8E8E8]`}>
+        <SessionProvider>
+          <Preloader />
+          <Navigation />
+          <main className="relative z-10">{children}</main>
+          <Footer />
 
-        <Preloader />
-        <Navigation />
-        <main className="relative z-10">{children}</main>
-        <Footer />
-
-        <Toaster />
+          <Toaster />
 
         {/* <Script
           src="//code.tidio.co/djigl1juhhik9frwz95ibypmds77jeky.js"
@@ -47,12 +49,12 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Smartsupp Loader */}
         <Script
           id="smartsupp-loader"
           src="https://www.smartsuppchat.com/loader.js?"
           strategy="beforeInteractive"
         />
+        </SessionProvider>
       </body>
     </html>
   )
