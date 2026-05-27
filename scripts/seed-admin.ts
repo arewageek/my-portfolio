@@ -1,40 +1,36 @@
-import "dotenv/config";
-import { AuthService } from "../services/auth.service";
-import dbConnect from "../lib/db";
-import mongoose from "mongoose";
+import { PrismaClient } from "@prisma/client"
+import bcrypt from "bcryptjs"
+import { Pool } from "pg"
+import { PrismaPg } from "@prisma/adapter-pg"
 
-async function seedAdmin() {
-  const adminEmail = process.env.ADMIN_EMAIL || "arewageek@gmail.com";
-  const adminPassword = process.env.ADMIN_PASSWORD || "incorrect";
-  const adminName = process.env.ADMIN_NAME || "Arewa Geek";
+const connectionString = process.env.DATABASE_URL
+const pool = new Pool({ connectionString })
+const adapter = new PrismaPg(pool)
 
-  try {
-    console.log("Connecting to database...");
-    await dbConnect();
+const prisma = new PrismaClient({ adapter })
 
-    console.log(`Checking if admin exists: ${adminEmail}...`);
-    
-    try {
-      const admin = await AuthService.createAdmin({
-        name: adminName,
-        email: adminEmail,
-        password: adminPassword,
-      });
-      console.log("✅ Admin account created successfully:", admin);
-    } catch (error: any) {
-      if (error.message === "Admin with this email already exists") {
-        console.log("ℹ️ Admin already exists. Skipping seeding.");
-      } else {
-        throw error;
-      }
-    }
+async function main() {
+  const email = "xxxx@xx.xx"
+  const password = await bcrypt.hash("xxxx", 10)
 
-  } catch (error) {
-    console.error("❌ Error seeding admin:", error);
-  } finally {
-    await mongoose.disconnect();
-    console.log("Disconnected from database.");
-  }
+  const admin = await prisma.user.upsert({
+    where: { email },
+    update: {},
+    create: {
+      email,
+      name: "Admin",
+      password,
+    },
+  })
+
+  console.log("Admin user created:", admin.email)
 }
 
-seedAdmin();
+main()
+  .catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })
