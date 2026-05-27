@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "dev": "next dev",
-    "deploy": "bunx prisma generate && next dev",
     "lint": "next lint",
     "start": "next start",
     "seed:work": "bun scripts/seed-work.ts",

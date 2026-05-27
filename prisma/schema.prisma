@@ -52,3 +52,27 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  projects  Project[]
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String?   @unique
+  overview    String?   @db.Text
+  status      String    @default("Draft")
+  url         String?
+  githubUrl   String?
+  image       String?
+  tech        String[]
+  
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

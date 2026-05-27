@@ -1,13 +1,18 @@
 import { ProjectsHero } from "@/components/projects/projects-hero"
 import { ProjectShowcase } from "@/components/project-showcase"
+import { getProjects } from "@/actions/projects"
+import { getCategories } from "@/actions/categories"
 
 export const dynamic = 'force-dynamic'
 
 export default async function Projects() {
-  const [projects, categories] = await Promise.all([
-    Promise.resolve([]),
-    Promise.resolve([])
+  const [projectsRes, categoriesRes] = await Promise.all([
+    getProjects(),
+    getCategories()
   ])
+
+  const projects = projectsRes.data || []
+  const categories = categoriesRes.data || []
 
   return (
     <div className="relative min-h-screen">
