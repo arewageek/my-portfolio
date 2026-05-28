@@ -2,8 +2,10 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import { Send, CheckCircle } from "lucide-react"
+import { useState, useTransition } from "react"
+import { Send, CheckCircle, Loader2 } from "lucide-react"
+import { sendContactEmail } from "@/actions/contact"
+import { toast } from "sonner"
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -14,6 +16,8 @@ export function ContactForm() {
     message: "",
   })
 
+  const [isPending, startTransition] = useTransition()
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -23,10 +27,16 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    startTransition(async () => {
+      const res = await sendContactEmail(formData);
+      if (res.error) {
+        toast.error("Failed to send message: " + res.error);
+        return;
+      }
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 5000)
+    })
   }
 
   if (isSubmitted) {
@@ -103,10 +113,15 @@ export function ContactForm() {
 
           <button
             type="submit"
-            className="group flex items-center gap-3 text-gray-900 font-serif text-lg hover:text-gray-500 transition-colors pt-4 border-b border-gray-900 hover:border-gray-500 pb-1 w-fit"
+            disabled={isPending}
+            className="group flex items-center gap-3 text-gray-900 font-serif text-lg hover:text-gray-500 transition-colors pt-4 border-b border-gray-900 hover:border-gray-500 pb-1 w-fit disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Message
-            <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
+            {isPending ? "Sending..." : "Send Message"}
+            {isPending ? (
+              <Loader2 className="w-4 h-4 animate-spin" strokeWidth={1.5} />
+            ) : (
+              <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
+            )}
           </button>
         </form>
       </div>
