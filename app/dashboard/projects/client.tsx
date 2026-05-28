@@ -106,9 +106,9 @@ export default function ProjectsClient({
         <div className="w-full sm:w-auto">
           <select className="w-full sm:w-auto px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-gray-400">
             <option value="all">All Status</option>
-            <option value="active">Active</option>
-            <option value="completed">Completed</option>
             <option value="draft">Draft</option>
+            <option value="in development">In Development</option>
+            <option value="live">Live</option>
           </select>
         </div>
       </div>
@@ -128,8 +128,8 @@ export default function ProjectsClient({
                 </div>
               </div>
               <span className={`text-[9px] uppercase tracking-wider font-bold px-2 py-1 rounded-md shrink-0 ${
-                project.status === 'Active' ? 'bg-green-50 text-green-700' : 
-                project.status === 'Completed' ? 'bg-blue-50 text-blue-700' : 
+                project.status === 'Live' ? 'bg-green-50 text-green-700' : 
+                project.status === 'In Development' ? 'bg-blue-50 text-blue-700' : 
                 'bg-gray-100 text-gray-600'
               }`}>
                 {project.status}
@@ -137,9 +137,9 @@ export default function ProjectsClient({
             </div>
             
             <div className="flex flex-wrap gap-1.5">
-              {project.tech.map(t => (
-                <span key={t} className="text-[10px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded border border-gray-200">
-                  {t}
+              {project.techStacks?.map((t: any) => (
+                <span key={t.id} className="text-[10px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded border border-gray-200">
+                  {t.name}
                 </span>
               ))}
             </div>
@@ -200,8 +200,8 @@ export default function ProjectsClient({
                 </td>
                 <td className="px-6 py-4">
                   <span className={`text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-md ${
-                    project.status === 'Active' ? 'bg-green-50 text-green-700' : 
-                    project.status === 'Completed' ? 'bg-blue-50 text-blue-700' : 
+                    project.status === 'Live' ? 'bg-green-50 text-green-700' : 
+                    project.status === 'In Development' ? 'bg-blue-50 text-blue-700' : 
                     'bg-gray-100 text-gray-600'
                   }`}>
                     {project.status}
@@ -209,9 +209,9 @@ export default function ProjectsClient({
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map(t => (
-                      <span key={t} className="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded-md border border-gray-200 whitespace-nowrap">
-                        {t}
+                    {project.techStacks?.map((t: any) => (
+                      <span key={t.id} className="text-[11px] px-2 py-0.5 bg-gray-100 text-gray-600 rounded-md border border-gray-200 whitespace-nowrap">
+                        {t.name}
                       </span>
                     ))}
                   </div>

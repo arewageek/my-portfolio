@@ -7,7 +7,7 @@ export async function getProjects() {
   try {
     const projects = await prisma.project.findMany({
       orderBy: { createdAt: "desc" },
-      include: { category: true }
+      include: { category: true, techStacks: true }
     });
     return { data: projects };
   } catch (error) {
@@ -27,7 +27,12 @@ export async function createProject(data: any) {
         url: data.url,
         githubUrl: data.githubUrl,
         image: data.image,
-        tech: data.tech || [],
+        techStacks: {
+          connectOrCreate: (data.tech || []).map((t: string) => ({
+            where: { name: t },
+            create: { name: t }
+          }))
+        },
         categoryId: data.categoryId || null,
       }
     });

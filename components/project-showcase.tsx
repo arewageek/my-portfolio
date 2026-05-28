@@ -36,7 +36,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
 
   const allFilteredProjects = activeFilter === "All"
     ? projects
-    : projects.filter((p) => p.category === activeFilter)
+    : projects.filter((p) => p.category?.name === activeFilter)
 
   const filteredProjects = showLoadMore
     ? allFilteredProjects.slice(0, visibleCount)
@@ -147,16 +147,16 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                     {/* Creative Hover Overlay */}
                     <div className="absolute inset-0 bg-[#F4F1EA]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-6">
                       <div className="flex gap-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                        {project.links?.demo && (
-                          <Link href={project.links.demo} target="_blank" className="flex flex-col items-center gap-2 group/link">
+                        {project.url && (
+                          <Link href={project.url} target="_blank" className="flex flex-col items-center gap-2 group/link">
                             <div className="w-12 h-12 rounded-full border border-gray-900 flex items-center justify-center bg-transparent group-hover/link:bg-gray-900 group-hover/link:text-[#F4F1EA] transition-all duration-300">
                               <ExternalLink className="w-5 h-5 stroke-[1.5]" />
                             </div>
                             <span className="text-xs font-medium uppercase tracking-wider text-gray-900">Live</span>
                           </Link>
                         )}
-                        {project.links?.github && (
-                          <Link href={project.links.github} target="_blank" className="flex flex-col items-center gap-2 group/link">
+                        {project.githubUrl && (
+                          <Link href={project.githubUrl} target="_blank" className="flex flex-col items-center gap-2 group/link">
                             <div className="w-12 h-12 rounded-full border border-gray-900 flex items-center justify-center bg-transparent group-hover/link:bg-gray-900 group-hover/link:text-[#F4F1EA] transition-all duration-300">
                               <Github className="w-5 h-5 stroke-[1.5]" />
                             </div>
@@ -171,23 +171,23 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                     <div className="flex justify-between items-start gap-4">
                       <div>
                         <h3 className="text-2xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors duration-300">{project.title}</h3>
-                        <p className="text-sm font-handwriting text-gray-500 mt-1">{project.category}</p>
+                        <p className="text-sm font-handwriting text-gray-500 mt-1">{project.category?.name}</p>
                       </div>
                     </div>
                     
                     <p className="text-gray-600 font-light leading-relaxed line-clamp-3">
-                      {project.description}
+                      {project.overview}
                     </p>
 
                     <div className="flex flex-wrap gap-2 pt-2">
-                      {project.technologies?.slice(0, 4).map((tech: string) => (
-                        <span key={tech} className="text-[10px] text-gray-600 border border-gray-200 px-2 py-1 uppercase tracking-wider bg-white">
-                          {tech}
+                      {project.techStacks?.slice(0, 4).map((tech: any) => (
+                        <span key={tech.id} className="text-[10px] text-gray-600 border border-gray-200 px-2 py-1 uppercase tracking-wider bg-white">
+                          {tech.name}
                         </span>
                       ))}
-                      {project.technologies?.length > 4 && (
+                      {project.techStacks?.length > 4 && (
                         <span className="text-[10px] text-gray-400 border border-transparent px-1 py-1 uppercase tracking-wider">
-                          +{project.technologies.length - 4} more
+                          +{project.techStacks.length - 4} more
                         </span>
                       )}
                     </div>
@@ -239,29 +239,29 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                     <div className="w-full md:w-1/2 space-y-6">
                       <div>
                         <h3 className="text-3xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors duration-300">{project.title}</h3>
-                        <p className="text-sm font-handwriting text-gray-500 mt-2">{project.category} • {project.status}</p>
+                        <p className="text-sm font-handwriting text-gray-500 mt-2">{project.category?.name} • {project.status}</p>
                       </div>
                       
-                      <p className="text-lg text-gray-600 leading-relaxed font-light">
-                        {project.description}
+                      <p className="text-lg text-gray-600 leading-relaxed font-light line-clamp-3">
+                        {project.overview}
                       </p>
 
                       <div className="flex flex-wrap gap-3 pt-2">
-                        {project.technologies?.map((tech: string) => (
-                          <span key={tech} className="text-xs text-gray-500 border border-gray-200 px-3 py-1 uppercase tracking-wider bg-white">
-                            {tech}
+                        {project.techStacks?.map((tech: any) => (
+                          <span key={tech.id} className="text-xs text-gray-500 border border-gray-200 px-3 py-1 uppercase tracking-wider bg-white">
+                            {tech.name}
                           </span>
                         ))}
                       </div>
 
                       <div className="flex gap-6 pt-6">
-                        {project.links?.demo && (
-                          <Link href={project.links.demo} target="_blank" className="text-sm font-medium text-gray-900 hover:text-gray-500 flex items-center gap-2 border-b border-gray-900 hover:border-gray-500 pb-1 transition-colors">
+                        {project.url && (
+                          <Link href={project.url} target="_blank" className="text-sm font-medium text-gray-900 hover:text-gray-500 flex items-center gap-2 border-b border-gray-900 hover:border-gray-500 pb-1 transition-colors">
                             Live Demo <ExternalLink className="w-4 h-4 stroke-[1.5]" />
                           </Link>
                         )}
-                        {project.links?.github && (
-                          <Link href={project.links.github} target="_blank" className="text-sm font-medium text-gray-500 hover:text-gray-900 flex items-center gap-2 border-b border-transparent hover:border-gray-900 pb-1 transition-colors">
+                        {project.githubUrl && (
+                          <Link href={project.githubUrl} target="_blank" className="text-sm font-medium text-gray-500 hover:text-gray-900 flex items-center gap-2 border-b border-transparent hover:border-gray-900 pb-1 transition-colors">
                             GitHub <Github className="w-4 h-4 stroke-[1.5]" />
                           </Link>
                         )}

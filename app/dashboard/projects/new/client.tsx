@@ -8,13 +8,13 @@ import { useRouter } from "next/navigation";
 import { createProject } from "@/actions/projects";
 import { createCategory } from "@/actions/categories";
 
-export default function NewProjectClient({ categories }: { categories: any[] }) {
+export default function NewProjectClient({ categories, techStacks }: { categories: any[], techStacks: any[] }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [formData, setFormData] = useState({
     title: "",
     categoryId: "",
-    status: "Active",
+    status: "Draft",
     url: "",
     githubUrl: "",
     image: "",
@@ -22,6 +22,18 @@ export default function NewProjectClient({ categories }: { categories: any[] }) 
     overview: ""
   });
   const [newCat, setNewCat] = useState("");
+  const [imageMode, setImageMode] = useState<"url" | "upload">("url");
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({ ...formData, image: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,9 +151,9 @@ export default function NewProjectClient({ categories }: { categories: any[] }) 
                     onChange={(e) => setFormData({...formData, status: e.target.value})}
                     className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:bg-white transition-all appearance-none"
                   >
-                    <option value="Active">Active</option>
-                    <option value="Completed">Completed</option>
                     <option value="Draft">Draft</option>
+                    <option value="In Development">In Development</option>
+                    <option value="Live">Live</option>
                   </select>
                 </div>
               </div>
@@ -172,17 +184,52 @@ export default function NewProjectClient({ categories }: { categories: any[] }) 
             {/* Right Column */}
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Cover Image</label>
-                <div className="w-full h-40 border-2 border-dashed border-gray-300 rounded-2xl bg-gray-50 flex flex-col items-center justify-center text-gray-500 hover:bg-gray-100 hover:border-gray-400 transition-colors cursor-pointer group">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-2 group-hover:scale-105 transition-transform border border-gray-200">
-                    <Upload className="w-5 h-5 text-gray-600" />
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-semibold text-gray-900">Cover Image (Optional)</label>
+                  <div className="flex bg-gray-100 rounded-lg p-0.5">
+                    <button 
+                      type="button" 
+                      onClick={() => setImageMode("url")} 
+                      className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors ${imageMode === "url" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}
+                    >
+                      URL
+                    </button>
+                    <button 
+                      type="button" 
+                      onClick={() => setImageMode("upload")} 
+                      className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors ${imageMode === "upload" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}
+                    >
+                      Upload
+                    </button>
                   </div>
-                  <span className="text-sm font-medium text-gray-700">Upload cover image</span>
-                  <span className="text-xs text-gray-400 mt-1">16:9 ratio (JPG, PNG)</span>
                 </div>
+
+                {imageMode === "url" ? (
+                  <input 
+                    type="url" 
+                    value={formData.image && !formData.image.startsWith("data:") ? formData.image : ""}
+                    onChange={(e) => setFormData({...formData, image: e.target.value})}
+                    placeholder="https://example.com/image.png"
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:bg-white transition-all"
+                  />
+                ) : (
+                  <label className="w-full h-40 border-2 border-dashed border-gray-300 rounded-2xl bg-gray-50 flex flex-col items-center justify-center text-gray-500 hover:bg-gray-100 hover:border-gray-400 transition-colors cursor-pointer group relative overflow-hidden">
+                    {formData.image && formData.image.startsWith("data:") && (
+                      <img src={formData.image} alt="Preview" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-20 transition-opacity" />
+                    )}
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-2 group-hover:scale-105 transition-transform border border-gray-200 relative z-10">
+                      <Upload className="w-5 h-5 text-gray-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 relative z-10">
+                      {formData.image && formData.image.startsWith("data:") ? "Replace cover image" : "Upload cover image"}
+                    </span>
+                    <span className="text-xs text-gray-400 mt-1 relative z-10">16:9 ratio (JPG, PNG)</span>
+                    <input type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
+                  </label>
+                )}
               </div>
 
-              <div>
+              <div className="relative">
                 <label className="block text-sm font-semibold text-gray-900 mb-2">Tech Stack</label>
                 <input 
                   type="text" 
@@ -191,6 +238,40 @@ export default function NewProjectClient({ categories }: { categories: any[] }) 
                   placeholder="e.g. Next.js, Solidity, Tailwind"
                   className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:bg-white transition-all"
                 />
+                
+                {(() => {
+                  const parts = formData.tech.split(",");
+                  const searchTerm = parts[parts.length - 1].trim();
+                  if (!searchTerm) return null;
+                  
+                  const suggestions = techStacks.filter((t: any) => 
+                    t.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    !formData.tech.toLowerCase().includes(t.name.toLowerCase())
+                  );
+
+                  if (suggestions.length === 0) return null;
+
+                  return (
+                    <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-48 overflow-y-auto">
+                      {suggestions.map((s: any) => (
+                        <button
+                          key={s.id}
+                          type="button"
+                          onClick={() => {
+                            const newParts = [...parts];
+                            newParts.pop(); // remove incomplete typing
+                            const newTech = [...newParts, s.name].map(p => p.trim()).filter(Boolean).join(", ") + ", ";
+                            setFormData({ ...formData, tech: newTech });
+                          }}
+                          className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+                        >
+                          {s.name}
+                        </button>
+                      ))}
+                    </div>
+                  );
+                })()}
+
                 <p className="text-[10px] text-gray-400 mt-1.5 ml-1">Separate multiple technologies with commas.</p>
               </div>
             </div>
