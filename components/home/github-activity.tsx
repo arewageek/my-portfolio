@@ -9,21 +9,21 @@ export function GithubActivity() {
   const githubUrl = brandConfig.socials.find(s => s.label === "GitHub")?.href || ""
   const username = githubUrl.split('/').pop() || "arewageek"
 
-  // Custom monochromatic theme to match the paper/ink aesthetic
+  // Green theme to match the paper/ink aesthetic and show contributions clearly
   const customTheme = {
     light: [
-      'rgba(0, 0, 0, 0.04)', // level 0 (empty)
-      '#D1CEC7', // level 1
-      '#9CA3AF', // level 2
-      '#4B5563', // level 3
-      '#1A1A1A'  // level 4 (highest)
+      '#f4f1ea', // level 0 (empty)
+      '#dcfce7', // level 1
+      '#86efac', // level 2
+      '#16a34a', // level 3
+      '#14532d'  // level 4 (highest)
     ],
     dark: [
-      'rgba(0, 0, 0, 0.04)',
-      '#D1CEC7',
-      '#9CA3AF',
-      '#4B5563',
-      '#1A1A1A'
+      '#f4f1ea',
+      '#dcfce7',
+      '#86efac',
+      '#16a34a',
+      '#14532d'
     ]
   }
 
