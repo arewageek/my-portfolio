@@ -16,16 +16,7 @@ export function ProjectsHero() {
           </p>
         </div>
 
-        <div className="mt-16 flex gap-12 border-t border-gray-200 pt-8">
-          <div>
-            <div className="text-4xl font-serif text-gray-900">{brandConfig.projects.length}</div>
-            <div className="text-sm font-handwriting text-gray-500 mt-1">Live Projects</div>
-          </div>
-          <div>
-            <div className="text-4xl font-serif text-gray-900">{brandConfig.companies.length}</div>
-            <div className="text-sm font-handwriting text-gray-500 mt-1">Companies</div>
-          </div>
-        </div>
+
       </div>
     </section>
   )
