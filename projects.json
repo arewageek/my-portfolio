@@ -8,7 +8,7 @@
             "category": {
                 "$oid": "6978767009ac6331dc370ada"
             },
-            "description": "All Your Bills. One abstract Secure Platform. Stop juggling multiple apps. Airtime, data, electricity, and cable TV unified into a single native-grade experience.",
+            "description": "A unified bill-payment and financial utility platform providing a seamless, native-grade experience for managing airtime, data, electricity, and cable subscriptions under one secure, abstract layer.",
             "image": "payunion.png",
             "status": "live",
             "technologies": [
@@ -37,7 +37,7 @@
             "category": {
                 "$oid": "69d12044b7c106cb4eed7b18"
             },
-            "description": "Catch Code provides sport booking code conversion services, an online jackpot for earning rewards for successful sports prediction, and live game tracking system for sports lovers",
+            "description": "A comprehensive sports betting utility featuring multi-platform booking code conversion, an interactive prediction jackpot system, and real-time live game tracking designed to elevate the sports engagement experience.",
             "image": "https://i.postimg.cc/pXnNfx2Q/Screenshot-from-2026-04-04-15-18-53.png",
             "status": "development",
             "technologies": [
@@ -65,7 +65,7 @@
             "category": {
                 "$oid": "6978766e09ac6331dc370ad7"
             },
-            "description": "Earn rewards for streaming, sharing, and growing your favorite artists communities. join millions of superfans unlocking exclusive merch, tickets, and epic experiences.",
+            "description": "A Web3-enabled fan engagement platform that incentivizes community growth, allowing music enthusiasts to earn rewards, unlock exclusive merchandise, and access unique experiences by supporting their favorite artists.",
             "image": "https://i.postimg.cc/7h0r9H3B/Screenshot-from-2026-03-07-21-17-02.png",
             "status": "live",
             "technologies": [
@@ -92,7 +92,7 @@
             "category": {
                 "$oid": "6978767009ac6331dc370adb"
             },
-            "description": "Established in 2020, Atlantis De Maria is a landmark hotel in Akure providing a peaceful and refined atmosphere for travelers who appreciate quality and professional service",
+            "description": "A premium hospitality booking platform engineered for a landmark hotel in Akure, offering a refined, responsive user interface to streamline reservations and showcase luxury accommodations.",
             "image": "https://i.postimg.cc/65phw9YM/Screenshot-from-2026-03-05-22-39-53.png",
             "status": "development",
             "technologies": [
@@ -120,7 +120,7 @@
             "category": {
                 "$oid": "6978767009ac6331dc370ada"
             },
-            "description": "Mr. Monei is an AI-native financial infrastructure layer that gives businesses and intelligent systems secure access to payments, banking, investments, and insurance, all through a single, unified API.",
+            "description": "An AI-native financial infrastructure layer empowering businesses with a unified API for secure, scalable access to payments, banking operations, investment management, and insurance services.",
             "image": "https://i.postimg.cc/d0kHrWmB/Screenshot-from-2026-03-07-21-20-12.png",
             "status": "live",
             "technologies": [
@@ -147,7 +147,7 @@
             "category": {
                 "$oid": "6978766e09ac6331dc370ad7"
             },
-            "description": "SEGO is the friendly monster of Somnia Network a meme coin + NFT ecosystem built for fun, community, and pure vibes. More than just a token, SEGO is a character, a culture, and your new favorite monster on the blockchain.",
+            "description": "A vibrant Web3 ecosystem on the Somnia Network integrating a meme coin and an interactive NFT collection, fostering community engagement through gamified experiences and unique digital culture.",
             "image": "https://i.postimg.cc/KvpDfPzv/Screenshot-from-2026-03-07-21-21-17.png",
             "status": "live",
             "technologies": [
@@ -173,7 +173,7 @@
             "category": {
                 "$oid": "69d12044b7c106cb4eed7b18"
             },
-            "description": "A sports network that helps users track betting tickets across multiple platforms using an AI agent, connect with fellow enthusiasts, make predictions, and access the latest sports news through an AI-powered search engine",
+            "description": "An AI-powered sports intelligence network that aggregates multi-platform betting tickets, facilitates community predictions, and delivers tailored sports news via an advanced semantic search engine.",
             "image": "https://i.postimg.cc/CL9fdm5R/Screenshot-from-2026-03-07-21-23-50.png",
             "status": "live",
             "technologies": [
@@ -208,7 +208,7 @@
             "category": {
                 "$oid": "6978766f09ac6331dc370ad9"
             },
-            "description": "A social platform that lets creators earn royalty from video contents",
+            "description": "A decentralized content monetization platform empowering video creators to seamlessly distribute media and automatically earn transparent, on-chain royalties via smart contracts.",
             "image": "sessions.png",
             "status": "live",
             "technologies": [
@@ -240,7 +240,7 @@
             "category": {
                 "$oid": "6978767009ac6331dc370adb"
             },
-            "description": "An app that lets people create and manage stores",
+            "description": "A versatile digital marketplace builder that equips entrepreneurs with intuitive tools to effortlessly create, customize, and manage robust e-commerce storefronts.",
             "image": "pricetag-new.png",
             "status": "live",
             "technologies": [
@@ -273,7 +273,7 @@
             "category": {
                 "$oid": "6978766e09ac6331dc370ad7"
             },
-            "description": "Whiz the SUI Wizard is a mystical meme force cast into the SUIverse to summon pure degen energy. With spells made of shitposts and a staff carved from hype, Whiz channels ancient liquidity through memetic power.",
+            "description": "A memetic Web3 project built on the SUI blockchain, designed to drive community liquidity and ecosystem participation through creative storytelling, dynamic branding, and interactive decentralized mechanics.",
             "image": "https://i.postimg.cc/Hk8D0jQp/Screenshot-from-2026-02-05-15-36-13.png",
             "status": "live",
             "technologies": [
@@ -304,7 +304,7 @@
             "category": {
                 "$oid": "6978766e09ac6331dc370ad8"
             },
-            "description": "A freelance platform that makes global payments easy and secure for both freelancers and clients, with a simple, user-friendly experience at its core. Building on the Base Blockchain",
+            "description": "A secure, decentralized freelance marketplace built on the Base Blockchain, bridging global talent with clients through streamlined cryptocurrency payments and trustless escrow smart contracts.",
             "image": "zyrro-new.png",
             "status": "development",
             "technologies": [
@@ -337,7 +337,7 @@
             "category": {
                 "$oid": "6978766e09ac6331dc370ad8"
             },
-            "description": "Developed a user-friendly video conferencing platform that simplifies virtual communication. The platform enables seamless meeting scheduling, instant joining, and session recording, ensuring an effortless and efficient collaboration experience.",
+            "description": "A high-performance video conferencing solution optimized for seamless virtual collaboration, featuring instant meeting creation, reliable session recording, and low-latency streaming infrastructure.",
             "image": "talqq.png",
             "status": "live",
             "technologies": [
@@ -370,7 +370,7 @@
             "category": {
                 "$oid": "6978766e09ac6331dc370ad8"
             },
-            "description": "Developed an electoral system utilizing an ESP32 micro-controller to capture and transmit votes securely. Integrated with a smart contract and API, the system ensures that all votes are recorded on-chain, leveraging the Ethereum blockchain  for transparency and immutability. This blockchain-powered solution enhances electoral integrity by preventing fraud, enabling real-time verification, and establishing a verifiable, tamper-proof election record.",
+            "description": "A hardware-integrated decentralized voting system combining ESP32 microcontrollers with Ethereum smart contracts to guarantee immutable, transparent, and cryptographically verifiable election records.",
             "image": "blocvote.png",
             "status": "live",
             "technologies": [
