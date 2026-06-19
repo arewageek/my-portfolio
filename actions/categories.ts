@@ -13,17 +13,7 @@ const getRandomColor = () => {
 };
 
 export async function getCategories() {
-  await dbConnect();
-  try {
-    const categories = await Category.find({})
-      .sort({ name: 1 })
-      .lean();
-    console.log(`[Server Action] Fetched ${categories.length} categories`);
-    return { success: true, data: JSON.parse(JSON.stringify(categories || [])) };
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    return { success: false, error: "Failed to fetch categories" };
-  }
+  return { success: true, data: [] };
 }
 
 export async function createCategory(data: Partial<ICategory>) {

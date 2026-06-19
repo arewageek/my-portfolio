@@ -1,33 +1,15 @@
+import projectsData from '../projects.json'
 
-import dbConnect from '../lib/db'
-import Project, { IBackEndProject } from '../models/Project'
-import Category from '../models/Category'
-
-export type ProjectDocument = Omit<IBackEndProject, 'description' | 'links'> & { 
-  description: string | null;
-  links: {
-    demo: string | null;
-    github: string | null;
-    live?: string | null;
-  } | null;
-  _id: string; 
-  id: string 
-}
+export type ProjectDocument = any;
 
 export async function getProjects(): Promise<ProjectDocument[]> {
-  await dbConnect()
-  const projects = await Project.find({})
-    .populate({ 
-      path: 'category', 
-      model: Category,
-      strictPopulate: false 
-    })
-    .sort({ createdAt: -1 })
-    .lean()
+  const projects = projectsData.projects;
   
-  return JSON.parse(JSON.stringify(projects)).map((p: any) => ({
+  return projects.map((p: any) => ({
     ...p,
-    category: p.category?.name || "Uncategorized", 
+    _id: p._id?.$oid || p._id,
+    id: p._id?.$oid || p._id,
+    category: "Uncategorized", 
     description: p.description || null,
     links: p.links ? {
         demo: p.links.demo || null,
@@ -38,23 +20,10 @@ export async function getProjects(): Promise<ProjectDocument[]> {
 }
 
 export async function getProjectById(id: string): Promise<ProjectDocument | null> {
-  await dbConnect()
-  const project = await Project.findById(id)
-    .populate({ path: 'category', model: Category, strictPopulate: false })
-    .lean()
-  
-  if (!project) return null
-
-  return {
-    ...project,
-    _id: (project as any)._id.toString(),
-    id: (project as any)._id.toString(),
-    category: (project.category as any)?.name || "Uncategorized"
-  } as unknown as ProjectDocument
+  const projects = await getProjects();
+  return projects.find(p => p.id === id) || null;
 }
 
 export async function getAllCategories() {
-  await dbConnect()
-  const categories = await Category.find({}).sort({ name: 1 }).lean()
-  return JSON.parse(JSON.stringify(categories))
+  return []
 }

@@ -88,7 +88,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
           </motion.div>
         )}
 
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -111,7 +111,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
               {filter}
             </button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {isGrid ? (
           <motion.div 
@@ -171,7 +171,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                     <div className="flex justify-between items-start gap-4">
                       <div>
                         <h3 className="text-2xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors duration-300">{project.title}</h3>
-                        <p className="text-sm font-handwriting text-gray-500 mt-1">{project.category}</p>
+                        {/* <p className="text-sm font-handwriting text-gray-500 mt-1">{project.category}</p> */}
                       </div>
                     </div>
                     
@@ -239,7 +239,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
                     <div className="w-full md:w-1/2 space-y-6">
                       <div>
                         <h3 className="text-3xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors duration-300">{project.title}</h3>
-                        <p className="text-sm font-handwriting text-gray-500 mt-2">{project.category} • {project.status}</p>
+                        <p className="text-sm font-handwriting text-gray-500 mt-2">{/*project.category • */}{project.status}</p>
                       </div>
                       
                       <p className="text-lg text-gray-600 leading-relaxed font-light">
