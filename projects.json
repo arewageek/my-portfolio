@@ -2,6 +2,35 @@
     "projects": [
         {
             "_id": {
+                "$oid": "payunion-mock-id-1234"
+            },
+            "title": "PayUnion",
+            "category": {
+                "$oid": "6978767009ac6331dc370ada"
+            },
+            "description": "All Your Bills. One abstract Secure Platform. Stop juggling multiple apps. Airtime, data, electricity, and cable TV unified into a single native-grade experience.",
+            "image": "payunion.png",
+            "status": "live",
+            "technologies": [
+                "Nextjs",
+                "Honojs",
+                "PostgreSQL",
+                "Cloudflare Workers"
+            ],
+            "links": {
+                "demo": "https://payunion.arewa.live",
+                "github": ""
+            },
+            "createdAt": {
+                "$date": "2026-06-19T14:34:00.000Z"
+            },
+            "updatedAt": {
+                "$date": "2026-06-19T14:34:00.000Z"
+            },
+            "__v": 0
+        },
+        {
+            "_id": {
                 "$oid": "69d1202fb7c106cb4eed7b13"
             },
             "title": "Catch Code",
@@ -212,7 +241,7 @@
                 "$oid": "6978767009ac6331dc370adb"
             },
             "description": "An app that lets people create and manage stores",
-            "image": "pricetag.png",
+            "image": "pricetag-new.png",
             "status": "live",
             "technologies": [
                 "React",
