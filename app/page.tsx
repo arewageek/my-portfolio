@@ -1,10 +1,10 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { ProfessionalHighlights } from "@/components/home/professional-highlights"
 import { ProjectShowcase } from "@/components/project-showcase"
-import { GithubActivity } from "@/components/home/github-activity"
 import { CallToAction } from "@/components/home/call-to-action"
 import { getProjects } from "@/services/project.service"
 import { getCategories } from "@/actions/categories"
+import { GithubActivity } from "@/components/home/github-activity-wrapper"
 
 export const dynamic = 'force-dynamic'
 
