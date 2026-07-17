@@ -34,25 +34,6 @@ export default function RootLayout({
 
         <Toaster />
 
-        {/* <Script
-          src="//code.tidio.co/djigl1juhhik9frwz95ibypmds77jeky.js"
-          async
-        /> */}
-
-        {/* Smartsupp Configuration */}
-        <Script id="smartsupp-config" strategy="beforeInteractive">
-          {`
-            window._smartsupp = window._smartsupp || {};
-            window._smartsupp.key = '48e411adc6533eb79bccad34ac0d9b84a05af085';
-          `}
-        </Script>
-
-        {/* Smartsupp Loader */}
-        <Script
-          id="smartsupp-loader"
-          src="https://www.smartsuppchat.com/loader.js?"
-          strategy="beforeInteractive"
-        />
       </body>
     </html>
   )

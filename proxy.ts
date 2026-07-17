@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { decrypt } from '@/lib/auth-utils';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const session = request.cookies.get('admin_token')?.value;
 
@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
       return NextResponse.next();
     } catch (error) {
       // Invalid session
-      console.error('Middleware: Session decryption failed', error);
+      console.error('Proxy: Session decryption failed', error);
       return NextResponse.redirect(new URL('/login', request.url));
     }
   }
