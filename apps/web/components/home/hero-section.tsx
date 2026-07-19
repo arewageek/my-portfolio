@@ -23,7 +23,7 @@ export function HeroSection() {
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
-  }
+  } as const
 
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center px-6 sm:px-12 lg:px-24 pt-24 pb-16">

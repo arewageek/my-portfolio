@@ -9,7 +9,7 @@ export const brandConfig = {
   tagline: "Engineering scalable solutions for the modern web",
   location: "Nigeria",
   email: "arewageek@gmail.com",
-  
+
   // Categories
   categories: [
     { name: "DeFi", slug: "defi", description: "Decentralized Finance protocols and applications" },
@@ -213,15 +213,23 @@ export const brandConfig = {
       description:
         "Co-founded the leading laundry service company in college at the time, introducing a subscription service model.",
       achievements: [],
-      technologies: ["PHP", "MySQL"],
+      technologies: ["PHP", "MySQL", "JQuery"],
       projectCount: 1,
       overview: {
         description:
-          "Co-founded a laundry service company in college with a subscription model.",
-        responsibilities: [
-          "Developed a web app that improved user experience and work efficiency.",
-          "Built a subscription system to help customers manage recurring payments.",
-          "Guided users on how to use the app to ensure smooth adoption.",
+          "Co-founded a subscription-based laundry service, combining technology with operational processes to simplify laundry management for students.",
+
+        teams: [
+          {
+            name: "Default",
+            startDate: "Sep 2021",
+            endDate: "Mar 2022",
+            responsibilities: [
+              "Co-founded the business and led the development of its web application, improving customer experience and operational efficiency.",
+              "Built a subscription management system to support recurring payments and customer plans.",
+              "Worked directly with customers to onboard users, gather feedback, and continuously improve the product experience.",
+            ],
+          },
         ],
       },
       projects: [
@@ -287,25 +295,31 @@ export const brandConfig = {
       logo: "",
       status: "past",
       description:
-        "Developed custom web applications for the organization and its clients, delivering tailored solutions to meet specific business needs.",
+        "Developed custom web applications for the organization and its clients while mentoring interns and supporting their growth in modern web development.",
       achievements: [
         // "Developed NFT marketplace with 75K+ active users",
         // "Created AI-powered smart contract vulnerability scanner",
         // "Implemented automated testing reducing bugs by 70%",
         // "Built cross-platform mobile app with 50K+ downloads",
       ],
-      technologies: ["PHP", "Laravel", "SQL"],
+      technologies: ["PHP", "Laravel", "SQL", "Javascript"],
       projectCount: 3,
       overview: {
-        // description:
-        //   "As a Fullstack Blockchain Developer at Web3 Innovations, I was responsible for building end-to-end blockchain applications with a strong focus on user experience and automated testing through AI integration.",
-        responsibilities: [
-          "Led the on-boarding process for new interns, providing guidance and support to help them integrate smoothly into the team.",
-          "Designed and developed a POS system for cybercafes, enabling them to effectively track sales, manage inventory, payrolls, and analyze growth.",
-          "Mentored and tutored new interns on website development, utilizing tools such as JavaScript and PHP to foster their technical skills.",
+        description:
+          "Developed custom web applications for the organization and its clients while mentoring interns and supporting their growth in modern web development.",
+        teams: [
+          {
+            name: "Default",
+            startDate: "Jun 2022",
+            endDate: "Jul 2023",
+            responsibilities: [
+              "Designed and developed a point-of-sale (POS) system for cybercafés, enabling sales tracking, inventory management, payroll processing, and business reporting.",
+              "Developed a custom news portal with content management capabilities.",
+              "Built a custom web application for a law firm to support its operational workflows.",
+              "Led the onboarding of new interns, providing technical guidance and mentoring in JavaScript, PHP, and modern web development practices.",
+            ],
+          },
         ],
-        // impact:
-        //   "Transformed the company's technical capabilities, leading to $12M+ in NFT trading volume and recognition as a top Web3 development team.",
       },
       projects: [
         //   {
@@ -370,7 +384,7 @@ export const brandConfig = {
       logo: "",
       status: "past",
       description:
-        "Built responsive and efficient web applications to address various operational needs.",
+        "Contributed to the development of internal tools and web applications while collaborating with the MIS engineering team. Built responsive and efficient web applications to address various operational needs.",
       achievements: [
         //   "Deployed 25+ smart contracts with zero vulnerabilities",
         //   "Built DeFi lending protocol with $5M+ in loans",
@@ -381,16 +395,18 @@ export const brandConfig = {
       projectCount: 2,
       overview: {
         description:
-          "Built responsive and efficient web applications to address various operational needs.",
-        responsibilities: [
-          "Collaborated with a team of software engineers in the MIS unit.",
-          "Designed and implemented a web application for managing interns within the MIS unit, streamlining processes and improving administrative oversight.",
-          "Collaborated with a team of developers both on-site and remotely, leveraging Laravel and PostgreSQL to deliver robust back-end solutions.",
-          "Developed WikiChat, a Python-React app utilizing OpenAI’s Python SDK to generate witty and engaging responses, enhancing user interactions.",
-          "Developed TrustLendr, a decentralized lending platform that uses on-chain credit scores for loan eligibility. Integrated a native ERC-20 token to facilitate smooth lending and borrowing transactions",
+          "Contributed to the development of internal tools and web applications while collaborating with the MIS engineering team.",
+        teams: [
+          {
+            name: "Default",
+            startDate: "Sep 2023",
+            endDate: "Feb 2024",
+            responsibilities: [
+              "Collaborated with the MIS engineering team to develop and maintain internal web applications.",
+              "Developed an intern management system that streamlined intern administration and improved operational efficiency.",
+            ],
+          },
         ],
-        // impact:
-        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
       },
       projects: [
         //   {
@@ -454,17 +470,23 @@ export const brandConfig = {
         //   "Improved dApp loading speed by 80%",
         //   "Conducted security audits for 15+ external projects",
       ],
-      technologies: ["Solidity", "Next Js", "Prisma ORM", "PostgreSQL"],
+      technologies: ["Solidity", "Next Js", "PostgreSQL"],
       projectCount: 1,
       overview: {
         description:
-          "Built a smart contract and decentralized application (dApp) for NFT auctions, making it easy for users to participate in secure and transparent bidding.",
-        responsibilities: [
-          "Built a smart contract and decentralized application (dApp) for NFT auctions, making it easy for users to participate in secure and transparent bidding.",
-          "Developed a web app for inscribing NFTs onto the Ethereum blockchain, combining a user-friendly interface with efficient blockchain integration.",
+          "Built decentralized applications and smart contracts on Ethereum, focusing on NFT infrastructure, auctions, and on-chain asset creation.",
+
+        teams: [
+          {
+            name: "Default",
+            startDate: "May 2024",
+            endDate: "Jul 2024",
+            responsibilities: [
+              "Developed an NFT auction protocol and decentralized application, enabling secure and transparent on-chain bidding.",
+              "Built a web application for inscribing NFTs on Ethereum, simplifying the process of creating and managing on-chain digital assets.",
+            ],
+          },
         ],
-        // impact:
-        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
       },
       projects: [
         //   {
@@ -528,20 +550,26 @@ export const brandConfig = {
         //   "Improved dApp loading speed by 80%",
         //   "Conducted security audits for 15+ external projects",
       ],
-      technologies: ["Next JS", "Mongo DB"],
+      technologies: ["Next JS", "Mongo DB", "Tact"],
       projectCount: 1,
       overview: {
         description:
-          "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
-        responsibilities: [
-          "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
-          "Built a dynamic wait-list and NFT minting website, incorporating blockchain features for seamless user on-boarding.",
-          "Developed a Telegram Mini-App and integrated Telegram Bot to enhance user engagement, streamline communication, and facilitate platform interactions.",
-          "Created a quest dashboard to engage the community through interactive social tasks, incentivizing participation and building excitement for a potential airdrop.",
-          "Developed a tap-to-earn Telegram mini-app game that rewards users with TapM tokens for interactions. Integrated a marketplace where tokens can be used to boost Points Per Hour (PPH), increasing user retention and platform activity.",
+          "Built a blockchain-powered freelance platform on the TON ecosystem, developing decentralized applications that combine smart contracts with engaging user experiences across web and Telegram.",
+
+        teams: [
+          {
+            name: "Default",
+            startDate: "Aug 2024",
+            endDate: "Nov 2024",
+            responsibilities: [
+              "Developed the core freelance platform, integrating TON blockchain to enable secure and decentralized user interactions.",
+              "Built the waitlist and NFT minting platform, delivering a seamless onboarding experience for early users.",
+              "Developed a Telegram Mini App and integrated Telegram Bot to streamline user engagement and platform interactions.",
+              "Built a community quest dashboard with social tasks and reward mechanisms to drive user participation and campaign growth.",
+              "Developed a tap-to-earn Telegram Mini App featuring an in-app marketplace where users could spend earned tokens to boost Points Per Hour (PPH) and increase engagement.",
+            ],
+          },
         ],
-        // impact:
-        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
       },
       projects: [
         //   {
@@ -598,21 +626,27 @@ export const brandConfig = {
       logo: "",
       status: "past",
       description:
-        "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
+        "Designed and developed scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability.",
       achievements: [],
       technologies: ["Express JS", "Mongo DB", "Firebase"],
       projectCount: 1,
       overview: {
         description:
-          "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
-        responsibilities: [
-          "Designed scalable and efficient back-end systems to support the platform's diverse user interactions.",
-          "Developed API services to power the beauty services platform, ensuring seamless functionality for both web and mobile applications.",
-          "Collaborated effectively with a fully remote team using slack and github, maintaining strong communication and delivering results within tight deadlines.",
-          "Developed an API service for the application’s in-app messaging and live chat feature",
+          "Designed and developed scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability.",
+
+        teams: [
+          {
+            name: "Default",
+            startDate: "Oct 2024",
+            endDate: "Nov 2024",
+            responsibilities: [
+              "Designed and developed scalable backend services supporting the platform's core business operations.",
+              "Built RESTful APIs consumed by both the web and mobile applications.",
+              "Led the development of the platform's in-app messaging and notification services, enabling reliable real-time communication between users.",
+              "Collaborated with a fully remote engineering team to deliver features and continuously improve the platform.",
+            ],
+          },
         ],
-        // impact:
-        //   "Established the company as a trusted smart contract development partner, with all deployed contracts maintaining perfect security records.",
       },
       projects: [
         //   {
@@ -668,7 +702,7 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
+        "Build modular applications and microservices with a focus on scalability, maintainability, and performance. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth.",
       achievements: [
         //   "Deployed 25+ smart contracts with zero vulnerabilities",
         //   "Built DeFi lending protocol with $5M+ in loans",
@@ -681,18 +715,45 @@ export const brandConfig = {
         "MySQL",
         "Modular Design",
         "Microservices",
-        "Figma",
       ],
       projectCount: 4,
       overview: {
         description:
-          "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
-        responsibilities: [
-          "Design and implement modular applications and micro-services, optimizing scalability, maintainability, and efficiency in the software development process.",
-          "Developed and manage a notifications module used across multiple applications to deliver real-time updates to users. This module has been successfully integrated across various platforms.",
-          "Collaborate with a cross-functional team, including both local and remote members, to create innovative software products and enhance existing systems using tools like Jira, Bitbucket, and Microsoft Teams for project management, version control, and communication.",
-          "Assist interns by explaining development processes, conducting 1:1 review sessions to help them overcome challenges, and ensuring a smooth and effective learning experience. ",
+          "Build modular applications and microservices with a focus on scalability, maintainability, and performance. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth.",
+        teams: [
+          {
+            name: "Mailforce",
+            startDate: "Mar",
+            endDate: "July 2025",
+            responsibilities: [
+              "Contributed to the development and maintenance of Mailforce, a multi-tenant donor management CRM that has processed over 10,000 donations for non-profit organizations.",
+              "Implemented and improved features across multiple modules",
+              "Maintained and enhanced existing functionality by addressing bugs, improving usability, and supporting evolving business requirements.",
+            ],
+          },
+          {
+            name: "Witness It",
+            startDate: "July 2025",
+            endDate: "Present",
+            responsibilities: [
+              "Led the engineering team, coordinating development efforts and driving feature delivery across the platform.",
+              "Designed and developed a reusable real-time notifications module that has since been adopted across multiple applications.",
+              "Contributed to the implementation of transaction workflows, evidence management, identity verification, and consensus-driven approval processes.",
+              "Collaborated closely with the product manager, client, and engineering team to define requirements, align on priorities, and deliver platform features.",
+            ],
+          },
+          {
+            name: "Benue Infopedia",
+            startDate: "May 2026",
+            endDate: "Present",
+            responsibilities: [
+              "Contributed to the development of a hyper-local news platform and CMS serving journalists, editors, and readers across Benue State.",
+              "Led the implementation of the platform's payment integration, enabling users to make payments seamlessly within the application.",
+              "Contributed to the advertisement workflow, building features that allow businesses and individuals to create, manage, and promote advertising campaigns on the platform.",
+            ],
+          },
         ],
+
         impact: "",
       },
       projects: [
@@ -750,19 +811,110 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "At Go Viral Africa, I build and maintain the frontend for two products: Whoscore, an AI-powered sports network, and Monei, an AI agent for simple and smart financial management.",
+        "At Go Viral Africa, I work as a Frontend Engineer building AI-powered consumer products across sports and fintech. My work focuses on delivering scalable user interfaces, leading major frontend initiatives, and collaborating closely with product and engineering teams to ship high-quality experiences.",
       achievements: [],
-      technologies: ["React", "Next.js", "TailwindCss", "Axios"],
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
       projectCount: 4,
       overview: {
         description:
-          "At Go Viral Africa, I build and maintain the frontend for two products: Whoscore, an AI-powered sports network, and Monei, an AI agent for simple and smart financial management.",
-        responsibilities: [
-          "Built and refined the full search flow for Whoscore, including the search page, hot trends, highlights, and results page.",
-          "Designed the desktop experience for the Livescore page to improve usability across devices.",
-          "Developed core frontend features for Monei, focusing on wallet access, portfolio views, peer-to-peer flows, and smart automations.",
-          "Collaborate with product and engineering teams to improve user experience, performance, and overall platform reliability."
+          "At Go Viral Africa, I work as a Frontend Engineer building AI-powered consumer products across sports and fintech. My work focuses on delivering scalable user interfaces, leading major frontend initiatives, and collaborating closely with product and engineering teams to ship high-quality experiences.",
+
+        teams: [
+          {
+            name: "Whoscore",
+            startDate: "Aug",
+            endDate: "Dec 2025",
+            responsibilities: [
+              "Led the development of the desktop experience, expanding the platform from a mobile-only interface to a fully responsive web application.",
+              "Led the end-to-end implementation of the search experience, including search, trending content, highlights, and search results.",
+            ],
+          },
+          {
+            name: "Monei",
+            startDate: "Oct",
+            endDate: "Dec 2025",
+            responsibilities: [
+              "Built the admin dashboard used to manage platform operations and internal workflows.",
+              "Collaborated with product and engineering teams to deliver new features while improving usability, performance, and maintainability.",
+            ],
+          },
         ],
+
+        impact: "",
+      },
+      projects: [
+        //   {
+        //     title: "DeFi Lending Protocol",
+        //     description:
+        //       "Secure lending and borrowing platform with innovative collateral mechanisms and competitive interest rates.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "Web3.js", "Node.js"],
+        //     metrics: { loans: "$5M+", borrowers: "2K+", default: "0%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+        //   {
+        //     title: "Token Launchpad",
+        //     description:
+        //       "Comprehensive platform for token launches with built-in vesting, staking, and governance features.",
+        //     image: "/placeholder.svg?height=300&width=500",
+        //     technologies: ["Solidity", "React", "IPFS", "Hardhat"],
+        //     metrics: { launches: "25+", raised: "$10M+", success: "100%" },
+        //     links: { demo: "#", github: "#" },
+        //   },
+      ],
+      impact: [
+        //   {
+        //     value: "25+",
+        //     label: "Smart Contracts",
+        //     description: "Deployed with zero hacks",
+        //   },
+        //   {
+        //     value: "$5M+",
+        //     label: "Loans Facilitated",
+        //     description: "Through DeFi lending protocol",
+        //   },
+        //   {
+        //     value: "80%",
+        //     label: "Speed Improvement",
+        //     description: "dApp loading optimization",
+        //   },
+        //   {
+        //     value: "15+",
+        //     label: "Audits Completed",
+        //     description: "External security audits",
+        //   },
+      ],
+    },
+    {
+      id: "dawih",
+      name: "Dawih Solutions",
+      role: "Frontend Engineer",
+      started: "Jul 2026",
+      location: "Remote",
+      type: "Full-Time",
+      logo: "",
+      status: "current",
+      description:
+        "At Dawih Solutions, I contribute to the development of Supacash, a social fintech platform serving over 20,000 users. I work closely with product and engineering teams to build scalable, user-focused features that power digital payments, collaborative finance, and community-driven financial services.",
+      achievements: [],
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      projectCount: 4,
+      overview: {
+        description:
+          "At Dawih Solutions, I contribute to the development of Supacash, a social fintech platform serving over 20,000 users. I work closely with product and engineering teams to build scalable, user-focused features that power digital payments, collaborative finance, and community-driven financial services.",
+
+        teams: [
+          {
+            name: "Supacash",
+            startDate: "Jul 2026",
+            responsibilities: [
+              "Led the development of the Supacash web application, translating core product features from the mobile app into a seamless and responsive web experience for over 20K users.",
+              "Collaborate closely with engineering teams to translate business requirements into production-ready solutions.",
+              "Build and improve reusable frontend components while optimizing application performance, maintainability, and responsiveness.",
+            ],
+          },
+        ],
+
         impact: "",
       },
       projects: [
