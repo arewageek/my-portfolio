@@ -66,15 +66,31 @@ export default function ResumePage() {
                     {exp.overview?.description || exp.description}
                   </p>
                   
-                  {exp.overview?.responsibilities && exp.overview.responsibilities.length > 0 && (
-                    <ul className="space-y-3 mb-8">
-                      {exp.overview.responsibilities.map((resp: string, i: number) => (
-                        <li key={i} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
-                          <span className="text-gray-400 mt-1.5">•</span>
-                          <span>{resp}</span>
-                        </li>
+                  {exp.overview?.teams && exp.overview.teams.length > 0 && (
+                    <div className="space-y-6 mb-8">
+                      {exp.overview.teams.map((team: any, tIndex: number) => (
+                        <div key={tIndex}>
+                          {team.name && team.name !== "Default" && (
+                            <div className="flex items-center justify-between mb-3">
+                              <h4 className="text-sm font-medium text-gray-900">{team.name}</h4>
+                              {(team.startDate || team.endDate) && (
+                                <span className="text-xs text-gray-500 font-medium tracking-wide">
+                                  {team.startDate} {team.endDate ? `— ${team.endDate}` : ""}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                          <ul className="space-y-3">
+                            {team.responsibilities.map((resp: string, i: number) => (
+                              <li key={i} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
+                                <span className="text-gray-400 mt-1.5">•</span>
+                                <span>{resp}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   )}
 
                   {exp.technologies && exp.technologies.length > 0 && (
