@@ -45,7 +45,7 @@ export function ProfessionalHighlights() {
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
-  }
+  } as const
 
   return (
     <section className="py-24 px-6 sm:px-12 lg:px-24">
