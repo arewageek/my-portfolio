@@ -203,7 +203,7 @@ export const brandConfig = {
     {
       id: "borbbles",
       name: "Borbbles",
-      role: "Fullstack Engineer",
+      role: "Co-Founder",
       started: "Sep 2021",
       stopped: "Mar 2022",
       location: "Niger, Nigeria",
@@ -313,7 +313,7 @@ export const brandConfig = {
             startDate: "Jun 2022",
             endDate: "Jul 2023",
             responsibilities: [
-              "Designed and developed a point-of-sale (POS) system for cybercafés, enabling sales tracking, inventory management, payroll processing, and business reporting.",
+              "Built a point-of-sale (POS) system for cybercafés, enabling sales tracking, inventory management, payroll processing, and business reporting.",
               "Developed a custom news portal with content management capabilities.",
               "Built a custom web application for a law firm to support its operational workflows.",
               "Led the onboarding of new interns, providing technical guidance and mentoring in JavaScript, PHP, and modern web development practices.",
@@ -403,7 +403,7 @@ export const brandConfig = {
             endDate: "Feb 2024",
             responsibilities: [
               "Collaborated with the MIS engineering team to develop and maintain internal web applications.",
-              "Developed an intern management system that streamlined intern administration and improved operational efficiency.",
+              "Built an intern management system used to streamline onboarding and administration.",
             ],
           },
         ],
@@ -483,7 +483,7 @@ export const brandConfig = {
             endDate: "Jul 2024",
             responsibilities: [
               "Developed an NFT auction protocol and decentralized application, enabling secure and transparent on-chain bidding.",
-              "Built a web application for inscribing NFTs on Ethereum, simplifying the process of creating and managing on-chain digital assets.",
+              "Built a web application for inscribing NFTs on Ethereum (Ethscriptions), simplifying the process of creating and managing on-chain digital assets.",
             ],
           },
         ],
@@ -562,10 +562,9 @@ export const brandConfig = {
             startDate: "Aug 2024",
             endDate: "Nov 2024",
             responsibilities: [
-              "Developed the core freelance platform, integrating TON blockchain to enable secure and decentralized user interactions.",
-              "Built the waitlist and NFT minting platform, delivering a seamless onboarding experience for early users.",
-              "Developed a Telegram Mini App and integrated Telegram Bot to streamline user engagement and platform interactions.",
-              "Built a community quest dashboard with social tasks and reward mechanisms to drive user participation and campaign growth.",
+              "Built the core freelance platform, integrating TON blockchain to enable secure and decentralized user interactions.",
+              "Designed the waitlist and NFT minting platform, delivering a seamless onboarding experience for early users.",
+              "Introduced a community quest dashboard with social tasks and reward mechanisms to drive user participation and campaign growth.",
               "Developed a tap-to-earn Telegram Mini App featuring an in-app marketplace where users could spend earned tokens to boost Points Per Hour (PPH) and increase engagement.",
             ],
           },
@@ -626,13 +625,13 @@ export const brandConfig = {
       logo: "",
       status: "past",
       description:
-        "Designed and developed scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability.",
+        "Built scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability. ",
       achievements: [],
       technologies: ["Express JS", "Mongo DB", "Firebase"],
       projectCount: 1,
       overview: {
         description:
-          "Designed and developed scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability.",
+          "Built scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability. ",
 
         teams: [
           {
@@ -640,10 +639,9 @@ export const brandConfig = {
             startDate: "Oct 2024",
             endDate: "Nov 2024",
             responsibilities: [
-              "Designed and developed scalable backend services supporting the platform's core business operations.",
+              "Led the development of the platform's in-app messaging and notification services, enabling reliable real-time communication between users",
               "Built RESTful APIs consumed by both the web and mobile applications.",
-              "Led the development of the platform's in-app messaging and notification services, enabling reliable real-time communication between users.",
-              "Collaborated with a fully remote engineering team to deliver features and continuously improve the platform.",
+              "Collaborated with a fully remote engineering team to deliver features and continuously improve the platform",
             ],
           },
         ],
@@ -697,12 +695,12 @@ export const brandConfig = {
       name: "Ignition 633 Ministries",
       role: "Fullstack Engineer",
       started: "Jan 2025",
-      location: "Benue, Nigeria",
+      location: "Benue, Nigeria (Hybrid)",
       type: "Full-Time",
       logo: "",
       status: "current",
       description:
-        "Build modular applications and microservices with a focus on scalability, maintainability, and performance. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth.",
+        "Built modular applications and shared platform services across multiple products, focusing on scalability, maintainability, and long-term reliability. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth",
       achievements: [
         //   "Deployed 25+ smart contracts with zero vulnerabilities",
         //   "Built DeFi lending protocol with $5M+ in loans",
@@ -719,15 +717,15 @@ export const brandConfig = {
       projectCount: 4,
       overview: {
         description:
-          "Build modular applications and microservices with a focus on scalability, maintainability, and performance. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth.",
+          "Built modular applications and shared platform services across multiple products, focusing on scalability, maintainability, and long-term reliability. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth",
         teams: [
           {
             name: "Mailforce",
             startDate: "Mar",
             endDate: "July 2025",
             responsibilities: [
-              "Contributed to the development and maintenance of Mailforce, a multi-tenant donor management CRM that has processed over 10,000 donations for non-profit organizations.",
-              "Implemented and improved features across multiple modules",
+              "Contributed to the development of MailForce, a multi-tenant donor management platform that has processed over $1M in donations.",
+              "Delivered new features across multiple modules while improving platform reliability and usability.",
               "Maintained and enhanced existing functionality by addressing bugs, improving usability, and supporting evolving business requirements.",
             ],
           },
@@ -737,7 +735,7 @@ export const brandConfig = {
             endDate: "Present",
             responsibilities: [
               "Led the engineering team, coordinating development efforts and driving feature delivery across the platform.",
-              "Designed and developed a reusable real-time notifications module that has since been adopted across multiple applications.",
+              "Built a reusable real-time notifications module that has since been adopted across multiple applications.",
               "Contributed to the implementation of transaction workflows, evidence management, identity verification, and consensus-driven approval processes.",
               "Collaborated closely with the product manager, client, and engineering team to define requirements, align on priorities, and deliver platform features.",
             ],
@@ -747,8 +745,8 @@ export const brandConfig = {
             startDate: "May 2026",
             endDate: "Present",
             responsibilities: [
-              "Contributed to the development of a hyper-local news platform and CMS serving journalists, editors, and readers across Benue State.",
               "Led the implementation of the platform's payment integration, enabling users to make payments seamlessly within the application.",
+              "Collaborated in the development of a hyper-local news platform and CMS serving journalists, editors, and readers across Benue State.",
               "Contributed to the advertisement workflow, building features that allow businesses and individuals to create, manage, and promote advertising campaigns on the platform.",
             ],
           },
@@ -811,13 +809,13 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "At Go Viral Africa, I work as a Frontend Engineer building AI-powered consumer products across sports and fintech. My work focuses on delivering scalable user interfaces, leading major frontend initiatives, and collaborating closely with product and engineering teams to ship high-quality experiences.",
+        "",
       achievements: [],
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
       projectCount: 4,
       overview: {
         description:
-          "At Go Viral Africa, I work as a Frontend Engineer building AI-powered consumer products across sports and fintech. My work focuses on delivering scalable user interfaces, leading major frontend initiatives, and collaborating closely with product and engineering teams to ship high-quality experiences.",
+          "",
 
         teams: [
           {
@@ -834,7 +832,7 @@ export const brandConfig = {
             startDate: "Oct",
             endDate: "Dec 2025",
             responsibilities: [
-              "Built the admin dashboard used to manage platform operations and internal workflows.",
+              "Built the internal admin dashboard used to manage platform operations.",
               "Collaborated with product and engineering teams to deliver new features while improving usability, performance, and maintainability.",
             ],
           },
@@ -895,20 +893,20 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "At Dawih Solutions, I contribute to the development of Supacash, a social fintech platform serving over 20,000 users. I work closely with product and engineering teams to build scalable, user-focused features that power digital payments, collaborative finance, and community-driven financial services.",
+        "",
       achievements: [],
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
       projectCount: 4,
       overview: {
         description:
-          "At Dawih Solutions, I contribute to the development of Supacash, a social fintech platform serving over 20,000 users. I work closely with product and engineering teams to build scalable, user-focused features that power digital payments, collaborative finance, and community-driven financial services.",
+          "",
 
         teams: [
           {
             name: "Supacash",
             startDate: "Jul 2026",
             responsibilities: [
-              "Led the development of the Supacash web application, translating core product features from the mobile app into a seamless and responsive web experience for over 20K users.",
+              "Worked on Supacash, a fintech platform serving over 20,000 users, where I led the expansion of the product from mobile to web.",
               "Collaborate closely with engineering teams to translate business requirements into production-ready solutions.",
               "Build and improve reusable frontend components while optimizing application performance, maintainability, and responsiveness.",
             ],
