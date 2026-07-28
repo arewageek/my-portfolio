@@ -2,14 +2,14 @@
     "projects": [
         {
             "_id": {
-                "$oid": "payunion-mock-id-1234"
+                "$oid": "kionara-1234"
             },
-            "title": "PayUnion",
+            "title": "Kionara",
             "category": {
                 "$oid": "6978767009ac6331dc370ada"
             },
             "description": "A unified bill-payment and financial utility platform providing a seamless, native-grade experience for managing airtime, data, electricity, and cable subscriptions under one secure, abstract layer.",
-            "image": "payunion.png",
+            "image": "https://i.postimg.cc/y6ghZd4K/Screenshot-from-2026-07-28-21-54-42.png",
             "status": "live",
             "technologies": [
                 "Nextjs",
@@ -18,7 +18,7 @@
                 "Cloudflare Workers"
             ],
             "links": {
-                "demo": "https://payunion.arewa.live",
+                "demo": "https://kionara.net",
                 "github": ""
             },
             "createdAt": {
