@@ -7,24 +7,28 @@ import { motion } from "framer-motion"
 export function ProfessionalHighlights() {
   const highlights = [
     {
-      icon: Feather,
-      title: "Smart Contract Development",
-      description: "I design and deploy production-ready smart contracts that securely handle high-value transactions. Every contract is security-audited, gas-optimized, and built for scalability."
-    },
-    {
       icon: Layers,
-      title: "Full-Stack Web Development",
-      description: "I build complete applications from databases to intuitive user interfaces, ensuring that complex technologies remain accessible and user-friendly."
-    },
-    {
-      icon: Fingerprint,
-      title: "Security & Architecture",
-      description: "Security is paramount. I implement defense-in-depth strategies and design robust architectures to protect your users and data."
+      title: "Software Development",
+      description:
+        "Build modern, scalable applications from backend services and APIs to intuitive user interfaces, delivering reliable software that solves real business problems."
     },
     {
       icon: Sparkles,
-      title: "Performance Optimization",
-      description: "I optimize every layer of the stack for maximum performance, ensuring your application delivers exceptional speed and reliability."
+      title: "AI Integrations",
+      description:
+        "Integrate AI capabilities into products using modern LLMs, automation workflows, and intelligent features that improve user experience and business operations."
+    },
+    {
+      icon: Feather,
+      title: "Smart Contract Development",
+      description:
+        "Design and build secure, gas-efficient smart contracts and decentralized applications for Ethereum and EVM-compatible networks."
+    },
+    {
+      icon: Fingerprint,
+      title: "System Architecture",
+      description:
+        "Design modular applications and microservices that are scalable, maintainable, and built to support long-term product growth."
     },
   ]
 
@@ -40,8 +44,8 @@ export function ProfessionalHighlights() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 15 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" }
     }
@@ -50,7 +54,7 @@ export function ProfessionalHighlights() {
   return (
     <section className="py-24 px-6 sm:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -61,7 +65,7 @@ export function ProfessionalHighlights() {
           <h2 className="text-4xl font-serif text-gray-900">What I Do</h2>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -71,7 +75,7 @@ export function ProfessionalHighlights() {
           {highlights.map((highlight, index) => (
             <motion.div key={index} variants={itemVariants} className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 group">
               <div className="text-gray-300 group-hover:text-gray-900 transition-colors duration-500 pt-1 hidden md:block">
-                <motion.div 
+                <motion.div
                   whileHover={{ rotate: 10, scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >

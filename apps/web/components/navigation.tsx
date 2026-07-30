@@ -23,6 +23,7 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Work" },
+    { href: "/resume", label: "Resume" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -65,21 +66,6 @@ export function Navigation() {
                 )}
               </Link>
             ))}
-            
-            <Link
-              href="/resume"
-              className={`text-sm tracking-wide transition-colors duration-300 relative group ${
-                pathname === "/resume" ? "text-gray-900 font-medium" : "text-gray-500 hover:text-gray-900"
-              }`}
-            >
-              Resume
-              {pathname === "/resume" && (
-                <motion.div 
-                  layoutId="nav-underline"
-                  className="absolute left-0 right-0 -bottom-1 h-[1px] bg-gray-900" 
-                />
-              )}
-            </Link>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -145,21 +131,6 @@ export function Navigation() {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.1 + navItems.length * 0.05 }}
-                >
-                  <Link
-                    href="/resume"
-                    className={`text-lg font-serif transition-colors ${
-                      pathname === "/resume" ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Resume
-                  </Link>
-                </motion.div>
               </div>
             </motion.div>
           )}

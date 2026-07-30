@@ -455,7 +455,7 @@ export const brandConfig = {
     {
       id: "phlamingos",
       name: "Phlamingos NFT",
-      role: "Software Engineer",
+      role: "Fullstack Engineer",
       started: "May 2024",
       stopped: "Jul 2024",
       location: "Fiverr",

@@ -18,8 +18,8 @@ export function HeroSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
@@ -28,7 +28,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center px-6 sm:px-12 lg:px-24 pt-24 pb-16">
       <div className="w-full max-w-4xl mx-auto">
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -45,10 +45,10 @@ export function HeroSection() {
 
           <motion.div variants={itemVariants} className="space-y-6 max-w-2xl">
             <p className="text-xl md:text-2xl font-serif text-gray-700 leading-relaxed">
-              I am a software engineer focused on building clean, intuitive, and highly scalable applications.
+              I build software that is simple to use, scalable, and built to last.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-sans font-light">
-              My work spans full-stack web development and Web3 engineering. I believe that powerful technology should feel invisible, and that the best interfaces are the ones that quietly get out of your way.
+              My work spans full-stack engineering and blockchain development, building products from backend systems and APIs to intuitive user interfaces and smart contracts.
             </p>
           </motion.div>
 
