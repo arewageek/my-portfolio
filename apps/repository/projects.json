@@ -1,0 +1,26 @@
+[
+  {
+    "id": "portfolio",
+    "name": "portfolio",
+    "domain": "portfolio.arewa.live",
+    "description": "A personal space showcasing my latest work, skills, and the journey so far. Built with Next.js and Tailwind CSS."
+  },
+  {
+    "id": "shop",
+    "name": "shop",
+    "domain": "shop.arewa.live",
+    "description": "A modern, minimal e-commerce platform designed for local artisans to sell their handcrafted goods."
+  },
+  {
+    "id": "blog",
+    "name": "blog",
+    "domain": "blog.arewa.live",
+    "description": "My thoughts on web development, design patterns, and life. A minimalist reading experience."
+  },
+  {
+    "id": "dashboard",
+    "name": "dashboard",
+    "domain": "dashboard.arewa.live",
+    "description": "An internal analytics dashboard for tracking metrics, user engagement, and system health across all my projects."
+  }
+]
