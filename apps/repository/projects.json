@@ -1,0 +1,26 @@
+[
+  {
+    "id": "flotty",
+    "name": "Flotty",
+    "domain": "flotty.arewa.live",
+    "description": "Flotty is a lightweight workspace built for freelancers to handle the business side of their work in one place. It makes it easy to keep track of clients, manage project milestones, send out invoices, and get paid without needing to juggle multiple tools."
+  },
+  {
+    "id": "sequence",
+    "name": "Sequence",
+    "domain": "sequence.arewa.live",
+    "description": "Sequence helps you stay on top of your workload when you're balancing multiple gigs at once. It gives you a clear view of your progress across different projects, so you know exactly what needs your attention and nothing slips through the cracks."
+  },
+  {
+    "id": "habits",
+    "name": "Habits",
+    "domain": "habits.arewa.live",
+    "description": "Habits is a straightforward tracker inspired by the Atomic Habits framework. It focuses on helping you build better routines by maintaining daily streaks, making it easier to turn small, consistent actions into long-lasting lifestyle changes."
+  },
+  {
+    "id": "report",
+    "name": "i633 Reports",
+    "domain": "report.arewa.live",
+    "description": "i633 Reports is a dedicated tracker designed to monitor developer performance and productivity for Ignition 633. It provides a simple way to log progress, track key metrics, and make sure development goals are being met."
+  }
+]

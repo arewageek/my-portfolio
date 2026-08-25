@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  /* Exact colors used in web app layout.tsx */
+  --color-background: #F4F1EA;
+  --color-foreground: #1A1A1A;
+  
+  --color-card: #F4F1EA;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #F4F1EA;
+  --color-popover-foreground: #1A1A1A;
+  
+  /* Hardcoded from web app tailwind config */
+  --color-primary: #8b5cf6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #18181b;
+  --color-secondary-foreground: #fafafa;
+  --color-accent: #ec4899;
+  --color-accent-foreground: #ffffff;
+
+  --color-muted: #E8E8E8;
+  --color-muted-foreground: #666666; 
+  --color-border: #E5E5E5;
+  --color-input: #E5E5E5;
+  --color-ring: #1A1A1A;
+  
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-newsreader);
+  --font-handwriting: var(--font-caveat);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
