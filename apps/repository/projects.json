@@ -1,26 +1,26 @@
 [
   {
-    "id": "portfolio",
-    "name": "portfolio",
-    "domain": "portfolio.arewa.live",
-    "description": "A personal space showcasing my latest work, skills, and the journey so far. Built with Next.js and Tailwind CSS."
+    "id": "flotty",
+    "name": "Flotty",
+    "domain": "flotty.arewa.live",
+    "description": "Flotty is a lightweight workspace built for freelancers to handle the business side of their work in one place. It makes it easy to keep track of clients, manage project milestones, send out invoices, and get paid without needing to juggle multiple tools."
   },
   {
-    "id": "shop",
-    "name": "shop",
-    "domain": "shop.arewa.live",
-    "description": "A modern, minimal e-commerce platform designed for local artisans to sell their handcrafted goods."
+    "id": "sequence",
+    "name": "Sequence",
+    "domain": "sequence.arewa.live",
+    "description": "Sequence helps you stay on top of your workload when you're balancing multiple gigs at once. It gives you a clear view of your progress across different projects, so you know exactly what needs your attention and nothing slips through the cracks."
   },
   {
-    "id": "blog",
-    "name": "blog",
-    "domain": "blog.arewa.live",
-    "description": "My thoughts on web development, design patterns, and life. A minimalist reading experience."
+    "id": "habits",
+    "name": "Habits",
+    "domain": "habits.arewa.live",
+    "description": "Habits is a straightforward tracker inspired by the Atomic Habits framework. It focuses on helping you build better routines by maintaining daily streaks, making it easier to turn small, consistent actions into long-lasting lifestyle changes."
   },
   {
-    "id": "dashboard",
-    "name": "dashboard",
-    "domain": "dashboard.arewa.live",
-    "description": "An internal analytics dashboard for tracking metrics, user engagement, and system health across all my projects."
+    "id": "report",
+    "name": "i633 Reports",
+    "domain": "report.arewa.live",
+    "description": "i633 Reports is a dedicated tracker designed to monitor developer performance and productivity for Ignition 633. It provides a simple way to log progress, track key metrics, and make sure development goals are being met."
   }
 ]

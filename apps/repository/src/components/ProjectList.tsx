@@ -33,7 +33,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               className="w-full text-left py-6 sm:py-8 flex items-center justify-between outline-none cursor-pointer"
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground transition-colors">
+                <h2 className="text-3xl sm:text-4xl font-serif tracking-tight text-foreground transition-colors duration-300 group-hover:text-gray-600">
                   {project.name}
                 </h2>
                 <span className="font-mono text-xs sm:text-sm text-muted-foreground uppercase tracking-widest mt-1 sm:mt-0">
@@ -61,7 +61,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
             >
               <div className="overflow-hidden">
                 <div className="pb-8 pt-2 flex flex-col sm:flex-row gap-8 sm:gap-16 justify-between items-start">
-                  <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed font-serif">
+                  <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed font-sans font-light">
                     {project.description}
                   </p>
                   <div className="shrink-0">
