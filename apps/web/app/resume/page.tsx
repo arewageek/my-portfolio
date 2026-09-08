@@ -67,29 +67,44 @@ export default function ResumePage() {
                   </p>
                   
                   {exp.overview?.teams && exp.overview.teams.length > 0 && (
-                    <div className="space-y-6 mb-8">
-                      {exp.overview.teams.map((team: any, tIndex: number) => (
-                        <div key={tIndex}>
-                          {team.name && team.name !== "Default" && (
-                            <div className="flex items-center justify-between mb-3">
-                              <h4 className="text-sm font-medium text-gray-900">{team.name}</h4>
-                              {(team.startDate || team.endDate) && (
-                                <span className="text-xs text-gray-500 font-medium tracking-wide">
-                                  {team.startDate} {team.endDate ? `— ${team.endDate}` : ""}
-                                </span>
-                              )}
-                            </div>
-                          )}
-                          <ul className="space-y-3">
-                            {team.responsibilities.map((resp: string, i: number) => (
-                              <li key={i} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
-                                <span className="text-gray-400 mt-1.5">•</span>
-                                <span>{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                    <div className="space-y-8 mb-8 mt-6">
+                      {exp.overview.teams.map((team: any, tIndex: number) => {
+                        const isDefault = !team.name || team.name === "Default";
+                        
+                        return (
+                          <div 
+                            key={tIndex} 
+                            className={!isDefault ? "relative pl-4 md:pl-5 border-l-2 border-gray-200/60" : ""}
+                          >
+                            {!isDefault && (
+                              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 sm:gap-0">
+                                <div className="flex items-center gap-2.5">
+                                  <span className="inline-flex items-center px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-widest">
+                                    Team
+                                  </span>
+                                  <h4 className="text-sm font-semibold text-gray-900">{team.name}</h4>
+                                </div>
+                                {(team.startDate || team.endDate) && (
+                                  <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium tracking-wide">
+                                    <Calendar className="w-3.5 h-3.5 hidden sm:block opacity-70" />
+                                    <span>
+                                      {team.startDate} {team.endDate ? `— ${team.endDate}` : ""}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                            <ul className="space-y-3 mt-2">
+                              {team.responsibilities.map((resp: string, i: number) => (
+                                <li key={i} className="flex gap-3 text-gray-600 text-sm leading-relaxed">
+                                  <span className="text-gray-300 mt-1.5">•</span>
+                                  <span>{resp}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
 

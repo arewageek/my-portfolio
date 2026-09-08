@@ -700,7 +700,7 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "Built modular applications and shared platform services across multiple products, focusing on scalability, maintainability, and long-term reliability. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth",
+        "Led the engineering of multiple platforms including MailForce (a multi-tenant donor management system processing over $1M), Witness It (an evidence verification platform), and Benue Infopedia (a hyper-local news CMS). Built scalable, modular architectures such as reusable real-time notification systems and payment integrations, while managing teams and mentoring junior developers.",
       achievements: [
         //   "Deployed 25+ smart contracts with zero vulnerabilities",
         //   "Built DeFi lending protocol with $5M+ in loans",
@@ -717,7 +717,7 @@ export const brandConfig = {
       projectCount: 4,
       overview: {
         description:
-          "Built modular applications and shared platform services across multiple products, focusing on scalability, maintainability, and long-term reliability. Collaborate across engineering teams to deliver reliable software while mentoring interns and supporting their technical growth",
+          "Led the engineering of multiple platforms including MailForce (a multi-tenant donor management system processing over $1M), Witness It (an evidence verification platform), and Benue Infopedia (a hyper-local news CMS). Built scalable, modular architectures such as reusable real-time notification systems and payment integrations, while managing teams and mentoring junior developers.",
         teams: [
           {
             name: "Mailforce",
@@ -809,13 +809,13 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "",
+        "Spearheaded frontend development across core platforms, notably expanding Whoscore from a mobile-only interface to a fully responsive desktop web application with a comprehensive search experience. Additionally, built internal administrative tools for Monei, collaborating with cross-functional teams to elevate platform usability, performance, and maintainability.",
       achievements: [],
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
       projectCount: 4,
       overview: {
         description:
-          "",
+          "Spearheaded frontend development across core platforms, notably expanding Whoscore from a mobile-only interface to a fully responsive desktop web application with a comprehensive search experience. Additionally, built internal administrative tools for Monei, collaborating with cross-functional teams to elevate platform usability, performance, and maintainability.",
 
         teams: [
           {
@@ -886,20 +886,20 @@ export const brandConfig = {
     {
       id: "dawih",
       name: "Dawih Solutions",
-      role: "Frontend Engineer",
+      role: "Fullstack Engineer",
       started: "Jul 2026",
       location: "Remote",
       type: "Full-Time",
       logo: "",
       status: "current",
       description:
-        "",
+        "Led the expansion of Supacash, a fintech platform serving over 20,000 users, from a mobile application to a fully functional web platform. Collaborated with engineering teams to translate business requirements into production-ready solutions, focusing on building reusable components, optimizing performance, and ensuring high maintainability.",
       achievements: [],
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
       projectCount: 4,
       overview: {
         description:
-          "",
+          "Led the expansion of Supacash, a fintech platform serving over 20,000 users, from a mobile application to a fully functional web platform. Collaborated with engineering teams to translate business requirements into production-ready solutions, focusing on building reusable components, optimizing performance, and ensuring high maintainability.",
 
         teams: [
           {

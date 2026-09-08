@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ExternalLink, Github, Plus } from "lucide-react"
+import { ExternalLink, Github, Plus, ArrowRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export interface Project {
@@ -113,166 +113,99 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
           ))}
         </motion.div> */}
 
-        {isGrid ? (
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16"
-          >
+          <div className="flex flex-col gap-24 sm:gap-32 md:gap-48 mt-12 pb-12">
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id || project.title}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="group flex flex-col gap-6"
-                >
-                  <div className="w-full aspect-[4/3] overflow-hidden relative bg-gray-100 border border-gray-200 shadow-sm rounded-sm">
-                    <motion.div
-                      className="w-full h-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              {filteredProjects.map((project, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <motion.div
+                    key={project.id || project.title}
+                    layout
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-0`}
+                  >
+                    {/* Large Background Number */}
+                    <div 
+                      className={`absolute -top-6 md:-top-24 ${isEven ? 'left-2 md:-left-12' : 'right-2 md:-right-12'} text-[8rem] md:text-[16rem] font-serif font-bold text-gray-500/5 pointer-events-none select-none leading-none z-0`}
                     >
-                      <img
-                        src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/projects/${project.image}`}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </motion.div>
-                    
-                    {/* Creative Hover Overlay */}
-                    <div className="absolute inset-0 bg-[#F4F1EA]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-6">
-                      <div className="flex gap-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                        {project.links?.demo && (
-                          <Link href={project.links.demo} target="_blank" className="flex flex-col items-center gap-2 group/link">
-                            <div className="w-12 h-12 rounded-full border border-gray-900 flex items-center justify-center bg-transparent group-hover/link:bg-gray-900 group-hover/link:text-[#F4F1EA] transition-all duration-300">
-                              <ExternalLink className="w-5 h-5 stroke-[1.5]" />
-                            </div>
-                            <span className="text-xs font-medium uppercase tracking-wider text-gray-900">Live</span>
-                          </Link>
-                        )}
-                        {project.links?.github && (
-                          <Link href={project.links.github} target="_blank" className="flex flex-col items-center gap-2 group/link">
-                            <div className="w-12 h-12 rounded-full border border-gray-900 flex items-center justify-center bg-transparent group-hover/link:bg-gray-900 group-hover/link:text-[#F4F1EA] transition-all duration-300">
-                              <Github className="w-5 h-5 stroke-[1.5]" />
-                            </div>
-                            <span className="text-xs font-medium uppercase tracking-wider text-gray-900">Code</span>
-                          </Link>
-                        )}
-                      </div>
+                      {String(index + 1).padStart(2, '0')}
                     </div>
-                  </div>
 
-                  <div className="space-y-4 px-2">
-                    <div className="flex justify-between items-start gap-4">
-                      <div>
-                        <h3 className="text-2xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors duration-300">{project.title}</h3>
-                        {/* <p className="text-sm font-handwriting text-gray-500 mt-1">{project.category}</p> */}
-                      </div>
-                    </div>
-                    
-                    <p className="text-gray-600 font-light leading-relaxed line-clamp-3">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {project.technologies?.slice(0, 4).map((tech: string) => (
-                        <span key={tech} className="text-[10px] text-gray-600 border border-gray-200 px-2 py-1 uppercase tracking-wider bg-white">
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies?.length > 4 && (
-                        <span className="text-[10px] text-gray-400 border border-transparent px-1 py-1 uppercase tracking-wider">
-                          +{project.technologies.length - 4} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        ) : (
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="relative"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id || project.title}
-                  layout
-                  variants={itemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-                  className={`sticky w-full ${index !== filteredProjects.length - 1 ? 'mb-24 lg:mb-32' : ''}`}
-                  style={{
-                    top: `calc(6rem + ${index * 1.5}rem)`,
-                    zIndex: index,
-                  }}
-                >
-                  <div className="group flex flex-col md:flex-row gap-8 md:gap-12 items-center bg-[#FAF9F6] p-4 sm:p-6 md:p-10 border border-gray-200 shadow-[0_-8px_30px_rgba(0,0,0,0.04)] rounded-sm">
-                    {/* Project Image */}
-                    <div className="w-full md:w-1/2 aspect-[4/3] overflow-hidden relative bg-gray-100">
-                      <motion.div
-                        className="w-full h-full"
-                        whileHover={{ scale: 1.05 }}
+                    {/* Image Container */}
+                    <div className="w-full md:w-[60%] relative z-10">
+                      <motion.div 
+                        whileHover={{ scale: 0.98 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        className="aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-gray-100 shadow-xl border border-gray-200/50 relative group cursor-pointer"
                       >
                         <img
                           src={project.image?.startsWith('http') || project.image?.startsWith('/') ? project.image : `/projects/${project.image}`}
                           alt={project.title}
-                          className="w-full h-full object-cover shadow-sm"
+                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                         />
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-gray-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        
+                        {/* External link button overlay if there's a demo */}
+                        {project.links?.demo && (
+                          <Link href={project.links.demo} target="_blank" className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+                            <div className="w-16 h-16 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-gray-900 shadow-xl translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                              <ExternalLink className="w-6 h-6 stroke-[1.5]" />
+                            </div>
+                          </Link>
+                        )}
                       </motion.div>
                     </div>
 
-                    {/* Project Info */}
-                    <div className="w-full md:w-1/2 space-y-6">
-                      <div>
-                        <h3 className="text-3xl font-serif text-gray-900 group-hover:text-gray-600 transition-colors duration-300">{project.title}</h3>
-                        <p className="text-sm font-handwriting text-gray-500 mt-2">{/*project.category • */}{project.status}</p>
+                    {/* Content Card (Overlapping) */}
+                    <motion.div 
+                      className={`w-[92%] sm:w-[85%] md:w-[50%] relative z-20 mx-auto md:mx-0 -mt-20 md:mt-0 ${isEven ? 'md:-ml-16 md:mt-24' : 'md:-mr-16 md:-mt-24'} bg-white/95 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-2xl border border-gray-100`}
+                      initial={{ opacity: 0, x: isEven ? 30 : -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <div className="flex items-center gap-4 mb-5 md:mb-6">
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-gray-400">{project.category || project.status}</span>
+                        <div className="h-px w-8 md:w-12 bg-gray-200"></div>
                       </div>
                       
-                      <p className="text-lg text-gray-600 leading-relaxed font-light">
+                      <h3 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6 leading-tight">{project.title}</h3>
+                      
+                      <p className="text-gray-600 font-light leading-relaxed mb-6 md:mb-8 text-sm sm:text-base md:text-lg">
                         {project.description}
                       </p>
-
-                      <div className="flex flex-wrap gap-3 pt-2">
+                      
+                      <div className="flex flex-wrap gap-2 mb-8 md:mb-10">
                         {project.technologies?.map((tech: string) => (
-                          <span key={tech} className="text-xs text-gray-500 border border-gray-200 px-3 py-1 uppercase tracking-wider bg-white">
+                          <span key={tech} className="text-[9px] md:text-[10px] text-gray-500 border border-gray-200 px-2 md:px-3 py-1 md:py-1.5 uppercase tracking-widest bg-gray-50">
                             {tech}
                           </span>
                         ))}
                       </div>
-
-                      <div className="flex gap-6 pt-6">
+                      
+                      <div className="flex gap-6 items-center">
                         {project.links?.demo && (
-                          <Link href={project.links.demo} target="_blank" className="text-sm font-medium text-gray-900 hover:text-gray-500 flex items-center gap-2 border-b border-gray-900 hover:border-gray-500 pb-1 transition-colors">
-                            Live Demo <ExternalLink className="w-4 h-4 stroke-[1.5]" />
+                          <Link href={project.links.demo} target="_blank" className="group inline-flex items-center gap-2 md:gap-3 text-xs md:text-sm font-medium text-gray-900 border-b border-gray-900 pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+                            Explore Project <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         )}
                         {project.links?.github && (
-                          <Link href={project.links.github} target="_blank" className="text-sm font-medium text-gray-500 hover:text-gray-900 flex items-center gap-2 border-b border-transparent hover:border-gray-900 pb-1 transition-colors">
-                            GitHub <Github className="w-4 h-4 stroke-[1.5]" />
+                          <Link href={project.links.github} target="_blank" className="group flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                            <Github className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-0.5 transition-transform" />
+                            <span className="sr-only">GitHub</span>
                           </Link>
                         )}
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
-          </motion.div>
-        )}
+          </div>
 
         {hasMoreProjects && (
           <motion.div 
