@@ -1,0 +1,17 @@
+# Arewa Geek
+
+> Experienced software engineer specializing in scalable web applications, thoughtful interfaces, and robust systems.
+
+## Site Structure
+- `/` - Home page
+- `/about` - About me
+- `/projects` - Selected works and projects showcase
+- `/resume` - Professional resume and work experience
+- `/contact` - Contact information
+
+## About This Site
+This is the personal portfolio of Arewa Geek. It serves as a digital resume and a showcase of past and current projects, ranging from minimal web apps to complex infrastructure. 
+
+## Useful Links
+- Sitemap: /sitemap.xml
+- Robots: /robots.txt
