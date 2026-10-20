@@ -43,12 +43,12 @@ export function HeroSection() {
             </h1>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6 max-w-2xl">
-            <p className="text-xl md:text-2xl font-serif text-gray-700 leading-relaxed">
-              I build software that is simple to use, scalable, and built to last.
+          <motion.div variants={itemVariants} className="space-y-4 max-w-2xl">
+            <p className="text-xl md:text-2xl font-serif text-gray-800 leading-relaxed">
+              I build software that is simple, fast, and built to last.
             </p>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-sans font-light">
-              My work spans full-stack engineering and blockchain development, building products from backend systems and APIs to intuitive user interfaces and smart contracts.
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed font-sans font-light">
+              Full-stack engineer and blockchain developer. I turn ideas into clean web apps, robust backend APIs, and secure smart contracts.
             </p>
           </motion.div>
 

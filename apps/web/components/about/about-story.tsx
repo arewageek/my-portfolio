@@ -15,19 +15,19 @@ export function AboutStory() {
           
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed font-light">
             <p>
-              I began my journey as a software engineer because I was fascinated by the ability to build tools that live on the internet and are instantly accessible globally.
+              I got into programming because I loved the idea of building tools that live on the internet and work for anyone, anywhere.
             </p>
 
             <p>
-              Over the years, I've worked across different stacks, from crafting pixel-perfect interfaces to architecting robust backend systems. More recently, I've spent considerable time in the Web3 space, exploring the intersection of cryptography, digital ownership, and decentralized infrastructure.
+              I got into blockchain not for the hype, but because I was fascinated by building systems that don't need a middleman to work. But most decentralized apps feel like they were built by engineers for engineers. I think that's backwards. The best technology is the kind you don't even notice you're using.
             </p>
 
             <p>
-              My focus is now centered on creating systems that balance clarity with performance. By combining thoughtful design with reliable, scalable infrastructure, I aim to build products that solve real problems elegantly.
+              When I'm not coding, I'm usually thinking about how to make complex systems simpler, or exploring how practical AI can take away repetitive work without adding unnecessary bloat.
             </p>
 
             <p>
-              Whether it's a sleek landing page, a complex web application, or a smart contract protocol, my approach remains the same: understand the user, simplify the complex, and write clean, maintainable code.
+              I'm based in Nigeria and work with teams and founders all over the world. Whether I'm building a backend API, a user interface, or a smart contract, my goal is always the same: keep it simple, make it fast, and build it to last.
             </p>
           </div>
         </div>

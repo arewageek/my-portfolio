@@ -543,7 +543,7 @@ export const brandConfig = {
       logo: "",
       status: "past",
       description:
-        "Designed and developed a freelance agency platform leveraging the TON blockchain to enable secure, decentralized interactions between users.",
+        "Built a freelance marketplace on the TON blockchain, complete with smart contracts, Telegram Mini Apps, and community quest dashboards.",
       achievements: [
         //   "Deployed 25+ smart contracts with zero vulnerabilities",
         //   "Built DeFi lending protocol with $5M+ in loans",
@@ -625,13 +625,13 @@ export const brandConfig = {
       logo: "",
       status: "past",
       description:
-        "Built scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability. ",
+        "Built backend services, real-time messaging, and in-app notifications powering the platform across web and mobile.",
       achievements: [],
       technologies: ["Express JS", "Mongo DB", "Firebase"],
       projectCount: 1,
       overview: {
         description:
-          "Built scalable backend services and APIs that power the platform's core features, with a focus on reliability, performance, and maintainability. ",
+          "Built backend services, real-time messaging, and in-app notifications powering the platform across web and mobile.",
 
         teams: [
           {
@@ -700,7 +700,7 @@ export const brandConfig = {
       logo: "",
       status: "current",
       description:
-        "Led the engineering of multiple platforms including MailForce (a multi-tenant donor management system processing over $1M), Witness It (an evidence verification platform), and Benue Infopedia (a hyper-local news CMS). Built scalable, modular architectures such as reusable real-time notification systems and payment integrations, while managing teams and mentoring junior developers.",
+        "Lead engineer across platforms including MailForce (donor management processing over $1M), Witness It (evidence verification), and Benue Infopedia (local news CMS). I build payment and real-time notification modules, manage development, and mentor developers.",
       achievements: [
         //   "Deployed 25+ smart contracts with zero vulnerabilities",
         //   "Built DeFi lending protocol with $5M+ in loans",
@@ -717,7 +717,7 @@ export const brandConfig = {
       projectCount: 4,
       overview: {
         description:
-          "Led the engineering of multiple platforms including MailForce (a multi-tenant donor management system processing over $1M), Witness It (an evidence verification platform), and Benue Infopedia (a hyper-local news CMS). Built scalable, modular architectures such as reusable real-time notification systems and payment integrations, while managing teams and mentoring junior developers.",
+          "Lead engineer across platforms including MailForce (donor management processing over $1M), Witness It (evidence verification), and Benue Infopedia (local news CMS). I build payment and real-time notification modules, manage development, and mentor developers.",
         teams: [
           {
             name: "Mailforce",

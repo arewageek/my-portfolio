@@ -11,7 +11,7 @@ export function ContactHero() {
         </h1>
 
         <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto font-light">
-          I'm available for new opportunities, product collaborations, and consulting. If you're building something interesting, I'd love to hear about it.
+          Open to full-time engineering roles, contract projects, and consulting. If you're building something and need a hand, send a message.
         </p>
       </div>
     </section>

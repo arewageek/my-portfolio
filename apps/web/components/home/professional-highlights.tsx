@@ -10,25 +10,25 @@ export function ProfessionalHighlights() {
       icon: Layers,
       title: "Software Development",
       description:
-        "Build modern, scalable applications from backend services and APIs to intuitive user interfaces, delivering reliable software that solves real business problems."
+        "Full-stack web applications from the ground up. Fast APIs, clean databases, and smooth interfaces that do what they promise."
     },
     {
       icon: Sparkles,
       title: "AI Integrations",
       description:
-        "Integrate AI capabilities into products using modern LLMs, automation workflows, and intelligent features that improve user experience and business operations."
+        "Connecting practical AI models and automation directly into workflows to eliminate repetitive tasks and make products smarter."
     },
     {
       icon: Feather,
       title: "Smart Contract Development",
       description:
-        "Design and build secure, gas-efficient smart contracts and decentralized applications for Ethereum and EVM-compatible networks."
+        "Secure, gas-efficient smart contracts for Ethereum and EVM chains, tested thoroughly to protect user assets."
     },
     {
       icon: Fingerprint,
       title: "System Architecture",
       description:
-        "Design modular applications and microservices that are scalable, maintainable, and built to support long-term product growth."
+        "Clean, modular backend services. Systems designed to stay fast, cheap to run, and easy to maintain as traffic grows."
     },
   ]
 

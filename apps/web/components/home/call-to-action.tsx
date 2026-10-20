@@ -20,11 +20,11 @@ export function CallToAction() {
             Start a project.
           </h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-sans font-light max-w-2xl mx-auto">
-            I'm currently available for new projects globally. If you have an idea you'd like to discuss, feel free to reach out.
+            I'm open to full-time roles, contracts, and new projects. If you have an idea or need an experienced engineer on your team, let's talk.
           </p>
           
           <div className="pt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm uppercase tracking-widest font-medium text-gray-800">
-            <Link href={brandConfig.calendar} className="group flex items-center gap-2 hover:text-gray-500 transition-colors border-b border-gray-800 hover:border-gray-500 pb-1">
+            <Link href={brandConfig.calendar} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 hover:text-gray-500 transition-colors border-b border-gray-800 hover:border-gray-500 pb-1">
               Schedule a call
               <motion.span
                 className="inline-block"

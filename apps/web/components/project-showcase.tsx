@@ -83,7 +83,7 @@ export function ProjectShowcase({ projects, categories = [], showLoadMore = true
             <p className="font-handwriting text-xl text-gray-500 mb-2">Selected Works</p>
             <h2 className="text-4xl font-serif text-gray-900">Projects</h2>
             <p className="text-lg text-gray-600 mt-4 max-w-2xl font-sans font-light">
-              A curated collection of things I have built. Ranging from minimal web apps to complex blockchain infrastructure.
+              Web apps, developer tools, and blockchain products I've designed, built, and shipped.
             </p>
           </motion.div>
         )}

@@ -40,7 +40,7 @@ export function GithubActivity() {
           <p className="font-handwriting text-xl text-gray-500 mb-2">Code Contributions</p>
           <h2 className="text-4xl font-serif text-gray-900">GitHub Activity</h2>
           <p className="text-lg text-gray-600 mt-4 max-w-2xl font-sans font-light">
-            A visual overview of my coding consistency and public contributions over the last year.
+            Daily commits and open-source contributions over the past year.
           </p>
         </motion.div>
 

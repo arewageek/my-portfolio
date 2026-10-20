@@ -13,7 +13,7 @@ export function AboutPersonal() {
           <p className="font-handwriting text-xl text-gray-500">My Vision</p>
 
           <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto font-light">
-            Engineering a future where software infrastructure is as invisible and reliable as the air we breathe.
+            Building software where the technology gets out of your way and just works.
           </p>
         </div>
       </div>

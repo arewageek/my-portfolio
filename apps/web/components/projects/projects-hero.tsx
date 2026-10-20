@@ -12,7 +12,7 @@ export function ProjectsHero() {
             Recent <br /> Projects.
           </h1>
           <p className="text-lg md:text-2xl text-gray-600 leading-relaxed font-sans font-light max-w-3xl pt-8">
-            A selection of products I've built across software, fintech, AI, and blockchain, from early prototypes to production applications.
+            A collection of web apps, developer tools, and blockchain products I've designed and shipped.
           </p>
         </div>
 

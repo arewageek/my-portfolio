@@ -11,11 +11,11 @@ export function AboutQuote() {
             Let's Work Together.
           </h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-sans font-light max-w-2xl mx-auto">
-            I'm always open to new ideas and challenging projects. Let's create something amazing.
+            I'm always open to discussing new roles, contracts, and engineering ideas.
           </p>
           
           <div className="pt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm uppercase tracking-widest font-medium text-gray-800">
-            <Link href={brandConfig.calendar} className="hover:text-gray-500 transition-colors border-b border-gray-800 hover:border-gray-500 pb-1">
+            <Link href={brandConfig.calendar} target="_blank" rel="noopener noreferrer" className="hover:text-gray-500 transition-colors border-b border-gray-800 hover:border-gray-500 pb-1">
               Schedule a call
             </Link>
             <span className="text-gray-300 hidden sm:inline">/</span>

@@ -16,7 +16,7 @@ export default function ResumePage() {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <p className="font-handwriting text-xl text-gray-500 mb-2">My Journey</p>
+            <p className="font-handwriting text-xl text-gray-500 mb-2">Career</p>
             <h1 className="text-4xl md:text-5xl font-serif text-gray-900 tracking-tight">Work Experience</h1>
           </div>
           
